@@ -1,0 +1,121 @@
+{
+  "air-hood": {
+    "url": "https://amzn.to/3LspXWu",
+    "title": "Airhood",
+    "imageUrl": "/img/featured/a/air_hood_black.jpg",
+    "imageWidht": "224",
+    "imageHeight": "280"
+  },
+  "arendo-ricecooker": {
+    "url": "https://amzn.to/3YksCXG",
+    "title": "Arendo Reiskocher",
+    "imageUrl": "/img/featured/a/arendo_reiskocher.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "bartscher_wok_induction": {
+    "url": "https://amzn.to/44Nt7Mj",
+    "title": "Bartscher 105986 Induktion Wok IW 35",
+    "imageUrl": "/img/featured/a/bartscher_wok_induction.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "fire_sense_yakatori": {
+    "url": "https://amzn.to/3XXmzdl",
+    "title": "Fire Sense Yakatori",
+    "imageUrl": "/img/featured/a/fire_sense_yakatori.jpg",
+    "imageWidht": "300",
+    "imageHeight": "300"
+  },
+  "flamotion_wok": {
+    "url": "https://amzn.to/3DB0plP",
+    "title": "Flavemotion Wok ",
+    "imageUrl": "/img/featured/a/flamotion_wok.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "global_knife": {
+    "url": "https://amzn.to/3Quci4N",
+    "title": "Global Kochmesser",
+    "imageUrl": "/img/featured/a/global_knife.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "hot_wok_pro": {
+    "url": "https://amzn.to/3q6GesG",
+    "title": "Hot Wok HW3711 Original Wok-Set mit Regelventil/Schlauch",
+    "imageUrl": "/img/featured/a/hot_wok_pro.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "hot_wok_pro2": {
+    "url": "https://amzn.to/3YhMgmR",
+    "title": "Hot Wok HW3711 Original Wok-Set mit Regelventil/Schlauch",
+    "imageUrl": "/img/featured/a/hot_wok_pro2.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "japan_grill": {
+    "url": "https://amzn.to/3KhTIce",
+    "title": "Konro Tischgrill",
+    "imageUrl": "/img/featured/a/japan_grill.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "kiwi-pro-slicer": {
+    "url": "https://amzn.to/47W2TsO",
+    "title": "Kiwi Pro Slicer",
+    "imageUrl": "/img/featured/a/kiwo-pro-slicer.jpg",
+    "imageWidht": "300",
+    "imageHeight": "300"
+  },
+  "ramen_bowl": {
+    "url": "https://amzn.to/3QmTzYM",
+    "title": "Ramenschüssel",
+    "imageUrl": "/img/featured/a/ramen_bowl.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "tokyo_design1": {
+    "url": "https://amzn.to/3Kl7CKy",
+    "title": "TOKYO design studio Nippon Blue Sushi-Set blau-weiß",
+    "imageUrl": "/img/featured/a/tokyo_design1.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "tom_yang1": {
+    "url": "https://amzn.to/43KdPGz",
+    "title": "TomYang BBQ - Der Original Thai Grill & Hotpot",
+    "imageUrl": "/img/featured/a/tom_yang1.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "tom_yang2": {
+    "url": "https://amzn.to/43KdPGz",
+    "title": "TomYang BBQ - Das Original",
+    "imageUrl": "/img/featured/a/tom_yang2.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "toro_tischgrill": {
+    "url": "https://amzn.to/3yjVXcd",
+    "title": "BBQ-Toro Keramik Tischgrill",
+    "imageUrl": "/img/featured/a/toro-tischgrill.jpg",
+    "imageWidht": "300",
+    "imageHeight": "300"
+  },
+  "unold_moo_kata": {
+    "url": "https://amzn.to/3OQyrJb",
+    "title": "UNOLD 48746 ASIA-FONDUE",
+    "imageUrl": "/img/featured/a/unold_moo_kata.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  },
+  "yosukata_wok": {
+    "url": "https://amzn.to/3OON6ED",
+    "title": "YOSUKATA Wokpfanne aus Karbonstahl",
+    "imageUrl": "/img/featured/a/yosukata_wok.jpg",
+    "imageWidht": "300",
+    "imageHeight": "250"
+  }
+}
