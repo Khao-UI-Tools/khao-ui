@@ -26,7 +26,11 @@
 <div class="container">
   <div class="title">{title}</div>
   {#if ad}
-    <a href={ad.url} target={ad.url.includes("mailto:") ? "_self" : "_blank"}>
+    <a
+      class="link"
+      href={ad.url}
+      target={ad.url.includes("mailto:") ? "_self" : "_blank"}
+    >
       <picture>
         <source
           srcset={ad.imageUrl.replace(".jpg", ".webp")}
@@ -38,6 +42,7 @@
           width={ad.imageWidth || 300}
           alt={ad.title || title}
           title={title ? title : ""}
+          class="image"
         />
       </picture>
     </a>
@@ -57,10 +62,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    margin-top: var(
-      --khao-ads-margin-top,
-      3rem
-    );
+    margin-top: var(--khao-ads-margin-top, 3rem);
 
     &:focus {
       outline: none !important;
@@ -69,9 +71,11 @@
 
   .title {
     font-size: 70%;
-    margin-bottom: var(
-      --khao-ads-margin-bottom,
-      0.5rem
-    );
+    margin-bottom: var(--khao-ads-margin-bottom, 0.5rem);
+  }
+
+  .link {
+    color: inherit;
+    text-decoration: inherit;
   }
 </style>

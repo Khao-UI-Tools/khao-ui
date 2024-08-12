@@ -20,6 +20,8 @@
 </a>
 
 <style>
+  @import "reset.css";
+
   :host {
     --khao-button-steady-height: var(--khao-sys-size-regular-10);
     --khao-button-steady-container-shape: var(--khao-sys-shape-corner-medium);

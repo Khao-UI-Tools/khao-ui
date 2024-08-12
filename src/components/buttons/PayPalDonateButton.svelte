@@ -35,12 +35,14 @@
 </a>
 
 <style>
+  @import "reset.css";
+
   :host {
     --khao-button-paypal-height: var(--khao-sys-size-regular-10);
     --khao-button-paypal-container-shape: var(--khao-sys-shape-corner-medium);
 
     --khao-button-paypal-container-color: rgb(255, 209, 64);
-    --khao-button-paypal-state-layer-color: var(--khao-sys-color-on-container);
+    --khao-button-paypal-state-layer-color: rgb(0, 0, 0);
 
     --khao-button-paypal-hover-state-layer-opacity: var(
       --khao-sys-state-hover-state-layer-opacity
