@@ -8,6 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: [
         "src/components/ads/Ads.svelte",
+        "src/components/buttons/Button.svelte",
         "src/components/buttons/PayPalDonateButton.svelte",
         "src/components/buttons/SteadyButton.svelte",
         "src/components/map/MarkerPin.svelte",

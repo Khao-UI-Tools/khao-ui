@@ -5,6 +5,7 @@
   export let iconName: string;
 </script>
 
+<!--icons from https://fonts.google.com/icons -->
 <div style="background-color: {color}" class="pin">
   {#if iconName === "close"}
     <svg class="icon" viewBox="0 -960 960 960"

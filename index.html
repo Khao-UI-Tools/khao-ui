@@ -7,12 +7,16 @@
     <link rel="icon" href="data:;base64,=" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khao UI Web Conponents</title>
+    <link rel="stylesheet" href="/src/design/design.css">
   </head>
   <body>
     <script type="module" src="/src/main.ts"></script>
-
-
     <style>
+
+      body {
+        background-color: var(--khao-sys-color-surface);
+        color: var( --khao-sys-color-on-surface);
+      }
 
       .showcase {
         display: flex;
@@ -20,6 +24,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        font-family: var(--khao-sys-typescale-body-font);
       }
 
     </style>
@@ -28,10 +33,16 @@
 
       <khao-ads title="Werbung"></khao-ads>
 
+      <khao-button label="Primary Button with longer Text" href="/"></khao-button>
+
+      <khao-button label="Secondary Button" prioritry="secondary" href="/"></khao-button>
+
+      <khao-button label="Tertiary Button" prioritry="tertiary" href="/"></khao-button>
+
       <khao-button-pay-pal-donate
         label="PalPay"
         title="Unterstütze meinen Blog über PayPal"
-        buttonid="J4B3UGYM7V7W6"
+        hostedButtonId="J4B3UGYM7V7W6"
       ></khao-button-pay-pal-donate>
 
       <khao-button-steady

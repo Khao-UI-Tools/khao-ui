@@ -8,7 +8,8 @@
     "build:lib": "vite build -c=vite.lib.config.js",
     "build:split": "vite build -c=vite.split.config.js",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
+    "update-design": "git fetch && git submodule init && git submodule update --remote"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.1.1",

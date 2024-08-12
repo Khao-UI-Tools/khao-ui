@@ -20,24 +20,38 @@
 </a>
 
 <style>
-  :focus {
-    outline: none !important;
+  :host {
+    --khao-button-steady-height: var(--khao-sys-size-regular-10);
+    --khao-button-steady-container-shape: var(--khao-sys-shape-corner-medium);
+
+    --khao-button-steady-background: linear-gradient(
+      134deg,
+      #b36eec 0%,
+      #ee7b68 80.07460585585586%
+    );
+
+    --khao-button-steady-background-hover: linear-gradient(
+      132deg,
+      #ee7b68 0%,
+      #b36eec 80.07460585585586%
+    );
   }
 
   .button {
-    width: 150px;
-    height: 40px;
-    display: flex;
+    min-width: 150px;
+    height: var(--khao-button-steady-height);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0.2rem;
-    border-radius: 13px;
-    background: linear-gradient(134deg, #b36eec 0%, #ee7b68 80.07460585585586%);
+    border-radius: var(--khao-button-steady-container-shape);
+    background: var(--khao-button-steady-background);
   }
 
   .button:hover,
-  .button:focus {
-    background: linear-gradient(132deg, #ee7b68 0%, #b36eec 80.07460585585586%);
+  .button:focus,
+  .button:active {
+    background: var(--khao-button-steady-background-hover);
   }
 
   .icon {

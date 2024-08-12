@@ -1,13 +1,13 @@
 <svelte:options customElement="khao-button-pay-pal-donate" />
 
 <script lang="ts">
-  export let buttonid: string;
-  let label: string;
-  let title: string;
+  export let hostedButtonId: string;
+  export let label: string;
+  export let title: string;
 </script>
 
 <a
-  href="https://www.paypal.com/donate/?hosted_button_id={buttonid}&lang=de"
+  href="https://www.paypal.com/donate/?hosted_button_id={hostedButtonId}&lang=de"
   {title}
   target="_blank"
   class="button"
@@ -35,26 +35,64 @@
 </a>
 
 <style>
-  :focus {
-    outline: none !important;
+  :host {
+    --khao-button-paypal-height: var(--khao-sys-size-regular-10);
+    --khao-button-paypal-container-shape: var(--khao-sys-shape-corner-medium);
+
+    --khao-button-paypal-container-color: rgb(255, 209, 64);
+    --khao-button-paypal-state-layer-color: var(--khao-sys-color-on-container);
+
+    --khao-button-paypal-hover-state-layer-opacity: var(
+      --khao-sys-state-hover-state-layer-opacity
+    );
+
+    --khao-button-paypal-focus-state-layer-opacity: var(
+      --khao-sys-state-focus-state-layer-opacity
+    );
+
+    --khao-button-paypal-pressed-state-layer-opacity: var(
+      --khao-sys-state-pressed-state-layer-opacity
+    );
   }
 
   .button {
-    width: 150px;
-    height: 40px;
-    display: flex;
+    min-width: 150px;
+    height: var(--khao-button-paypal-height);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0.2rem;
-    border-radius: 13px;
-    background: rgb(255, 209, 64);
+    border-radius: var(--khao-button-paypal-container-shape);
+    background: var(--khao-button-paypal-container-color);
     text-decoration: none;
     gap: 0.4rem;
-  }
 
-  .button:hover,
-  .button:focus {
-    background: rgb(249, 219, 119);
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--khao-button-paypal-container-color),
+        var(--khao-button-paypal-state-layer-color)
+          var(--khao-button-paypal-hover-state-layer-opacity)
+      );
+    }
+
+    &:focus-visible {
+      background-color: color-mix(
+        in srgb,
+        var(--khao-button-paypal-container-color),
+        var(--khao-button-paypal-state-layer-color)
+          var(--khao-button-paypal-focus-state-layer-opacity)
+      );
+    }
+
+    &:active {
+      background-color: color-mix(
+        in srgb,
+        var(--khao-button-paypal-container-color),
+        var(--khao-button-paypal-state-layer-color)
+          var(--khao-button-paypal-pressed-state-layer-opacity)
+      );
+    }
   }
 
   .text {
