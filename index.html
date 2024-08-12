@@ -6,22 +6,55 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="data:;base64,=" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reiskoch Web Conponents</title>
+    <title>Khao UI Web Conponents</title>
   </head>
   <body>
     <script type="module" src="/src/main.ts"></script>
 
-    <reiskoch-ads title="Werbung"></reiskoch-ads>
 
-    <pay-pal-donate-button
-      label="PalPay"
-      title="Unterstütze meinen Blog über PayPal"
-      buttonid="J4B3UGYM7V7W6"
-    ></pay-pal-donate-button>
+    <style>
 
-    <steady-button
-      title="Unterstütze meinen Blog über Steady"
-      user="der-reiskoch"
-    ></steady-button>
-  </body>
+      .showcase {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+    </style>
+
+    <div class="showcase">
+
+      <khao-ads title="Werbung"></khao-ads>
+
+      <khao-button-pay-pal-donate
+        label="PalPay"
+        title="Unterstütze meinen Blog über PayPal"
+        buttonid="J4B3UGYM7V7W6"
+      ></khao-button-pay-pal-donate>
+
+      <khao-button-steady
+        title="Unterstütze meinen Blog über Steady"
+        user="der-reiskoch"
+      ></khao-button-steady>
+
+
+      <div>
+        <khao-map-marker-pin color="#ff9900" iconName="close"/></td>
+      </div>
+
+      <div>
+        <khao-map-marker-pin color="#533553" iconName="restaurant"/></td>
+      </div>
+
+      <div>
+        <khao-map-marker-pin color="#533553" iconName="shopping_cart"/></td>
+      </div>
+
+
+    
+
+  </div>
+
 </html>

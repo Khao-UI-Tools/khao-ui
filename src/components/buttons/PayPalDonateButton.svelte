@@ -1,4 +1,4 @@
-<svelte:options customElement="pay-pal-donate-button" />
+<svelte:options customElement="khao-button-pay-pal-donate" />
 
 <script lang="ts">
   export let buttonid: string;

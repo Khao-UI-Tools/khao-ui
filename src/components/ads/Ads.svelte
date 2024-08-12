@@ -1,4 +1,4 @@
-<svelte:options customElement="reiskoch-ads" />
+<svelte:options customElement="khao-ads" />
 
 <script lang="ts">
   import { onMount, onDestroy } from "svelte";

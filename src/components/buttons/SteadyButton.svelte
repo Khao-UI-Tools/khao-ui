@@ -1,4 +1,4 @@
-<svelte:options customElement="steady-button" />
+<svelte:options customElement="khao-button-steady" />
 
 <script lang="ts">
   export let user: string;
