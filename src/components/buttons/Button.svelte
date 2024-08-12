@@ -7,10 +7,15 @@
   export let title: string;
   export let href: string;
   export let prioritry: ButtonPriority = "primary";
+  export let icon: string = "";
 </script>
 
 <a class="button button-{prioritry}" {title} {href}>
   {label}
+  {#if icon !== ""}
+  
+  
+  {/if}
 </a>
 
 <style>
@@ -20,6 +25,10 @@
     --khao-button-container-color: var(--khao-sys-color-container);
     --khao-button-label-text-color: var(--khao-sys-color-on-container);
     --khao-button-state-layer-color: var(--khao-sys-color-on-container);
+
+    --khao-button-label-font-weight: var(
+      --khao-sys-typescale-label-medium-weight-prominent
+    );
 
     --khao-button-height: var(--khao-sys-size-regular-10);
     --khao-button-container-shape: var(--khao-sys-shape-corner-medium);
@@ -54,6 +63,7 @@
     justify-content: center;
     padding: 0.2rem;
     border-radius: var(--khao-button-container-shape);
+    font-weight: var(--khao-button-label-font-weight);
     cursor: pointer;
     padding: 0.2rem;
     padding-inline-start: var(--khao-button-leading-space);

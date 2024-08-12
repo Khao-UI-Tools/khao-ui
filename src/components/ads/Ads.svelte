@@ -54,7 +54,7 @@
 <style>
   :host {
     --khao-ads-margin-top: var(--khao-sys-size-regular-6);
-    --khao-ads-margin-bottom: var(--khao-sys-size-regular-6);
+    --khao-ads-title-margin-bottom: var(--khao-sys-size-regular-6);
   }
 
   .container {
@@ -63,19 +63,19 @@
     width: 100%;
     align-items: center;
     margin-top: var(--khao-ads-margin-top, 3rem);
-
-    &:focus {
-      outline: none !important;
-    }
   }
 
   .title {
     font-size: 70%;
-    margin-bottom: var(--khao-ads-margin-bottom, 0.5rem);
+    margin-bottom: var(--khao-ads-title-margin-bottom, 0.5rem);
   }
 
   .link {
     color: inherit;
     text-decoration: inherit;
+
+    &:focus {
+      outline: none !important;
+    }
   }
 </style>
