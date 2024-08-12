@@ -47,22 +47,31 @@
 </div>
 
 <style>
+  :host {
+    --khao-ads-margin-top: var(--khao-sys-size-regular-6);
+    --khao-ads-margin-bottom: var(--khao-sys-size-regular-6);
+  }
+
   .container {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
     margin-top: var(
-      --reis-sys-size-regular-6,
+      --khao-ads-margin-top,
       3rem
-    ); /* TODO: --reis-sys-size-regular-6 */
+    );
+
+    &:focus {
+      outline: none !important;
+    }
   }
 
   .title {
     font-size: 70%;
     margin-bottom: var(
-      --reis-sys-size-regular-1,
+      --khao-ads-margin-bottom,
       0.5rem
-    ); /* TODO: --reis-sys-size-regular-1 */
+    );
   }
 </style>
