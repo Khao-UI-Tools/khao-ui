@@ -1,20 +1,48 @@
 <svelte:options customElement="khao-button" />
 
 <script lang="ts">
+  import { onMount } from "svelte";
+  import Icon from "../icons/Icon.svelte";
+  import { type IconName } from "../icons/IconName";
+
   type ButtonPriority = "primary" | "secondary" | "tertiary";
 
+  function setCustomStyles(customBGColor: string, customColor: string): string {
+    var customStyles =
+      customBGColor !== "" && customColor !== ""
+        ? `--khao-button-container-color:${customBGColor}; --khao-button-label-text-color:${customColor}; --khao-button-icon-color: ${customColor}; --khao-button-state-layer-color: ${customColor}`
+        : "";
+
+    return customStyles;
+  }
+
   export let label: string;
-  export let title: string;
+  export let title: string = label;
   export let href: string;
+
+  export let customBGColor: string = "";
+  export let customColor: string = "";
+
   export let priority: ButtonPriority = "primary";
   export let target: string = "_self";
-  export let icon: string = "";
+  export let iconName: IconName | "" = "";
   export let rel: string = "";
 </script>
 
-<a class="button button-{priority}" {title} {href} {target} {rel}>
+<a
+  class="button button-{priority}"
+  {title}
+  {href}
+  {target}
+  {rel}
+  style={setCustomStyles(customBGColor, customColor)}
+>
   {label}
-  {#if icon !== ""}{/if}
+  {#if iconName !== ""}
+    <div class="icon">
+      <Icon {iconName} />
+    </div>
+  {/if}
 </a>
 
 <style>
@@ -34,6 +62,10 @@
 
     --khao-button-leading-space: var(--khao-sys-size-regular-5);
     --khao-button-trailing-space: var(--khao-sys-size-regular-5);
+
+    --khao-button-icon-size: var(--khao-sys-size-regular-5);
+    --khao-button-icon-color: var(--khao-sys-color-on-container);
+    --khao-button-icon-leading-space: var(--khao-sys-size-regular-2);
 
     --khao-button-hover-state-layer-opacity: var(
       --khao-sys-state-hover-state-layer-opacity
@@ -67,6 +99,7 @@
     padding: 0.2rem;
     padding-inline-start: var(--khao-button-leading-space);
     padding-inline-end: var(--khao-button-trailing-space);
+    gap: var(--khao-button-icon-leading-space);
     transition:
       background-color 0.1s,
       color 0.2s;
@@ -102,18 +135,28 @@
   .button-primary {
     --khao-button-container-color: var(--khao-sys-color-primary);
     --khao-button-label-text-color: var(--khao-sys-color-on-primary);
+    --khao-button-icon-color: var(--khao-sys-color-on-primary);
     --khao-button-state-layer-color: var(--khao-sys-color-on-primary);
   }
 
   .button-secondary {
     --khao-button-container-color: var(--khao-sys-color-secondary);
     --khao-button-label-text-color: var(--khao-sys-color-on-secondary);
+    --khao-button-icon-color: var(--khao-sys-color-on-secondary);
     --khao-button-state-layer-color: var(--khao-sys-color-on-secondary);
   }
 
   .button-tertiary {
     --khao-button-container-color: var(--khao-sys-color-tertiary);
     --khao-button-label-text-color: var(--khao-sys-color-on-tertiary);
+    --khao-button-icon-color: var(--khao-sys-color-on-tertiary);
     --khao-button-state-layer-color: var(--khao-sys-color-on-tertiary);
+  }
+
+  .icon {
+    stroke: var(--khao-button-icon-color);
+    fill: var(--khao-button-icon-color);
+    width: var(--khao-button-icon-size);
+    height: var(--khao-button-icon-size);
   }
 </style>
