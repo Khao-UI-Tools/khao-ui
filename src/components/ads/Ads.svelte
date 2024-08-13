@@ -20,6 +20,17 @@
   });
 
   onDestroy(() => {});
+
+  export let onError = () => {
+    ad = {
+      url: "/",
+      imageUrl: "https://placehold.co/200x200",
+      imageWidth: "200px",
+      imageHeight: "200px",
+      title: "Fehler beim Laden",
+    };
+  };
+
   export let title: string;
 </script>
 
@@ -43,6 +54,7 @@
           alt={ad.title || title}
           title={title ? title : ""}
           class="image"
+          on:error={onError}
         />
       </picture>
     </a>
@@ -54,7 +66,7 @@
 <style>
   :host {
     --khao-ads-margin-top: var(--khao-sys-size-regular-6);
-    --khao-ads-title-margin-bottom: var(--khao-sys-size-regular-6);
+    --khao-ads-title-margin-bottom: var(--khao-sys-size-regular-1);
   }
 
   .container {
@@ -67,7 +79,7 @@
 
   .title {
     font-size: 70%;
-    margin-bottom: var(--khao-ads-title-margin-bottom, 0.5rem);
+    margin-bottom: var(--khao-ads-title-margin-bottom);
   }
 
   .link {

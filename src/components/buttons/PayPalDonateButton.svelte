@@ -44,7 +44,7 @@
     --khao-button-paypal-container-color: rgb(255, 209, 64);
     --khao-button-paypal-state-layer-color: rgb(0, 0, 0);
 
-    --khao-button-paypal-width: 120px;
+    --khao-button-paypal-width: 130px;
 
     --khao-button-paypal-hover-state-layer-opacity: var(
       --khao-sys-state-hover-state-layer-opacity

@@ -6,16 +6,15 @@
   export let label: string;
   export let title: string;
   export let href: string;
-  export let prioritry: ButtonPriority = "primary";
+  export let priority: ButtonPriority = "primary";
+  export let target: string = "_self";
   export let icon: string = "";
+  export let rel: string = "";
 </script>
 
-<a class="button button-{prioritry}" {title} {href}>
+<a class="button button-{priority}" {title} {href} {target} {rel}>
   {label}
-  {#if icon !== ""}
-  
-  
-  {/if}
+  {#if icon !== ""}{/if}
 </a>
 
 <style>

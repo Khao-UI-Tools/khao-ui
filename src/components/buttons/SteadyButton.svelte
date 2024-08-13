@@ -26,7 +26,7 @@
     --khao-button-steady-height: var(--khao-sys-size-regular-10);
     --khao-button-steady-container-shape: var(--khao-sys-shape-corner-medium);
 
-    --khao-button-steady-width: 120px;
+    --khao-button-steady-width: 130px;
 
     --khao-button-steady-background: linear-gradient(
       134deg,
