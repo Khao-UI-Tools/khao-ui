@@ -12,16 +12,51 @@
     window.print();
   }
 
+  function buildFacebookShareUrl(sharedUrl: string): string {
+    const baseUrl = "https://www.facebook.com/share.php?u=";
+    const urlToShare = sharedUrl || window.location.href;
+    const url = `${baseUrl}${urlToShare}`;
+    console.log("buildFacebookShareUrl", url);
+    return url;
+  }
+
+  /*
+    https://www.pinterest.de/pin-builder/
+    ?description=Thail%C3%A4ndisches_Pad_Pak_Choi_Tao_Djiau
+    &media=https%3A%2F%2Fbilder.koch-reis.de%2Fpin%2Fv2%2F%3Fid%3D1352%26title%3DPak+Choi+mit+gelber+Bohnenpaste
+    &method=button
+    &title=Pak_Choi_mit_gelber_Bohnenpaste
+    &url=https%3A%2F%2Fwww.der-reiskoch.de%2Frezepte%2Fpak-choi-mit-gelber-bohnenpaste%2F
+  */
+  function buildPinterestShareUrl(
+    sharedUrl: string,
+    sharedMediaUrl: string,
+    sharedTitle: string,
+    sharedDescription: string
+  ): string {
+    const baseUrl = "https://www.pinterest.de/pin-builder/";
+    const urlToShare = sharedUrl || window.location.href;
+    const saveMediaUrl = sharedMediaUrl.replace("ß", "ss");
+    const url = `${baseUrl}?description=${sharedDescription}&media=${encodeURIComponent(saveMediaUrl)}&method=button&title=${sharedTitle}&url=${encodeURIComponent(urlToShare)}`;
+    console.log("buildPinterestShareUrl", url);
+    return url;
+  }
+
   export let printButtonLabel: string | null = "No Label";
   export let printButtonTitle: string | null = printButtonLabel;
 
+  export let sharedUrl: string = "";
+  export let sharedMediaUrl: string = "";
+  export let sharedTitle: string = "";
+  export let sharedDescription: string = "";
+
+  export let showFacebookButton: string = "true";
   export let facebookButtonLabel: string | null = "No Label";
   export let facebookButtonTitle: string | null = facebookButtonLabel;
-  export let facebookButtonUrl: string | null = null;
 
+  export let showPinterestButton: string = "true";
   export let pinterestButtonLabel: string | null = "No Label";
   export let pinterestButtonTitle: string | null = pinterestButtonLabel;
-  export let pinterestButtonUrl: string | null = null;
 </script>
 
 <div class="share-buttons">
@@ -33,7 +68,7 @@
       onClick={print}
     ></Button>
   {/if}
-  {#if facebookButtonUrl !== null}
+  {#if showFacebookButton === "true"}
     <Button
       label={facebookButtonLabel || "No Label"}
       title={facebookButtonTitle || ""}
@@ -41,20 +76,27 @@
       customBGColor="#3b5998"
       customColor="#ffffff"
       onClick={() => {
-        openInNewWindow(facebookButtonUrl || "");
+        openInNewWindow(buildFacebookShareUrl(sharedUrl));
       }}
     ></Button>
   {/if}
 
-  {#if pinterestButtonUrl !== null}
+  {#if showPinterestButton === "true"}
     <Button
       label={pinterestButtonLabel || "No Label"}
       title={pinterestButtonTitle || ""}
       iconName="pinterest"
-      customBGColor="rgb(189, 8, 28)"
+      customBGColor="#bd081c"
       customColor="#ffffff"
       onClick={() => {
-        openInNewWindow(pinterestButtonUrl || "");
+        openInNewWindow(
+          buildPinterestShareUrl(
+            sharedUrl,
+            sharedMediaUrl,
+            sharedTitle,
+            sharedDescription
+          )
+        );
       }}
     ></Button>
   {/if}
