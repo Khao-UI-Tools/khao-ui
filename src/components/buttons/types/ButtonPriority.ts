@@ -1,0 +1,1 @@
+export type ButtonPriority = "primary" | "secondary" | "tertiary";

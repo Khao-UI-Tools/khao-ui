@@ -21,17 +21,21 @@
 
   onDestroy(() => {});
 
+  export let title: string;
+  export let fallbackImageUrl: string;
+
   export let onError = () => {
+
+    console.log('onError', fallbackImageUrl);
+
     ad = {
       url: "/",
-      imageUrl: "https://placehold.co/200x200",
+      imageUrl: fallbackImageUrl,
       imageWidth: "200px",
       imageHeight: "200px",
       title: "Fehler beim Laden",
     };
   };
-
-  export let title: string;
 </script>
 
 <div class="container">

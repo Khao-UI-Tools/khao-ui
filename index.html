@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/src/design/design.css">
   </head>
   <body>
-    <link rel="preload" as="image" href="/assets/ricepaddy.jpg">
     <script type="module" src="/src/main.ts"></script>
     <style>
 
@@ -32,7 +31,7 @@
 
     <div class="showcase">
 
-      <khao-ads title="Werbung"></khao-ads>
+      <khao-ads title="Werbung" fallbackImageUrl="https://placehold.co/200x200?text=Werbung&font=montserra"></khao-ads>
 
       <khao-button label="Primary Button with longer Text" title="My beautiful primary button" href="/"></khao-button>
 
@@ -42,7 +41,7 @@
 
       <khao-button label="Newsletter" priority="tertiary" iconName="newsletter" href="/"></khao-button>
 
-      <khao-button label="Drucken" iconName="printer" href="/"></khao-button>
+      <khao-button label="Drucken" iconName="printer" onClick="alert('print');"></khao-button>
 
       <khao-button label="Kaufen" iconName="cart" href="/"></khao-button>
 
@@ -63,6 +62,26 @@
         user="der-reiskoch"
         lang="de"
       ></khao-button-steady>
+
+      <khao-share-buttons 
+        printButtonLabel="Drucken" 
+        printButtonTitle="Druck" 
+        facebookButtonLabel="Facebook" 
+        facebookButtonTitle="Auf Facebook teilen" 
+        facebookButtonUrl="https://placehold.co/700x650?text=Auf+Facebook+teilen&font=montserrat">
+      </khao-share-buttons>
+
+      <khao-share-buttons 
+      printButtonLabel="Drucken" 
+      printButtonTitle="Druck" 
+      facebookButtonLabel="Facebook" 
+      facebookButtonTitle="Auf Facebook teilen" 
+      facebookButtonUrl="https://placehold.co/700x650?text=Auf+Facebook+teilen&font=montserrat"
+      pinterestButtonLabel="Pinterest" 
+      pinterestButtonTitle="Auf Facebook teilen" 
+      pinterestButtonUrl="https://placehold.co/700x650?text=Auf+Pinterest+teilen&font=montserrat">
+    </khao-share-buttons>
+
 
 
       <div>

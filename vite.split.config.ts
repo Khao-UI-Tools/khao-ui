@@ -11,6 +11,7 @@ export default defineConfig({
         "src/components/buttons/Button.svelte",
         "src/components/buttons/PayPalDonateButton.svelte",
         "src/components/buttons/SteadyButton.svelte",
+        "src/components/buttons/ShareButtons.svelte",
         "src/components/map/MarkerPin.svelte",
       ],
       output: {
