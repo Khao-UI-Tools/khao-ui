@@ -1,5 +1,4 @@
-
-import '@der-reiskoch/khao-malet/css/index.css';
+export * as Style from "@der-reiskoch/khao-malet/css/index.css";
 
 export * as Ad from "./components/ads/Ad.svelte";
 export * as Button from "./components/buttons/Button.svelte";

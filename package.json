@@ -1,8 +1,11 @@
 {
   "name": "@der-reiskoch/khao-ui",
-  "private": true,
   "version": "0.0.2",
   "type": "module",
+  "main": "dist/lib/khao-ui.js",
+  "files": [
+    "dist/lib/"
+  ],
   "scripts": {
     "dev": "vite",
     "build:lib": "vite build -c=vite.lib.config.js",
@@ -13,7 +16,7 @@
     "jest:dev": "jest --watchAll --silent=false",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "update-design": "git fetch && git submodule init && git submodule update --remote"
+    "prepack": "npm run build:lib"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",

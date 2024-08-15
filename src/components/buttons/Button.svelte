@@ -55,7 +55,6 @@
 
 <style>
   @import "reset.css";
-  @import "../../design/design.css";
 
   :host {
     --khao-button-container-color: var(--khao-sys-color-container);

@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/svelte-vite";
+import "@der-reiskoch/khao-malet/css/index.css";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|ts|svelte)"],

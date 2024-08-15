@@ -1,8 +1,30 @@
 # Khao UI
 
+A UI Component Library based on Svelte Components that are provided as web-components.
+
 ![Khao UI](khao_ui_logo.jpg "Khao UI")
 
-This is a Component Library based on Svelte Components that are provided as web-components.
+## Build
+
+There are two types of builds available for the Components
+
+### Library
+
+To create a library that includes all components and the css with fonts from [Khao Malet](https://github.com/Der-Reiskoch/khao-malet) design system perform
+
+```bash
+npm run build:lib
+```
+
+(this option is also used for building nnp packages)
+
+### Splitted Code
+
+To create a single JS File for every component and and index.js file (without any CSS and fonts!) perform
+
+```bash
+npm run build:split
+```
 
 ## About the Name
 
