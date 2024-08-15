@@ -1,0 +1,9 @@
+/* State layers
+ * https://m3.material.io/foundations/interaction/states/state-layers
+ */
+
+:root {
+  --khao-sys-state-hover-state-layer-opacity: 10%;
+  --khao-sys-state-focus-state-layer-opacity: 12%;
+  --khao-sys-state-pressed-state-layer-opacity: 12%;
+}
