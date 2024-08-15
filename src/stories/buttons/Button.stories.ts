@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import Button from "../components/buttons/Button.svelte";
+import type { Meta, StoryObj } from "@storybook/svelte-vite";
+import Button from "../../components/buttons/Button.svelte";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: "Khao-UI/Button",
-  component: 'khao-button',
+  title: "Buttons/Button",
+  component: "khao-button",
   tags: ["autodocs"],
   argTypes: {
     customBGColor: { control: "color" },
@@ -12,6 +12,17 @@ const meta = {
     priority: {
       control: { type: "select" },
       options: ["primary", "secondary", "tertiary"],
+    },
+    iconName: {
+      control: { type: "select" },
+      options: [
+        "cart",
+        "external-link",
+        "facebook",
+        "newsletter",
+        "pinterest",
+        "printer",
+      ], // @see src/components/icons/IconName.ts
     },
     label: {
       control: "text",
@@ -61,5 +72,39 @@ export const Tertiary: Story = {
   args: {
     priority: "tertiary",
     label: "Tertiary Button",
+  },
+};
+
+export const Newsletter: Story = {
+  args: {
+    priority: "tertiary",
+    label: "Newsletter",
+    iconName: "newsletter",
+  },
+};
+
+export const Print: Story = {
+  args: {
+    priority: "primary",
+    label: "Print",
+    iconName: "printer",
+  },
+};
+
+export const CustomColorsExample1: Story = {
+  args: {
+    label: "Facebook",
+    iconName: "facebook",
+    customBGColor: "#3b5998",
+    customColor: "white",
+  },
+};
+
+export const CustomColorsExample2: Story = {
+  args: {
+    label: "Pinterest",
+    iconName: "pinterest",
+    customBGColor: "rgb(189, 8, 28)",
+    customColor: "white",
   },
 };
