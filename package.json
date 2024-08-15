@@ -1,12 +1,12 @@
 {
   "name": "@der-reiskoch/khao-ui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "main": "dist/lib/khao-ui.js",
   "files": [
     "dist/lib/",
     "dist/split/",
-    "logo.jpg"
+    "./logo.jpg"
   ],
   "scripts": {
     "dev": "vite",
