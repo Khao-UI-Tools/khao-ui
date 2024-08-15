@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
-import pkg from "./package.json";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,8 +15,8 @@ export default defineConfig({
       ],
       output: {
         dir: "dist/split/",
-        entryFileNames: `components/[name]-v${pkg.version}.js`,
-        chunkFileNames: `components/[name]-v${pkg.version}.js`,
+        entryFileNames: `components/[name].js`,
+        chunkFileNames: `components/[name].js`,
         inlineDynamicImports: false,
       },
     },
