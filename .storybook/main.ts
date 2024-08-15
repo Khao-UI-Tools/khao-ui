@@ -13,9 +13,6 @@ const config: StorybookConfig = {
     name: "@storybook/web-components-vite",
     options: {},
   },
-  staticDirs: [
-    "../node_modules/@der-reiskoch/khao-malet",
-    "../src/stories/assets",
-  ],
+  staticDirs: ["../node_modules/@der-reiskoch/khao-malet"],
 };
 export default config;
