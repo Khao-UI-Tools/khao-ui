@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/svelte";
+import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Button from "../components/buttons/Button.svelte";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
   title: "Khao-UI/Button",
-  component: Button,
+  component: 'khao-button',
   tags: ["autodocs"],
   argTypes: {
     customBGColor: { control: "color" },
