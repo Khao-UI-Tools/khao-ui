@@ -5,8 +5,7 @@
   "main": "dist/lib/khao-ui.js",
   "files": [
     "dist/lib/",
-    "dist/split/",
-    "./logo.jpg"
+    "dist/split/"
   ],
   "scripts": {
     "dev": "vite",
