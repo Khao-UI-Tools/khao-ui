@@ -1,0 +1,30 @@
+/* Color system
+ * https://m3.material.io/styles/color/system/how-the-system-works
+ */
+
+:root {
+  /* Primary */
+  --khao-sys-color-primary: var(--khao-ref-palette-green);
+  --khao-sys-color-on-primary: var(--khao-ref-palette-white);
+
+  /* Secondary */
+  --khao-sys-color-secondary: var(--khao-ref-palette-bamboo);
+  --khao-sys-color-on-secondary: var(--khao-ref-palette-white);
+
+  /* Tertiary */
+  --khao-sys-color-tertiary: var(--khao-ref-palette-orange);
+  --khao-sys-color-on-tertiary: var(--khao-ref-palette-black);
+
+  /* Container */
+  --khao-sys-color-container: var(--khao-ref-palette-neutral10);
+  --khao-sys-color-on-container: var(--khao-ref-palette-neutral100);
+
+  /* Surface */
+  --khao-sys-color-surface: var(--khao-ref-palette-bamboo-light);
+  --khao-sys-color-on-surface: var(--khao-ref-palette-black);
+  --khao-sys-color-on-surface-variant: var(--khao-ref-palette-neutral30);
+
+  /* Outline */
+  --khao-sys-color-outline: var(--khao-ref-palette-neutral50);
+  --khao-sys-color-outline-variant: var(--khao-ref-palette-neutral80);
+}

@@ -1,0 +1,23 @@
+@font-face {
+  font-display: swap;
+  font-family: Ubuntu;
+  src: url(ubuntu-v20-latin-regular.woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Ubuntu;
+  src: url(ubuntu-v20-latin-italic.woff2);
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Ubuntu;
+  src: url(ubuntu-v20-latin-700.woff2);
+  font-weight: 700;
+  font-style: normal;
+}

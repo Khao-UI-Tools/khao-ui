@@ -15,8 +15,9 @@
     "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
     "jest": "jest",
     "jest:dev": "jest --watchAll --silent=false",
-    "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build",
+    "storybook:prepare": "rm -r -f src/stories/assets/design && cp -r node_modules/@der-reiskoch/khao-malet/css/ src/stories/assets/design",
+    "storybook": "npm run storybook:prepare && storybook dev -p 6006",
+    "storybook:build": "npm run storybook:prepare && storybook build",
     "prepack": "npm run build:lib && npm run build:split"
   },
   "devDependencies": {
