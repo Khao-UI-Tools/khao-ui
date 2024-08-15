@@ -15,9 +15,26 @@ const meta = {
     },
     label: {
       control: "text",
+      type: "string",
     },
     title: {
       control: "text",
+      type: "string",
+    },
+    href: {
+      control: "text",
+      type: "string",
+    },
+    rel: {
+      control: "text",
+      type: "string",
+    },
+    target: {
+      control: "text",
+      type: "string",
+    },
+    onClick: {
+      type: "function",
     },
   },
 } satisfies Meta<Button>;
@@ -36,6 +53,13 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     priority: "secondary",
-    label: "Button",
+    label: "Secondary Button",
+  },
+};
+
+export const Tertiary: Story = {
+  args: {
+    priority: "tertiary",
+    label: "Tertiary Button",
   },
 };
