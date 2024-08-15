@@ -13,6 +13,12 @@ const meta = {
       control: { type: "select" },
       options: ["primary", "secondary", "tertiary"],
     },
+    label: {
+      control: "text",
+    },
+    title: {
+      control: "text",
+    },
   },
 } satisfies Meta<Button>;
 
