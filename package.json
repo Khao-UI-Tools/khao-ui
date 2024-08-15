@@ -50,7 +50,9 @@
   },
   "keywords": [
     "css",
-    "design-system"
+    "ui-components",
+    "ui-library",
+    "svelte"
   ],
   "author": "Der-Reiskoch <info@der-reiskoch.de>",
   "license": "ISC",
