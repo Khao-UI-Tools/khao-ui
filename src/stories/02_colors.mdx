@@ -1,0 +1,129 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Color Palette" />
+
+# Color Palette
+
+The color Palette is provides by the [Khao Malet](https://www.npmjs.com/package/@der-reiskoch/khao-malet) design system
+
+
+## Main Colors
+
+<div className="sb-container">
+  <div className='container'>
+    <div className="color-item color-primary">
+      <p>
+        --khao-sys-color-primary
+      </p>
+    </div>
+
+    <div className="color-item color-secondary">
+      <p>
+        --khao-sys-color-secondary
+      </p>
+    </div>
+
+    <div className="color-item color-tertiary">
+      <p>
+        --khao-sys-color-tertiary
+      </p>
+    </div>
+
+    <div className="color-item color-container">
+      <p>
+        --khao-sys-color-container
+      </p>
+    </div>
+
+    <div className="color-item color-surface">
+      <p>
+        --khao-sys-color-surface
+      </p>
+    </div>
+
+    <div className="color-item color-outline">
+      <p>
+        --khao-sys-color-outline
+      </p>
+    </div>
+
+  </div>
+ </div>
+
+<style>
+  {`
+  .sb-container {
+    margin-top: 24px;
+    margin-bottom: 48px;
+  }
+
+  .container {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    
+  }
+
+  .color-item {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    width: 200px;
+    height: 200px;
+  }
+
+  .color-primary {
+      background-color: var(--khao-sys-color-primary);
+
+      p {
+        color: var(--khao-sys-color-on-primary) !important;
+      }
+  }
+
+  .color-secondary {
+      background-color: var(--khao-sys-color-secondary);
+
+      p {
+        color: var(--khao-sys-color-on-secondary) !important;
+      }
+  }
+
+  .color-tertiary {
+      background-color: var(--khao-sys-color-tertiary);
+
+      p {
+        color: var(--khao-sys-color-on-tertiary) !important;
+      }
+  }
+
+
+  .color-container {
+      background-color: var(--khao-sys-color-container);
+
+      p {
+        color: var(--khao-sys-color-on-container) !important;
+      }
+  }
+
+  .color-surface {
+      background-color: var(--khao-sys-color-surface);
+
+      p {
+        color: var(--khao-sys-color-on-surface) !important;
+      }
+  }
+
+  .color-outline {
+      background-color: var(--khao-ref-palette-neutral50);
+
+      p {
+        color: var(-khao-ref-palette-neutral80) !important;
+      }
+  }
+  `}
+</style>
