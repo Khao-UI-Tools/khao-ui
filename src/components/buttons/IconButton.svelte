@@ -5,14 +5,19 @@
     import Icon from "../icons/Icon.svelte";
     import { type IconName } from "../icons/IconName";
   
-    function setCustomStyles(customBGColor: string, customColor: string): string {
-    var customStyles =
-      customBGColor !== "" && customColor !== ""
-        ? `--khao-icon-button-container-color:${customBGColor}; --khao-icon-button-label-text-color:${customColor}; --khao-icon-button-icon-color: ${customColor}; --khao-icon-button-state-layer-color: ${customColor}`
-        : "";
+    function setCustomStyles(customBGColor: string, customColor: string, customHoverColor: string): string {
+      var customStyles =
+        customBGColor !== "" && customColor !== ""
+          ? `--khao-icon-button-container-color:${customBGColor}; --khao-icon-button-label-text-color:${customColor}; --khao-icon-button-icon-color: ${customColor}; --khao-icon-button-state-layer-color: ${customColor}`
+          : "";
 
-    return customStyles;
-  }
+        if (customHoverColor) {
+          customStyles += `; --khao-icon-button-container-custom-hover-color: ${customHoverColor}`;
+        }
+
+        return customStyles;
+    }
+
     function setRole(href: string | null, onClick: (() => void) | null): string {
       return href === null && onClick !== null ? "button" : "";
     }
@@ -27,6 +32,7 @@
 
     export let customBGColor: string = "";
     export let customColor: string = "";
+    export let customHoverColor: string = "";
   
     export let iconName: IconName | "" = "";
   
@@ -35,12 +41,12 @@
 
 
 <a
-  class="button button-{priority}"
+  class="button button-{priority} {customHoverColor ? 'button-custom-hover' : ''}"
   {title}
   {href}
   {target}
   {rel}
-  style={setCustomStyles(customBGColor, customColor)}
+  style={setCustomStyles(customBGColor, customColor, customHoverColor)}
   role={setRole(href, onClick)}
   on:click={onClick}
 >
@@ -96,13 +102,10 @@
     justify-content: center;
     padding: 0.2rem;
     border-radius: var(--khao-icon-button-container-shape);
-    font-weight: var(--khao-icon-button-label-font-weight);
     cursor: pointer;
-    padding: 0.2rem;
 
-    gap: var(--khao-icon-button-icon-leading-space);
     transition:
-      background-color 0.1s,
+      background-color 0.2s,
       color 0.2s;
 
     &:hover {
@@ -152,6 +155,12 @@
     --khao-icon-button-label-text-color: var(--khao-sys-color-on-tertiary);
     --khao-icon-button-icon-color: var(--khao-sys-color-on-tertiary);
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-tertiary);
+  }
+
+  .button-custom-hover {
+    &:hover {
+      background-color: var(--khao-icon-button-container-custom-hover-color);
+    }
   }
 
   .icon {

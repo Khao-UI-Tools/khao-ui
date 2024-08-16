@@ -106,7 +106,6 @@
     border-radius: var(--khao-button-container-shape);
     font-weight: var(--khao-button-label-font-weight);
     cursor: pointer;
-    padding: 0.2rem;
     padding-inline-start: var(--khao-button-leading-space);
     padding-inline-end: var(--khao-button-trailing-space);
     gap: var(--khao-button-icon-leading-space);

@@ -74,10 +74,18 @@ export const Tertiary: Story = {
   },
 };
 
-export const CustomColorsExample1: Story = {
+export const CustomColorsExample: Story = {
   args: {
     iconName: "facebook",
     customBGColor: "#3b5998",
     customColor: "white",
+  },
+};
+
+export const CustomHoverColorExample: Story = {
+  args: {
+    iconName: "facebook",
+    priority: "secondary",
+    customHoverColor: "#3b5998",
   },
 };
