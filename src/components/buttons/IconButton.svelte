@@ -67,7 +67,7 @@
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-container);
 
     --khao-icon-button-size: var(--khao-sys-size-regular-14);
-    --khao-icon-button-container-shape: var(--khao-sys-shape-corner-none);
+    --khao-icon-button-container-shape: var( --khao-sys-shape-corner-small);
 
     --khao-icon-button-icon-size: var(--khao-sys-size-regular-9);
     --khao-icon-button-icon-color: var(--khao-sys-color-on-container);

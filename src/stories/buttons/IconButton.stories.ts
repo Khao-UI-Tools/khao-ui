@@ -3,7 +3,7 @@ import IconButton from "../../components/buttons/IconButton.svelte";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: "Buttons/Icon-Button",
+  title: "Buttons/IconButton",
   component: "khao-icon-button",
   tags: ["autodocs"],
   argTypes: {
