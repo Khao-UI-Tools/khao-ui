@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import Button from "../../components/buttons/Button.svelte";
+import IconButton from "../../components/buttons/IconButton.svelte";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: "Buttons/Button",
-  component: "khao-button",
+  title: "Buttons/IconButton",
+  component: "khao-icon-button",
   tags: ["autodocs"],
   argTypes: {
     customBGColor: { control: "color" },
@@ -26,10 +26,6 @@ const meta = {
         "rss",
       ], // @see src/components/icons/IconName.ts
     },
-    label: {
-      control: "text",
-      type: "string",
-    },
     title: {
       control: "text",
       type: "string",
@@ -50,7 +46,7 @@ const meta = {
       type: "function",
     },
   },
-} satisfies Meta<Button>;
+} satisfies Meta<IconButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -58,57 +54,40 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
+    title: "Primary with Printer",
     priority: "primary",
-    label: "Primary Button",
+    iconName: "printer",
   },
 };
 
 export const Secondary: Story = {
   args: {
+    title: "Secondary with Cart",
     priority: "secondary",
-    label: "Secondary Button",
+    iconName: "cart",
   },
 };
 
 export const Tertiary: Story = {
   args: {
+    title: "Tertiary with Newsletter",
     priority: "tertiary",
-    label: "Tertiary Button",
-  },
-};
-
-export const Newsletter: Story = {
-  args: {
-    priority: "tertiary",
-    label: "Newsletter",
     iconName: "newsletter",
   },
 };
 
-export const Print: Story = {
+export const CustomColorsExample: Story = {
   args: {
-    priority: "primary",
-    label: "Print",
-    iconName: "printer",
-  },
-};
-
-export const CustomColorsExample1: Story = {
-  args: {
-    label: "Facebook",
     iconName: "facebook",
     customBGColor: "#3b5998",
     customColor: "white",
   },
 };
 
-export const CustomColorsExample2: Story = {
+export const CustomHoverColorExample: Story = {
   args: {
-    label: "Pinterest",
     iconName: "pinterest",
-    customBGColor: "rgb(189, 8, 28)",
-    customColor: "white",
+    priority: "secondary",
+    customHoverColor: "#bd081c",
   },
 };
-
-

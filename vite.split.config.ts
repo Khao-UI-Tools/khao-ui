@@ -8,9 +8,11 @@ export default defineConfig({
       input: [
         "src/components/ads/Ad.svelte",
         "src/components/buttons/Button.svelte",
+        "src/components/buttons/IconButton.svelte",
         "src/components/buttons/PayPalDonateButton.svelte",
         "src/components/buttons/SteadyButton.svelte",
-        "src/components/buttons/ShareButtons.svelte",
+        "src/components/widgets/ShareButtons.svelte",
+        "src/components/widgets/SocialButtons.svelte",
         "src/components/map/MarkerPin.svelte",
       ],
       output: {
