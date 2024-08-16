@@ -19,9 +19,11 @@ const meta = {
         "cart",
         "external-link",
         "facebook",
+        "instagram",
         "newsletter",
         "pinterest",
         "printer",
+        "rss",
       ], // @see src/components/icons/IconName.ts
     },
     label: {
@@ -108,3 +110,5 @@ export const CustomColorsExample2: Story = {
     customColor: "white",
   },
 };
+
+

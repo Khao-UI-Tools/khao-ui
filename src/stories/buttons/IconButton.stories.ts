@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import Button from "../../components/buttons/IconButton.svelte";
+import IconButton from "../../components/buttons/IconButton.svelte";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
@@ -19,9 +19,11 @@ const meta = {
         "cart",
         "external-link",
         "facebook",
+        "instagram",
         "newsletter",
         "pinterest",
         "printer",
+        "rss",
       ], // @see src/components/icons/IconName.ts
     },
     title: {
@@ -44,7 +46,7 @@ const meta = {
       type: "function",
     },
   },
-} satisfies Meta<Button>;
+} satisfies Meta<IconButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -84,8 +86,8 @@ export const CustomColorsExample: Story = {
 
 export const CustomHoverColorExample: Story = {
   args: {
-    iconName: "facebook",
+    iconName: "pinterest",
     priority: "secondary",
-    customHoverColor: "#3b5998",
+    customHoverColor: "#bd081c",
   },
 };
