@@ -1,3 +1,6 @@
+<svelte:options customElement="khao-social-buttons" />
+
+
 /*
 $social-color: darken($color-gold, 15%);
 $social-color-amz: #ff9900;

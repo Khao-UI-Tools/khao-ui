@@ -1,8 +1,8 @@
 <svelte:options customElement="khao-share-buttons" />
 
 <script lang="ts">
-  import Button from "./Button.svelte";
-  import openInNewWindow from "./utils/openInNewWindow";
+  import Button from "../buttons/Button.svelte";
+  import openInNewWindow from "../buttons/utils/openInNewWindow";
 
   function isAbleToPrint(): boolean {
     return window.print !== undefined;
@@ -20,14 +20,6 @@
     return url;
   }
 
-  /*
-    https://www.pinterest.de/pin-builder/
-    ?description=Thail%C3%A4ndisches_Pad_Pak_Choi_Tao_Djiau
-    &media=https%3A%2F%2Fbilder.koch-reis.de%2Fpin%2Fv2%2F%3Fid%3D1352%26title%3DPak+Choi+mit+gelber+Bohnenpaste
-    &method=button
-    &title=Pak_Choi_mit_gelber_Bohnenpaste
-    &url=https%3A%2F%2Fwww.der-reiskoch.de%2Frezepte%2Fpak-choi-mit-gelber-bohnenpaste%2F
-  */
   function buildPinterestShareUrl(
     sharedUrl: string,
     sharedMediaUrl: string,
