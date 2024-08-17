@@ -16,7 +16,7 @@
     "jest": "jest",
     "jest:dev": "jest --watchAll --silent=false",
     "storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build",
+    "build:storybook": "storybook build -o ./dist/storybook",
     "prepack": "npm run build:lib && npm run build:split"
   },
   "devDependencies": {
