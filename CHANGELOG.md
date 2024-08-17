@@ -7,7 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Next]
 
-- updated khao-malet to v0.0.8
+- added icons to storybook
+- unified handling of icons
+- updated khao-malet to v0.0.9
 
 ## [0.0.10]
 

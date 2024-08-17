@@ -1,9 +1,11 @@
 export const iconNames = [
   "cart",
   "close",
+  "copy",
   "external-link",
-  "instagram",
   "facebook",
+  "instagram",
+  "location",
   "newsletter",
   "pinterest",
   "printer",
