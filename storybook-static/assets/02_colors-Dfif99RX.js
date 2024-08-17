@@ -1,4 +1,4 @@
-import{j as o}from"./jsx-runtime-Dka8B1Cz.js";import{u as a}from"./index-Ci-pW8F0.js";import{ae as n}from"./index-lZ7R2qOu.js";import"./iframe-B6HenkZZ.js";import"../sb-preview/runtime.js";import"./index-D-8MO0q_.js";import"./index-DxKRhftL.js";import"./index-DrFu-skq.js";function c(e){const r={a:"a",h1:"h1",h2:"h2",p:"p",...a(),...e.components};return o.jsxs(o.Fragment,{children:[o.jsx(n,{title:"Color Palette"}),`
+import{j as o}from"./jsx-runtime-FED_1eYc.js";import{u as a}from"./index-B-1geKos.js";import{ae as n}from"./index-DS_mcoYK.js";import"./iframe-CXpE0ImL.js";import"../sb-preview/runtime.js";import"./index-D-8MO0q_.js";import"./index-DxKRhftL.js";import"./index-DrFu-skq.js";function c(e){const r={a:"a",h1:"h1",h2:"h2",p:"p",...a(),...e.components};return o.jsxs(o.Fragment,{children:[o.jsx(n,{title:"Color Palette"}),`
 `,o.jsx(r.h1,{id:"color-palette",children:"Color Palette"}),`
 `,o.jsxs(r.p,{children:["The color Palette is provided by the ",o.jsx(r.a,{href:"https://www.npmjs.com/package/@der-reiskoch/khao-malet",rel:"nofollow",children:"Khao Malet"})," design system"]}),`
 `,o.jsx(r.h2,{id:"main-colors",children:"Main Colors"}),`
