@@ -14,6 +14,10 @@ const meta = {
       control: { type: "select" },
       options: ["primary", "secondary", "tertiary"],
     },
+    size: {
+      control: { type: "select" },
+      options: ["compact", "medium", "large"],
+    },
     iconName: {
       control: { type: "select" },
       options: iconNames,
@@ -55,9 +59,19 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary: Story = {
+export const PrimaryCompact: Story = {
+  args: {
+    priority: "primary",
+    size: "compact",
+    label: "Karten App",
+    iconName: "location"    
+  },
+};
+
+export const SecondaryLarge: Story = {
   args: {
     priority: "secondary",
+    size: "large",
     label: "Secondary Button",
   },
 };
