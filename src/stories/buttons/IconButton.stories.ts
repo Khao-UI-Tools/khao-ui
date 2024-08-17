@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import IconButton from "../../components/buttons/IconButton.svelte";
+import { iconNames } from "../../icons/IconName";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
@@ -15,16 +16,7 @@ const meta = {
     },
     iconName: {
       control: { type: "select" },
-      options: [
-        "cart",
-        "external-link",
-        "facebook",
-        "instagram",
-        "newsletter",
-        "pinterest",
-        "printer",
-        "rss",
-      ], // @see src/components/icons/IconName.ts
+      options: iconNames,
     },
     title: {
       control: "text",

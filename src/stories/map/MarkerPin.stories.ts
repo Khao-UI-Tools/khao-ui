@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import MarkerPin from "../../components/map/MarkerPin.svelte";
+import { iconNames } from "../../icons/IconName";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
@@ -10,7 +11,7 @@ const meta = {
     color: { control: "color" },
     iconName: {
       control: { type: "select" },
-      options: ["close", "restaurant", "shopping_cart"],
+      options: iconNames,
     },
   },
 } satisfies Meta<MarkerPin>;
@@ -25,10 +26,10 @@ export const Restaurant: Story = {
   },
 };
 
-export const Shop: Story = {
+export const Cart: Story = {
   args: {
     color: "#249b57",
-    iconName: "shopping_cart",
+    iconName: "cart",
   },
 };
 

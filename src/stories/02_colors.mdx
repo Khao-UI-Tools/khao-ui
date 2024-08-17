@@ -4,10 +4,11 @@ import { Meta } from "@storybook/blocks";
 
 # Color Palette
 
-The color Palette is provided by the [Khao Malet](https://www.npmjs.com/package/@der-reiskoch/khao-malet) design system
+The color Palette is provided by the [Khao Malet](https://www.npmjs.com/package/@der-reiskoch/khao-malet) design system 
+which applys the [Material Design Color System](https://m3.material.io/styles/color/system/how-the-system-works).
 
 
-## Main Colors
+## Dynamic Main Colors
 
 <div className="sb-container">
   <div className='container'>
@@ -50,6 +51,77 @@ The color Palette is provided by the [Khao Malet](https://www.npmjs.com/package/
   </div>
  </div>
 
+## Dynamic Neutral Colors
+
+<div className="sb-container">
+  <div className='container'>
+    <div className="color-item color-neutral10">
+      <p>
+        --khao-sys-color-neutral10
+      </p>
+    </div>
+
+    <div className="color-item color-neutral30">
+      <p>
+        --khao-sys-color-neutral30
+      </p>
+    </div>
+
+    <div className="color-item color-neutral50">
+      <p>
+        --khao-sys-color-neutral50
+      </p>
+    </div>
+
+    <div className="color-item color-neutral80">
+      <p>
+        --khao-sys-color-neutral80
+      </p>
+    </div>
+
+     <div className="color-item color-neutral100">
+      <p>
+        --khao-sys-color-neutral100
+      </p>
+    </div>
+
+  </div>
+ </div>
+
+ ## Static Colors
+
+<div className="sb-container">
+  <div className='container'>
+    <div className="color-item color-green">
+      <p>
+        --khao-sys-static-color-green
+      </p>
+    </div>
+
+    <div className="color-item color-red">
+      <p>
+        --khao-sys-static-color-red
+      </p>
+    </div>
+
+     <div className="color-item color-white">
+      <p>
+        --khao-sys-static-color-white
+      </p>
+    </div>
+
+     <div className="color-item color-black">
+      <p>
+        --khao-sys-static-color-black
+      </p>
+    </div>
+
+    
+
+  </div>
+ </div>
+
+
 <style>
   {`
   .sb-container {
@@ -73,8 +145,9 @@ The color Palette is provided by the [Khao Malet](https://www.npmjs.com/package/
     justify-content: center;
     align-items: center;
     font-weight: 800;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
+    border-radius: var(--khao-sys-shape-corner-large);
   }
 
   .color-primary {
@@ -101,7 +174,6 @@ The color Palette is provided by the [Khao Malet](https://www.npmjs.com/package/
       }
   }
 
-
   .color-container {
       background-color: var(--khao-sys-color-container);
 
@@ -119,11 +191,87 @@ The color Palette is provided by the [Khao Malet](https://www.npmjs.com/package/
   }
 
   .color-outline {
-      background-color: var(--khao-ref-palette-neutral50);
+      background-color: var(--khao-sys-color-outline);
 
       p {
-        color: var(-khao-ref-palette-neutral80) !important;
+        color: var(--khao-sys-color-on-outline) !important;
       }
   }
+
+  .color-neutral10 {
+      background-color: var(--khao-sys-color-neutral10);
+
+      p {
+        color: var(--khao-sys-static-color-white) !important;
+      }
+  }
+
+  .color-neutral30 {
+      background-color: var(--khao-sys-color-neutral30);
+
+      p {
+        color: var(--khao-sys-static-color-white) !important;
+      }
+  }
+
+  .color-neutral50 {
+      background-color: var(--khao-sys-color-neutral50);
+
+      p {
+        color: var(--khao-sys-static-color-black) !important;
+      }
+  }
+
+  .color-neutral80 {
+      background-color: var(--khao-sys-color-neutral80);
+
+      p {
+        color: var(--khao-sys-static-color-black) !important;
+      }
+  }
+
+  .color-neutral100 {
+      background-color: var(--khao-sys-color-neutral100);
+      border: 1px solid var(--khao-sys-static-color-black);
+
+      p {
+        color: var(--khao-sys-static-color-black) !important;
+      }
+  }
+
+  .color-green {
+      background-color: var(--khao-sys-static-color-green);
+     
+      p {
+        color: var(--khao-sys-static-color-on-green) !important;
+      }
+  }
+
+  .color-red {
+      background-color: var(--khao-sys-static-color-red);
+     
+      p {
+        color: var(--khao-sys-static-color-on-red) !important;
+      }
+  }
+
+  .color-white {
+      background-color: var(--khao-sys-static-color-white);
+       border: 1px solid var(--khao-sys-static-color-black);
+     
+      p {
+        color: var(--khao-sys-static-color-on-white) !important;
+      }
+  }
+
+  .color-black {
+      background-color: var(--khao-sys-static-color-black);
+     
+      p {
+        color: var(--khao-sys-static-color-on-black) !important;
+      }
+  }
+
+
   `}
 </style>

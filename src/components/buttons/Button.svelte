@@ -2,8 +2,9 @@
 
 <script lang="ts">
   import { type ButtonPriority } from "./types/ButtonPriority";
-  import Icon from "../icons/Icon.svelte";
-  import { type IconName } from "../icons/IconName";
+  import { type ButtonSize } from "./types/ButtonSize";
+  import Icon from "../../icons/Icon.svelte";
+  import { type IconName } from "../../icons/IconName";
 
   function setCustomStyles(customBGColor: string, customColor: string): string {
     var customStyles =
@@ -26,6 +27,7 @@
   export let target: string | null = null;
 
   export let priority: ButtonPriority = "primary";
+  export let size: ButtonSize = "medium";
 
   export let customBGColor: string = "";
   export let customColor: string = "";
@@ -36,7 +38,7 @@
 </script>
 
 <a
-  class="button button-{priority}"
+  class="button button-{priority} button-size-{size}"
   {title}
   {href}
   {target}
@@ -47,7 +49,7 @@
 >
   {label}
   {#if iconName !== ""}
-    <div class="icon">
+    <div class="icon icon-size-{size}">
       <Icon {iconName} />
     </div>
   {/if}
@@ -65,17 +67,25 @@
       --khao-sys-typescale-label-medium-weight-prominent
     );
 
-    --khao-button-height: var(--khao-sys-size-regular-10);
     --khao-button-container-shape: var(--khao-sys-shape-corner-medium);
 
     --khao-button-leading-space: var(--khao-sys-size-regular-5);
     --khao-button-trailing-space: var(--khao-sys-size-regular-5);
 
-    --khao-button-icon-size: var(--khao-sys-size-regular-5);
     --khao-button-icon-color: var(--khao-sys-color-on-container);
     --khao-button-icon-leading-space: var(--khao-sys-size-regular-2);
+    --khao-button-icon-size-compact: var(--khao-sys-size-regular-4);
+    --khao-button-icon-size-medium: var(--khao-sys-size-regular-5);
+    --khao-button-icon-size-large: var(--khao-sys-size-regular-6);
+    
+    --khao-button-height-compact: var(--khao-sys-size-regular-8);
+    --khao-button-width-compact: 120px;
 
-    --khao-button-width: 150px;
+    --khao-button-height-medium: var(--khao-sys-size-regular-10);
+    --khao-button-width-medium: 150px;
+
+    --khao-button-height-large: var(--khao-sys-size-regular-12);
+    --khao-button-width-large: 180px;
 
     --khao-button-hover-state-layer-opacity: var(
       --khao-sys-state-hover-state-layer-opacity
@@ -98,8 +108,6 @@
     display: inline-flex;
     color: var(--khao-button-label-text-color);
     background-color: var(--khao-button-container-color);
-    min-width: var(--khao-button-width);
-    height: var(--khao-button-height, 40px);
     align-items: center;
     justify-content: center;
     padding: 0.2rem;
@@ -141,6 +149,22 @@
     }
   }
 
+  .button-size-compact {
+    min-width: var(--khao-button-width-compact);
+    height: var(--khao-button-height-compact);
+  }
+
+  .button-size-medium {
+    min-width: var(--khao-button-width-medium);
+    height: var(--khao-button-height-medium);
+  }
+
+  .button-size-large {
+    min-width: var(--khao-button-width-large);
+    height: var(--khao-button-height-large);
+  }
+
+
   .button-primary {
     --khao-button-container-color: var(--khao-sys-color-primary);
     --khao-button-label-text-color: var(--khao-sys-color-on-primary);
@@ -165,7 +189,20 @@
   .icon {
     stroke: var(--khao-button-icon-color);
     fill: var(--khao-button-icon-color);
-    width: var(--khao-button-icon-size);
-    height: var(--khao-button-icon-size);
+  }
+
+  .icon-size-compact {
+    height: var(--khao-button-icon-size-compact);
+    width: var(--khao-button-icon-size-compact);
+  }
+
+  .icon-size-medium {
+    height: var(--khao-button-icon-size-medium);
+    width: var(--khao-button-icon-size-medium);
+  }
+
+  .icon-size-large {
+    height: var(--khao-button-icon-size-large);
+    width: var(--khao-button-icon-size-large);
   }
 </style>

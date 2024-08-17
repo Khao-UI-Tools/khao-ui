@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Button from "../../components/buttons/Button.svelte";
+import { iconNames } from "../../icons/IconName";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
@@ -13,18 +14,13 @@ const meta = {
       control: { type: "select" },
       options: ["primary", "secondary", "tertiary"],
     },
+    size: {
+      control: { type: "select" },
+      options: ["compact", "medium", "large"],
+    },
     iconName: {
       control: { type: "select" },
-      options: [
-        "cart",
-        "external-link",
-        "facebook",
-        "instagram",
-        "newsletter",
-        "pinterest",
-        "printer",
-        "rss",
-      ], // @see src/components/icons/IconName.ts
+      options: iconNames,
     },
     label: {
       control: "text",
@@ -63,9 +59,19 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary: Story = {
+export const PrimaryCompact: Story = {
+  args: {
+    priority: "primary",
+    size: "compact",
+    label: "Karten App",
+    iconName: "location"    
+  },
+};
+
+export const SecondaryLarge: Story = {
   args: {
     priority: "secondary",
+    size: "large",
     label: "Secondary Button",
   },
 };
@@ -110,5 +116,3 @@ export const CustomColorsExample2: Story = {
     customColor: "white",
   },
 };
-
-
