@@ -1,9 +1,14 @@
-export type IconName =
-  | "cart"
-  | "external-link"
-  | "instagram"
-  | "facebook"
-  | "newsletter"
-  | "pinterest"
-  | "printer"
-  | "rss";
+export const iconNames = [
+  "cart",
+  "close",
+  "external-link",
+  "instagram",
+  "facebook",
+  "newsletter",
+  "pinterest",
+  "printer",
+  "restaurant",
+  "rss",
+];
+
+export type IconName = (typeof iconNames)[number];
