@@ -2,8 +2,7 @@ name: Deploy storybook content to GH Pages
 
 on:
   push:
-    branches:
-      - "main"
+    branches: ["master"]
 
 permissions:
   contents: read
