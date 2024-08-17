@@ -1,6 +1,5 @@
 <svelte:options customElement="khao-social-buttons" />
 
-
 <script lang="ts">
     import IconButton from "../buttons/IconButton.svelte";
 
@@ -76,9 +75,6 @@
         target={socialButtonsTarget}
         rel={socialButtonsRel}
     />
-
-
-
 </div>
 
 
