@@ -1,9 +1,9 @@
 <svelte:options customElement="khao-map-marker-pin" />
 
 <script lang="ts">
-  import Icon from "../icons/Icon.svelte";
-  import { type IconName } from "../icons/IconName";
-  
+  import Icon from "../../icons/Icon.svelte";
+  import { type IconName } from "../../icons/IconName";
+
   export let color: string;
   export let iconName: IconName;
 </script>

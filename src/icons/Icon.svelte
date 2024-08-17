@@ -1,3 +1,5 @@
+<svelte:options customElement="khao-icon" />
+
 <script lang="ts">
   import { type IconName } from "./IconName";
 

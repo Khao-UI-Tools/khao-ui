@@ -1,0 +1,53 @@
+import { Meta } from "@storybook/blocks";
+import Icon from "../icons/Icon.svelte";
+import { iconNames } from "../icons/IconName";
+
+<Meta title="Icons" />
+
+# Icons
+
+Icons are used to represent actions, objects, or concepts.
+
+<div className="sb-container">
+  <div className='container'>
+  
+    {iconNames.map(iconName=>(
+        <div className="icon-item">
+            <khao-icon iconName={iconName} />
+            {iconName}
+        </div>
+    ))}
+
+    </div>
+
+</div>
+
+<style>
+  {`
+    .sb-container {
+        margin-top: 24px;
+        margin-bottom: 48px;
+    }
+
+    .container {
+        display:flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 2rem;
+        
+    }
+
+    .icon-item {
+        display:block;
+        justify-content: flex-start;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+    }
+
+   
+  
+  
+  `}
+</style>{" "}
