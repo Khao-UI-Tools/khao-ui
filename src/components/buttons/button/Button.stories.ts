@@ -1,12 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import IconButton from "../../components/buttons/IconButton.svelte";
-import { iconNames } from "../../icons/IconName";
-import { buttonPriorities } from "../../components/buttons/types/ButtonPriority";
+import Button from "./Button.svelte";
+import { iconNames } from "../../../icons/IconName";
+import {
+  buttonPriorities,
+  buttonPriorityDefault,
+} from "../types/ButtonPriority";
+import { buttonSizes, buttonSizeDefault } from "../types/ButtonSize";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: "Buttons/IconButton",
-  component: "khao-icon-button",
+  title: "Buttons/Button",
+  component: "khao-button",
   tags: ["autodocs"],
   argTypes: {
     customBGColor: { control: "color" },
@@ -14,10 +18,20 @@ const meta = {
     priority: {
       control: { type: "select" },
       options: buttonPriorities,
+      default: buttonPriorityDefault,
+    },
+    size: {
+      control: { type: "select" },
+      options: buttonSizes,
+      default: buttonSizeDefault,
     },
     iconName: {
       control: { type: "select" },
       options: iconNames,
+    },
+    label: {
+      control: "text",
+      type: "string",
     },
     title: {
       control: "text",
@@ -39,7 +53,7 @@ const meta = {
       type: "function",
     },
   },
-} satisfies Meta<IconButton>;
+} satisfies Meta<Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -47,40 +61,65 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    title: "Primary with Printer",
     priority: "primary",
-    iconName: "printer",
+    label: "Primary Button",
   },
 };
 
-export const Secondary: Story = {
+export const PrimaryCompact: Story = {
   args: {
-    title: "Secondary with Cart",
+    priority: "primary",
+    size: "compact",
+    label: "Karten App",
+    iconName: "location",
+  },
+};
+
+export const SecondaryLarge: Story = {
+  args: {
     priority: "secondary",
-    iconName: "cart",
+    size: "large",
+    label: "Secondary Button",
   },
 };
 
 export const Tertiary: Story = {
   args: {
-    title: "Tertiary with Newsletter",
     priority: "tertiary",
+    label: "Tertiary Button",
+  },
+};
+
+export const Newsletter: Story = {
+  args: {
+    priority: "tertiary",
+    label: "Newsletter",
     iconName: "newsletter",
   },
 };
 
-export const CustomColorsExample: Story = {
+export const Print: Story = {
   args: {
+    priority: "primary",
+    label: "Print",
+    iconName: "printer",
+  },
+};
+
+export const CustomColorsExample1: Story = {
+  args: {
+    label: "Facebook",
     iconName: "facebook",
     customBGColor: "#3b5998",
     customColor: "white",
   },
 };
 
-export const CustomHoverColorExample: Story = {
+export const CustomColorsExample2: Story = {
   args: {
+    label: "Pinterest",
     iconName: "pinterest",
-    priority: "secondary",
-    customHoverColor: "#bd081c",
+    customBGColor: "rgb(189, 8, 28)",
+    customColor: "white",
   },
 };

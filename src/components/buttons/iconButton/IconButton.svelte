@@ -1,9 +1,9 @@
 <svelte:options customElement="khao-icon-button" />
 
 <script lang="ts">
-    import { type ButtonPriority } from "./types/ButtonPriority";
-    import Icon from "../../icons/Icon.svelte";
-    import { type IconName } from "../../icons/IconName";
+    import { type ButtonPriority } from "../types/ButtonPriority";
+    import Icon from "../../../icons/Icon.svelte";
+    import { type IconName } from "../../../icons/IconName";
   
     function setCustomStyles(customBGColor: string, customColor: string, customHoverColor: string): string {
       var customStyles =
@@ -59,7 +59,7 @@
 
 
 <style>
-  @import "reset.css";
+  @import "../reset.css";
 
   :host {
     --khao-icon-button-container-color: var(--khao-sys-color-container);

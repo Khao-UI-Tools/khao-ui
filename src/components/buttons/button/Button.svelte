@@ -1,10 +1,10 @@
 <svelte:options customElement="khao-button" />
 
 <script lang="ts">
-  import { type ButtonPriority } from "./types/ButtonPriority";
-  import { type ButtonSize } from "./types/ButtonSize";
-  import Icon from "../../icons/Icon.svelte";
-  import { type IconName } from "../../icons/IconName";
+  import { type ButtonPriority, buttonPriorityDefault } from "../types/ButtonPriority";
+  import { type ButtonSize, buttonSizeDefault } from "../types/ButtonSize";
+  import Icon from "../../../icons/Icon.svelte";
+  import { type IconName } from "../../../icons/IconName";
 
   function setCustomStyles(customBGColor: string, customColor: string): string {
     var customStyles =
@@ -26,8 +26,8 @@
   export let rel: string | null = null;
   export let target: string | null = null;
 
-  export let priority: ButtonPriority = "primary";
-  export let size: ButtonSize = "medium";
+  export let priority: ButtonPriority = buttonPriorityDefault;
+  export let size: ButtonSize = buttonSizeDefault;
 
   export let customBGColor: string = "";
   export let customColor: string = "";
@@ -56,7 +56,7 @@
 </a>
 
 <style>
-  @import "reset.css";
+  @import "../reset.css";
 
   :host {
     --khao-button-container-color: var(--khao-sys-color-container);

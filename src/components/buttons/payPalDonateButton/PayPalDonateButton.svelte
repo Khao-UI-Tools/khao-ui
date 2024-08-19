@@ -35,7 +35,7 @@
 </a>
 
 <style>
-  @import "reset.css";
+  @import "../reset.css";
 
   :host {
     --khao-button-paypal-height: var(--khao-sys-size-regular-10);
