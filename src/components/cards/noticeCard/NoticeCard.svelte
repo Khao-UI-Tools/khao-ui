@@ -13,8 +13,14 @@
     onMount( () => {
 		
         switch (type) {
+            case "info": {
+                cardFilling = "primary";
+                iconName = "info"
+                break;
+            }
             case "neutral": {
                 cardFilling = cardFillingDefault;
+                iconName = "info"
                 break;
             }
             case "warning": {

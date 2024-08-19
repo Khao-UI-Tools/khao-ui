@@ -19,8 +19,8 @@
 
     <div class="content">
         {#if iconName !== ""}    
-            <div class="icon">
-                <Icon {iconName} />
+            <div class="icon-wrapper">
+                <Icon {iconName} sizeFactor="7" />
             </div>
         {/if}
         <slot>
@@ -49,6 +49,7 @@
     }
 
     .card {
+        box-sizing: border-box;
         display: block;
         padding: var(--khao-card-top-space) var(--khao-card-trailing-space);
         margin: 0 auto 0 auto;
@@ -79,14 +80,11 @@
         line-height: var(--khao-card-icon-size);
     }
 
-    .icon {
+    .icon-wrapper {
         float: left;
+        margin-right: var(--khao-card-icon-space);
         width: var(--khao-card-icon-size);
         height: var(--khao-card-icon-size);
-        margin-right: var(--khao-card-icon-space);
-        stroke-width: 0;
-        stroke: currentColor;
-        fill: currentColor;
     }
 
     .card-surface {

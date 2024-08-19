@@ -49,9 +49,7 @@
 >
   {label}
   {#if iconName !== ""}
-    <div class="icon">
-      <Icon {iconName} />
-    </div>
+    <Icon {iconName} sizeFactor="5" />
   {/if}
 </a>
 
@@ -72,8 +70,6 @@
     --khao-button-leading-space: var(--khao-sys-size-regular-5);
     --khao-button-trailing-space: var(--khao-sys-size-regular-5);
 
-    --khao-button-icon-size: var(--khao-sys-size-regular-5);
-    --khao-button-icon-color: var(--khao-sys-color-on-container);
     --khao-button-icon-leading-space: var(--khao-sys-size-regular-2);
     
     --khao-button-height-compact: var(--khao-sys-size-regular-8);
@@ -166,28 +162,20 @@
   .button-primary {
     --khao-button-container-color: var(--khao-sys-color-primary);
     --khao-button-label-text-color: var(--khao-sys-color-on-primary);
-    --khao-button-icon-color: var(--khao-sys-color-on-primary);
     --khao-button-state-layer-color: var(--khao-sys-color-on-primary);
   }
 
   .button-secondary {
     --khao-button-container-color: var(--khao-sys-color-secondary);
     --khao-button-label-text-color: var(--khao-sys-color-on-secondary);
-    --khao-button-icon-color: var(--khao-sys-color-on-secondary);
     --khao-button-state-layer-color: var(--khao-sys-color-on-secondary);
   }
 
   .button-tertiary {
     --khao-button-container-color: var(--khao-sys-color-tertiary);
     --khao-button-label-text-color: var(--khao-sys-color-on-tertiary);
-    --khao-button-icon-color: var(--khao-sys-color-on-tertiary);
     --khao-button-state-layer-color: var(--khao-sys-color-on-tertiary);
   }
 
-  .icon {
-    stroke: var(--khao-button-icon-color);
-    fill: var(--khao-button-icon-color);
-    height: var(--khao-button-icon-size);
-    width: var(--khao-button-icon-size);
-  }
+ 
 </style>

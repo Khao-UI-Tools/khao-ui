@@ -5,14 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [NEXT]
+
+- added `khao-link` component
+- removed wrapper around svg icons in all components
+- added sizeFactor prop to icon component
+- added icon storys
+- increased size of `khao-map-marker-pin`
+
 ## [0.0.14]
 
 - added title and icon to Card component
-- added NoticeCard component
+- added `khao-card-notice` component
 
 ## [0.0.13]
 
-- added card component
+- added `khao-card` component
 - brought components and their stories to the same folder
 - unified icon size for different button sizes
 
@@ -28,8 +36,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [0.0.10]
 
-- added khao-social-buttons
-- added khao-icon-button component
+- added `khao-social-buttons`
+- added `khao-icon-button` component
 - updated khao-malet to v0.0.7
 
 ## [0.0.0 - 0.0.9]

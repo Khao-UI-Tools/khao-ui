@@ -6,6 +6,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: [
+        "src/components/links/link/Link.svelte",
         "src/components/ads/ad/Ad.svelte",
         "src/components/buttons/button/Button.svelte",
         "src/components/buttons/iconButton/IconButton.svelte",

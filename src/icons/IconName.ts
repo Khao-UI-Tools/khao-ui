@@ -13,6 +13,7 @@ export const iconNames = [
   "printer",
   "restaurant",
   "rss",
+  "speaker",
 ];
 
 export type IconName = (typeof iconNames)[number];

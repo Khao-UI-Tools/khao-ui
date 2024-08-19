@@ -51,9 +51,7 @@
   on:click={onClick}
 >
   {#if iconName !== ""}
-    <div class="icon">
-      <Icon {iconName} />
-    </div>
+      <Icon {iconName} sizeFactor="9" />
   {/if}
 </a>
 
@@ -68,12 +66,6 @@
 
     --khao-icon-button-size: var(--khao-sys-size-regular-14);
     --khao-icon-button-container-shape: var( --khao-sys-shape-corner-small);
-
-    --khao-icon-button-icon-size: var(--khao-sys-size-regular-9);
-    --khao-icon-button-icon-color: var(--khao-sys-color-on-container);
-    --khao-icon-button-icon-leading-space: var(--khao-sys-size-regular-2);
-
-    --khao-icon-button-width: 150px;
 
     --khao-icon-button-hover-state-layer-opacity: var(
       --khao-sys-state-hover-state-layer-opacity
@@ -139,21 +131,18 @@
   .button-primary {
     --khao-icon-button-container-color: var(--khao-sys-color-primary);
     --khao-icon-button-label-text-color: var(--khao-sys-color-on-primary);
-    --khao-icon-button-icon-color: var(--khao-sys-color-on-primary);
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-primary);
   }
 
   .button-secondary {
     --khao-icon-button-container-color: var(--khao-sys-color-secondary);
     --khao-icon-button-label-text-color: var(--khao-sys-color-on-secondary);
-    --khao-icon-button-icon-color: var(--khao-sys-color-on-secondary);
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-secondary);
   }
 
   .button-tertiary {
     --khao-icon-button-container-color: var(--khao-sys-color-tertiary);
     --khao-icon-button-label-text-color: var(--khao-sys-color-on-tertiary);
-    --khao-icon-button-icon-color: var(--khao-sys-color-on-tertiary);
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-tertiary);
   }
 
@@ -163,10 +152,4 @@
     }
   }
 
-  .icon {
-    stroke: var(--khao-icon-button-icon-color);
-    fill: var(--khao-icon-button-icon-color);
-    width: var(--khao-icon-button-icon-size);
-    height: var(--khao-icon-button-icon-size);
-  }
 </style>

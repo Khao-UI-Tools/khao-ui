@@ -11,7 +11,7 @@
 <!--icons from https://fonts.google.com/icons -->
 <div style="background-color: {color}" class="pin">
   <span class="icon">
-    <Icon iconName={iconName}></Icon>
+    <Icon iconName={iconName} sizeFactor="5"/>
   </span>
 </div>
 
@@ -23,8 +23,8 @@
   }
 
   .pin {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50% 50% 50% 0;
     position: relative;
     transform: rotate(-45deg);
@@ -34,21 +34,18 @@
 
   .pin::before {
     content: "";
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     margin: 3px 0 0 3px;
     position: absolute;
     background: var(--khao-marker-pin-icon-bgcolor);
+    color: var(--khao-marker-pin-icon-color);
     border-radius: 50%;
   }
 
   .icon {
     position: absolute;
-    width: 18px;
-    height: 18px;
-    stroke: var(--khao-marker-pin-icon-color);
-    fill: var(--khao-marker-pin-icon-colo);
-    top: 0.4rem;
+    top: 0.3rem;
     left: 0.4rem;
     transform: rotate(45deg);
     text-align: center;
