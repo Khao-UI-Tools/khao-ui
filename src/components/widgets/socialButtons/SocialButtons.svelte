@@ -1,7 +1,7 @@
 <svelte:options customElement="khao-social-buttons" />
 
 <script lang="ts">
-    import IconButton from "../buttons/iconButton/IconButton.svelte";
+    import IconButton from "../../buttons/iconButton/IconButton.svelte";
 
     const socialButtonsPriority = 'secondary';
     const socialButtonsTarget = '_blank';

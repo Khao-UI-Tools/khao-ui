@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import ShareButtons from "../../components/widgets/ShareButtons.svelte";
+import ShareButtons from "./ShareButtons.svelte";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {

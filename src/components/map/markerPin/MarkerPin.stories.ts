@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import MarkerPin from "../../components/map/MarkerPin.svelte";
-import { iconNames } from "../../icons/IconName";
+import MarkerPin from "./MarkerPin.svelte";
+import { iconNames } from "../../../icons/IconName";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
