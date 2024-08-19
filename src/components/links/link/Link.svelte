@@ -16,7 +16,9 @@
 
 <a class="link" href={href} title={title} rel={rel} target={target}>
     <span class="label">{label}</span>
+    {#if iconName !== ""}
     <Icon iconName={iconName} sizeFactor="4" opacity="80%"/>
+    {/if}
 </a>
 
 
@@ -36,7 +38,6 @@
         gap: var(--khao-link-icon-space);
         cursor: pointer;
         align-items: center;
-        margin-left: 0.1rem;
     }
 
     .link:hover {
