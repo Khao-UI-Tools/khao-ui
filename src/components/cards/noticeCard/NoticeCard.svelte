@@ -3,7 +3,7 @@
 <script lang="ts">
    import { onMount } from 'svelte';
     import Card from "../card/Card.svelte";
-    import { type IconName } from "../../../icons/IconName";
+    import { type IconName } from "../../../icons/types/IconName";
     import {type CardFilling, cardFillingDefault} from "../types/CardFilling";
     import { type NoticeType, noticeTypeDefault } from "./NoticeTypes";
     

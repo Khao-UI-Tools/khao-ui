@@ -4,7 +4,7 @@
   import { type ButtonPriority, buttonPriorityDefault } from "../types/ButtonPriority";
   import { type ButtonSize, buttonSizeDefault } from "../types/ButtonSize";
   import Icon from "../../../icons/Icon.svelte";
-  import { type IconName } from "../../../icons/IconName";
+  import { type IconName } from "../../../icons/types/IconName";
 
   function setCustomStyles(customBGColor: string, customColor: string): string {
     var customStyles =

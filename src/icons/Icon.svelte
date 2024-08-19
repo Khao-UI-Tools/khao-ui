@@ -1,15 +1,17 @@
 <svelte:options customElement="khao-icon" />
 
 <script lang="ts">
-  import { type IconName } from "./IconName";
-  import { type IconSizeFactor, iconSizeFactorDefault } from "./IconSizeFactor";
+  import { type IconName } from "./types/IconName";
+  import { type IconSizeFactor, iconSizeFactorDefault } from "./types/IconSizeFactor";
+  import { type IconOpacity, iconOpacityDefault } from "./types/IconOpacity";
 
   export let iconName: IconName;
   export let sizeFactor: IconSizeFactor = iconSizeFactorDefault;
+  export let opacity: string = iconOpacityDefault;
 
 </script>
 
-<svg class="icon" style="width: var(--khao-sys-size-regular-{sizeFactor}); height: var(--khao-sys-size-regular-{sizeFactor});">
+<svg class="icon" style="width: var(--khao-sys-size-regular-{sizeFactor}); height: var(--khao-sys-size-regular-{sizeFactor}); opacity: {opacity};">
 
 {#if iconName === "cart"}
   <symbol id="icon-cart" viewBox="0 -960 960 960"

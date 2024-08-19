@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Button from "./Button.svelte";
-import { iconNames } from "../../../icons/IconName";
+import { iconNames } from "../../../icons/types/IconName";
 import {
   buttonPriorities,
   buttonPriorityDefault,

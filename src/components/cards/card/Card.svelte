@@ -4,7 +4,7 @@
     import { type CardFilling, cardFillingDefault } from "../types/CardFilling";
     import { type CardType, cardTypeDefault } from "../types/CardType";
     import Icon from "../../../icons/Icon.svelte";
-    import { type IconName } from "../../../icons/IconName";
+    import { type IconName } from "../../../icons/types/IconName";
 
     export let filling: CardFilling = cardFillingDefault;
     export let type: CardType = cardTypeDefault;

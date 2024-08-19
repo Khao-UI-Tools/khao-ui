@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Link from "./Link.svelte";
-import { iconNames } from "../../../icons/IconName";
+import { iconNames } from "../../../icons/types/IconName";
 
 const meta = {
   title: "Links/Link",

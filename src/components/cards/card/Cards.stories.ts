@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Card from "./Card.svelte";
 import { cardFillings, cardFillingDefault } from "../types/CardFilling";
 import { cardTypes, cardTypeDefault } from "../types/CardType";
-import { iconNames } from "../../../icons/IconName";
+import { iconNames } from "../../../icons/types/IconName";
 
 const meta = {
   title: "Cards/Card",

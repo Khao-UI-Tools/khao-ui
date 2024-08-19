@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Icon from "./Icon.svelte";
-import { iconNames } from "../icons/IconName";
-import { iconSizeFactors, iconSizeFactorDefault } from "./IconSizeFactor";
+import { iconNames } from "./types/IconName";
+import { iconSizeFactors, iconSizeFactorDefault } from "./types/IconSizeFactor";
+import { iconOpacities, iconOpacityDefault } from "./types/IconOpacity";
 
 const meta = {
   title: "Icons/Icon Component",
@@ -16,6 +17,11 @@ const meta = {
       control: { type: "select" },
       options: iconSizeFactors,
       default: iconSizeFactorDefault,
+    },
+    opacity: {
+      control: { type: "select" },
+      options: iconOpacities,
+      default: iconOpacityDefault,
     },
   },
 } satisfies Meta<Icon>;

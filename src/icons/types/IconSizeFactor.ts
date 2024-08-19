@@ -15,4 +15,4 @@ export const iconSizeFactors = [
 
 export type IconSizeFactor = (typeof iconSizeFactors)[number];
 
-export const iconSizeFactorDefault = "4";
+export const iconSizeFactorDefault: IconSizeFactor = "4";

@@ -2,7 +2,7 @@
 
 <script lang="ts">
    import Icon from "../../../icons/Icon.svelte";
-   import { type IconName } from "../../../icons/IconName";
+   import { type IconName } from "../../../icons/types/IconName";
 
    export let label: string;
    export let title: string = label;
@@ -16,7 +16,7 @@
 
 <a class="link" href={href} title={title} rel={rel} target={target}>
     <span class="label">{label}</span>
-    <Icon iconName={iconName} sizeFactor="4"/>
+    <Icon iconName={iconName} sizeFactor="4" opacity="80%"/>
 </a>
 
 

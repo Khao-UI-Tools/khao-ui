@@ -3,7 +3,7 @@
 <script lang="ts">
     import { type ButtonPriority } from "../types/ButtonPriority";
     import Icon from "../../../icons/Icon.svelte";
-    import { type IconName } from "../../../icons/IconName";
+    import { type IconName } from "../../../icons/types/IconName";
   
     function setCustomStyles(customBGColor: string, customColor: string, customHoverColor: string): string {
       var customStyles =
