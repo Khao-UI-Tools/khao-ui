@@ -12,6 +12,7 @@ export default defineConfig({
         "src/components/buttons/payPalDonateButton/PayPalDonateButton.svelte",
         "src/components/buttons/steadyButton/SteadyButton.svelte",
         "src/components/cards/card/Card.svelte",
+        "src/components/cards/noticeCard/NoticeCard.svelte",
         "src/components/map/markerPin/MarkerPin.svelte",
         "src/components/widgets/shareButtons/ShareButtons.svelte",
         "src/components/widgets/socialButtons/SocialButtons.svelte",
