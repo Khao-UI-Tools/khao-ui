@@ -7,7 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [NEXT]
 
-- unified ucon size for different button sizes
+- added card component
+- brought components and their stories to the same folder
+- unified icon size for different button sizes
 
 ## [0.0.12]
 
