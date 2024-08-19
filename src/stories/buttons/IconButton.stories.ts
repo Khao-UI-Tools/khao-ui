@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import IconButton from "../../components/buttons/IconButton.svelte";
 import { iconNames } from "../../icons/IconName";
+import { buttonPriorities } from "../../components/buttons/types/ButtonPriority";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
@@ -12,7 +13,7 @@ const meta = {
     customColor: { control: "color" },
     priority: {
       control: { type: "select" },
-      options: ["primary", "secondary", "tertiary"],
+      options: buttonPriorities,
     },
     iconName: {
       control: { type: "select" },

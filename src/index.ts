@@ -6,3 +6,4 @@ export * as PayPalDonateButton from "./components/buttons/PayPalDonateButton.sve
 export * as SteadyButton from "./components/buttons/SteadyButton.svelte";
 export * as ShareButtons from "./components/widgets/ShareButtons.svelte";
 export * as MarkerPin from "./components/map/MarkerPin.svelte";
+export * as Sheet from "./components/cards/card/Card.svelte";

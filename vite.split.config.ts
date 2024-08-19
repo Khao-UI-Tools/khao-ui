@@ -11,9 +11,10 @@ export default defineConfig({
         "src/components/buttons/IconButton.svelte",
         "src/components/buttons/PayPalDonateButton.svelte",
         "src/components/buttons/SteadyButton.svelte",
+        "src/components/cards/card/Card.svelte",
+        "src/components/map/MarkerPin.svelte",
         "src/components/widgets/ShareButtons.svelte",
         "src/components/widgets/SocialButtons.svelte",
-        "src/components/map/MarkerPin.svelte",
       ],
       output: {
         dir: "dist/split/",

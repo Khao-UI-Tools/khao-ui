@@ -49,7 +49,7 @@
 >
   {label}
   {#if iconName !== ""}
-    <div class="icon icon-size-{size}">
+    <div class="icon">
       <Icon {iconName} />
     </div>
   {/if}
@@ -72,11 +72,9 @@
     --khao-button-leading-space: var(--khao-sys-size-regular-5);
     --khao-button-trailing-space: var(--khao-sys-size-regular-5);
 
+    --khao-button-icon-size: var(--khao-sys-size-regular-5);
     --khao-button-icon-color: var(--khao-sys-color-on-container);
     --khao-button-icon-leading-space: var(--khao-sys-size-regular-2);
-    --khao-button-icon-size-compact: var(--khao-sys-size-regular-4);
-    --khao-button-icon-size-medium: var(--khao-sys-size-regular-5);
-    --khao-button-icon-size-large: var(--khao-sys-size-regular-6);
     
     --khao-button-height-compact: var(--khao-sys-size-regular-8);
     --khao-button-width-compact: 120px;
@@ -189,20 +187,7 @@
   .icon {
     stroke: var(--khao-button-icon-color);
     fill: var(--khao-button-icon-color);
-  }
-
-  .icon-size-compact {
-    height: var(--khao-button-icon-size-compact);
-    width: var(--khao-button-icon-size-compact);
-  }
-
-  .icon-size-medium {
-    height: var(--khao-button-icon-size-medium);
-    width: var(--khao-button-icon-size-medium);
-  }
-
-  .icon-size-large {
-    height: var(--khao-button-icon-size-large);
-    width: var(--khao-button-icon-size-large);
+    height: var(--khao-button-icon-size);
+    width: var(--khao-button-icon-size);
   }
 </style>

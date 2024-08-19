@@ -1,1 +1,3 @@
-export type ButtonPriority = "primary" | "secondary" | "tertiary";
+export const buttonPriorities = ["primary", "secondary", "tertiary"];
+
+export type ButtonPriority = (typeof buttonPriorities)[number];
