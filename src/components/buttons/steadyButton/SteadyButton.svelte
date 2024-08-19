@@ -20,7 +20,7 @@
 </a>
 
 <style>
-  @import "reset.css";
+  @import "../reset.css";
 
   :host {
     --khao-button-steady-height: var(--khao-sys-size-regular-10);

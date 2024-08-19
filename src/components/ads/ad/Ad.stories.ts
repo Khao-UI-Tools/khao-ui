@@ -1,34 +1,39 @@
-import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import SteadyButton from "../../components/buttons/SteadyButton.svelte";
+import type { Meta, StoryObj } from "@storybook/svelte-vite";
+import Ad from "./Ad.svelte";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: "Buttons/SteadyButton",
-  component: "khao-button-steady",
+  title: "Ads/Ad",
+  component: "khao-ad",
   tags: ["autodocs"],
   argTypes: {
     title: {
       control: "text",
       type: "string",
     },
-    user: {
+    url: {
       control: "text",
       type: "string",
     },
-    lang: {
+    imageUrl: {
       control: "text",
       type: "string",
     },
   },
-} satisfies Meta<SteadyButton>;
+} satisfies Meta<Ad>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    title: "Unterstütze meinen Blog über Steady",
-    user: "der-reiskoch",
-    lang: "de",
+    title: "Werbung",
+    url: "/",
+    imageUrl: "https://placehold.co/200x200?text=Werbung&font=montserrat",
+    imageWidth: "200px",
+    imageTitle: "Dummy Image",
+    onError: () => {
+      alert("error");
+    },
   },
 };

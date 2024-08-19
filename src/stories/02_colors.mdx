@@ -4,9 +4,8 @@ import { Meta } from "@storybook/blocks";
 
 # Color Palette
 
-The color Palette is provided by the [Khao Malet](https://www.npmjs.com/package/@der-reiskoch/khao-malet) design system 
+The color Palette is provided by the [Khao Malet](https://www.npmjs.com/package/@der-reiskoch/khao-malet) design system
 which applys the [Material Design Color System](https://m3.material.io/styles/color/system/how-the-system-works).
-
 
 ## Dynamic Main Colors
 
@@ -51,6 +50,16 @@ which applys the [Material Design Color System](https://m3.material.io/styles/co
   </div>
  </div>
 
+## Dynamic Variants
+
+<div className="sb-container">
+  <div className="container">
+    <div className="color-item color-surface-variantd30">
+      <p>--khao-sys-color-surface-variantd30</p>
+    </div>
+  </div>
+</div>
+
 ## Dynamic Neutral Colors
 
 <div className="sb-container">
@@ -88,7 +97,7 @@ which applys the [Material Design Color System](https://m3.material.io/styles/co
   </div>
  </div>
 
- ## Static Colors
+## Static Colors
 
 <div className="sb-container">
   <div className='container'>
@@ -116,14 +125,31 @@ which applys the [Material Design Color System](https://m3.material.io/styles/co
       </p>
     </div>
 
-    
-
   </div>
  </div>
 
-
 <style>
   {`
+
+  :root {
+
+    --khao-sys-color-surface: color-mix(
+    in srgb,
+    var( --khao-sys-color-secondary),
+    var(--khao-ref-palette-white) 90%
+  );
+
+
+
+    --khao-sys-color-surface-variantd30: color-mix(
+    in srgb,
+    var( --khao-sys-color-secondary),
+    var(--khao-ref-palette-white) 60%
+  );
+
+  }
+
+
   .sb-container {
     margin-top: 24px;
     margin-bottom: 48px;
@@ -145,9 +171,9 @@ which applys the [Material Design Color System](https://m3.material.io/styles/co
     justify-content: center;
     align-items: center;
     font-weight: 800;
-    width: 220px;
-    height: 220px;
-    border-radius: var(--khao-sys-shape-corner-large);
+    width: 250px;
+    height: 80px;
+    border-radius: var(--khao-sys-shape-corner-small);
   }
 
   .color-primary {
@@ -187,6 +213,14 @@ which applys the [Material Design Color System](https://m3.material.io/styles/co
 
       p {
         color: var(--khao-sys-color-on-surface) !important;
+      }
+  }
+
+  .color-surface-variantd30 {
+      background-color: var(--khao-sys-color-surface-variantd30);
+
+      p {
+        color: var(--khao-sys-color-on-surface-variantd30) !important;
       }
   }
 

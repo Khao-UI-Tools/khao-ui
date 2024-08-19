@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [NEXT]
+
+- added card component
+- brought components and their stories to the same folder
+- unified icon size for different button sizes
+
 ## [0.0.12]
 
 - added size attribute to button
