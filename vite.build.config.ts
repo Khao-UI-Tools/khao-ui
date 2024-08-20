@@ -8,11 +8,12 @@ export default defineConfig({
     rollupOptions: {
       input: ["src/index.ts"],
       output: {
-        dir: "dist/components/",
-        entryFileNames: `js/[name]-v${version}.js`,
+        dir: "dist/",
+        entryFileNames: `js/khao-ui-v${version}.js`,
         chunkFileNames: `js/[name]-v${version}.js`,
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name == "index.css") return `css/index-v${version}.css`;
+          if (assetInfo.name == "index.css")
+            return `css/khao-ui-v${version}.css`;
           return `css/${assetInfo.name}`;
         },
 
