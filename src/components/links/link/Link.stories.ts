@@ -68,7 +68,15 @@ export const SpeakerLink: Story = {
   },
 };
 
+export const HelpLink: Story = {
+  args: {
+    label: "Help Link",
+    href: "/",
+    iconName: "help",
+  },
+};
+
 export const LinksInsideText: Story = {
   render: () =>
-    `<p style="line-height: 1.5rem;">Lorem <khao-link label="ipsum"></khao-link> dolor sit amet, consectetuer <khao-link label="test" iconName="speaker"></khao-link> adipiscing elit. Aenean commodo (<khao-link label="test" iconName="external-link"></khao-link>) eu, pretium quis.Stet clita <khao-link label="test" iconName="cart"></khao-link> kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>`,
+    `<p style="line-height: 1.5rem;">Lorem <khao-link label="ipsum"></khao-link> dolor sit amet, consectetuer <khao-link label="test" iconName="speaker"></khao-link> adipiscing elit. Aenean commodo (<khao-link label="test" iconName="external-link"></khao-link>) eu, pretium quis.Stet clita <khao-link label="test" iconName="cart"></khao-link> kasd gubergren, no sea takimata sanctus est Lorem <khao-link label="ipsum" iconName="help"></khao-link> dolor sit amet.</p>`,
 };

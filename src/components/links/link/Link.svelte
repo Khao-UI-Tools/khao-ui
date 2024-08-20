@@ -41,7 +41,11 @@
     }
 
     .link:hover {
-        text-decoration: none;
+        text-decoration-thickness: 2px;
+    }
+
+    .link:focus {
+        text-decoration-thickness: 2px;
     }
 
     .label {

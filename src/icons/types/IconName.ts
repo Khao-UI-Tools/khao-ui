@@ -4,6 +4,7 @@ export const iconNames = [
   "copy",
   "external-link",
   "facebook",
+  "help",
   "info",
   "instagram",
   "location",
