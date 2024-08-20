@@ -7,6 +7,7 @@ const meta = {
   component: "khao-share-buttons",
   tags: ["autodocs"],
   argTypes: {
+    showPrintButton: { type: "string" },
     printButtonLabel: { control: "text", type: "string" },
     printButtonTitle: { control: "text", type: "string" },
     facebookButtonLabel: { control: "text", type: "string" },
@@ -26,8 +27,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    showPrintButton: "true",
     printButtonLabel: "Drucken",
     printButtonTitle: "Diese Seite Drucken",
+    showFacebookButton: "true",
     facebookButtonLabel: "Facebook",
     facebookButtonTitle: "Auf Facebook teilen",
     showPinterestButton: "true",
@@ -41,3 +44,11 @@ export const Default: Story = {
     sharedTitle: "Pak Choi mit gelber Bohnenpaste",
   },
 };
+
+/*
+export const Example: Story = {
+  render: () =>
+    `<khao-share-buttons printbuttonlabel="Drucken" printbuttontitle="Diesen Beitrag drucken" facebookbuttonlabel="Teilen" facebookbuttontitle="Auf Facebook teilen" showpinterestbutton="true" pinterestbuttonlabel="Pinnen" pinterestbuttontitle="Auf Pinterest teilen" sharedurl="https://www.der-reiskoch.de/rezepte/gebratener-reis-mit-xo-sosse/" sharedmediaurl="https://bilder.koch-reis.de/pin/v2/?id=1096&amp;title=Gebratener%20Reis%20mit%20XO%20So%c3%9fe" sharedtitle="Gebratener_Reis_mit_XO_Soße" shareddescription="Ein_Wokgericht_aus_Hongkong">
+    </khao-share-buttons>`,
+};
+*/

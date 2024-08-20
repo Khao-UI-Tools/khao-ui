@@ -34,6 +34,7 @@
     return url;
   }
 
+  export let showPrintButton: string = "true";
   export let printButtonLabel: string | null = "No Label";
   export let printButtonTitle: string | null = printButtonLabel;
 
@@ -52,7 +53,7 @@
 </script>
 
 <div class="share-buttons">
-  {#if isAbleToPrint()}
+  {#if showPrintButton === "true" && isAbleToPrint()}
     <Button
       label={printButtonLabel || "No Label"}
       title={printButtonTitle || ""}
