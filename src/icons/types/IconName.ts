@@ -12,9 +12,11 @@ export const iconNames = [
   "notification",
   "pinterest",
   "printer",
+  "reiskoch-logo",
   "restaurant",
   "rss",
   "speaker",
+  "translation",
 ];
 
 export type IconName = (typeof iconNames)[number];
