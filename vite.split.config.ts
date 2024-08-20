@@ -6,7 +6,6 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: [
-        "src/components/links/link/Link.svelte",
         "src/components/ads/ad/Ad.svelte",
         "src/components/buttons/button/Button.svelte",
         "src/components/buttons/iconButton/IconButton.svelte",
@@ -14,6 +13,7 @@ export default defineConfig({
         "src/components/buttons/steadyButton/SteadyButton.svelte",
         "src/components/cards/card/Card.svelte",
         "src/components/cards/noticeCard/NoticeCard.svelte",
+        "src/components/links/link/Link.svelte",
         "src/components/map/markerPin/MarkerPin.svelte",
         "src/components/widgets/shareButtons/ShareButtons.svelte",
         "src/components/widgets/socialButtons/SocialButtons.svelte",
