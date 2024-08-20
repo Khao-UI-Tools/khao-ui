@@ -31,11 +31,11 @@ Or you can copy the files into another folder which is managed by your build too
 ```html
 <link
   rel="stylesheet"
-  href="node_modules/@der-reiskoch/khao-ui/dist/components/css/index-vx.x.x.css"
+  href="node_modules/@der-reiskoch/khao-ui/dist/css/khao-ui-vx.x.x.css"
 />
 <script
   type="module"
-  src="node_modules/@der-reiskoch/khao-ui/dist/components/js/index-vx.x.x.js"
+  src="node_modules/@der-reiskoch/khao-ui/dist/js/khao-ui-vx.x.x.js"
 ></script>
 ```
 
