@@ -4,7 +4,7 @@ import {
   buttonPriorities,
   buttonPriorityDefault,
 } from "../types/ButtonPriority";
-import { iconNames } from "../../../icons/IconName";
+import { iconNames } from "../../../icons/types/IconName";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {

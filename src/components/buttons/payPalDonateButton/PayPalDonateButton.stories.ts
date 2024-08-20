@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import PayPalDonateButton from "./PayPalDonateButton.svelte";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
   title: "Buttons/PayPalDonateButton",
   component: "khao-button-pay-pal-donate",

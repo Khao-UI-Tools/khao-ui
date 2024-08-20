@@ -1,19 +1,19 @@
 import { Meta } from "@storybook/blocks";
-import Icon from "../icons/Icon.svelte";
-import { iconNames } from "../icons/IconName";
+import Icon from "./Icon.svelte";
+import { iconNames } from "./types/IconName";
 
-<Meta title="Icons" />
+<Meta title="Icons/Icon Library" />
 
-# Icons
+# Icon Library
 
-Icons are used to represent actions, objects, or concepts. Most of them are base on [Material Icons](https://fonts.google.com/icons).
+Icons are used to represent actions, objects, or concepts. Most of come from [Material Icons](https://fonts.google.com/icons) and [Icomoon.io](https://icomoon.io/)
 
 <div className="sb-container">
   <div className='container'>
   
     {iconNames.map(iconName=>(
         <div className="icon-item">
-            <khao-icon iconName={iconName} />
+            <khao-icon iconName={iconName} sizeFactor="15" />
             {iconName}
         </div>
     ))}
@@ -40,14 +40,9 @@ Icons are used to represent actions, objects, or concepts. Most of them are base
 
     .icon-item {
         display:block;
-        justify-content: flex-start;
         width: 75px;
         height: 75px;
         text-align: center;
     }
-
-   
-  
-  
   `}
 </style>{" "}

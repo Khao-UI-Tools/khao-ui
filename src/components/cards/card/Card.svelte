@@ -3,17 +3,30 @@
 <script lang="ts">
     import { type CardFilling, cardFillingDefault } from "../types/CardFilling";
     import { type CardType, cardTypeDefault } from "../types/CardType";
+    import Icon from "../../../icons/Icon.svelte";
+    import { type IconName } from "../../../icons/types/IconName";
 
     export let filling: CardFilling = cardFillingDefault;
     export let type: CardType = cardTypeDefault;
+    export let title: string = "";
+    export let iconName: IconName | "" = "";
 </script>
 
 <div class="card card-{filling} card-type-{type}">
-    <slot>
-        <p style="text-align: center">Here comes the content of the card</p>
+    {#if title !== ""}  
+        <div class="title">{ title }</div>
+    {/if}
 
-        <p style="text-align: center">This might be any element or component</p>
-    </slot>
+    <div class="content">
+        {#if iconName !== ""}    
+            <div class="icon-wrapper">
+                <Icon {iconName} sizeFactor="7" />
+            </div>
+        {/if}
+        <slot>
+            Card content comes here. if it's longer it breaks the next line but not the container, because that would look rather ugly. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </slot>
+    </div>
 </div>
 
 
@@ -28,9 +41,15 @@
         --khao-card-elevation-level: 1;
         --khao-card-elevation-level-shadow: none;
         --khao-card-outline: none;
+
+        --khao-card-title-space: var(--khao-sys-size-regular-2);
+
+        --khao-card-icon-size: var(--khao-sys-size-regular-7);
+        --khao-card-icon-space: var(--khao-sys-size-regular-2);
     }
 
     .card {
+        box-sizing: border-box;
         display: block;
         padding: var(--khao-card-top-space) var(--khao-card-trailing-space);
         margin: 0 auto 0 auto;
@@ -48,6 +67,24 @@
 
         background-color: var(--khao-card-container-color);
         color: var(--khao-card-text-color);
+    }
+
+
+    .title {
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-bottom: var(--khao-card-title-space);
+    }
+
+    .content {
+        line-height: var(--khao-card-icon-size);
+    }
+
+    .icon-wrapper {
+        float: left;
+        margin-right: var(--khao-card-icon-space);
+        width: var(--khao-card-icon-size);
+        height: var(--khao-card-icon-size);
     }
 
     .card-surface {

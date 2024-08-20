@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Button from "./Button.svelte";
-import { iconNames } from "../../../icons/IconName";
+import { iconNames } from "../../../icons/types/IconName";
 import {
   buttonPriorities,
   buttonPriorityDefault,
 } from "../types/ButtonPriority";
 import { buttonSizes, buttonSizeDefault } from "../types/ButtonSize";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
   title: "Buttons/Button",
   component: "khao-button",
