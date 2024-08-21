@@ -16,7 +16,7 @@
 
 </script>
 
-<a class="link {iconName !== "" ? 'link-with-icon'  : ''} icon-location-{iconLocation}" href={href} title={title} rel={rel} target={target}>
+<a class="link {iconName !== "" ? (iconLocation === 'after') ? 'link-with-icon-after' : 'link-with-icon-before': ''}" href={href} title={title} rel={rel} target={target}>
     <slot>Empty Link</slot>
     {#if iconName !== ""}
     <span class="icon" aria-hidden="true">
@@ -42,15 +42,20 @@
         vertical-align: baseline;
     }
 
-    .link-with-icon {
+    .link-with-icon-after {
         display: inline-flex;
         flex-direction: row;
         align-items: center;
         gap: var(--khao-link-icon-space);
+        margin-right: var(--khao-link-space-to-next-char);
     }
 
-    .icon-location-before {
+    .link-with-icon-before {
+        display: inline-flex;
         flex-direction: row-reverse;
+        align-items: center;
+        gap: var(--khao-link-icon-space);
+        margin-left: var(--khao-link-space-to-next-char);
     }
 
     .link:hover {
@@ -62,7 +67,7 @@
     }
 
     .icon {
-        margin: 0 var(--khao-link-space-to-next-char) var(--khao-sys-size-regular-1) 0;
+        margin-bottom: var(--khao-sys-size-regular-1);
     }
 
 

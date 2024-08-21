@@ -5,8 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1]
+
+- fixed default `iconLocation` behavior
+
 ## [1.2.0]
 
+- !changed `khao-link` interface: label now has to given as child element.
 - improved `khao-link` display
 - added `iconLocation` prop to `khao-link`
 
