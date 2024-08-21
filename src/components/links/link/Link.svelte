@@ -40,6 +40,7 @@
         text-underline-offset: var(--khao-sys-size-regular-1);
         cursor: pointer;
         vertical-align: baseline;
+        margin-right: var(--khao-link-space-to-next-char);
     }
 
     .link-with-icon-after {
@@ -47,7 +48,6 @@
         flex-direction: row;
         align-items: center;
         gap: var(--khao-link-icon-space);
-        margin-right: var(--khao-link-space-to-next-char);
     }
 
     .link-with-icon-before {
@@ -55,6 +55,7 @@
         flex-direction: row-reverse;
         align-items: center;
         gap: var(--khao-link-icon-space);
+        margin-right: 0;
         margin-left: var(--khao-link-space-to-next-char);
     }
 
