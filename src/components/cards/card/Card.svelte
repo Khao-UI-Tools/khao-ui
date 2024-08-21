@@ -10,9 +10,11 @@
     export let type: CardType = cardTypeDefault;
     export let title: string = "";
     export let iconName: IconName | "" = "";
+
+    export let ariaLabel: string = "";
 </script>
 
-<div class="card card-{filling} card-type-{type}">
+<div class="card card-{filling} card-type-{type}" aria-label={ariaLabel}>
     {#if title !== ""}  
         <div class="title">{ title }</div>
     {/if}

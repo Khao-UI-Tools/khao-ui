@@ -1,4 +1,8 @@
 export const iconNames = [
+  "arrow-down",
+  "arrow-left",
+  "arrow-right",
+  "arrow-up",
   "cart",
   "close",
   "copy",
@@ -11,6 +15,7 @@ export const iconNames = [
   "newsletter",
   "notification",
   "pinterest",
+  "play",
   "printer",
   "reiskoch-logo",
   "restaurant",

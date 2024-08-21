@@ -9,6 +9,7 @@
     
     let cardFilling:CardFilling = "primary";
     let iconName: IconName = "info"
+    
 
     onMount( () => {
 		
@@ -33,9 +34,10 @@
 
     export let type: NoticeType = noticeTypeDefault;
     export let title: string = "";
+    export let ariaLabel: string = "";
   
 </script>
 
-<Card filling={cardFilling} title={title} iconName={iconName} type="elevated">
+<Card filling={cardFilling} title={title} iconName={iconName} type="elevated" ariaLabel={ariaLabel}>
     <slot>Notice Card is a specialized semantic card with a reduced set of fillings and icons</slot>
 </Card>
