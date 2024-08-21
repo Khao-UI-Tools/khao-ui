@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Link from "./Link.svelte";
 import { iconNames } from "../../../icons/types/IconName";
+import { iconLocations, iconLocationDefault } from "./LinkIconLocation";
 
 const meta = {
   title: "Links/Link",
@@ -10,6 +11,11 @@ const meta = {
     iconName: {
       control: { type: "select" },
       options: iconNames,
+      default: "",
+    },
+    iconLocation: {
+      control: { type: "select" },
+      options: iconLocations,
     },
     label: {
       control: "text",
@@ -34,6 +40,17 @@ const meta = {
   },
 } satisfies Meta<Link>;
 
+interface renderProps {
+  label: String;
+  href: String;
+  iconName: string;
+  iconLocation: string;
+}
+
+const render = (props: renderProps): string => {
+  return `<khao-link href="${props.href}" iconName="${props.iconName || ""}" iconLocation="${props.iconLocation || iconLocationDefault}">${props.label}</khao-link>`;
+};
+
 export default meta;
 type Story = StoryObj<typeof meta>;
 
@@ -42,6 +59,7 @@ export const Example: Story = {
     label: "A humble link",
     href: "/",
   },
+  render: render,
 };
 
 export const ExternalLink: Story = {
@@ -50,6 +68,7 @@ export const ExternalLink: Story = {
     href: "/",
     iconName: "external-link",
   },
+  render: render,
 };
 
 export const AffiliateLink: Story = {
@@ -58,6 +77,7 @@ export const AffiliateLink: Story = {
     href: "/",
     iconName: "cart",
   },
+  render: render,
 };
 
 export const SpeakerLink: Story = {
@@ -66,6 +86,7 @@ export const SpeakerLink: Story = {
     href: "/",
     iconName: "speaker",
   },
+  render: render,
 };
 
 export const HelpLink: Story = {
@@ -73,7 +94,9 @@ export const HelpLink: Story = {
     label: "Help Link",
     href: "/",
     iconName: "help",
+    iconLocation: "before",
   },
+  render: render,
 };
 
 export const ReiskochLink: Story = {
@@ -82,6 +105,7 @@ export const ReiskochLink: Story = {
     href: "/",
     iconName: "reiskoch-logo",
   },
+  render: render,
 };
 
 export const TranslationLink: Story = {
@@ -90,9 +114,10 @@ export const TranslationLink: Story = {
     href: "/",
     iconName: "translation",
   },
+  render: render,
 };
 
 export const LinksInsideText: Story = {
   render: () =>
-    `<p style="line-height: 1.5rem;">Lorem <khao-link label="ipsum"></khao-link> dolor sit amet, consectetuer <khao-link label="test" iconName="speaker"></khao-link> adipiscing elit. Aenean commodo (<khao-link label="test" iconName="external-link"></khao-link>) eu, pretium quis.Stet clita <khao-link label="test" iconName="cart"></khao-link> kasd gubergren, no sea takimata sanctus est Lorem <khao-link label="ipsum" iconName="help"></khao-link> dolor sit amet.</p>`,
+    `<p style="line-height: 1.6rem; width: 400px">Lorem <khao-link>ipsum</khao-link> dolor sit amet, consectetuer <khao-link iconName="help">textus longus extremus</khao-link> adipiscing elit. Aenean commodo (<khao-link iconName="speaker">Speakus Linkus</khao-link>) eu, pretium quis.Stet clita <khao-link iconName="cart">Merch Gigantus</khao-link> kasd gubergren, no sea takimata melaton <khao-link>ipsum langos textus in linkus breakus nextus linos</khao-link> sanctus est Lorem <khao-link iconName="reiskoch-logo">ipsum fragus dummus questus</khao-link> dolor sit amet.</p>`,
 };

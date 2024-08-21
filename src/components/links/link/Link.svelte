@@ -1,43 +1,61 @@
 <svelte:options customElement="khao-link" />
 
 <script lang="ts">
-   import Icon from "../../../icons/Icon.svelte";
-   import { type IconName } from "../../../icons/types/IconName";
+    import Icon from "../../../icons/Icon.svelte";
+    import { type IconName } from "../../../icons/types/IconName";
+    import { type IconLocation, iconLocationDefault } from "./LinkIconLocation";
 
-   export let label: string;
-   export let title: string = label;
+   
+    export let title: string = "";
 
-  export let href: string | null = null;
-  export let rel: string | null = null;
-  export let target: string | null = null;
-  export let iconName: IconName | "" = "";
+    export let href: string | null = null;
+    export let rel: string | null = null;
+    export let target: string | null = null;
+    export let iconName: IconName | "" = "";
+    export let iconLocation: IconLocation = iconLocationDefault;
 
 </script>
 
-<a class="link" href={href} title={title} rel={rel} target={target}>
-    <span class="label">{label}</span>
+<a class="link {iconName !== "" ? (iconLocation === 'after') ? 'link-with-icon-after' : 'link-with-icon-before': ''}" href={href} title={title} rel={rel} target={target}>
+    <slot>Empty Link</slot>
     {#if iconName !== ""}
-    <Icon iconName={iconName} sizeFactor="4" opacity="80%"/>
+    <span class="icon" aria-hidden="true">
+        <Icon iconName={iconName} sizeFactor="4" opacity="80%"/>
+    </span>
     {/if}
 </a>
-
 
 <style>
 
     :host {
         --khao-link-icon-size: var(--khao-sys-size-regular-4);
         --khao-link-icon-space: var(--khao-sys-size-regular-1);
+        --khao-link-space-to-next-char: 0.2rem;
     }
 
-
     .link {
-        display: inline-flex;
         color: currentColor;
+        word-wrap: break-word;
         text-decoration: underline;
         text-underline-offset: var(--khao-sys-size-regular-1);
-        gap: var(--khao-link-icon-space);
         cursor: pointer;
+        vertical-align: baseline;
+    }
+
+    .link-with-icon-after {
+        display: inline-flex;
+        flex-direction: row;
         align-items: center;
+        gap: var(--khao-link-icon-space);
+        margin-right: var(--khao-link-space-to-next-char);
+    }
+
+    .link-with-icon-before {
+        display: inline-flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: var(--khao-link-icon-space);
+        margin-left: var(--khao-link-space-to-next-char);
     }
 
     .link:hover {
@@ -48,10 +66,8 @@
         text-decoration-thickness: 2px;
     }
 
-    .label {
-        display: inline-block;
-        vertical-align: center;
-        line-height: var(--khao-link-icon-size);
+    .icon {
+        margin-bottom: var(--khao-sys-size-regular-1);
     }
 
 
