@@ -7,6 +7,7 @@
     const socialButtonsTarget = '_blank';
     const socialButtonsRel = 'noopener noreferrer';
 
+    export let newsletterTeaser: string = "true";
     export let newsletterTitle: string = "";
     export let newsletterUrl: string = "";
 
@@ -26,6 +27,7 @@
 
 
 <div class="container">
+    <span class="{newsletterTeaser === "true" ? 'teaser' : ''}">
     <IconButton
         iconName="newsletter"
         priority={socialButtonsPriority}
@@ -35,6 +37,7 @@
         target={socialButtonsTarget}
         rel={socialButtonsRel}
     />
+    </span>
 
     <IconButton
         iconName="facebook"
@@ -87,6 +90,23 @@
         max-width: 350px;
         margin: 0 auto;
         gap: var(--khao-sys-size-regular-2);
+    }
+
+
+    @keyframes blinker {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.2;
+    }
+}
+    .teaser {
+        animation-name: blinker;
+        animation-duration: 0.6s;
+        animation-iteration-count: 4;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
     }
 
 </style>
