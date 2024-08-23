@@ -7,8 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.3.0]
 
+- added search to `khao-icon`
+- changed help icon in `khao-icon`
 - added `opensNewWindow` attribute to `khao-link`
-- ommited `khao-card-notice`, you can use `khao-card` to layout card accordingly
+- (!) ommited `khao-card-notice`, you can use `khao-card` to layout card accordingly
 
 ## [1.2.3]
 
@@ -27,7 +29,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.2.0]
 
-- !changed `khao-link` interface: label now has to given as child element.
+- (!) changed `khao-link` interface: label now has to given as child element.
 - improved `khao-link` display
 - added `iconLocation` prop to `khao-link`
 

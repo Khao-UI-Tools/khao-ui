@@ -20,6 +20,7 @@ export const iconNames = [
   "reiskoch-logo",
   "restaurant",
   "rss",
+  "search",
   "speaker",
   "translation",
 ];
