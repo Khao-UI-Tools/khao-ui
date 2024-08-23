@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.3.0]
 
+- added `opensNewWindow` attribute to `khao-link`
 - ommited `khao-card-notice`, you can use `khao-card` to layout card accordingly
 
 ## [1.2.3]

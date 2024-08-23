@@ -37,6 +37,10 @@ const meta = {
       control: "text",
       type: "string",
     },
+    opensNewWindow: {
+      control: "text",
+      type: "string",
+    },
   },
 } satisfies Meta<Link>;
 
@@ -45,10 +49,11 @@ interface renderProps {
   href: String;
   iconName: string;
   iconLocation: string;
+  opensNewWindow: string;
 }
 
 const render = (props: renderProps): string => {
-  return `<khao-link href="${props.href}" iconName="${props.iconName || ""}" iconLocation="${props.iconLocation || iconLocationDefault}">${props.label}</khao-link>`;
+  return `<khao-link href="${props.href}" opensNewWindow=${props.opensNewWindow} iconName="${props.iconName || ""}" iconLocation="${props.iconLocation || iconLocationDefault}">${props.label}</khao-link>`;
 };
 
 export default meta;
@@ -85,6 +90,7 @@ export const SpeakerLink: Story = {
     label: "Clickthai Link",
     href: "/",
     iconName: "speaker",
+    opensNewWindow: "true",
   },
   render: render,
 };
@@ -95,6 +101,7 @@ export const HelpLink: Story = {
     href: "/",
     iconName: "help",
     iconLocation: "before",
+    opensNewWindow: "true",
   },
   render: render,
 };
