@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.4]
+
+- added meta-icons to `khao-icon`
+
+## [1.3.3]
+
+- fixed instagram url in `khao-social-buttons`
+
+## [1.3.2]
+
+- fixed newsletter link and rss link in `khao-social-buttons`
+
+## [1.3.1]
+
+- added export for `khao-social-buttons`
+- unified utils methods
+
 ## [1.3.0]
 
 - added `newsletterTeaser` attribute to `khao-social-buttons`
@@ -88,6 +105,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [0.0.12]
 
+- added `khao-social-buttons`
 - added size attribute to button
 
 ## [0.0.11]
@@ -98,7 +116,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [0.0.10]
 
-- added `khao-social-buttons`
 - added `khao-icon-button` component
 - updated `khao-malet` to v0.0.7
 
