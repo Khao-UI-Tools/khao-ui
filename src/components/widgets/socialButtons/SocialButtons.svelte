@@ -15,7 +15,7 @@
     export let facebookUrl: string = "";
 
     export let instagramTitle: string = "";
-    export let inatagramUrl: string = "";
+    export let instagramUrl: string = "";
 
     export let pinterestTitle: string = "";
     export let pinterestUrl: string = "";
@@ -34,8 +34,7 @@
         customHoverColor="#9acd32"
         title={newsletterTitle}
         href={newsletterUrl}
-        target={socialButtonsTarget}
-        rel={socialButtonsRel}
+        target="_self"
     />
     </span>
 
@@ -54,7 +53,7 @@
         priority={socialButtonsPriority}
         customHoverColor="#e4405f"
         title={instagramTitle}
-        href={inatagramUrl}
+        href={instagramUrl}
         target={socialButtonsTarget}
         rel={socialButtonsRel}
     />
@@ -75,8 +74,7 @@
         customHoverColor="#ff9900"
         title={rssTitle}
         href={rssUrl}
-        target={socialButtonsTarget}
-        rel={socialButtonsRel}
+        target="_self"
     />
 </div>
 

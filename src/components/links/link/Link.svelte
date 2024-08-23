@@ -4,7 +4,7 @@
     import Icon from "../../../icons/Icon.svelte";
     import { type IconName } from "../../../icons/types/IconName";
     import { type IconLocation, iconLocationDefault } from "./LinkIconLocation";
-    import openInNewWindow from "./utils/openInNewWindow";
+    import openInNewWindow from "../../../utils/openInNewWindow";
 
     const onClick = (event: MouseEvent) => {
         if (href !== "" && opensNewWindow === "true") {

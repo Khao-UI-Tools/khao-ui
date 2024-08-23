@@ -2,7 +2,7 @@
 
 <script lang="ts">
   import Button from "../../buttons/button/Button.svelte";
-  import openInNewWindow from "../../buttons/utils/openInNewWindow";
+  import openInNewWindow from "../../../utils/openInNewWindow";
 
   function isAbleToPrint(): boolean {
     return window.print !== undefined;
