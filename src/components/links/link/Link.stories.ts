@@ -100,7 +100,6 @@ export const HelpLink: Story = {
     label: "Help Link",
     href: "/",
     iconName: "help",
-    iconLocation: "before",
     opensNewWindow: "true",
   },
   render: render,
@@ -120,6 +119,28 @@ export const TranslationLink: Story = {
     label: "Translation Link",
     href: "/",
     iconName: "translation",
+  },
+  render: render,
+};
+
+
+export const BackLink: Story = {
+  args: {
+    label: "Back",
+    href: "/",
+    iconName: "navigate-back",
+    iconLocation: "before",
+    opensNewWindow: "true",
+  },
+  render: render,
+};
+
+export const ForwardLink: Story = {
+  args: {
+    label: "Forward",
+    href: "/",
+    iconName: "navigate-forward",
+    opensNewWindow: "true",
   },
   render: render,
 };

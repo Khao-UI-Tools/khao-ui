@@ -134,6 +134,18 @@
   </symbol>
 {/if}
 
+{#if iconName === "navigate-back"}
+  <symbol id="khao-icon-navigate-back" viewBox="0 -960 960 960">
+      <path d="M 933.9 -215 L 494.09 -498.533 L 933.9 -782.065 L 933.9 -215 Z M 451.671 -215 L 11.861 -498.533 L 451.671 -782.065 L 451.671 -215 Z"/>
+  </symbol>
+{/if}  
+
+{#if iconName === "navigate-forward"}
+  <symbol id="khao-icon-navigate-forward" viewBox="0 -960 960 960">
+    <path d="M 945.815 -781.279 L 506.005 -497.746 L 945.815 -214.214 L 945.815 -781.279 Z M 463.586 -781.279 L 23.776 -497.746 L 463.586 -214.214 L 463.586 -781.279 Z" style="transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(-1, 0, 0, -1, 0.000022, -0.000032)"/>
+  </symbol>
+{/if}  
+
 {#if iconName === "notification"}
   <symbol id="khao-icon-notification" viewBox="0 0 48 48">
     <path

@@ -12,6 +12,8 @@ export const iconNames = [
   "info",
   "instagram",
   "location",
+  "navigate-back",
+  "navigate-forward",
   "newsletter",
   "notification",
   "pinterest",
