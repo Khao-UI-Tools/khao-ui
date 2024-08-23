@@ -7,6 +7,7 @@ const meta = {
   component: "khao-social-buttons",
   tags: ["autodocs"],
   argTypes: {
+    newsletterTeaser: { control: "text", type: "string" },
     newsletterTitle: { control: "text", type: "string" },
     newsletterUrl: { control: "text", type: "string" },
     facebookTitle: { control: "text", type: "string" },
