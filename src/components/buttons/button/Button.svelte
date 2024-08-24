@@ -1,7 +1,10 @@
 <svelte:options customElement="khao-button" />
 
 <script lang="ts">
-  import { type ButtonPriority, buttonPriorityDefault } from "../types/ButtonPriority";
+  import {
+    type ButtonPriority,
+    buttonPriorityDefault,
+  } from "../types/ButtonPriority";
   import { type ButtonSize, buttonSizeDefault } from "../types/ButtonSize";
   import Icon from "../../../icons/Icon.svelte";
   import { type IconName } from "../../../icons/types/IconName";
@@ -71,9 +74,9 @@
     --khao-button-trailing-space: var(--khao-sys-size-regular-5);
 
     --khao-button-icon-leading-space: var(--khao-sys-size-regular-2);
-    
+
     --khao-button-height-compact: var(--khao-sys-size-regular-8);
-    --khao-button-width-compact: 120px;
+    --khao-button-width-compact: 80px;
 
     --khao-button-height-medium: var(--khao-sys-size-regular-10);
     --khao-button-width-medium: 150px;
@@ -158,7 +161,6 @@
     height: var(--khao-button-height-large);
   }
 
-
   .button-primary {
     --khao-button-container-color: var(--khao-sys-color-primary);
     --khao-button-label-text-color: var(--khao-sys-color-on-primary);
@@ -176,6 +178,4 @@
     --khao-button-label-text-color: var(--khao-sys-color-on-tertiary);
     --khao-button-state-layer-color: var(--khao-sys-color-on-tertiary);
   }
-
- 
 </style>
