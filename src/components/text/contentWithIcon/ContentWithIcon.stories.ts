@@ -87,3 +87,13 @@ export const LangExample: Story = {
   },
   render: render,
 };
+
+export const MealExample: Story = {
+  args: {
+    iconName: "meta-meal",
+    iconSizeFactor: "5",
+    iconOpacity: "50%",
+    slot: `<span>ยำหมูย่าง</span>`,
+  },
+  render: render,
+};
