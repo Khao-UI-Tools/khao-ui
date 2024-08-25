@@ -5,10 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.9]
+
+- changed help icon in `khao-icon` (again)
+
+## [1.3.8]
+
+- changed help icon in `khao-icon` (again)
+
+## [1.3.7]
+
+- introduced `priority` to `khao-link`
+
+## [1.3.6]
+
+- added `content-with-icon` component.
+
 ## [1.3.5]
 
 - reducted width of `khao-button` for size `compact`
-
 
 ## [1.3.4]
 
