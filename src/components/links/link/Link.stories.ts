@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Link from "./Link.svelte";
 import { iconNames } from "../../../icons/types/IconName";
 import { iconLocations, iconLocationDefault } from "./LinkIconLocation";
+import { linkPriorities, linkPriorityDefault } from "./types/LinkPriority";
 
 const meta = {
   title: "Links/Link",
@@ -16,6 +17,11 @@ const meta = {
     iconLocation: {
       control: { type: "select" },
       options: iconLocations,
+    },
+    priority: {
+      control: { type: "select" },
+      options: linkPriorities,
+      default: linkPriorityDefault,
     },
     label: {
       control: "text",
@@ -45,15 +51,16 @@ const meta = {
 } satisfies Meta<Link>;
 
 interface renderProps {
-  label: String;
   href: String;
-  iconName: string;
   iconLocation: string;
+  iconName: string;
+  label: String;
   opensNewWindow: string;
+  priority: string;
 }
 
 const render = (props: renderProps): string => {
-  return `<khao-link href="${props.href}" opensNewWindow=${props.opensNewWindow} iconName="${props.iconName || ""}" iconLocation="${props.iconLocation || iconLocationDefault}">${props.label}</khao-link>`;
+  return `<khao-link href="${props.href}" opensNewWindow=${props.opensNewWindow} iconName="${props.iconName || ""}" iconLocation="${props.iconLocation || iconLocationDefault}" priority="${props.priority}">${props.label}</khao-link>`;
 };
 
 export default meta;
@@ -61,8 +68,18 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    label: "A humble link",
+    label: "Primary Link",
     href: "/",
+    priority: "primary",
+  },
+  render: render,
+};
+
+export const SecondaryLink: Story = {
+  args: {
+    label: "Secondary Link",
+    href: "/",
+    priority: "secondary",
   },
   render: render,
 };
@@ -122,7 +139,6 @@ export const TranslationLink: Story = {
   },
   render: render,
 };
-
 
 export const BackLink: Story = {
   args: {
