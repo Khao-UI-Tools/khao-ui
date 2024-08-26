@@ -31,6 +31,7 @@ export const iconNames = [
   "search",
   "speaker",
   "translation",
+  "youtube",
 ];
 
 export type IconName = (typeof iconNames)[number];

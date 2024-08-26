@@ -7,7 +7,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.4.2]
 
-- added `khao-chip` componenent
+- added cutsom proprtery `--khao-card-title-size`
+- added `khao-chip` component
+- upgraded to `khao-maletv0.0.12`
+- changed back `help` icon in `khao-icon` (again)
+- added `youtube` icon to `khao-icon`
 
 ## [1.4.1]
 
