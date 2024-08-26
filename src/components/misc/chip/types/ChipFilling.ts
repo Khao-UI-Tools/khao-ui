@@ -1,6 +1,4 @@
 export const chipFillings = [
-  "surface",
-  "surface-dark",
   "primary",
   "secondary",
   "tertiary",

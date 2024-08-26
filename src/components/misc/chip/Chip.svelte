@@ -33,6 +33,18 @@
     --khao-chip-outline: none;
 
     --khao-chip-font-size: var(--khao-sys-size-typography-6);
+
+    --khao-chip-hover-state-layer-opacity: var(
+      --khao-sys-state-hover-state-layer-opacity
+    );
+
+    --khao-chip-focus-state-layer-opacity: var(
+      --khao-sys-state-focus-state-layer-opacity
+    );
+
+    --khao-chip-pressed-state-layer-opacity: var(
+      --khao-sys-state-pressed-state-layer-opacity
+    );
   }
 
   .chip {
@@ -53,41 +65,72 @@
 
     background-color: var(--khao-chip-container-color);
     color: var(--khao-chip-text-color);
-  }
 
-  .chip-surface {
-    --khao-chip-container-color: var(--khao-sys-color-surface);
-    --khao-chip-text-color: var(--khao-sys-color-on-surface);
-  }
+    transition:
+      background-color 0.1s,
+      color 0.2s;
 
-  .chip-surface-dark {
-    --khao-chip-container-color: var(--khao-sys-color-surface-variantd30);
-    --khao-chip-text-color: var(--khao-sys-color-on-surface-variantd30);
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--khao-chip-container-color),
+        var(--khao-chip-state-layer-color)
+          var(--khao-chip-hover-state-layer-opacity)
+      );
+    }
+
+    &:focus-visible {
+      background-color: color-mix(
+        in srgb,
+        var(--khao-chip-container-color),
+        var(--khao-chip-state-layer-color)
+          var(--khao-chip-focus-state-layer-opacity)
+      );
+    }
+
+    &:active {
+      background-color: color-mix(
+        in srgb,
+        var(--khao-chip-container-color),
+        var(--khao-chip-state-layer-color)
+          var(--khao-chip-pressed-state-layer-opacity)
+      );
+    }
   }
 
   .chip-primary {
     --khao-chip-container-color: var(--khao-sys-color-primary);
+    --khao-chip-outline: 1px solid var(--khao-sys-color-primary);
     --khao-chip-text-color: var(--khao-sys-color-on-primary);
+    --khao-chip-state-layer-color: var(--khao-sys-color-on-primary);
   }
 
   .chip-secondary {
     --khao-chip-container-color: var(--khao-sys-color-secondary);
+    --khao-chip-outline: 1px solid var(--khao-sys-color-secondary);
     --khao-chip-text-color: var(--khao-sys-color-on-secondary);
+    --khao-chip-state-layer-color: var(--khao-sys-color-on-secondary);
   }
 
   .chip-tertiary {
     --khao-chip-container-color: var(--khao-sys-color-tertiary);
+    --khao-chip-outline: 1px solid var(--khao-sys-color-tertiary);
     --khao-chip-text-color: var(--khao-sys-color-on-tertiary);
+    --khao-chip-state-layer-color: var(--khao-sys-color-on-tertiary);
   }
 
   .chip-success {
     --khao-chip-container-color: var(--khao-sys-static-color-green);
+    --khao-chip-outline: 1px solid var(--khao-sys-static-color-green);
     --khao-chip-text-color: var(--khao-sys-static-color-on-green);
+    --khao-chip-state-layer-color: var(--khao-sys-static-color-on-green);
   }
 
   .chip-error {
     --khao-chip-container-color: var(--khao-sys-static-color-red);
+    --khao-chip-outline: 1px solid var(--khao-sys-static-color-red);
     --khao-chip-text-color: var(--khao-sys-static-color-on-red);
+    --khao-chip-state-layer-color: var(--khao-sys-static-color-on-red);
   }
 
   .chip-type-filled {
@@ -95,6 +138,27 @@
   }
 
   .chip-type-outlined {
+    --khao-chip-container-color: var(--khao-sys-color-surface);
+    --khao-chip-text-color: var(--khao-sys-color-on-surface);
     --khao-chip-outline: 1px solid var(--khao-sys-color-neutral30);
+
+    &:hover {
+      --khao-chip-container-color: var(--khao-sys-static-color-green);
+      --khao-chip-text-color: var(--khao-sys-static-color-on-green);
+      --khao-chip-state-layer-color: var(--khao-sys-color-surface);
+    }
+
+    &:focus-visible {
+      --khao-chip-container-color: var(--khao-sys-static-color-green);
+      --khao-chip-text-color: var(--khao-sys-static-color-on-green);
+      --khao-chip-state-layer-color: var(--khao-sys-color-surface);
+      --khao-chip-outline: 2px solid var(--khao-sys-color-neutral30);
+    }
+
+    &:active {
+      --khao-chip-container-color: var(--khao-sys-static-color-green);
+      --khao-chip-text-color: var(--khao-sys-static-color-on-green);
+      --khao-chip-state-layer-color: var(--khao-sys-color-surface);
+    }
   }
 </style>
