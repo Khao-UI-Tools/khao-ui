@@ -97,3 +97,14 @@ export const MealExample: Story = {
   },
   render: render,
 };
+
+export const RegionExample: Story = {
+  args: {
+    iconName: "meta-region",
+    iconSizeFactor: "5",
+    iconOpacity: "50%",
+    slot: `<span>Isaan</span>`,
+  },
+  render: render,
+};
+
