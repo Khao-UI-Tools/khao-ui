@@ -11,7 +11,7 @@ import {
 } from "../../../icons/types/IconOpacity";
 
 const meta = {
-  title: "Text/Content With Icon",
+  title: "Misc/Content With Icon",
   component: "khao-content-with-icon",
   tags: ["autodocs"],
   argTypes: {
