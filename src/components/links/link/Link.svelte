@@ -6,6 +6,7 @@
   import { type IconLocation, iconLocationDefault } from "./LinkIconLocation";
   import openInNewWindow from "../../../utils/openInNewWindow";
   import { linkPriorityDefault, type LinkPriority } from "./types/LinkPriority";
+  import type { IconOpacity } from "../../../icons/types/IconOpacity";
 
   const onClick = (event: MouseEvent) => {
     if (href !== "" && opensNewWindow === "true") {
@@ -21,6 +22,7 @@
   export let target: string | null = null;
   export let iconName: IconName | "" = "";
   export let iconLocation: IconLocation = iconLocationDefault;
+  export let iconOpacity: IconOpacity = "80%";
   export let opensNewWindow: string = "false";
   export let priority: LinkPriority = linkPriorityDefault;
 </script>
@@ -42,7 +44,7 @@
   <slot>Empty Link</slot>
   {#if iconName !== ""}
     <span class="icon" aria-hidden="true">
-      <Icon {iconName} sizeFactor="4" opacity="80%" />
+      <Icon {iconName} sizeFactor="4" opacity={iconOpacity} />
     </span>
   {/if}
 </a>
