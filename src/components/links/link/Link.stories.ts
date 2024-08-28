@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Link from "./Link.svelte";
 import { iconNames } from "../../../icons/types/IconName";
-import { iconLocations, iconLocationDefault } from "./LinkIconLocation";
+import { iconLocations, iconLocationDefault } from "./types/LinkIconLocation";
 import { linkPriorities, linkPriorityDefault } from "./types/LinkPriority";
 import {
   iconOpacities,
@@ -180,5 +180,11 @@ export const ForwardLink: Story = {
 
 export const LinksInsideText: Story = {
   render: () =>
-    `<p style="line-height: 1.6rem; width: 400px">Lorem <khao-link>ipsum</khao-link> dolor sit amet, consectetuer <khao-link iconName="help">textus longus extremus</khao-link> adipiscing elit. Aenean commodo (<khao-link iconName="speaker">Speakus Linkus</khao-link>) eu, pretium quis.Stet clita <khao-link iconName="cart">Merch Gigantus</khao-link> kasd gubergren, no sea takimata melaton <khao-link>ipsum langos textus in linkus breakus nextus linos</khao-link> sanctus est Lorem <khao-link iconName="reiskoch-logo">ipsum fragus dummus questus</khao-link> dolor sit amet.</p>`,
+    `<p style="line-height: 1.6rem; width: 400px">
+        Lorem <khao-link>ipsum</khao-link> dolor sit amet, consectetuer <khao-link iconName="help">textus longus extremus</khao-link> adipiscing elit. 
+        Aenean commodo (<khao-link iconName="speaker">Speakus Linkus</khao-link>) eu bla elissum <khao-link>Linkus befori kommatum</khao-link>, pretium quis.
+        Stet clita <khao-link iconName="cart">Merch Gigantus</khao-link> kasd gubergren, no sea takimata melaton 
+        <khao-link>ipsum langos textus in linkus breakus nextus linos</khao-link> sanctus est Lorem <khao-link iconName="reiskoch-logo">ipsum fragus dummus questus</khao-link> 
+        dolor sit amet <khao-link>linkus avantus dotus</khao-link>.
+      </p>`,
 };
