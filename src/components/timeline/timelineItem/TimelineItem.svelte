@@ -10,18 +10,15 @@
     type TimelineItemSize,
   } from "../types/timelineItemSize";
 
-  let size: TimelineItemSize = timelineItemSizeDefault;
-
-  $: console.log("slots", $$slots.default);
-
   export let href: string = "";
   export let title: string = "";
   export let active: StringBoolean = "false";
+  export let size: TimelineItemSize = timelineItemSizeDefault;
 </script>
 
 <li class="item item-{size}">
   <a {href} {title} class="link {isTrue(active) ? 'link-active' : ''}">
-    <span><slot>Item</slot></span>
+    <slot>Item</slot>
   </a>
 </li>
 
@@ -54,9 +51,10 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: start;
+    justify-content: center;
     width: 100%;
     font-size: var(--khao-timeline-item-text-size);
+    border: 1px solid gold;
   }
 
   .item::before {
@@ -71,8 +69,13 @@
     transform: translate(-110%, -250%);
   }
 
+  .item-medium {
+    max-width: 20px;
+    height: 15px;
+  }
+
   .item-large {
-    width: 120px;
+    max-width: 120px;
     height: 15px;
   }
 
