@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.10]
+
+- `khao-infinte-scroll` can be triggered multiple times
+
+## [1.4.9]
+
+- `khao-infinte-scroll` trigggers lazy load when it becomes visible
+
+## [1.4.8]
+
+- `khao-infinte-scroll` component emits event `khao-infinite-scroll-loaded-more`
+
+## [1.4.7]
+
+- added `khao-chip` component
+- added `khao-infinte-scroll` component
+
+## [1.4.6]
+
+- added size to `khao-tab`
+- preload tabComponent in `khao-tabs-bar`
+
+## [1.4.5]
+
+- added `khao-tabs-bar` and `khao-tab`
+
 ## [1.4.4]
 
 - improved spacing of `khao-link`
@@ -16,7 +42,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [1.4.2]
 
 - added cutsom proprtery `--khao-card-title-size`
-- added `khao-chip` component
 - upgraded to `khao-maletv0.0.12`
 - changed back `help` icon in `khao-icon` (again)
 - added `youtube` icon to `khao-icon`

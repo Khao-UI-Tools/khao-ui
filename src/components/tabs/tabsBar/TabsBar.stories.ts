@@ -1,11 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import TabsBar from "./TabsBar.svelte";
-import Tab from "../tab/Tab.svelte";
-
-console.log(
-  "we have to do someting with tab to ensure it is loaded in here",
-  typeof Tab
-);
 
 const meta = {
   title: "Tabs/TabsBar",
@@ -20,7 +14,6 @@ type Story = StoryObj<typeof meta>;
 export const PaginationExample: Story = {
   render: () => {
     return `
-         <div style="width: 1000px;">
           <khao-tabs-bar>
             <khao-tab>1</khao-tab>
             <khao-tab>2</khao-tab>
@@ -36,7 +29,6 @@ export const PaginationExample: Story = {
             <khao-tab>12</khao-tab>
             <khao-tab>13</khao-tab>
           </khao-tabs-bar>
-          </div>
       `;
   },
 };

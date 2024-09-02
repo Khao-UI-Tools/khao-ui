@@ -2,67 +2,15 @@
 
 <script lang="ts">
   import { onMount } from "svelte";
+  import scrollActiveTabIntoView from "./utils/scrollActiveTabIntoView";
   import Tab from "../tab/Tab.svelte";
 
   let wrapper: HTMLElement;
   let bar: HTMLElement;
 
   onMount(() => {
-    scrollSelectedTimelineItemIntoView(wrapper);
+    scrollActiveTabIntoView(wrapper);
   });
-
-  var scrollSelectedTimelineItemIntoView = function (wrapper: HTMLElement) {
-    if (!!window.IntersectionObserver) {
-      const callback: IntersectionObserverCallback = function (
-        entries,
-        observer
-      ) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            doScroll();
-            observer.unobserve(entry.target);
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(callback, {
-        rootMargin: "0px 0px 420px 0px",
-      });
-
-      observer.observe(wrapper);
-    }
-  };
-
-  var doScroll = function () {
-    const selectedElement = wrapper.querySelector('[aria-selected="true"]');
-
-    const wrapperWidth = wrapper.clientWidth;
-
-    const tabs = bar.querySelector("slot")?.assignedElements();
-
-    tabs?.forEach((tab) => {
-      const tabElement = <HTMLElement>tab.shadowRoot?.childNodes[1];
-
-      if (tabElement.ariaSelected === "true") {
-        console.log(
-          "tab:",
-          tabElement.ariaSelected,
-          wrapperWidth,
-          tabElement.offsetLeft
-        );
-
-        if (tabElement.offsetLeft > wrapperWidth) {
-          console.log("greater");
-
-          tabElement.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "center",
-          });
-        }
-      }
-    });
-  };
 </script>
 
 <div class="wrapper" bind:this={wrapper}>
@@ -70,6 +18,10 @@
     <slot>bar</slot>
   </ul>
 </div>
+
+<template>
+  <Tab>Preload Tab</Tab>
+</template>
 
 <style>
   :host {

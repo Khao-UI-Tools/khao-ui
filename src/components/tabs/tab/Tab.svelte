@@ -5,14 +5,16 @@
     isTrue,
     type StringBoolean,
   } from "../../../common/types/StringBoolean";
+  import { tabSizeDefault, type TabSize } from "./types/TabSize";
 
   export let href: string = "";
   export let title: string = "";
   export let active: StringBoolean = "false";
+  export let size: TabSize = tabSizeDefault;
 </script>
 
 <li
-  class="tab {isTrue(active) ? 'tab-active' : ''}"
+  class="tab {isTrue(active) ? 'tab-active' : ''} tab-size-{size}"
   role="tab"
   aria-selected={isTrue(active) ? "true" : "false"}
 >
@@ -84,6 +86,21 @@
     border-bottom: 3px solid var(--khao-tab-border-color);
     margin-bottom: -3px;
     height: var(--khao-tab-active-height);
+  }
+
+  .tab-size-compact {
+    --khao-tab-leading-space: var(--khao-sys-size-regular-4);
+    --khao-tab-trailing-space: var(--khao-sys-size-regular-4);
+  }
+
+  .tab-size-medium {
+    --khao-tab-leading-space: var(--khao-sys-size-regular-6);
+    --khao-tab-trailing-space: var(--khao-sys-size-regular-6);
+  }
+
+  .tab-size-large {
+    --khao-tab-leading-space: var(--khao-sys-size-regular-8);
+    --khao-tab-trailing-space: var(--khao-sys-size-regular-8);
   }
 
   .link {
