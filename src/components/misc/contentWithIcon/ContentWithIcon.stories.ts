@@ -107,4 +107,3 @@ export const RegionExample: Story = {
   },
   render: render,
 };
-

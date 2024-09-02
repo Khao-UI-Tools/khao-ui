@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Chip from "./Chip.svelte";
 import { chipFillings, chipFillingDefault } from "./types/ChipFilling";
 import { chipTypes, chipTypeDefault } from "./types/ChipType";
-import { iconNames } from "../../../icons/types/IconName";
 
 const meta = {
   title: "Misc/Chip",
