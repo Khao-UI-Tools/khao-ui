@@ -13,4 +13,4 @@ export * as ShareButtons from "./components/widgets/shareButtons/ShareButtons.sv
 export * as SocialButtons from "./components/widgets/socialButtons/SocialButtons.svelte";
 export * as SteadyButton from "./components/buttons/steadyButton/SteadyButton.svelte";
 export * as Tab from "./components/tabs/tab/Tab.svelte";
-export * as TabsBar from "./components/tabs/tabsBar/TabsBar.svelte";
+export * as TabBar from "./components/tabs/tabBar/TabBar.svelte";

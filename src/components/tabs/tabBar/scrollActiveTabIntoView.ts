@@ -1,6 +1,4 @@
-import getActiveTabOfTabsBar from "./getActiveTabOfTabsBar";
-
-const scrollActiveTabIntoView = (tabsBar: HTMLElement) => {
+const scrollActiveTabIntoView = (tabBar: HTMLElement) => {
   if (!!window.IntersectionObserver) {
     const callback: IntersectionObserverCallback = function (
       entries,
@@ -8,23 +6,27 @@ const scrollActiveTabIntoView = (tabsBar: HTMLElement) => {
     ) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          performScrolling(tabsBar);
+          performScrolling(tabBar);
           observer.unobserve(entry.target);
         }
       });
     };
 
     const observer = new IntersectionObserver(callback, {
-      rootMargin: "0px 0px 420px 0px",
+      rootMargin: "0px 0px 0px 0px",
+      threshold: 1.0,
     });
 
-    observer.observe(tabsBar);
+    observer.observe(tabBar);
   }
 };
 
-const performScrolling = (tabsBar: HTMLElement) => {
-  const wrapperWidth = tabsBar.clientWidth;
-  const activeTab = getActiveTabOfTabsBar(tabsBar);
+const performScrolling = (tabBar: HTMLElement) => {
+  const wrapperWidth = tabBar.clientWidth;
+
+  const activeTab = tabBar.querySelector(
+    ".tab-bar > li.tab[aria-selected='true']"
+  ) as HTMLElement;
 
   if (activeTab) {
     if (activeTab.offsetLeft > wrapperWidth) {
