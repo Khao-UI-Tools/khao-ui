@@ -48,8 +48,6 @@ const loadMore = (
     }
   }
 
-  console.log("try to load ", nextUrl);
-
   if (alreadyAddedPages.indexOf(nextPage) === -1) {
     console.log("try to load ", nextUrl);
 

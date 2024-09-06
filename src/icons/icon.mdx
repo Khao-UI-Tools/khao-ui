@@ -15,7 +15,7 @@ Icons are used to represent actions, objects, or concepts. Most of come from [Ma
   <div className='container'>
   
     {iconNames.map(iconName=>(
-        <div className="icon-item">
+        <div className="icon-item" key={iconName}>
             <khao-icon iconName={iconName} sizeFactor="15" />
             {iconName}
         </div>

@@ -29,7 +29,9 @@ const performScrolling = (tabBar: HTMLElement) => {
   ) as HTMLElement;
 
   if (activeTab) {
-    if (activeTab.offsetLeft > wrapperWidth) {
+    const offset = activeTab.clientWidth;
+
+    if (activeTab.offsetLeft + offset > wrapperWidth) {
       activeTab.scrollIntoView({
         behavior: "smooth",
         block: "nearest",

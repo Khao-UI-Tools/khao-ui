@@ -13,13 +13,14 @@
 
   export let tabs: string = "";
   export let activeTabKey: string = "";
+  export let maxWidth: string = "860px";
 
   $: () => {
     console.log("33", activeTabKey);
   };
 </script>
 
-<div class="wrapper" bind:this={wrapper}>
+<div class="wrapper" bind:this={wrapper} style="max-width: {maxWidth}">
   <ul class="tab-bar" role="tablist">
     {#if tabs}
       {#each JSON.parse(tabs) as { label, key, href, title, size }}
@@ -41,15 +42,28 @@
   }
 
   .wrapper {
-    display: inline-flex;
     width: 100%;
     height: var(--khao-tab-bar-height);
-    overflow-x: scroll;
-    scrollbar-width: none;
+    border: 1px solid green;
   }
 
-  .wrapper::-webkit-scrollbar {
-    display: none;
+  @media screen and (max-width: 1100px) {
+    .wrapper {
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .wrapper::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      overflow-x: auto;
+    }
   }
 
   .tab-bar {
@@ -58,7 +72,7 @@
     flex-wrap: nowrap;
     justify-content: start;
     align-items: end;
-    margin: 0 0 3px 0;
+    margin: 0;
     padding: 0;
   }
 </style>

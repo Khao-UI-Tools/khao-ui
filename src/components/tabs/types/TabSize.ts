@@ -1,4 +1,4 @@
-export const tabSizes = ["compact", "medium", "large"];
+export const tabSizes = ["flex", "compact", "medium", "large"];
 
 export type TabSize = (typeof tabSizes)[number];
 

@@ -14,6 +14,10 @@ const meta = {
       control: "text",
       type: "string",
     },
+    maxWidth: {
+      control: "text",
+      type: "string",
+    },
   },
 } satisfies Meta<TabBar>;
 
@@ -23,16 +27,18 @@ type Story = StoryObj<typeof meta>;
 interface renderProps {
   tabs: { key: string; label: string }[];
   activeTabKey: string;
+  maxWidth: string;
 }
 
 const renderTabBar = (props: renderProps) => {
-  const tabBar = `<khao-tab-bar activeTabKey="${props.activeTabKey}" tabs='${JSON.stringify(props.tabs)}'></khao-tab-bar>`;
+  const tabBar = `<khao-tab-bar activeTabKey="${props.activeTabKey}" maxWidth="${props.maxWidth}" tabs='${JSON.stringify(props.tabs)}'></khao-tab-bar>`;
   return tabBar;
 };
 
 export const Default: Story = {
   args: {
     activeTabKey: "3",
+    maxWidth: "860px",
     tabs: [
       {
         label: "1",
@@ -96,137 +102,164 @@ export const Default: Story = {
 
 export const AlphabetExample: Story = {
   args: {
-    activeTabKey: "x",
+    activeTabKey: "h",
+    maxWidth: "800px",
     tabs: [
       {
         label: "A",
         key: "a",
         href: "/",
+        size: "flex",
       },
       {
         label: "B",
         key: "b",
         href: "/",
+        size: "flex",
       },
       {
         label: "C",
         key: "c",
         href: "/",
+        size: "flex",
       },
       {
         label: "D",
         key: "d",
         href: "/",
+        size: "flex",
       },
       {
         label: "E",
         key: "e",
         href: "/",
+        size: "flex",
       },
       {
         label: "F",
         key: "f",
         href: "/",
+        size: "flex",
       },
       {
         label: "G",
         key: "g",
         href: "/",
+        size: "flex",
       },
       {
         label: "H",
         key: "h",
         href: "/",
+        size: "flex",
       },
       {
         label: "I",
         key: "i",
         href: "/",
+        size: "flex",
       },
       {
         label: "J",
         key: "j",
         href: "/",
+        size: "flex",
       },
       {
         label: "K",
         key: "k",
         href: "/",
+        size: "flex",
       },
       {
         label: "L",
         key: "l",
         href: "/",
+        size: "flex",
       },
       {
         label: "M",
         key: "m",
         href: "/",
+        size: "flex",
       },
       {
         label: "N",
         key: "n",
         href: "/",
+        size: "flex",
       },
       {
         label: "O",
         key: "o",
         href: "/",
+        size: "flex",
       },
       {
         label: "P",
         key: "p",
         href: "/",
+        size: "flex",
       },
       {
         label: "Q",
         key: "q",
         href: "/",
+        size: "flex",
       },
       {
         label: "R",
         key: "r",
         href: "/",
+        size: "flex",
       },
       {
         label: "S",
         key: "s",
         href: "/",
+        size: "flex",
       },
       {
         label: "T",
         key: "t",
         href: "/",
+        size: "flex",
       },
       {
         label: "U",
         key: "u",
         href: "/",
+        size: "flex",
       },
       {
         label: "V",
         key: "v",
         href: "/",
+        size: "flex",
       },
       {
         label: "W",
         key: "w",
         href: "/",
+        size: "flex",
       },
       {
         label: "X",
         key: "x",
         href: "/",
+        size: "flex",
       },
       {
         label: "Y",
         key: "y",
         href: "/",
+        size: "flex",
       },
       {
         label: "Z",
         key: "z",
         href: "/",
+        size: "flex",
       },
     ],
   },
@@ -236,6 +269,7 @@ export const AlphabetExample: Story = {
 export const AhaanIndexExample: Story = {
   args: {
     activeTabKey: "s",
+    maxWidth: "830px",
     tabs: [
       {
         label: "A",
@@ -315,6 +349,7 @@ export const AhaanIndexExample: Story = {
 export const WordsExample: Story = {
   args: {
     activeTabKey: "videos",
+    maxWidth: "830px",
     tabs: [
       {
         label: "Bücher",
@@ -349,6 +384,7 @@ export const WordsExample: Story = {
 export const WordsExample2: Story = {
   args: {
     activeTabKey: "rezepte-a-z",
+    maxWidth: "830px",
     tabs: [
       {
         label: "Suche",
