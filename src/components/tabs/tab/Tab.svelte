@@ -36,7 +36,7 @@
 
     --khao-tab-height: var(--khao-sys-size-regular-6);
 
-    --khao-tab-width: var(--khao-sys-size-regular-10);
+    --khao-tab-width: var(--khao-sys-size-regular-8);
     --khao-tab-container-shape: var(--khao-sys-shape-corner-small);
 
     --khao-tab-active-height: var(--khao-sys-size-regular-7);
@@ -65,11 +65,10 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    padding: 0.1rem;
-    padding-inline-start: var(--khao-tab-leading-space);
-    padding-inline-end: var(--khao-tab-trailing-space);
-    width: var(--khao-tab-width);
-    min-width: 1.3rem;
+    padding: 0.1rem var(--khao-tab-leading-space) 0.1rem
+      var(--khao-tab-trailing-space);
+    min-width: var(--khao-tab-width);
+    width: 100%;
     height: var(--khao-tab-height);
     font-size: var(--khao-tab-text-size);
     border: 1px solid var(--khao-tab-border-color);
@@ -94,8 +93,8 @@
   }
 
   .tab-size-flex {
-    --khao-tab-leading-space: none;
-    --khao-tab-trailing-space: none;
+    --khao-tab-leading-space: 0;
+    --khao-tab-trailing-space: 0;
   }
 
   .tab-size-compact {
@@ -118,10 +117,14 @@
     color: var(--khao-tab-text-color);
     white-space: nowrap;
     text-decoration: none;
-    width: 100%;
+    min-width: 3rem;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    margin: 0 0.3rem;
 
     &:hover {
       text-decoration: none !important;
+
       color: color-mix(
         in srgb,
         var(--khao-tab-text-color),
@@ -146,7 +149,6 @@
 
   .link-active {
     font-weight: 700;
-
     &:hover {
       color: inherit;
       font-weight: 700;

@@ -18,6 +18,10 @@ const meta = {
       control: "text",
       type: "string",
     },
+    centered: {
+      control: "boolean",
+      type: "Boolean",
+    },
   },
 } satisfies Meta<TabBar>;
 
@@ -28,17 +32,26 @@ interface renderProps {
   tabs: { key: string; label: string }[];
   activeTabKey: string;
   maxWidth: string;
+  centered: boolean;
 }
 
 const renderTabBar = (props: renderProps) => {
-  const tabBar = `<khao-tab-bar activeTabKey="${props.activeTabKey}" maxWidth="${props.maxWidth}" tabs='${JSON.stringify(props.tabs)}'></khao-tab-bar>`;
+  const tabBar = `
+      <khao-tab-bar 
+          activeTabKey="${props.activeTabKey}" 
+          maxWidth="${props.maxWidth}" 
+          centered=${props.centered} 
+          tabs='${JSON.stringify(props.tabs)}'
+      >
+      </khao-tab-bar>`;
   return tabBar;
 };
 
 export const Default: Story = {
   args: {
     activeTabKey: "3",
-    maxWidth: "860px",
+    maxWidth: "600px",
+    centered: true,
     tabs: [
       {
         label: "1",
@@ -102,8 +115,9 @@ export const Default: Story = {
 
 export const AlphabetExample: Story = {
   args: {
-    activeTabKey: "h",
-    maxWidth: "800px",
+    activeTabKey: "x",
+    maxWidth: "600px",
+    centered: true,
     tabs: [
       {
         label: "A",
@@ -269,77 +283,92 @@ export const AlphabetExample: Story = {
 export const AhaanIndexExample: Story = {
   args: {
     activeTabKey: "s",
-    maxWidth: "830px",
+    maxWidth: "600px",
+    centered: true,
     tabs: [
       {
         label: "A",
         key: "a",
         href: "/",
+        size: "flex",
       },
       {
         label: "B",
         key: "b",
         href: "/",
+        size: "flex",
       },
       {
         label: "C",
         key: "c",
         href: "/",
+        size: "flex",
       },
       {
         label: "D",
         key: "d",
         href: "/",
+        size: "flex",
       },
       {
         label: "G",
         key: "g",
         href: "/",
+        size: "flex",
       },
       {
         label: "H",
         key: "h",
         href: "/",
+        size: "flex",
       },
       {
         label: "K",
         key: "k",
         href: "/",
+        size: "flex",
       },
       {
         label: "L",
         key: "l",
         href: "/",
+        size: "flex",
       },
       {
         label: "M",
         key: "m",
         href: "/",
+        size: "flex",
       },
       {
         label: "N",
         key: "n",
         href: "/",
+        size: "flex",
       },
       {
         label: "P",
         key: "p",
         href: "/",
+        size: "flex",
       },
       {
         label: "S",
         key: "s",
         href: "/",
+        size: "flex",
       },
       {
         label: "T",
         key: "t",
         href: "/",
+        size: "flex",
       },
       {
         label: "Y",
         key: "y",
         href: "/",
+        size: "flex",
       },
     ],
   },
@@ -349,7 +378,8 @@ export const AhaanIndexExample: Story = {
 export const WordsExample: Story = {
   args: {
     activeTabKey: "videos",
-    maxWidth: "830px",
+    maxWidth: "600px",
+    centered: true,
     tabs: [
       {
         label: "Bücher",
@@ -372,7 +402,7 @@ export const WordsExample: Story = {
         href: "/",
       },
       {
-        label: "Facebookgruppen",
+        label: "Gruppen",
         key: "gruppen",
         href: "/",
       },
@@ -383,56 +413,39 @@ export const WordsExample: Story = {
 
 export const WordsExample2: Story = {
   args: {
-    activeTabKey: "rezepte-a-z",
-    maxWidth: "830px",
+    activeTabKey: "landeskuechen",
+    maxWidth: "600px",
+    centered: true,
     tabs: [
       {
         label: "Suche",
         key: "suche",
         href: "/",
-        size: "compact",
       },
       {
-        label: "Alle Stichworte",
+        label: "Stichwörter",
         key: "tags",
         href: "/",
-        size: "compact",
       },
       {
-        label: "Landesküchen",
+        label: "Länder",
         key: "landeskuechen",
         href: "/",
-        size: "compact",
-      },
-      {
-        label: "Rezepte A-Z",
-        key: "rezepte-a-z",
-        href: "/",
-        size: "compact",
-      },
-      {
-        label: "Alle Inhalte",
-        key: "all",
-        href: "/",
-        size: "compact",
       },
       {
         label: "Karten",
         key: "karten",
         href: "/",
-        size: "compact",
       },
       {
-        label: "Neuester Beitrag",
+        label: "Aktuell",
         key: "neu",
         href: "/",
-        size: "compact",
       },
       {
         label: "Zufall",
         key: "zufall",
         href: "/",
-        size: "compact",
       },
     ],
   },
