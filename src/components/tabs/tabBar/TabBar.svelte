@@ -57,6 +57,7 @@
     height: var(--khao-tab-bar-height);
     overflow-x: auto;
     scrollbar-width: none;
+    padding: 0 1px;
   }
 
   .wrapper::-webkit-scrollbar {

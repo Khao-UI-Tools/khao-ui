@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [NEXT]
+
+- optimized padding for `khao-tab-bar` wrapper
+
 ## [1.4.23]
 
 - fixed display of active tab in `khao-tab-bar` for very small screens
