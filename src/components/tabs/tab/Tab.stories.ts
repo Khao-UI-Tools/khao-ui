@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Tab from "./Tab.svelte";
-import { tabSizeDefault, tabSizes } from "./types/TabSize";
+import { tabSizeDefault, tabSizes } from "../types/TabSize";
 
 const meta = {
   title: "Tabs/Single Tab",

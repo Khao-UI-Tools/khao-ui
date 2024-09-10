@@ -32,8 +32,6 @@ const loadMore = (
 ) => {
   const currentUrl = document.location.href;
 
-  console.log("loadMore", querySelector, paginationSlug);
-
   let currentPage = "1";
   let nextPage = "2";
   let nextUrl = `${currentUrl}${paginationSlug}${nextPage}`;
@@ -48,16 +46,12 @@ const loadMore = (
     }
   }
 
-  console.log("try to load ", nextUrl);
-
   if (alreadyAddedPages.indexOf(nextPage) === -1) {
-    console.log("try to load ", nextUrl);
-
     fetch(nextUrl)
       .then((response) => {
         if (!response.ok) {
           throw new Error(
-            "error loading next page, perhaps we reached the end!"
+            `error loading next page ${nextUrl} , perhaps we have reached the end!`
           );
         }
         return response.text();
@@ -90,8 +84,6 @@ const loadMore = (
   } else {
     console.log("already added", nextPage);
   }
-
-  console.log("load more", currentUrl, currentPage, nextUrl);
 };
 
 export default initInfiniteSroll;

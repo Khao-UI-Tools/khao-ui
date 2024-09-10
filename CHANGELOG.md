@@ -5,6 +5,63 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [NEXT]
+
+- optimized padding for `khao-tab-bar` wrapper
+
+## [1.4.23]
+
+- fixed display of active tab in `khao-tab-bar` for very small screens
+
+## [1.4.22]
+
+- optimizes `khao-tab-bar` for different length of label values
+
+## [1.4.21]
+
+- added `centered` attribute to `khao-tab-bar`
+
+## [1.4.20]
+
+- removed debug messages and borders
+
+## [1.4.19]
+
+- added size `flex` to `khao-tab`
+- added `maxWidth` attribute to `khao-tab-bar`
+
+## [1.4.18]
+
+- reduced sizes in `khao-tab`
+
+## [1.4.17]
+
+- added further improvemen for scrolling of active tab in to view in `khao-tab-bar`
+
+## [1.4.16]
+
+- improved scrolling of active tab in to view in `khao-tab-bar`
+
+## [1.4.15]
+
+- added helper class `Breakpoint` and used it in `khao-tab`
+
+## [1.4.14]
+
+- deprecate `khao-tabs-bar` in favor of `khao-tab-bar`
+
+## [1.4.13]
+
+- added `acticeTaBKey` to `tab-bar`
+
+## [1.4.12]
+
+- added alternative `tab-bar` component which gets tabs as json object.
+
+## [1.4.11]
+
+- changed style of `khao-tab`
+
 ## [1.4.10]
 
 - `khao-infinte-scroll` can be triggered multiple times

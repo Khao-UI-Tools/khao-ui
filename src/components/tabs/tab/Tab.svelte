@@ -1,21 +1,25 @@
 <svelte:options customElement="khao-tab" />
 
 <script lang="ts">
+  import Breakpoint from "../../../common/utils/Breakpoint";
+
   import {
     isTrue,
     type StringBoolean,
   } from "../../../common/types/StringBoolean";
-  import { tabSizeDefault, type TabSize } from "./types/TabSize";
+  import { type TabSize } from "../types/TabSize";
 
   export let href: string = "";
   export let title: string = "";
   export let active: StringBoolean = "false";
-  export let size: TabSize = tabSizeDefault;
+  export let size: TabSize = Breakpoint.isPhone() ? "compact" : "medium";
+  export let key: string = "";
 </script>
 
 <li
   class="tab {isTrue(active) ? 'tab-active' : ''} tab-size-{size}"
   role="tab"
+  data-key={key}
   aria-selected={isTrue(active) ? "true" : "false"}
 >
   <a {href} {title} class="link {isTrue(active) ? 'link-active' : ''}">
@@ -32,7 +36,7 @@
 
     --khao-tab-height: var(--khao-sys-size-regular-6);
 
-    --khao-tab-width: var(--khao-sys-size-regular10);
+    --khao-tab-width: var(--khao-sys-size-regular-8);
     --khao-tab-container-shape: var(--khao-sys-shape-corner-small);
 
     --khao-tab-active-height: var(--khao-sys-size-regular-7);
@@ -61,16 +65,17 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    padding: 0.1rem;
-    padding-inline-start: var(--khao-tab-leading-space);
-    padding-inline-end: var(--khao-tab-trailing-space);
+    padding: 0.1rem var(--khao-tab-leading-space) 0.1rem
+      var(--khao-tab-trailing-space);
     min-width: var(--khao-tab-width);
+    width: 100%;
     height: var(--khao-tab-height);
     font-size: var(--khao-tab-text-size);
     border: 1px solid var(--khao-tab-border-color);
-    border-bottom: none;
     border-top-left-radius: var(--khao-tab-container-shape);
     border-top-right-radius: var(--khao-tab-container-shape);
+    border-bottom-width: 2px;
+    text-align: center;
 
     &:hover {
       text-decoration: none !important;
@@ -83,24 +88,28 @@
   }
 
   .tab-active {
-    border-bottom: 3px solid var(--khao-tab-border-color);
-    margin-bottom: -3px;
+    border-bottom: none;
     height: var(--khao-tab-active-height);
   }
 
+  .tab-size-flex {
+    --khao-tab-leading-space: 0;
+    --khao-tab-trailing-space: 0;
+  }
+
   .tab-size-compact {
-    --khao-tab-leading-space: var(--khao-sys-size-regular-4);
-    --khao-tab-trailing-space: var(--khao-sys-size-regular-4);
+    --khao-tab-leading-space: var(--khao-sys-size-regular-3);
+    --khao-tab-trailing-space: var(--khao-sys-size-regular-3);
   }
 
   .tab-size-medium {
-    --khao-tab-leading-space: var(--khao-sys-size-regular-6);
-    --khao-tab-trailing-space: var(--khao-sys-size-regular-6);
+    --khao-tab-leading-space: var(--khao-sys-size-regular-5);
+    --khao-tab-trailing-space: var(--khao-sys-size-regular-5);
   }
 
   .tab-size-large {
-    --khao-tab-leading-space: var(--khao-sys-size-regular-8);
-    --khao-tab-trailing-space: var(--khao-sys-size-regular-8);
+    --khao-tab-leading-space: var(--khao-sys-size-regular-7);
+    --khao-tab-trailing-space: var(--khao-sys-size-regular-7);
   }
 
   .link {
@@ -108,10 +117,14 @@
     color: var(--khao-tab-text-color);
     white-space: nowrap;
     text-decoration: none;
-    width: 100%;
+    min-width: 3rem;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    margin: 0 0.3rem;
 
     &:hover {
       text-decoration: none !important;
+
       color: color-mix(
         in srgb,
         var(--khao-tab-text-color),
@@ -136,7 +149,6 @@
 
   .link-active {
     font-weight: 700;
-
     &:hover {
       color: inherit;
       font-weight: 700;
