@@ -19,7 +19,7 @@ jobs:
       - name: install
         run: npm ci
       - name: build
-        run: build:storybook
+        run: npm run build:storybook
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
