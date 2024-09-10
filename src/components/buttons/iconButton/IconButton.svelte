@@ -1,47 +1,60 @@
 <svelte:options customElement="khao-icon-button" />
 
 <script lang="ts">
-    import { type ButtonPriority } from "../types/ButtonPriority";
-    import Icon from "../../../icons/Icon.svelte";
-    import { type IconName } from "../../../icons/types/IconName";
-  
-    function setCustomStyles(customBGColor: string, customColor: string, customHoverColor: string): string {
-      var customStyles =
-        customBGColor !== "" && customColor !== ""
-          ? `--khao-icon-button-container-color:${customBGColor}; --khao-icon-button-label-text-color:${customColor}; --khao-icon-button-icon-color: ${customColor}; --khao-icon-button-state-layer-color: ${customColor}`
-          : "";
+  import { type ButtonPriority } from "../types/ButtonPriority";
+  import Icon from "../../../icons/Icon.svelte";
+  import { type IconName } from "../../../icons/types/IconName";
+  import {
+    isTrue,
+    type StringBoolean,
+  } from "../../../common/types/StringBoolean";
 
-        if (customHoverColor) {
-          customStyles += `; --khao-icon-button-container-custom-hover-color: ${customHoverColor}`;
-        }
+  function setCustomStyles(
+    customBGColor: string,
+    customColor: string,
+    customHoverColor: string
+  ): string {
+    var customStyles =
+      customBGColor !== "" && customColor !== ""
+        ? `--khao-icon-button-container-color:${customBGColor}; --khao-icon-button-label-text-color:${customColor}; --khao-icon-button-icon-color: ${customColor}; --khao-icon-button-state-layer-color: ${customColor}`
+        : "";
 
-        return customStyles;
+    if (customHoverColor) {
+      customStyles += `; --khao-icon-button-container-custom-hover-color: ${customHoverColor}`;
     }
 
-    function setRole(href: string | null, onClick: (() => void) | null): string {
-      return href === null && onClick !== null ? "button" : "";
-    }
-  
-    export let title: string = "";
-  
-    export let href: string | null = null;
-    export let rel: string | null = null;
-    export let target: string | null = null;
+    return customStyles;
+  }
 
-    export let priority: ButtonPriority = "primary";
+  function setRole(href: string | null, onClick: (() => void) | null): string {
+    return href === null && onClick !== null ? "button" : "";
+  }
 
-    export let customBGColor: string = "";
-    export let customColor: string = "";
-    export let customHoverColor: string = "";
-  
-    export let iconName: IconName | "" = "";
-  
-    export let onClick: (() => void) | null = null;
+  export let title: string = "";
+
+  export let href: string | null = null;
+  export let rel: string | null = null;
+  export let target: string | null = null;
+
+  export let priority: ButtonPriority = "primary";
+
+  export let customBGColor: string = "";
+  export let customColor: string = "";
+  export let customHoverColor: string = "";
+
+  export let iconName: IconName | "" = "";
+
+  export let circle: StringBoolean = "false";
+
+  export let onClick: (() => void) | null = null;
+
+  $: console.log("circle:", circle);
 </script>
 
-
 <a
-  class="button button-{priority} {customHoverColor ? 'button-custom-hover' : ''}"
+  class="button button-{priority} {isTrue(circle)
+    ? 'button-circle'
+    : ''} {customHoverColor ? 'button-custom-hover' : ''}"
   {title}
   {href}
   {target}
@@ -51,10 +64,9 @@
   on:click={onClick}
 >
   {#if iconName !== ""}
-      <Icon {iconName} sizeFactor="9" />
+    <Icon {iconName} sizeFactor="9" />
   {/if}
 </a>
-
 
 <style>
   @import "../reset.css";
@@ -65,7 +77,7 @@
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-container);
 
     --khao-icon-button-size: var(--khao-sys-size-regular-14);
-    --khao-icon-button-container-shape: var( --khao-sys-shape-corner-small);
+    --khao-icon-button-container-shape: var(--khao-sys-shape-corner-small);
 
     --khao-icon-button-hover-state-layer-opacity: var(
       --khao-sys-state-hover-state-layer-opacity
@@ -146,10 +158,13 @@
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-tertiary);
   }
 
+  .button-circle {
+    --khao-icon-button-container-shape: var(--khao-sys-shape-corner-full);
+  }
+
   .button-custom-hover {
     &:hover {
       background-color: var(--khao-icon-button-container-custom-hover-color);
     }
   }
-
 </style>

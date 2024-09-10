@@ -5,9 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [NEXT]
+## [1.4.24]
 
 - optimized padding for `khao-tab-bar` wrapper
+- added attribute `circle` to `icon-button`
 
 ## [1.4.23]
 
