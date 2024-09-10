@@ -22,7 +22,7 @@ jobs:
           # location of the coverage artifacts
           path: "./storybook-static"
 
-  deploy-coverage:
+  deploy:
 
     runs-on: ubuntu-latest
     needs: build
