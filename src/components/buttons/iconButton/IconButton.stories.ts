@@ -23,6 +23,11 @@ const meta = {
       control: { type: "select" },
       options: iconNames,
     },
+    circle: {
+      control: { type: "select" },
+      options: ["true", "false"],
+      type: "string",
+    },
     title: {
       control: "text",
       type: "string",
@@ -48,12 +53,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
     title: "Primary with Printer",
     priority: "primary",
     iconName: "printer",
+    circle: "false",
   },
 };
 
@@ -86,5 +91,14 @@ export const CustomHoverColorExample: Story = {
     iconName: "pinterest",
     priority: "secondary",
     customHoverColor: "#bd081c",
+  },
+};
+
+export const Circle: Story = {
+  args: {
+    title: "Primary Circle",
+    priority: "primary",
+    iconName: "arrow-up",
+    circle: "true",
   },
 };
