@@ -18,13 +18,13 @@ jobs:
           node-version: 20
       - name: install
         run: npm ci
-      - name: install-rollup
+      - name: install missing rollup for linux
         run: npm install @rollup/rollup-linux-x64-gnu
       - name: build
         run: npm run build:storybook
 
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload Storybook
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "./storybook-static"
 
@@ -44,4 +44,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
