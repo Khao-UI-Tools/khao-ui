@@ -10,16 +10,20 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
       - name: install
-        run: npm install
-
+        run: npm ci
       - name: build
         run: build:storybook
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # location of the coverage artifacts
           path: "./storybook-static"
 
   deploy:
@@ -32,7 +36,6 @@ jobs:
       id-token: write
 
     environment:
-      # environment created automatically by GitHub
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
