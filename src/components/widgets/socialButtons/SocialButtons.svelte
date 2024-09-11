@@ -86,7 +86,6 @@
     display: flex;
     justify-content: space-around;
     max-width: 320px;
-    border: 1px dashed gray;
     margin: 0 auto;
     gap: var(--khao-sys-size-regular-1);
   }

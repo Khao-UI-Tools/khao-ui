@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import { action } from "@storybook/addon-actions";
 import ScrollToTop from "./scrollToTop.svelte";
+import { buttonSizeDefault, buttonSizes } from "../types/ButtonSize";
 
 const meta = {
-  title: "Misc/Scroll To Top",
+  title: "Buttons/ScrollToTopButton",
   component: "khao-scroll-to-top",
   tags: ["autodocs"],
   argTypes: {
@@ -14,6 +15,11 @@ const meta = {
     scrollThreshold: {
       control: "text",
       type: "string",
+    },
+    size: {
+      control: { type: "select" },
+      options: buttonSizes,
+      default: buttonSizeDefault,
     },
     forceVisible: {
       control: { type: "boolean" },
@@ -29,12 +35,14 @@ interface renderProps {
   title: string;
   scrollThreshold: string;
   forceVisible: string;
+  size: string;
 }
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     title: "Scroll to the top",
     scrollThreshold: "100",
+    size: buttonSizeDefault,
     forceVisible: false,
   },
 
@@ -76,6 +84,8 @@ export const Default: Story = {
       <khao-scroll-to-top 
         title="${props.title}" 
         scrollThreshold="${props.scrollThreshold}" 
-        forceVisible=${props.forceVisible}></khao-scroll-to-top>`;
+        forceVisible="${props.forceVisible}"
+        size="${props.size}"
+        />`;
   },
 };

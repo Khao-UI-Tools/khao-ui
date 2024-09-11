@@ -1,18 +1,14 @@
-<svelte:options
-  customElement={{
-    tag: "khao-scroll-to-top",
-    shadow: "none",
-  }}
-/>
+<svelte:options customElement="khao-scroll-to-top" />
 
 <script lang="ts">
   import { onMount } from "svelte";
-  import IconButton from "../../buttons/iconButton/IconButton.svelte";
+  import IconButton from "../iconButton/IconButton.svelte";
   import scrollToTop from "./utils/scrollToTop";
   import {
     isTrue,
     type StringBoolean,
   } from "../../../common/types/StringBoolean";
+  import { type ButtonSize, buttonSizeDefault } from "../types/ButtonSize";
 
   let wrapper: HTMLElement;
 
@@ -26,18 +22,20 @@
   onMount(() => {
     const threshold = parseInt(scrollThreshold, 10);
 
+    console.log("forceVisible", forceVisible);
+
     document.addEventListener("scroll", () => {
       if (
         document.body.scrollTop > threshold ||
         document.documentElement.scrollTop > threshold
       ) {
-        if (!wrapper.classList.contains("scroll-to-top-visible")) {
-          wrapper.classList.add("scroll-to-top-visible");
+        if (!wrapper.classList.contains("wrapper-visible")) {
+          wrapper.classList.add("wrapper-visible");
           window.dispatchEvent(visibilityChangeEvent);
         }
       } else {
-        if (wrapper.classList.contains("scroll-to-top-visible")) {
-          wrapper.classList.remove("scroll-to-top-visible");
+        if (wrapper.classList.contains("wrapper-visible")) {
+          wrapper.classList.remove("wrapper-visible");
           window.dispatchEvent(visibilityChangeEvent);
         }
       }
@@ -47,28 +45,29 @@
   export let title: string = "";
   export let scrollThreshold: string = "155";
   export let forceVisible: StringBoolean = "false";
+
+  export let size: ButtonSize = buttonSizeDefault;
 </script>
 
 <div
   bind:this={wrapper}
-  class="scroll-to-top {isTrue(forceVisible) ? 'scroll-to-top-visible' : ''}"
+  class="wrapper wrapper-size-{size} {isTrue(forceVisible)
+    ? 'wrapper-visible'
+    : ''}"
 >
-  <khao-icon-button
+  <IconButton
+    priority="primary"
     onClick={scrollToTop}
     {title}
     iconName="arrow-up"
     circle="true"
-    size="medium"
-  ></khao-icon-button>
+    {size}
+  />
 </div>
 
 <style>
-  .scroll-to-top {
+  .wrapper {
     position: fixed;
-    bottom: 1.5rem;
-    right: 1rem;
-    height: var(--khao-sys-size-regular-14);
-    width: var(--khao-sys-size-regular-14);
     visibility: hidden;
     opacity: 0;
     transition:
@@ -78,7 +77,28 @@
     z-index: 10000;
   }
 
-  .scroll-to-top-visible {
+  .wrapper-size-compact {
+    bottom: 1.5rem;
+    right: 0.7rem;
+    height: var(--khao-sys-size-regular-10);
+    width: var(--khao-sys-size-regular-10);
+  }
+
+  .wrapper-size-medium {
+    bottom: 1.5rem;
+    right: 1rem;
+    height: var(--khao-sys-size-regular-12);
+    width: var(--khao-sys-size-regular-12);
+  }
+
+  .wrapper-size-large {
+    bottom: 1.5rem;
+    right: 1.3rem;
+    height: var(--khao-sys-size-regular-14);
+    width: var(--khao-sys-size-regular-14);
+  }
+
+  .wrapper-visible {
     visibility: visible;
     opacity: 0.8;
   }

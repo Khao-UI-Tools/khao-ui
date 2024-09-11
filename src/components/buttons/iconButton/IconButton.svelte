@@ -49,7 +49,6 @@
   export let circle: StringBoolean = "false";
 
   export let onClick: (() => void) | null = null;
-  
 </script>
 
 <a
@@ -81,6 +80,8 @@
     --khao-icon-button-size-medium: var(--khao-sys-size-regular-12);
     --khao-icon-button-size-large: var(--khao-sys-size-regular-14);
 
+    --khao-icon-button-spacing: var(--khao-sys-size-regular-1);
+
     --khao-icon-button-container-shape: var(--khao-sys-shape-corner-small);
 
     --khao-icon-button-hover-state-layer-opacity: var(
@@ -106,7 +107,7 @@
     background-color: var(--khao-icon-button-container-color);
     align-items: center;
     justify-content: center;
-    padding: 0.2rem;
+    padding: var(--khao-icon-button-spacing);
     border-radius: var(--khao-icon-button-container-shape);
     cursor: pointer;
 
@@ -160,7 +161,6 @@
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-tertiary);
   }
 
-
   .button-size-compact {
     width: var(--khao-icon-button-size-compact);
     height: var(--khao-icon-button-size-compact);
@@ -175,8 +175,6 @@
     width: var(--khao-icon-button-size-large);
     height: var(--khao-icon-button-size-large);
   }
-
-
 
   .button-circle {
     --khao-icon-button-container-shape: var(--khao-sys-shape-corner-full);
