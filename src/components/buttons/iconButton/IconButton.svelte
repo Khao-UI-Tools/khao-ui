@@ -48,7 +48,7 @@
 
   export let circle: StringBoolean = "false";
 
-  export let onClick: (() => void) | null = null;
+  export let onClick: ((event: MouseEvent) => void) | null = null;
 </script>
 
 <a

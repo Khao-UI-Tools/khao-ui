@@ -27,7 +27,10 @@
 
     if (!isTouch) {
       button.href = "";
-      button.onClick = scrollToTop;
+      button.onClick = (event: MouseEvent) => {
+        event.preventDefault();
+        scrollToTop();
+      };
     }
 
     document.addEventListener("scroll", () => {
