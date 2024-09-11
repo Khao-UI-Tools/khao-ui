@@ -8,6 +8,7 @@
     isTrue,
     type StringBoolean,
   } from "../../../common/types/StringBoolean";
+  import { buttonSizeDefault, type ButtonSize } from "../types/ButtonSize";
 
   function setCustomStyles(
     customBGColor: string,
@@ -37,6 +38,7 @@
   export let target: string | null = null;
 
   export let priority: ButtonPriority = "primary";
+  export let size: ButtonSize = buttonSizeDefault;
 
   export let customBGColor: string = "";
   export let customColor: string = "";
@@ -47,12 +49,10 @@
   export let circle: StringBoolean = "false";
 
   export let onClick: (() => void) | null = null;
-
-  $: console.log("circle:", circle);
 </script>
 
 <a
-  class="button button-{priority} {isTrue(circle)
+  class="button button-{priority} button-size-{size} {isTrue(circle)
     ? 'button-circle'
     : ''} {customHoverColor ? 'button-custom-hover' : ''}"
   {title}
@@ -76,7 +76,12 @@
     --khao-icon-button-label-text-color: var(--khao-sys-color-on-container);
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-container);
 
-    --khao-icon-button-size: var(--khao-sys-size-regular-14);
+    --khao-icon-button-size-compact: var(--khao-sys-size-regular-10);
+    --khao-icon-button-size-medium: var(--khao-sys-size-regular-12);
+    --khao-icon-button-size-large: var(--khao-sys-size-regular-14);
+
+    --khao-icon-button-spacing: var(--khao-sys-size-regular-1);
+
     --khao-icon-button-container-shape: var(--khao-sys-shape-corner-small);
 
     --khao-icon-button-hover-state-layer-opacity: var(
@@ -100,11 +105,9 @@
     display: inline-flex;
     color: var(--khao-icon-button-label-text-color);
     background-color: var(--khao-icon-button-container-color);
-    width: var(--khao-icon-button-size);
-    height: var(--khao-icon-button-size);
     align-items: center;
     justify-content: center;
-    padding: 0.2rem;
+    padding: var(--khao-icon-button-spacing);
     border-radius: var(--khao-icon-button-container-shape);
     cursor: pointer;
 
@@ -156,6 +159,21 @@
     --khao-icon-button-container-color: var(--khao-sys-color-tertiary);
     --khao-icon-button-label-text-color: var(--khao-sys-color-on-tertiary);
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-tertiary);
+  }
+
+  .button-size-compact {
+    width: var(--khao-icon-button-size-compact);
+    height: var(--khao-icon-button-size-compact);
+  }
+
+  .button-size-medium {
+    width: var(--khao-icon-button-size-medium);
+    height: var(--khao-icon-button-size-medium);
+  }
+
+  .button-size-large {
+    width: var(--khao-icon-button-size-large);
+    height: var(--khao-icon-button-size-large);
   }
 
   .button-circle {

@@ -84,6 +84,8 @@ export const Default: Story = {
 
         <article class="recipe" id="mock-added-item">
           <p>This new item appears when the "khao-infinite-scroll-loaded-more" event is dispatched.</p>
+
+          <p>But this is only mocked to demonstrate how it would work!</p>
         </article>
 
         <h2>Please scroll down!</h2>

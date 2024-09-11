@@ -33,6 +33,7 @@
       title={newsletterTitle}
       href={newsletterUrl}
       target="_self"
+      size="medium"
     />
   </span>
 
@@ -44,6 +45,7 @@
     href={facebookUrl}
     target={socialButtonsTarget}
     rel={socialButtonsRel}
+    size="medium"
   />
 
   <IconButton
@@ -54,6 +56,7 @@
     href={instagramUrl}
     target={socialButtonsTarget}
     rel={socialButtonsRel}
+    size="medium"
   />
 
   <IconButton
@@ -64,6 +67,7 @@
     href={pinterestUrl}
     target={socialButtonsTarget}
     rel={socialButtonsRel}
+    size="medium"
   />
 
   <IconButton
@@ -73,6 +77,7 @@
     title={rssTitle}
     href={rssUrl}
     target="_self"
+    size="medium"
   />
 </div>
 
@@ -80,10 +85,9 @@
   .container {
     display: flex;
     justify-content: space-around;
-    padding-top: var(--khao-sys-size-regular-3);
-    max-width: 350px;
+    max-width: 320px;
     margin: 0 auto;
-    gap: var(--khao-sys-size-regular-2);
+    gap: var(--khao-sys-size-regular-1);
   }
 
   @keyframes blinker {
