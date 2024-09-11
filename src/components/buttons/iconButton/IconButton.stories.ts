@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
+import { fn } from '@storybook/test';
 import IconButton from "./IconButton.svelte";
 import {
   buttonPriorities,
   buttonPriorityDefault,
 } from "../types/ButtonPriority";
 import { iconNames } from "../../../icons/types/IconName";
+import { buttonSizeDefault, buttonSizes } from "../types/ButtonSize";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
@@ -22,6 +24,11 @@ const meta = {
     iconName: {
       control: { type: "select" },
       options: iconNames,
+    },
+    size: {
+      control: { type: "select" },
+      options: buttonSizes,
+      default: buttonSizeDefault,
     },
     circle: {
       control: { type: "select" },
@@ -53,28 +60,34 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const PrimaryLarge: Story = {
   args: {
     title: "Primary with Printer",
     priority: "primary",
     iconName: "printer",
     circle: "false",
+    size: "large",
+    onClick: fn()
   },
 };
 
-export const Secondary: Story = {
+export const SecondaryMedium: Story = {
   args: {
     title: "Secondary with Cart",
     priority: "secondary",
     iconName: "cart",
+    size: "medium",
+    onClick: fn()
   },
 };
 
-export const Tertiary: Story = {
+export const TertiaryCompact: Story = {
   args: {
     title: "Tertiary with Newsletter",
     priority: "tertiary",
     iconName: "newsletter",
+    size: "compact",
+    onClick: fn()
   },
 };
 
@@ -83,6 +96,7 @@ export const CustomColorsExample: Story = {
     iconName: "facebook",
     customBGColor: "#3b5998",
     customColor: "white",
+    onClick: fn()
   },
 };
 
@@ -91,6 +105,7 @@ export const CustomHoverColorExample: Story = {
     iconName: "pinterest",
     priority: "secondary",
     customHoverColor: "#bd081c",
+    onClick: fn()
   },
 };
 
@@ -100,5 +115,6 @@ export const Circle: Story = {
     priority: "primary",
     iconName: "arrow-up",
     circle: "true",
+    onClick: fn()
   },
 };
