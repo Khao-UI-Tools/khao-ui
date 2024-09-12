@@ -17,8 +17,6 @@ const config: StorybookConfig = {
     options: {},
   },
 
-  docs: {
-    autodocs: true
-  }
+  docs: {}
 };
 export default config;
