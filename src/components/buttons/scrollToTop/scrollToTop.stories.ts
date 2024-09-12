@@ -12,10 +12,6 @@ const meta = {
       control: "text",
       type: "string",
     },
-    anchorName: {
-      control: "text",
-      type: "string",
-    },
     scrollThreshold: {
       control: "text",
       type: "string",
@@ -37,7 +33,6 @@ type Story = StoryObj<typeof meta>;
 
 interface renderProps {
   title: string;
-  anchorName: string;
   scrollThreshold: string;
   forceVisible: string;
   size: string;
@@ -46,7 +41,6 @@ interface renderProps {
 export const Example: Story = {
   args: {
     title: "Scroll to the top",
-    anchorName: "top-of-page",
     scrollThreshold: "100",
     size: buttonSizeDefault,
     forceVisible: false,
@@ -80,11 +74,6 @@ export const Example: Story = {
           <p>
           This component ads a "Scroll To Top" button to your document when the user scrolls over a given horizontal threshold.
           </p>
-
-          <p>
-          As "onClick" not always work on touch devices you can also give a fallback anchorName (for exaample "top-of-page") 
-          which defines the top on your page.
-          </p>
          </article>  
 
       
@@ -95,7 +84,6 @@ export const Example: Story = {
     return `${mockContent}
       <khao-scroll-to-top 
         title="${props.title}"
-        anchorName="${props.anchorName}" 
         scrollThreshold="${props.scrollThreshold}" 
         forceVisible="${props.forceVisible}"
         size="${props.size}"

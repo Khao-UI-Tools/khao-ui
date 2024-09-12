@@ -11,7 +11,6 @@
   import { type ButtonSize, buttonSizeDefault } from "../types/ButtonSize";
 
   let wrapper: HTMLElement;
-  let button: IconButton;
 
   const visibilityChangeEvent = new CustomEvent(
     "khao-scroll-to-top-visibility-change",
@@ -22,16 +21,6 @@
 
   onMount(() => {
     const threshold = parseInt(scrollThreshold, 10);
-
-    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-
-    if (!isTouch) {
-      button.href = "";
-      button.onClick = (event: MouseEvent) => {
-        event.preventDefault();
-        scrollToTop();
-      };
-    }
 
     document.addEventListener("scroll", () => {
       if (
@@ -51,7 +40,6 @@
     });
   });
 
-  export let anchorName: string = "";
   export let title: string = "";
   export let scrollThreshold: string = "155";
   export let forceVisible: StringBoolean = "false";
@@ -66,12 +54,11 @@
 >
   <IconButton
     priority="primary"
-    href="#{anchorName}"
     {title}
     iconName="arrow-up"
     circle="true"
     {size}
-    bind:this={button}
+    onClick={scrollToTop}
   />
 </div>
 
