@@ -3,19 +3,16 @@
 <script lang="ts">
 
   import { onMount } from "svelte";
+  import initLazyLoad from "./utils/initLazyLoad";
   import { type ImageType, imageTypeDefault } from "./types/ImageType";
   import {
     isTrue,
     type StringBoolean,
   } from "../../../common/types/StringBoolean";
 
-
   let webpSrc: string = "";
   let imageType: "image/jpeg" | "image/png" = "image/jpeg";
-
-  let pictureElement: HTMLElement;
-
-
+  let pictureElement: HTMLPictureElement;
 
   onMount(() => {
    
@@ -24,14 +21,22 @@
 
       if (extension) {
         webpSrc = src.replace(extension,'webp');
+        imageType = (['jpg', 'jpeg'].includes(extension.toLowerCase())) ?  "image/jpeg" : "image/png";
       }
     }
+
+    if (lazyloadSrc !== '') {
+        initLazyLoad(pictureElement, lazyloadThreshold)
+    }
+
 
   });
 
 
   export let src: string = ""
-  export let lazyloadPlaceholderSrc: string = "";
+  export let lazyloadSrc: string = "";
+  export let lazyloadThreshold: string = "440px";
+
   export let webp: StringBoolean = "false";
 
   export let title: string = "";
@@ -45,16 +50,23 @@
 
 
 <figure class="figure">
-    <picture bind:this(pictureElement)>
+    <picture bind:this={pictureElement}>
 
       {#if isTrue(webp)}
-          <source srcset="{webpSrc}" type="image/webp">
+          <source 
+            srcset={lazyloadSrc !== "" ? lazyloadSrc : webpSrc}
+            data-srcset={lazyloadSrc !== "" ? webpSrc : ""} 
+            type="image/webp">
       {/if}
 
-      <source srcset="{src}" data-srcset="" type="{imageType}">
+      <source 
+        srcset={lazyloadSrc !== "" ? lazyloadSrc : src}
+        data-srcset={lazyloadSrc !== "" ? src : ""} 
+        type="{imageType}"
+      >
       <img 
-        src={src} 
-        data-src={lazyloadPlaceholderSrc}
+        src={lazyloadSrc !== "" ? lazyloadSrc : src}
+        data-src={lazyloadSrc !== "" ? src : ""} 
         alt={title}
         title={title}
         width={width}
@@ -92,6 +104,8 @@
   }
 
   .image {
+    max-width: 100%;
+    height: auto;
     box-shadow: var(--khao-image-elevation-level-shadow);
     z-index: var(--khao-image-elevation-level);
   }

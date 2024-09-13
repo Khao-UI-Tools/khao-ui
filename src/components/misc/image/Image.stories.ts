@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Image from "./Image.svelte";
 import { imageTypes, imageTypeDefault } from "./types/ImageType";
+import lazyLoadImage from "./utils/loaders/loadImage";
 
 const meta = {
   title: "Misc/Image",
@@ -10,7 +11,11 @@ const meta = {
       control: "text",
       type: "string",
     },
-    lazyloadPlaceholderSrc: {
+    lazyloadSrc: {
+      control: "text",
+      type: "string",
+    },
+    lazyloadThreshold: {
       control: "text",
       type: "string",
     },
@@ -50,7 +55,6 @@ export const Default: Story = {
   args: {
     src: "https://bilder.koch-reis.de/media/_thaiindex/yam_hed.jpg",
     title: "An image",
-    lazyloadPlaceholderSrc: "https://www.der-reiskoch.de/img/lazy-loading.png",
     type: imageTypeDefault,
     webp: "false",
   },
@@ -75,23 +79,57 @@ export const ElevatedWithCaption: Story = {
   },
 };
 
-
 export const JpgWithWebp: Story = {
   args: {
     src: "https://bilder.koch-reis.de/media/_thaiindex/yam_hed.jpg",
     title: "An image that tries to load the webp version of the src",
-    lazyloadPlaceholderSrc: "https://www.der-reiskoch.de/img/lazy-loading.png",
     caption: "A .jpg image that tries to load it's webp version",
     type: imageTypeDefault,
     webp: "true",
   },
 };
+
 export const PngWithWebp: Story = {
   args: {
     src: "https://bilder.koch-reis.de/media/_links/thai_kueche_und_ihre_rezepte.png",
     title: "An image that tries to load the webp version of the image",
-    lazyloadPlaceholderSrc: "https://www.der-reiskoch.de/img/lazy-loading.png",
     caption: "A .png image that tries to load it's webp version",
+    type: imageTypeDefault,
+    webp: "true",
+  },
+};
+
+export const LazyLoadedImage: Story = {
+  args: {
+    src: "https://bilder.koch-reis.de/media/1300/1333/00_markt_in_ranong.jpg",
+    title: "An image that is lazyloaded",
+    lazyloadSrc: "https://www.der-reiskoch.de/img/lazy-loading.png",
+    caption: "An image that is lazyloaded",
+    type: imageTypeDefault,
+  },
+};
+
+export const LazyLoadedWithWebp: Story = {
+  args: {
+    src: "https://bilder.koch-reis.de/media/1200/1263/collage.jpg",
+    title: "An image that has webp and is lazyloaded",
+    lazyloadSrc: "https://www.der-reiskoch.de/img/lazy-loading.png",
+    caption: "An image that has webp and is lazyloaded",
+    type: imageTypeDefault,
+    webp: "true",
+  },
+};
+
+
+export const SmallLazyLoadedWithWebp: Story = {
+  args: {
+    src: "https://bilder.koch-reis.de/media/1200/1263/collage.jpg",
+    title: "An image that has webp and is lazyloaded",
+    lazyloadSrc: "https://www.der-reiskoch.de/img/lazy-loading.png",
+    lazyLoadThreshold: "220px",
+    width: "300px",
+    height: "240px",
+    caption: "A small image that has webp and is lazyloaded",
     type: imageTypeDefault,
     webp: "true",
   },
