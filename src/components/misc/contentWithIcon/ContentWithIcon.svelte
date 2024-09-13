@@ -14,7 +14,7 @@
 
   export let iconName: IconName;
   export let iconSizeFactor: IconSizeFactor = iconSizeFactorDefault;
-  export let iconOpacity: IconOpacity = "100%";
+  export let iconOpacity: IconOpacity = iconOpacityDefault;
 </script>
 
 <div class="content-with-icon">

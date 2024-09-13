@@ -1,12 +1,12 @@
 # Khao UI
 
-An UI Component Library based on Svelte Components that are provided as web-components.
+This is an UI Component Library based on lightweight Svelte Components which are provided as web-components.
 
 ![Khao UI](https://bilder.koch-reis.de/logo/khao-ui.jpg "Khao UI")
 
 ## About the Name
 
-"Khao" (ข้าว) is the Thai name for rice. Just as rice is the basis of many Asian dishes, this component library will be the new basis for my blogs [Der Reiskoch](https://www.der-reiskoch.de/), [ahaan-thai.de](https://www.ahaan-thai.de/) and other projects.
+"Khao" (ข้าว) is the Thai name for rice. Just as rice is the basis of many Asian dishes, this component library will be the new basis for my blogs [Der Reiskoch](https://www.der-reiskoch.de/), [ahaan-thai.de](https://www.ahaan-thai.de/) and other upcoming projects.
 
 ## Styling
 
