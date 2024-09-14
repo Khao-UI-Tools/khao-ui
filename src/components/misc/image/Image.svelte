@@ -87,13 +87,14 @@
     --khao-image-caption-color: var(--khao-sys-color-neutral30);
     --khao-image-caption-font-size: var(--khao-sys-size-typography-6);
     --khao-image-caption-font-style: italic;
-    --khao-image-caption-spacing: 2px;
+    --khao-image-caption-spacing: var(--khao-sys-size-regular-1);
   }
 
   .figure {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
   }
 
   .image {
@@ -112,6 +113,7 @@
     padding-top: var(--khao-image-caption-spacing);
     text-align: center;
     font-size: var(--khao-image-caption-font-size);
+    line-height: var(--khao-image-caption-font-size);
     font-style: var(--khao-image-caption-font-style);
     color: var(--khao-image-caption-color);
   }
