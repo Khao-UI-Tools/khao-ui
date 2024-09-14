@@ -15,7 +15,6 @@
   let pictureElement: HTMLPictureElement;
 
   onMount(() => {
-   
     if (src !== "") {
       let extension  = src.split('.').pop();
 
@@ -26,10 +25,8 @@
     }
 
     if (lazyloadSrc !== '') {
-        initLazyLoad(pictureElement, lazyloadThreshold)
+        initLazyLoad(pictureElement, lazyloadThreshold);
     }
-
-
   });
 
 
@@ -82,25 +79,21 @@
     {/if}
 </figure>
 
-
 <style>
   :host {
     --khao-image-elevation-level: 1;
     --khao-image-elevation-level-shadow: none;
 
-
     --khao-image-caption-color: var(--khao-sys-color-neutral30);
     --khao-image-caption-font-size: var(--khao-sys-size-typography-6);
     --khao-image-caption-font-style: italic;
-    --khao-image-caption-spacing: var(--khao-sys-size-regular-1);
+    --khao-image-caption-spacing: 2px;
   }
-
 
   .figure {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--khao-image-caption-spacing);
   }
 
   .image {
@@ -116,15 +109,12 @@
   }
 
   .caption {
+    padding-top: var(--khao-image-caption-spacing);
     text-align: center;
     font-size: var(--khao-image-caption-font-size);
     font-style: var(--khao-image-caption-font-style);
     color: var(--khao-image-caption-color);
   }
-
-  
-
-
 
 </style>
 

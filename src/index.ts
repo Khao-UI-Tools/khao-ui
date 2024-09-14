@@ -6,6 +6,7 @@ export * as Card from "./components/cards/card/Card.svelte";
 export * as Chip from "./components/misc/chip/Chip.svelte";
 export * as ContentWithIcon from "./components/misc/contentWithIcon/ContentWithIcon.svelte";
 //export * as IconButton from "./components/buttons/iconButton/IconButton.svelte";
+export * as Image from './components/misc/image/Image.svelte';
 export * as InfiniteScroll from "./components/misc/infinteScroll/InfiniteScroll.svelte";
 export * as Link from "./components/links/link/Link.svelte";
 export * as MarkerPin from "./components/map/markerPin/MarkerPin.svelte";

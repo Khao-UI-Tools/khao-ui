@@ -4,7 +4,7 @@ const initInfiniteSroll = (
   paginationSlug: string,
   callback?: () => void
 ) => {
-  const observerCallback = (entries) => {
+  const observerCallback:  IntersectionObserverCallback = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         loadMore(querySelector, paginationSlug, callback);
