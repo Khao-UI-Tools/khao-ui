@@ -55,6 +55,7 @@ export const Default: Story = {
   args: {
     src: "https://bilder.koch-reis.de/media/_thaiindex/yam_hed.jpg",
     title: "An image",
+    caption: "An Image with caption",
     type: imageTypeDefault,
     webp: "false",
   },
