@@ -44,7 +44,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Khao-UI-Tools/khao-ui.git"
+    "url": "git+https://github.com/Khao-UI-Tools/khao-ui.git"
   },
   "keywords": [
     "css",
