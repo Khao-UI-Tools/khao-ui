@@ -44,7 +44,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Khao-UI-Tools/khao-ui.git"
+    "url": "git+https://github.com/Khao-UI-Tools/khao-ui.git"
   },
   "keywords": [
     "css",
@@ -54,5 +54,5 @@
   ],
   "author": "Der-Reiskoch <info@der-reiskoch.de>",
   "license": "ISC",
-  "homepage": "https://der-reiskoch.github.io/khao-ui/"
+  "homepage": "https://khao-ui-tools.github.io/khao-ui"
 }
