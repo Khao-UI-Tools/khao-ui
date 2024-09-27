@@ -1,13 +1,11 @@
-const initInfiniteSroll = (
+export const observeSrolledToBottom = (
   scroller: HTMLElement,
-  querySelector: string,
-  paginationSlug: string,
   callback?: () => void
 ) => {
-  const observerCallback:  IntersectionObserverCallback = (entries) => {
+  const observerCallback: IntersectionObserverCallback = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        loadMore(querySelector, paginationSlug, callback);
+        if (callback) callback();
       }
     });
   };
@@ -25,7 +23,7 @@ const initInfiniteSroll = (
 
 const alreadyAddedPages = ["1"];
 
-const loadMore = (
+export const loadMore = (
   querySelector: string,
   paginationSlug: string,
   callback?: () => void
@@ -85,5 +83,3 @@ const loadMore = (
     console.log("already added", nextPage);
   }
 };
-
-export default initInfiniteSroll;
