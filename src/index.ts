@@ -15,6 +15,7 @@ export * as PayPalDonateButton from "./components/buttons/payPalDonateButton/Pay
 export * as ScrollToTop from "./components/buttons/scrollToTop/scrollToTop.svelte";
 export * as ShareButtons from "./components/widgets/shareButtons/ShareButtons.svelte";
 export * as SocialButtons from "./components/widgets/socialButtons/SocialButtons.svelte";
+export * as Spinner from "./components/misc/spinner/Spinner.svelte";
 export * as SteadyButton from "./components/buttons/steadyButton/SteadyButton.svelte";
 export * as Tab from "./components/tabs/tab/Tab.svelte";
 export * as TabBar from "./components/tabs/tabBar/TabBar.svelte";

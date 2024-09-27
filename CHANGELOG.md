@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.3]
+
+- improved handling of `numberOfPages` in `<khao-infinite-scoll>`
+
+## [1.6.2]
+
+- added `numberOfPages` to `<khao-infinite-scoll>`
+
+## [1.6.1]
+
+- added `khao-spinner`
+- use `khao-spinner` in `<khao-infinite-scoll>`
+- hide button if there is no more content in `<khao-infinite-scoll>`
+
 ## [1.6.0]
 
 - changed behavior of `<khao-infinite-scoll>` by adding a load more button
