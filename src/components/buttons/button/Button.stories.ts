@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Button from "./Button.svelte";
-import { fn } from '@storybook/test';
+import { fn } from "@storybook/test";
 import { iconNames } from "../../../icons/types/IconName";
 import {
   buttonPriorities,
@@ -15,6 +15,7 @@ const meta = {
   argTypes: {
     customBGColor: { control: "color" },
     customColor: { control: "color" },
+    customMinWidth: { control: "text", type: "string" },
     priority: {
       control: { type: "select" },
       options: buttonPriorities,
@@ -63,7 +64,7 @@ export const Primary: Story = {
   args: {
     priority: "primary",
     label: "Primary Button",
-    onClick: fn()
+    onClick: fn(),
   },
 };
 
@@ -73,7 +74,7 @@ export const PrimaryCompact: Story = {
     size: "compact",
     label: "Karten App",
     iconName: "location",
-    onClick: fn()
+    onClick: fn(),
   },
 };
 
@@ -82,7 +83,7 @@ export const SecondaryLarge: Story = {
     priority: "secondary",
     size: "large",
     label: "Secondary Button",
-    onClick: fn()
+    onClick: fn(),
   },
 };
 
@@ -90,7 +91,7 @@ export const Tertiary: Story = {
   args: {
     priority: "tertiary",
     label: "Tertiary Button",
-    onClick: fn()
+    onClick: fn(),
   },
 };
 
@@ -99,7 +100,7 @@ export const Newsletter: Story = {
     priority: "tertiary",
     label: "Newsletter",
     iconName: "newsletter",
-    onClick: fn()
+    onClick: fn(),
   },
 };
 
@@ -108,7 +109,7 @@ export const Print: Story = {
     priority: "primary",
     label: "Print",
     iconName: "printer",
-    onClick: fn()
+    onClick: fn(),
   },
 };
 
@@ -118,7 +119,7 @@ export const CustomColorsExample1: Story = {
     iconName: "facebook",
     customBGColor: "#3b5998",
     customColor: "white",
-    onClick: fn()
+    onClick: fn(),
   },
 };
 
@@ -128,6 +129,14 @@ export const CustomColorsExample2: Story = {
     iconName: "pinterest",
     customBGColor: "rgb(189, 8, 28)",
     customColor: "white",
-    onClick: fn()
+    onClick: fn(),
+  },
+};
+
+export const CustomMinWidthExample: Story = {
+  args: {
+    label: "Wide Button",
+    customMinWidth: "400px",
+    onClick: fn(),
   },
 };

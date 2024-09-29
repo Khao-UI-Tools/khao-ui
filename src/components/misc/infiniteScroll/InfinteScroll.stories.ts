@@ -14,6 +14,18 @@ const meta = {
       control: "text",
       type: "string",
     },
+    buttonLabel: {
+      control: "text",
+      type: "string",
+    },
+    numberOfPages: {
+      control: "number",
+      type: "string",
+    },
+    showButtonOnFirstLoad: {
+      control: "boolean",
+      type: "string",
+    },
   },
 } satisfies Meta<InfiniteScroll>;
 
@@ -24,6 +36,8 @@ export const Default: Story = {
   args: {
     querySelector: "article.recipe",
     paginationSlug: "page/",
+    buttonLabel: "Load more...",
+    numberOfPages: 2,
   },
 
   render: () => {
@@ -110,6 +124,6 @@ export const Default: Story = {
     
     </script>`;
 
-    return `${mockContent}${eventListener}<khao-infinite-scroll querySelector="article.recipe" paginationSlug="page/">`;
+    return `${mockContent}${eventListener}<khao-infinite-scroll querySelector="article.recipe" paginationSlug="page" buttonLabel="Load More ..." numberOfPages="2" /">`;
   },
 };
