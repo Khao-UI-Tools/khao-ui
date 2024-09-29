@@ -10,6 +10,10 @@
   import { observeSrolledToBottom, loadMore } from "./utils/initInfiniteSroll";
   import Button from "../../buttons/button/Button.svelte";
   import Spinner from "../spinner/Spinner.svelte";
+  import {
+    isTrue,
+    type StringBoolean,
+  } from "../../../common/types/StringBoolean";
 
   let showButton = false;
   let showSpinner = false;
@@ -42,6 +46,10 @@
   let scroller: HTMLElement;
 
   onMount(() => {
+    if (isTrue(showButtonOnFirstLoad)) {
+      showButton = true;
+    }
+
     observeSrolledToBottom(scroller, handleScolledToBottom);
   });
 
@@ -49,6 +57,7 @@
   export let paginationSlug: string;
   export let buttonLabel: string;
   export let numberOfPages: string = "1";
+  export let showButtonOnFirstLoad: StringBoolean = "true";
 </script>
 
 <div bind:this={scroller} class="infinite-scroll">

@@ -9,11 +9,17 @@
   import Icon from "../../../icons/Icon.svelte";
   import { type IconName } from "../../../icons/types/IconName";
 
-  function setCustomStyles(customBGColor: string, customColor: string): string {
+  function setCustomStyles(
+    customBGColor: string,
+    customColor: string,
+    customMinWidth: string
+  ): string {
     var customStyles =
       customBGColor !== "" && customColor !== ""
-        ? `--khao-button-container-color:${customBGColor}; --khao-button-label-text-color:${customColor}; --khao-button-icon-color: ${customColor}; --khao-button-state-layer-color: ${customColor}`
+        ? `--khao-button-container-color:${customBGColor}; --khao-button-label-text-color:${customColor}; --khao-button-icon-color: ${customColor}; --khao-button-state-layer-color: ${customColor};`
         : "";
+
+    customStyles += customMinWidth !== "" ? `min-width: ${customMinWidth}` : "";
 
     return customStyles;
   }
@@ -34,6 +40,7 @@
 
   export let customBGColor: string = "";
   export let customColor: string = "";
+  export let customMinWidth: string = "";
 
   export let iconName: IconName | "" = "";
 
@@ -46,7 +53,7 @@
   {href}
   {target}
   {rel}
-  style={setCustomStyles(customBGColor, customColor)}
+  style={setCustomStyles(customBGColor, customColor, customMinWidth)}
   role={setRole(href, onClick)}
   on:click={onClick}
 >
