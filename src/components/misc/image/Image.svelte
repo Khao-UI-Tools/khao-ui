@@ -10,7 +10,7 @@
   } from "../../../common/types/StringBoolean";
 
   let webpSrc: string = "";
-  let imageType: "image/jpeg" | "image/png" = "image/jpeg";
+  let imageType: "image/jpeg" | "image/png" | "image/svg+xml" = "image/jpeg";
   let pictureElement: HTMLPictureElement;
 
   onMount(() => {
@@ -19,9 +19,13 @@
 
       if (extension) {
         webpSrc = src.replace(extension, "webp");
-        imageType = ["jpg", "jpeg"].includes(extension.toLowerCase())
-          ? "image/jpeg"
-          : "image/png";
+        imageType = "image/jpeg";
+        if ("png" === extension.toLowerCase()) {
+          imageType = "image/png";
+        }
+        if ("svg" === extension.toLowerCase()) {
+          imageType = "image/svg+xml";
+        }
       }
     }
 
@@ -82,6 +86,8 @@
     --khao-image-elevation-level: 1;
     --khao-image-elevation-level-shadow: none;
 
+    --khao-image-border-radius: var(--khao-sys-shape-corner-none);
+
     --khao-image-caption-color: var(--khao-sys-color-neutral30);
     --khao-image-caption-font-size: var(--khao-sys-size-typography-6);
     --khao-image-caption-line-height: var(--khao-sys-size-typography-6);
@@ -101,6 +107,7 @@
     height: auto;
     box-shadow: var(--khao-image-elevation-level-shadow);
     z-index: var(--khao-image-elevation-level);
+    border-radius: var(--khao-image-border-radius);
   }
 
   .image-elevated {

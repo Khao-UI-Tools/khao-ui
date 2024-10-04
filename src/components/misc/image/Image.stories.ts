@@ -100,6 +100,18 @@ export const PngWithWebp: Story = {
   },
 };
 
+export const SVG: Story = {
+  args: {
+    src: "https://www.der-reiskoch.de/svg/logo/logo.svg",
+    title: "An SVG image",
+    caption: "A .svg image",
+    width: "220px",
+    height: "220px",
+    type: imageTypeDefault,
+    webp: "false",
+  },
+};
+
 export const LazyLoadedImage: Story = {
   args: {
     src: "https://bilder.koch-reis.de/media/1300/1333/00_markt_in_ranong.jpg",
@@ -120,7 +132,6 @@ export const LazyLoadedWithWebp: Story = {
     webp: "true",
   },
 };
-
 
 export const SmallLazyLoadedWithWebp: Story = {
   args: {
