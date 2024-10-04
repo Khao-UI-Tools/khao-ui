@@ -1,6 +1,6 @@
 {
   "name": "@der-reiskoch/khao-ui",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "type": "module",
   "main": "dist/lib/khao-ui.js",
   "files": [
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^2.0.1",
-    "@der-reiskoch/khao-malet": "0.0.12",
+    "@der-reiskoch/khao-malet": "0.0.13",
     "@storybook/addon-essentials": "^8.3.0",
     "@storybook/addon-interactions": "^8.3.0",
     "@storybook/addon-links": "^8.3.0",
