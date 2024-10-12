@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Image from "./Image.svelte";
 import { imageTypes, imageTypeDefault } from "./types/ImageType";
-import lazyLoadImage from "./utils/loaders/loadImage";
 
 const meta = {
   title: "Misc/Image",
@@ -11,12 +10,9 @@ const meta = {
       control: "text",
       type: "string",
     },
-    lazyloadSrc: {
-      control: "text",
-      type: "string",
-    },
-    lazyloadThreshold: {
-      control: "text",
+    lazyLoading: {
+      control: { type: "select" },
+      options: ["true", "false"],
       type: "string",
     },
     webp: {
@@ -116,7 +112,7 @@ export const LazyLoadedImage: Story = {
   args: {
     src: "https://bilder.koch-reis.de/media/1300/1333/00_markt_in_ranong.jpg",
     title: "An image that is lazyloaded",
-    lazyloadSrc: "https://www.der-reiskoch.de/img/lazy-loading.png",
+    lazyLoading: "true",
     caption: "An image that is lazyloaded",
     type: imageTypeDefault,
   },
@@ -126,7 +122,7 @@ export const LazyLoadedWithWebp: Story = {
   args: {
     src: "https://bilder.koch-reis.de/media/1200/1263/collage.jpg",
     title: "An image that has webp and is lazyloaded",
-    lazyloadSrc: "https://www.der-reiskoch.de/img/lazy-loading.png",
+    lazyLoading: "true",
     caption: "An image that has webp and is lazyloaded",
     type: imageTypeDefault,
     webp: "true",
@@ -137,8 +133,7 @@ export const SmallLazyLoadedWithWebp: Story = {
   args: {
     src: "https://bilder.koch-reis.de/media/1200/1263/collage.jpg",
     title: "An image that has webp and is lazyloaded",
-    lazyloadSrc: "https://www.der-reiskoch.de/img/lazy-loading.png",
-    lazyLoadThreshold: "220px",
+    lazyLoading: "true",
     width: "300px",
     height: "240px",
     caption: "A small image that has webp and is lazyloaded",

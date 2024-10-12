@@ -2,7 +2,6 @@
 
 <script lang="ts">
   import { onMount } from "svelte";
-  import initLazyLoad from "./utils/initLazyLoad";
   import { type ImageType, imageTypeDefault } from "./types/ImageType";
   import {
     isTrue,
@@ -28,16 +27,11 @@
         }
       }
     }
-
-    if (lazyloadSrc !== "") {
-      initLazyLoad(pictureElement, lazyloadThreshold);
-    }
   });
 
   export let src: string = "";
-  export let lazyloadSrc: string = "";
-  export let lazyloadThreshold: string = "440px";
 
+  export let lazyLoading: StringBoolean = "false";
   export let webp: StringBoolean = "false";
 
   export let title: string = "";
@@ -51,21 +45,13 @@
 <figure class="figure">
   <picture bind:this={pictureElement}>
     {#if isTrue(webp)}
-      <source
-        srcset={lazyloadSrc !== "" ? lazyloadSrc : webpSrc}
-        data-srcset={lazyloadSrc !== "" ? webpSrc : ""}
-        type="image/webp"
-      />
+      <source srcset={webpSrc} type="image/webp" />
     {/if}
 
-    <source
-      srcset={lazyloadSrc !== "" ? lazyloadSrc : src}
-      data-srcset={lazyloadSrc !== "" ? src : ""}
-      type={imageType}
-    />
+    <source srcset={src} type={imageType} />
     <img
-      src={lazyloadSrc !== "" ? lazyloadSrc : src}
-      data-src={lazyloadSrc !== "" ? src : ""}
+      {src}
+      loading={isTrue(lazyLoading) ? "lazy" : "eager"}
       alt={title}
       {title}
       {width}
