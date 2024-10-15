@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.5]
+
+- added `startTime` to `khao-video` component
+
+## [1.7.4]
+
+- fixed `khao-video` consent text and icon for mobile devices
+
+## [1.7.3]
+
+- removed consentText from caption in `khao-video` component
+
+## [1.7.2]
+
+- introduced `khao-video` component
+
 ## [1.7.1]
 
 - upgraded to `khao-maletv0.0.14`
