@@ -3,7 +3,7 @@ import Image from "./Image.svelte";
 import { imageTypes, imageTypeDefault } from "./types/ImageType";
 
 const meta = {
-  title: "Misc/Image",
+  title: "Media/Image",
   component: "khao-image",
   argTypes: {
     src: {
