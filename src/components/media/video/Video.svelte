@@ -27,7 +27,7 @@
   export let videoId: string = "";
 
   export let autoplay: StringBoolean = "false";
-  export let startTime: String = "";
+  export let start: String = "";
 
   export let title: string = "";
   export let caption: string = "";
@@ -45,11 +45,11 @@
       : "";
 
   if (type === "youtube" && isTrue(autoplay)) {
-    embeddedUrl += "?autoplay=1";
+    embeddedUrl += "&autoplay=1";
   }
 
-  if (type === "youtube" && startTime !== "") {
-    embeddedUrl += `?start=${startTime}`;
+  if (type === "youtube" && start !== "") {
+    embeddedUrl += `&start=${start}`;
   }
 
   function giveConsent(event: MouseEvent) {

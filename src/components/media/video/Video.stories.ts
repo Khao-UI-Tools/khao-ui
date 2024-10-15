@@ -15,7 +15,7 @@ const meta = {
       options: ["true", "false"],
       type: "string",
     },
-    startTime: {
+    start: {
       control: "text",
       type: "string",
       description: "Start time in seconds",
@@ -65,12 +65,12 @@ export const Default: Story = {
 
 export const WithConsent: Story = {
   args: {
-    videoId: "uIwy020UD7E",
+    videoId: "EFv5mlII3zA",
     awaitsConsent: "true",
     autoplay: "true",
     consentText:
       "Mit dem Aufruf des Videos erklärst Du Dich einverstanden, dass Deine Daten an YouTube übermittelt werden und dass du die Datemschutzerklärung gelesen hast.",
-    previewSrc: "https://api.koch-reis.de/youtube/v1/?file=uIwy020UD7E.jpg",
+    previewSrc: "https://api.koch-reis.de/youtube/v1/?file=EFv5mlII3zA.jpg",
     title: "Video",
     caption: "A Video with consent",
   },
@@ -94,7 +94,21 @@ export const WithStartTime: Story = {
     videoId: "-rD6V79-M4I",
     autoplay: "false",
     title: "Video",
-    startTime: "1880",
+    start: "1880",
+    caption: "Video with startTime",
+  },
+};
+
+export const WithStartTimeAndConsent: Story = {
+  args: {
+    videoId: "-rD6V79-M4I",
+    previewSrc: "https://api.koch-reis.de/youtube/v1/?file=-rD6V79-M4I.jpg",
+    awaitsConsent: "true",
+    autoplay: "true",
+    consentText:
+      "Mit dem Aufruf des Videos erklärst Du Dich einverstanden, dass Deine Daten an YouTube übermittelt werden.",
+    title: "Video",
+    start: "1880",
     caption: "Video with startTime",
   },
 };
