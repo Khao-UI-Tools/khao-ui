@@ -52,7 +52,7 @@
   {target}
   on:click={onClick}
 >
-  <slot>Empty Link</slot>
+  <slot>Link</slot>
   {#if iconName !== ""}
     <span class="icon" aria-hidden="true">
       <Icon {iconName} sizeFactor="4" opacity={iconOpacity} />
@@ -72,6 +72,11 @@
     cursor: pointer;
     vertical-align: baseline;
     text-underline-offset: var(--khao-sys-size-regular-1);
+
+    &:focus-visible {
+      outline: 1px solid currentColor;
+      outline-offset: 2px;
+    }
   }
 
   .link-primary {
