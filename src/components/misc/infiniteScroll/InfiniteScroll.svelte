@@ -10,10 +10,7 @@
   import { observeSrolledToBottom, loadMore } from "./utils/initInfiniteSroll";
   import Button from "../../buttons/button/Button.svelte";
   import Spinner from "../spinner/Spinner.svelte";
-  import {
-    isTrue,
-    type StringBoolean,
-  } from "../../../common/types/StringBoolean";
+  import { type StringBoolean } from "../../../common/types/StringBoolean";
 
   let showButton = false;
   let showSpinner = false;
@@ -46,7 +43,7 @@
   let scroller: HTMLElement;
 
   onMount(() => {
-    if (isTrue(showButtonOnFirstLoad)) {
+    if (showButtonOnFirstLoad === "true") {
       showButton = true;
     }
 

@@ -4,11 +4,8 @@
   import { onMount } from "svelte";
   import IconButton from "../iconButton/IconButton.svelte";
   import scrollToTop from "./utils/scrollToTop";
-  import {
-    isTrue,
-    type StringBoolean,
-  } from "../../../common/types/StringBoolean";
-  import { type ButtonSize, buttonSizeDefault } from "../types/ButtonSize";
+  import { type StringBoolean } from "../../../common/types/StringBoolean";
+  import { type ButtonSize } from "../types/ButtonSize";
 
   let wrapper: HTMLElement;
 
@@ -43,12 +40,12 @@
   export let title: string = "";
   export let scrollThreshold: string = "155";
   export let forceVisible: StringBoolean = "false";
-  export let size: ButtonSize = buttonSizeDefault;
+  export let size: ButtonSize = "medium";
 </script>
 
 <div
   bind:this={wrapper}
-  class="wrapper wrapper-size-{size} {isTrue(forceVisible)
+  class="wrapper wrapper-size-{size} {forceVisible === 'true'
     ? 'wrapper-visible'
     : ''}"
 >

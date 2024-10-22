@@ -5,7 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-# [1.8.4]
+## [1.8.7]
+
+- renamed svelte-chunk
+- improved focus state for `khao-ui-link`
+- added focus-trap to `khao-ui-share-buttons`
+- upgraded node version to `18.17.0`
+
+## [1.8.5]
+
+- moved `khao-ui-ad` to seperate chunk
+- moved `khao-ui-button-pay-pal-donate` to seperate chunk
+- moved `khao-ui-button-steady` to seperate chunk
+- moved `khao-ui-content-with-icon` to seperate chunk
+- moved `khao-ui-icon-button` to seperate chunk
+- moved `khao-ui-link` to seperate chunk
+- moved `khao-ui-marker-pin` to seperate chunk
+- moved `khao-ui-scroll-to-top` to seperate chunk
+- moved `khao-ui-social-buttons` to seperate chunk
+- removed `ButtonSizeDefault` and `isTrue`
+- included `openInNewWindow` in `khao-ui-link` and `khao-ui-share-buttons`
+
+## [1.8.4]
 
 - added chunk suffix to chunk
 

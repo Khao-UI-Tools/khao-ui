@@ -7,9 +7,17 @@
     type IconLocation,
     iconLocationDefault,
   } from "./types/LinkIconLocation";
-  import openInNewWindow from "../../../common/utils/openInNewWindow";
   import { linkPriorityDefault, type LinkPriority } from "./types/LinkPriority";
   import type { IconOpacity } from "../../../icons/types/IconOpacity";
+
+  const openInNewWindow = (
+    url: string,
+    width: number = 700,
+    height: number = 650
+  ) => {
+    const windowFeatures = `left=100,top=100,width=${width},height=${height}}`;
+    window.open(url, "new", windowFeatures);
+  };
 
   const onClick = (event: MouseEvent) => {
     if (href !== "" && opensNewWindow === "true") {
@@ -44,7 +52,7 @@
   {target}
   on:click={onClick}
 >
-  <slot>Empty Link</slot>
+  <slot>Link</slot>
   {#if iconName !== ""}
     <span class="icon" aria-hidden="true">
       <Icon {iconName} sizeFactor="4" opacity={iconOpacity} />
@@ -64,6 +72,11 @@
     cursor: pointer;
     vertical-align: baseline;
     text-underline-offset: var(--khao-sys-size-regular-1);
+
+    &:focus-visible {
+      outline: 1px solid currentColor;
+      outline-offset: 2px;
+    }
   }
 
   .link-primary {

@@ -6,7 +6,7 @@ import {
   buttonPriorities,
   buttonPriorityDefault,
 } from "../types/ButtonPriority";
-import { buttonSizes, buttonSizeDefault } from "../types/ButtonSize";
+import { buttonSizes } from "../types/ButtonSize";
 
 const meta = {
   title: "Buttons/Button",
@@ -24,7 +24,7 @@ const meta = {
     size: {
       control: { type: "select" },
       options: buttonSizes,
-      default: buttonSizeDefault,
+      default: "medium",
     },
     iconName: {
       control: { type: "select" },

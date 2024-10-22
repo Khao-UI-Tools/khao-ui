@@ -4,10 +4,7 @@
   import { onMount } from "svelte";
   import Tab from "../tab/Tab.svelte";
   import scrollActiveTabIntoView from "./scrollActiveTabIntoView";
-  import {
-    isTrue,
-    type StringBoolean,
-  } from "../../../common/types/StringBoolean";
+  import { type StringBoolean } from "../../../common/types/StringBoolean";
 
   let wrapper: HTMLElement;
 
@@ -23,7 +20,7 @@
 
 <div class="container">
   <div
-    class="wrapper {isTrue(centered) ? 'wrapper-centered' : ''}"
+    class="wrapper {centered === 'true' ? 'wrapper-centered' : ''}"
     bind:this={wrapper}
     style="max-width: {maxWidth}"
   >

@@ -4,10 +4,7 @@
   import { onMount } from "svelte";
   import Image from "../image/Image.svelte";
   import Icon from "../../../icons/Icon.svelte";
-  import {
-    isTrue,
-    type StringBoolean,
-  } from "../../../common/types/StringBoolean";
+  import { type StringBoolean } from "../../../common/types/StringBoolean";
 
   type VideoType = "youtube";
 
@@ -17,7 +14,7 @@
   let captionElement: HTMLDivElement;
 
   onMount(() => {
-    if (isTrue(awaitsConsent)) {
+    if (awaitsConsent === "true") {
       shwoPreview = true;
     } else {
       showVideo = true;
@@ -45,7 +42,7 @@
       ? `https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1`
       : "";
 
-  if (type === "youtube" && isTrue(autoplay)) {
+  if (type === "youtube" && autoplay === "true") {
     embeddedUrl += "&autoplay=1";
   }
 
