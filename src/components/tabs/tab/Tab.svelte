@@ -3,10 +3,7 @@
 <script lang="ts">
   import Breakpoint from "../../../common/utils/Breakpoint";
 
-  import {
-    isTrue,
-    type StringBoolean,
-  } from "../../../common/types/StringBoolean";
+  import { type StringBoolean } from "../../../common/types/StringBoolean";
   import { type TabSize } from "../types/TabSize";
 
   export let href: string = "";
@@ -17,12 +14,12 @@
 </script>
 
 <li
-  class="tab {isTrue(active) ? 'tab-active' : ''} tab-size-{size}"
+  class="tab {active === 'true' ? 'tab-active' : ''} tab-size-{size}"
   role="tab"
   data-key={key}
-  aria-selected={isTrue(active) ? "true" : "false"}
+  aria-selected={active === "true" ? "true" : "false"}
 >
-  <a {href} {title} class="link {isTrue(active) ? 'link-active' : ''}">
+  <a {href} {title} class="link {active === 'true' ? 'link-active' : ''}">
     <slot>Tab</slot>
   </a>
 </li>

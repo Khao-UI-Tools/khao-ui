@@ -4,11 +4,8 @@
   import { type ButtonPriority } from "../types/ButtonPriority";
   import Icon from "../../../icons/Icon.svelte";
   import { type IconName } from "../../../icons/types/IconName";
-  import {
-    isTrue,
-    type StringBoolean,
-  } from "../../../common/types/StringBoolean";
-  import { buttonSizeDefault, type ButtonSize } from "../types/ButtonSize";
+  import { type StringBoolean } from "../../../common/types/StringBoolean";
+  import { type ButtonSize } from "../types/ButtonSize";
 
   function setCustomStyles(
     customBGColor: string,
@@ -27,7 +24,10 @@
     return customStyles;
   }
 
-  function setRole(href: string | null, onClick: (() => void) | null): string {
+  function setRole(
+    href: string | null,
+    onClick: ((event: MouseEvent) => void) | null
+  ): string {
     return href === null && onClick !== null ? "button" : "";
   }
 
@@ -38,7 +38,7 @@
   export let target: string | null = null;
 
   export let priority: ButtonPriority = "primary";
-  export let size: ButtonSize = buttonSizeDefault;
+  export let size: ButtonSize = "medium";
 
   export let customBGColor: string = "";
   export let customColor: string = "";
@@ -52,7 +52,7 @@
 </script>
 
 <a
-  class="button button-{priority} button-size-{size} {isTrue(circle)
+  class="button button-{priority} button-size-{size} {circle === 'true'
     ? 'button-circle'
     : ''} {customHoverColor ? 'button-custom-hover' : ''}"
   {title}

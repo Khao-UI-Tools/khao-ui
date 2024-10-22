@@ -3,10 +3,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { type ImageType, imageTypeDefault } from "./types/ImageType";
-  import {
-    isTrue,
-    type StringBoolean,
-  } from "../../../common/types/StringBoolean";
+  import { type StringBoolean } from "../../../common/types/StringBoolean";
 
   let webpSrc: string = "";
   let imageType: "image/jpeg" | "image/png" | "image/svg+xml" = "image/jpeg";
@@ -43,14 +40,14 @@
 
 <figure class="figure">
   <picture>
-    {#if isTrue(webp)}
+    {#if webp === "true"}
       <source srcset={webpSrc} type="image/webp" />
     {/if}
 
     <source srcset={src} type={imageType} />
     <img
       {src}
-      loading={isTrue(lazyLoading) ? "lazy" : "eager"}
+      loading={lazyLoading === "true" ? "lazy" : "eager"}
       alt={title}
       {title}
       {width}

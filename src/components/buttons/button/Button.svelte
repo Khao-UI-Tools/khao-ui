@@ -5,7 +5,7 @@
     type ButtonPriority,
     buttonPriorityDefault,
   } from "../types/ButtonPriority";
-  import { type ButtonSize, buttonSizeDefault } from "../types/ButtonSize";
+  import { type ButtonSize } from "../types/ButtonSize";
   import Icon from "../../../icons/Icon.svelte";
   import { type IconName } from "../../../icons/types/IconName";
 
@@ -36,7 +36,7 @@
   export let target: string | null = null;
 
   export let priority: ButtonPriority = buttonPriorityDefault;
-  export let size: ButtonSize = buttonSizeDefault;
+  export let size: ButtonSize = "medium";
 
   export let customBGColor: string = "";
   export let customColor: string = "";
