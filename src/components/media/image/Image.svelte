@@ -10,7 +10,6 @@
 
   let webpSrc: string = "";
   let imageType: "image/jpeg" | "image/png" | "image/svg+xml" = "image/jpeg";
-  let pictureElement: HTMLPictureElement;
 
   onMount(() => {
     if (src !== "") {
@@ -43,7 +42,7 @@
 </script>
 
 <figure class="figure">
-  <picture bind:this={pictureElement}>
+  <picture>
     {#if isTrue(webp)}
       <source srcset={webpSrc} type="image/webp" />
     {/if}
@@ -71,6 +70,7 @@
   :host {
     --khao-image-elevation-level: 1;
     --khao-image-elevation-level-shadow: none;
+    --khao-image-position: center;
 
     --khao-image-border-radius: var(--khao-sys-shape-corner-none);
 
@@ -82,6 +82,9 @@
   }
 
   .figure {
+    display: flex;
+    flex-direction: column;
+    align-items: var(--khao-image-position);
     margin: 0;
   }
 

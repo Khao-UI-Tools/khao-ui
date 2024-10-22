@@ -5,30 +5,62 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.8.4]
+
+- added chunk suffix to chunk
+
+## [1.8.3]
+
+- make chunks independent
+- moved `khao-ui-icon` to seperate chunk
+
+## [1.8.2]
+
+- moved `khao-ui-badge`, `khao-ui-tab-bar`, `khao-ui-chip` and `khao-ui-share-buttons` to seperate chunks
+- removed dummy slot content in `khao-ui-card` und `khao-ui-chip`
+
+## [1.8.1]
+
+- fixed loading of video in `khao-ui-video`
+- moved `khao-ui-image` to seperate chunk
+
+## [1.8.0]
+
+- moved `khao-ui-infinite-scroll`, `khao-ui-tab-bar`, and `khao-ui-video` to seperate chunks
+
+## [1.7.9]
+
+- moved `khao-ui-card` and `khao-ui-button` to seperate chunks
+
+## [1.7.8]
+
+- added `khao-ui-image-position` to `khao-ui-image`
+- removed ununised bind in `khao-ui-image`
+
 ## [1.7.7]
 
-- simlified styles for `khao-image`
+- simlified styles for `khao-ui-image`
 
 ## [1.7.6]
 
-- fixed `startTime` and `autoplay` in `khao-video` component
+- fixed `startTime` and `autoplay` in `khao-ui-video` component
 - renamed `startTime` into `start` (/!\)
 
 ## [1.7.5]
 
-- added `startTime` to `khao-video` component
+- added `startTime` to `khao-ui-video` component
 
 ## [1.7.4]
 
-- fixed `khao-video` consent text and icon for mobile devices
+- fixed `khao-ui-video` consent text and icon for mobile devices
 
 ## [1.7.3]
 
-- removed consentText from caption in `khao-video` component
+- removed consentText from caption in `khao-ui-video` component
 
 ## [1.7.2]
 
-- introduced `khao-video` component
+- introduced `khao-ui-video` component
 
 ## [1.7.1]
 
@@ -37,8 +69,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.7.0]
 
-- added `lazyLoading` attribute to `<khao-image>`
-- removed `lazyloadSrc` and `lazyloadThreshold` from `<khao-image>` (/!\)
+- added `lazyLoading` attribute to `<khao-ui-image>`
+- removed `lazyloadSrc` and `lazyloadThreshold` from `<khao-ui-image>` (/!\)
 
 ## [1.6.7]
 
@@ -47,11 +79,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.6.6]
 
--`<khao-image>` can now handle svg images correctly
+-`<khao-ui-image>` can now handle svg images correctly
 
 ## [1.6.5]
 
-- added `--khao-image-border-radius` to `<khao-image>`
+- added `--khao-ui-image-border-radius` to `<khao-ui-image>`
 
 ## [1.6.4]
 
@@ -78,7 +110,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.5.6]
 
-- added `--khao-image-caption-line-height` custom property to `khao-image`
+- added `--khao-ui-image-caption-line-height` custom property to `khao-ui-image`
 -
 
 ## [1.5.5]
@@ -88,19 +120,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.5.4]
 
-- added margin 0 to figure in `khao-image` component
+- added margin 0 to figure in `khao-ui-image` component
 
 ## [1.5.3]
 
-- reduced padding on caption display for `khao-image` component
+- reduced padding on caption display for `khao-ui-image` component
 
 ## [1.5.2]
 
-- optimized caption display for `khao-image` component
+- optimized caption display for `khao-ui-image` component
 
 ## [1.5.1]
 
-- added `khao-image` component with WebP Support and optional lazy loading
+- added `khao-ui-image` component with WebP Support and optional lazy loading
 
 ## [1.5.0]
 
