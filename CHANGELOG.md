@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [1.8.5]
 
 - removed `ButtonSizeDefault` and `isTrue`
+- included `openInNewWindow` in `khao-ui-link` and `khao-ui-share-buttons`
 
 ## [1.8.4]
 

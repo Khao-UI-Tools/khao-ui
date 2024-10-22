@@ -2,7 +2,15 @@
 
 <script lang="ts">
   import Button from "../../buttons/button/Button.svelte";
-  import openInNewWindow from "../../../common/utils/openInNewWindow";
+
+  function openInNewWindow(
+    url: string,
+    width: number = 700,
+    height: number = 650
+  ) {
+    const windowFeatures = `left=100,top=100,width=${width},height=${height}}`;
+    window.open(url, "new", windowFeatures);
+  }
 
   function isAbleToPrint(): boolean {
     return window.print !== undefined;
