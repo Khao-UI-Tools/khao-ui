@@ -5,7 +5,6 @@
   import { type CardType, cardTypeDefault } from "../types/CardType";
   import Icon from "../../../icons/Icon.svelte";
   import { type IconName } from "../../../icons/types/IconName";
-
   export let filling: CardFilling = cardFillingDefault;
   export let type: CardType = cardTypeDefault;
   export let title: string = "";
@@ -25,14 +24,7 @@
         <Icon {iconName} sizeFactor="7" />
       </div>
     {/if}
-    <slot>
-      Card content comes here. if it's longer it breaks the next line but not
-      the container, because that would look rather ugly. Lorem ipsum dolor sit
-      amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-      ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-      accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-      sea takimata sanctus est Lorem ipsum dolor sit amet.
-    </slot>
+    <slot></slot>
   </div>
 </div>
 

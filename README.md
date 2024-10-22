@@ -23,7 +23,7 @@ npm run build
 
 ## Include the components
 
-To use the Khao UI components in your project, you have to include the JavaScript and Css file from the `/dist/components` folder
+To use the Khao UI components in your project, you have to include the base and component specific JavaScript files and the CSS file from the `/dist/components` folder
 
 Perhaps you have to configure your bundler/build tool to be able to use resources from the `node_modules` folder.
 Or you can copy the files into another folder which is managed by your build tool.
@@ -35,7 +35,11 @@ Or you can copy the files into another folder which is managed by your build too
 />
 <script
   type="module"
-  src="node_modules/@der-reiskoch/khao-ui/dist/js/khao-ui-vx.x.x.js"
+  src="node_modules/@der-reiskoch/khao-ui/dist/js/khao-ui-base-vx.x.x.js"
+></script>
+<script
+  type="module"
+  src="node_modules/@der-reiskoch/khao-ui/dist/js/khao-ui-button-vx.x.x.js"
 ></script>
 ```
 

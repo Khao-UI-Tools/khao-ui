@@ -19,7 +19,7 @@
   {title}
   aria-label={ariaLabel}
 >
-  <slot>Curry</slot>
+  <slot></slot>
 </a>
 
 <style>

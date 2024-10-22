@@ -12,14 +12,15 @@
   type VideoType = "youtube";
 
   let shwoPreview = false;
-  let showVideo = true;
+  let showVideo = false;
 
   let captionElement: HTMLDivElement;
 
   onMount(() => {
     if (isTrue(awaitsConsent)) {
       shwoPreview = true;
-      showVideo = false;
+    } else {
+      showVideo = true;
     }
   });
 
