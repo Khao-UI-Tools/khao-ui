@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.8.4]
+
+- added chunk suffix to chunk
+
+## [1.8.3]
+
+- make chunks independent
+- moved `khao-ui-icon` to seperate chunk
+
 ## [1.8.2]
 
 - moved `khao-ui-badge`, `khao-ui-tab-bar`, `khao-ui-chip` and `khao-ui-share-buttons` to seperate chunks
