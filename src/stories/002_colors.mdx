@@ -64,6 +64,12 @@ which applies the [Material Design Color System](https://m3.material.io/styles/c
     <div className="color-item color-surface-variantd30">
       <p>--khao-sys-color-surface-variantd30</p>
     </div>
+
+    <div className="color-item color-surface-variantd50">
+      <p>--khao-sys-color-surface-variantd50</p>
+    </div>
+
+
   </div>
 </div>
 
@@ -137,25 +143,6 @@ which applies the [Material Design Color System](https://m3.material.io/styles/c
 
 <style>
   {`
-
-  :root {
-
-    --khao-sys-color-surface: color-mix(
-    in srgb,
-    var( --khao-sys-color-secondary),
-    var(--khao-ref-palette-white) 90%
-  );
-
-
-
-    --khao-sys-color-surface-variantd30: color-mix(
-    in srgb,
-    var( --khao-sys-color-secondary),
-    var(--khao-ref-palette-white) 60%
-  );
-
-  }
-
 
   .sb-container {
     margin-top: 24px;
@@ -236,6 +223,14 @@ which applies the [Material Design Color System](https://m3.material.io/styles/c
 
       p {
         color: var(--khao-sys-color-on-surface-variantd30) !important;
+      }
+  }
+
+  .color-surface-variantd50 {
+      background-color: var(--khao-sys-color-surface-variantd50);
+
+      p {
+        color: var(--khao-sys-color-on-surface-variantd50) !important;
       }
   }
 
