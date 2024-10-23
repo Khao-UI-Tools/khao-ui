@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/svelte-vite";
+import { Meta, StoryObj } from "@storybook/svelte-vite";
 import Link from "./Link.svelte";
 import { iconNames } from "../../../icons/types/IconName";
 import { iconLocations, iconLocationDefault } from "./types/LinkIconLocation";
@@ -70,7 +70,13 @@ interface renderProps {
 }
 
 const render = (props: renderProps): string => {
-  return `<khao-link href="${props.href}" opensNewWindow=${props.opensNewWindow} iconName="${props.iconName || ""}" iconLocation="${props.iconLocation || iconLocationDefault}"  iconOpacity="${props.iconOpacity || iconOpacityDefault}" priority="${props.priority}">${props.label}</khao-link>`;
+  return `<khao-link href="${props.href}" opensNewWindow=${
+    props.opensNewWindow
+  } iconName="${props.iconName || ""}" iconLocation="${
+    props.iconLocation || iconLocationDefault
+  }"  iconOpacity="${props.iconOpacity || iconOpacityDefault}" priority="${
+    props.priority
+  }">${props.label}</khao-link>`;
 };
 
 export default meta;
