@@ -47,6 +47,7 @@ export const Default: Story = {
 export const Primary: Story = {
   args: {
     filling: "primary",
+    title: "Primary Card with Title",
   },
 };
 
