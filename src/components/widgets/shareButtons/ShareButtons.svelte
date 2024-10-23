@@ -1,7 +1,6 @@
 <svelte:options customElement="khao-share-buttons" />
 
 <script lang="ts">
-  import { trapFocus } from "trap-focus-svelte";
   import Button from "../../buttons/button/Button.svelte";
 
   function openInNewWindow(
@@ -61,7 +60,7 @@
   export let pinterestButtonTitle: string | null = pinterestButtonLabel;
 </script>
 
-<div class="share-buttons" use:trapFocus>
+<div class="share-buttons">
   {#if showPrintButton === "true" && isAbleToPrint()}
     <Button
       label={printButtonLabel || "No Label"}
