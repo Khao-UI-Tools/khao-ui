@@ -87,6 +87,15 @@
         var(--khao-button-paypal-state-layer-color)
           var(--khao-button-paypal-focus-state-layer-opacity)
       );
+
+      outline-offset: 2px;
+      outline: 2px solid
+        color-mix(
+          in srgb,
+          var(--khao-button-paypal-container-color),
+          var(--khao-button-paypal-state-layer-color)
+            var(--khao-button-paypal-focus-state-layer-opacity)
+        );
     }
 
     &:active {
