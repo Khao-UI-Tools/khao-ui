@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - upgraded to `khao-malet@0.0.19`
 - added `label` prop to `khao-link`, slot is deprecated now!
+- improved focus state of `khao-link`
 
 ## [1.9.1]
 

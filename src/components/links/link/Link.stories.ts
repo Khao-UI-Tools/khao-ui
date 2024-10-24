@@ -164,3 +164,21 @@ export const LinksInsideText: Story = {
         dolor sit amet <khao-link label="linkus avantus dotus"></khao-link>.
       </p>`,
 };
+
+export const LinksInsideCard: Story = {
+  render: () =>
+    `<khao-card filling="primary">
+        Lorem <khao-link label="ipsum"></khao-link> dolor sit amet, consectetuer <khao-link iconName="help" label="textus helpus longus extremus"></khao-link> adipiscing elit. 
+        Aenean commodo (<khao-link iconName="speaker" label="Speakus Linkus"></khao-link>) eu bla elissum <khao-link label="Linkus befori kommatum"></khao-link>, pretium quis.
+        Stet clita <khao-link iconName="cart" label="Merch Gigantus"></khao-link> kasd gubergren, no sea takimata melaton 
+        <khao-link>ipsum langos textus in linkus breakus nextus linos</khao-link> sanctus est Lorem <khao-link iconName="reiskoch-logo" label="ipsum fragus dummus questus"></khao-link> 
+        dolor sit amet <khao-link label="linkus avantus dotus"></khao-link>.
+      </<khao-card>`,
+};
+
+export const HeadlineLinks: Story = {
+  render: () =>
+    `<p style="line-height: 1.6rem; width: 400px">
+        <h2><khao-link label="h2 link"></khao-link></h2>
+      </p>`,
+};

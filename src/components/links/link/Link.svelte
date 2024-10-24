@@ -80,8 +80,14 @@
     text-underline-offset: var(--khao-sys-size-regular-1);
 
     &:focus-visible {
-      outline: 1px solid currentColor;
-      outline-offset: 2px;
+      outline: 2px solid currentColor;
+      outline-offset: 0;
+      background-color: rgb(128, 128, 128, 50%);
+      text-decoration: none;
+      padding: var(--khao-sys-size-regular-1);
+      height: var(--khao-sys-size-regular-4);
+      border-radius: var(--khao-sys-shape-corner-extra-large);
+      backdrop-filter: saturate(80%);
     }
   }
 
