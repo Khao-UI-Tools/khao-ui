@@ -76,17 +76,19 @@
 
     &:hover {
       text-decoration: none !important;
-      color: color-mix(
-        in srgb,
-        var(--khao-tab-text-color),
-        var(--khao-tab-layer-color) var(--khao-tab-hover-state-layer-opacity)
-      );
+      background-color: var(--khao-sys-color-outline);
+    }
+
+    &:focus-within {
+      text-decoration: none !important;
+      background-color: var(--khao-sys-color-outline);
     }
   }
 
   .tab-active {
     border-bottom: none;
     height: var(--khao-tab-active-height);
+    background-color: var(--khao-sys-color-surface-variantd30);
   }
 
   .tab-size-flex {
@@ -129,18 +131,8 @@
       );
     }
 
-    &:focus {
-      color: color-mix(
-        in srgb,
-        var(--khao-tab-text-color),
-        var(--khao-tab-layer-color) var(--khao-tab-focus-state-layer-opacity)
-      );
-      background-color: color-mix(
-        in srgb,
-        var(--khao-tab-text-color),
-        var(--khao-tab-layer-color) var(--khao-tab-focus-state-layer-opacity)
-      );
-      font-weight: 800;
+    &:focus-visible {
+      outline: none;
     }
   }
 
