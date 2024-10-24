@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from "@storybook/svelte-vite";
+import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Link from "./Link.svelte";
 import { iconNames } from "../../../icons/types/IconName";
-import { iconLocations, iconLocationDefault } from "./types/LinkIconLocation";
+import { iconLocations } from "./types/LinkIconLocation";
 import { linkPriorities, linkPriorityDefault } from "./types/LinkPriority";
 import {
   iconOpacities,
@@ -9,7 +9,7 @@ import {
 } from "../../../icons/types/IconOpacity";
 
 const meta = {
-  title: "Links/Link",
+  title: "links/Link",
   component: "khao-link",
   tags: ["autodocs"],
   argTypes: {
@@ -62,42 +62,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-/*interface renderProps {
-  href: String;
-  iconName: string;
-  iconLocation: string;
-  iconOpacity: string;
-  label: String;
-  opensNewWindow: string;
-  priority: string;
-}
-
-const render = (props: renderProps): string => {
-  return `<khao-link href="${props.href}" opensNewWindow=${
-    props.opensNewWindow
-  } iconName="${props.iconName || ""}" iconLocation="${
-    props.iconLocation || iconLocationDefault
-  }"  iconOpacity="${props.iconOpacity || iconOpacityDefault}" priority="${
-    props.priority
-  }">${props.label}</khao-link>`;
-};
-
 export const Default: Story = {
   args: {
     label: "Primary Link",
     href: "/",
     priority: "primary",
   },
-  render: render,
-};
-
-export const Example: Story = {
-  args: {
-    label: "Primary Link",
-    href: "/",
-    priority: "primary",
-  },
-  render: render,
 };
 
 export const SecondaryLink: Story = {
@@ -106,7 +76,6 @@ export const SecondaryLink: Story = {
     href: "/",
     priority: "secondary",
   },
-  render: render,
 };
 
 export const ExternalLink: Story = {
@@ -116,7 +85,6 @@ export const ExternalLink: Story = {
     iconName: "external-link",
     priority: "primary",
   },
-  render: render,
 };
 
 export const AffiliateLink: Story = {
@@ -126,7 +94,6 @@ export const AffiliateLink: Story = {
     iconName: "cart",
     priority: "primary",
   },
-  render: render,
 };
 
 export const SpeakerLink: Story = {
@@ -137,7 +104,6 @@ export const SpeakerLink: Story = {
     priority: "primary",
     opensNewWindow: "true",
   },
-  render: render,
 };
 
 export const HelpLink: Story = {
@@ -149,7 +115,6 @@ export const HelpLink: Story = {
     priority: "primary",
     opensNewWindow: "true",
   },
-  render: render,
 };
 
 export const ReiskochLink: Story = {
@@ -159,7 +124,6 @@ export const ReiskochLink: Story = {
     iconName: "reiskoch-logo",
     priority: "primary",
   },
-  render: render,
 };
 
 export const TranslationLink: Story = {
@@ -169,7 +133,6 @@ export const TranslationLink: Story = {
     iconName: "translation",
     priority: "primary",
   },
-  render: render,
 };
 
 export const BackLink: Story = {
@@ -180,7 +143,6 @@ export const BackLink: Story = {
     iconLocation: "before",
     opensNewWindow: "true",
   },
-  render: render,
 };
 
 export const ForwardLink: Story = {
@@ -190,16 +152,15 @@ export const ForwardLink: Story = {
     iconName: "navigate-forward",
     opensNewWindow: "true",
   },
-  render: render,
 };
-*/
+
 export const LinksInsideText: Story = {
   render: () =>
     `<p style="line-height: 1.6rem; width: 400px">
-        Lorem <khao-link>ipsum</khao-link> dolor sit amet, consectetuer <khao-link iconName="help">textus longus extremus</khao-link> adipiscing elit. 
-        Aenean commodo (<khao-link iconName="speaker">Speakus Linkus</khao-link>) eu bla elissum <khao-link>Linkus befori kommatum</khao-link>, pretium quis.
-        Stet clita <khao-link iconName="cart">Merch Gigantus</khao-link> kasd gubergren, no sea takimata melaton 
-        <khao-link>ipsum langos textus in linkus breakus nextus linos</khao-link> sanctus est Lorem <khao-link iconName="reiskoch-logo">ipsum fragus dummus questus</khao-link> 
-        dolor sit amet <khao-link>linkus avantus dotus</khao-link>.
+        Lorem <khao-link label="ipsum"></khao-link> dolor sit amet, consectetuer <khao-link iconName="help" label="textus helpus longus extremus"></khao-link> adipiscing elit. 
+        Aenean commodo (<khao-link iconName="speaker" label="Speakus Linkus"></khao-link>) eu bla elissum <khao-link label="Linkus befori kommatum"></khao-link>, pretium quis.
+        Stet clita <khao-link iconName="cart" label="Merch Gigantus"></khao-link> kasd gubergren, no sea takimata melaton 
+        <khao-link>ipsum langos textus in linkus breakus nextus linos</khao-link> sanctus est Lorem <khao-link iconName="reiskoch-logo" label="ipsum fragus dummus questus"></khao-link> 
+        dolor sit amet <khao-link label="linkus avantus dotus"></khao-link>.
       </p>`,
 };

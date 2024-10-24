@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [1.9.2]
 
 - upgraded to `khao-malet@0.0.19`
+- added `label` prop to `khao-link`, slot is deprecated now!
 
 ## [1.9.1]
 

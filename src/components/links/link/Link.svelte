@@ -27,6 +27,7 @@
     }
   };
 
+  export let label: string = "";
   export let title: string = "";
   export let href: string = "";
   export let rel: string | null = null;
@@ -52,7 +53,12 @@
   {target}
   on:click={onClick}
 >
-  <slot>Link</slot>
+  {#if label !== ""}
+    {label}
+  {:else}
+    <slot>Link</slot>
+  {/if}
+
   {#if iconName !== ""}
     <span class="icon" aria-hidden="true">
       <Icon {iconName} sizeFactor="4" opacity={iconOpacity} />
