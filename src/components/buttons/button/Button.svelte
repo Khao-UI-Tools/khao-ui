@@ -50,7 +50,7 @@
 <a
   class="button button-{priority} button-size-{size}"
   {title}
-  {href}
+  href={onClick === null ? href : "javascript:void();"}
   {target}
   {rel}
   style={setCustomStyles(customBGColor, customColor, customMinWidth)}
@@ -141,6 +141,15 @@
         var(--khao-button-state-layer-color)
           var(--khao-button-focus-state-layer-opacity)
       );
+      
+      outline-offset: 2px;
+      outline: 2px solid
+        color-mix(
+          in srgb,
+          var(--khao-button-container-color),
+          var(--khao-button-state-layer-color)
+            var(--khao-button-focus-state-layer-opacity)
+        );
     }
 
     &:active {

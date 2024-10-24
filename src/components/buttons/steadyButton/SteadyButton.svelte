@@ -53,9 +53,14 @@
   }
 
   .button:hover,
-  .button:focus,
   .button:active {
     background: var(--khao-button-steady-background-hover);
+  }
+
+  .button:focus-visible {
+    background: var(--khao-button-steady-background-hover);
+    outline-offset: 2px;
+    outline: 2px solid #b36eec;
   }
 
   .icon {

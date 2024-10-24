@@ -56,7 +56,7 @@
     ? 'button-circle'
     : ''} {customHoverColor ? 'button-custom-hover' : ''}"
   {title}
-  {href}
+  href={onClick === null ? href : "javascript:void();"}
   {target}
   {rel}
   style={setCustomStyles(customBGColor, customColor, customHoverColor)}
@@ -131,6 +131,15 @@
         var(--khao-icon-button-state-layer-color)
           var(--khao-icon-button-focus-state-layer-opacity)
       );
+
+      outline-offset: 2px;
+      outline: 2px solid
+        color-mix(
+          in srgb,
+          var(--khao-icon-button-container-color),
+          var(--khao-icon-button-state-layer-color)
+            var(--khao-icon-button-focus-state-layer-opacity)
+        );
     }
 
     &:active {

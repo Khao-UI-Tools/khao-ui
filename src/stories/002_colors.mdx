@@ -53,7 +53,7 @@ which applies the [Material Design Color System](https://m3.material.io/styles/c
   </div>
  </div>
 
-## Dynamic Variants
+## Dynamic Surface Variants
 
 <div className="sb-container">
   <div className="container">
@@ -69,6 +69,13 @@ which applies the [Material Design Color System](https://m3.material.io/styles/c
       <p>--khao-sys-color-surface-variantd50</p>
     </div>
 
+    <div className="color-item color-surface-variantd70">
+      <p>--khao-sys-color-surface-variantd70</p>
+    </div>
+
+    <div className="color-item color-surface-variantd90">
+      <p>--khao-sys-color-surface-variantd90</p>
+    </div>
 
   </div>
 </div>
@@ -101,9 +108,9 @@ which applies the [Material Design Color System](https://m3.material.io/styles/c
       </p>
     </div>
 
-     <div className="color-item color-neutral100">
+     <div className="color-item color-neutral90">
       <p>
-        --khao-sys-color-neutral100
+        --khao-sys-color-neutral90
       </p>
     </div>
 
@@ -234,6 +241,22 @@ which applies the [Material Design Color System](https://m3.material.io/styles/c
       }
   }
 
+  .color-surface-variantd70 {
+      background-color: var(--khao-sys-color-surface-variantd70);
+
+      p {
+        color: var(--khao-sys-color-on-surface-variantd70) !important;
+      }
+  }
+
+  .color-surface-variantd90 {
+      background-color: var(--khao-sys-color-surface-variantd90);
+
+      p {
+        color: var(--khao-sys-color-on-surface-variantd90) !important;
+      }
+  }
+
   .color-outline {
       background-color: var(--khao-sys-color-outline);
 
@@ -274,9 +297,8 @@ which applies the [Material Design Color System](https://m3.material.io/styles/c
       }
   }
 
-  .color-neutral100 {
-      background-color: var(--khao-sys-color-neutral100);
-      border: 1px solid var(--khao-sys-static-color-black);
+  .color-neutral90 {
+      background-color: var(--khao-sys-color-neutral90);
 
       p {
         color: var(--khao-sys-static-color-black) !important;

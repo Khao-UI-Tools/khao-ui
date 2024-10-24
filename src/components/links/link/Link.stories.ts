@@ -59,7 +59,10 @@ const meta = {
   },
 } satisfies Meta<Link>;
 
-interface renderProps {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+/*interface renderProps {
   href: String;
   iconName: string;
   iconLocation: string;
@@ -79,8 +82,14 @@ const render = (props: renderProps): string => {
   }">${props.label}</khao-link>`;
 };
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export const Default: Story = {
+  args: {
+    label: "Primary Link",
+    href: "/",
+    priority: "primary",
+  },
+  render: render,
+};
 
 export const Example: Story = {
   args: {
@@ -183,7 +192,7 @@ export const ForwardLink: Story = {
   },
   render: render,
 };
-
+*/
 export const LinksInsideText: Story = {
   render: () =>
     `<p style="line-height: 1.6rem; width: 400px">
