@@ -7,6 +7,10 @@ const meta = {
   component: "khao-tab",
   tags: ["autodocs"],
   argTypes: {
+    label: {
+      control: "text",
+      type: "string",
+    },
     href: {
       control: "text",
       type: "string",
@@ -30,25 +34,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-interface renderProps {
-  href: string;
-  title: string;
-  active: boolean;
-  size: string;
-  slot: string;
-}
-
-const render = (props: renderProps): string => {
-  return `<khao-tab href="${props.href}" title="${props.title}" active="${props.active || "false"}" size="${props.size}">${props.slot}</khao-tab>`;
-};
-
 export const Default: Story = {
   args: {
     href: "/",
     title: "A Single Tab",
-    slot: "A Single Tab",
+    label: "A Single Tab",
     active: false,
     size: tabSizeDefault,
   },
-  render: render,
 };

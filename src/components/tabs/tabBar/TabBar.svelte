@@ -29,11 +29,12 @@
         {#each JSON.parse(tabs) as { label, key, href, title, size }}
           <Tab
             {key}
+            {label}
             {href}
             {title}
             active={activeTabKey === key ? "true" : "false"}
-            {size}>{label}</Tab
-          >
+            {size}
+          ></Tab>
         {/each}
       {/if}
     </ul>

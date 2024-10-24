@@ -6,6 +6,7 @@
   import { type StringBoolean } from "../../../common/types/StringBoolean";
   import { type TabSize } from "../types/TabSize";
 
+  export let label: string = "";
   export let href: string = "";
   export let title: string = "";
   export let active: StringBoolean = "false";
@@ -20,7 +21,7 @@
   aria-selected={active === "true" ? "true" : "false"}
 >
   <a {href} {title} class="link {active === 'true' ? 'link-active' : ''}">
-    <slot>Tab</slot>
+    {label}
   </a>
 </li>
 
@@ -56,6 +57,7 @@
   }
 
   .tab {
+    background-color: var(--khao-sys-color-surface-variantd10);
     list-style-type: none;
     display: inline-flex;
     flex-direction: row;
@@ -88,7 +90,7 @@
   .tab-active {
     border-bottom: none;
     height: var(--khao-tab-active-height);
-    background-color: var(--khao-sys-color-surface-variantd30);
+    background-color: transparent;
   }
 
   .tab-size-flex {
