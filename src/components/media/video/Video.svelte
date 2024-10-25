@@ -127,6 +127,12 @@ encrypted-media; gyroscope; picture-in-picture"
     background-color: var(--khao-sys-static-color-black);
   }
 
+  .preview-wrapper:focus-visible {
+    outline: var(--khao-sys-size-regular-1) solid var(--khao-sys-color-tertiary);
+    outline-offset: var(--khao-sys-size-regular-5);
+    border-radius: var(--khao-sys-shape-corner-medium);
+  }
+
   .preview-icon {
     position: absolute;
     color: var(--khao-sys-static-color-white);

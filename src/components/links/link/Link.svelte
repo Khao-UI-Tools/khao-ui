@@ -120,10 +120,13 @@
     text-decoration-thickness: 2px;
   }
 
-  .link-secondary:hover,
-  .link-secondary:focus {
+  .link-secondary:hover {
     text-decoration: underline;
     text-decoration-thickness: 1px;
+  }
+
+  .link-secondary:focus-visible {
+    text-decoration: none;
   }
 
   .icon {
