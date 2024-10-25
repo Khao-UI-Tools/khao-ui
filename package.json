@@ -1,6 +1,6 @@
 {
   "name": "@der-reiskoch/khao-ui",
-  "version": "1.9.1",
+  "version": "1.9.3",
   "type": "module",
   "main": "dist/lib/khao-ui.js",
   "files": [
@@ -23,7 +23,6 @@
     "@storybook/addon-essentials": "^8.3.6",
     "@storybook/addon-interactions": "^8.3.6",
     "@storybook/addon-links": "^8.3.6",
-    "@storybook/addon-mdx-gfm": "^8.3.6",
     "@storybook/addon-svelte-csf": "^4.1.7",
     "@storybook/blocks": "^8.3.6",
     "@storybook/svelte": "^8.3.6",

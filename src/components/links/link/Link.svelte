@@ -27,6 +27,7 @@
     }
   };
 
+  export let label: string = "";
   export let title: string = "";
   export let href: string = "";
   export let rel: string | null = null;
@@ -52,7 +53,12 @@
   {target}
   on:click={onClick}
 >
-  <slot>Link</slot>
+  {#if label !== ""}
+    {label}
+  {:else}
+    <slot>Link</slot>
+  {/if}
+
   {#if iconName !== ""}
     <span class="icon" aria-hidden="true">
       <Icon {iconName} sizeFactor="4" opacity={iconOpacity} />
@@ -74,8 +80,14 @@
     text-underline-offset: var(--khao-sys-size-regular-1);
 
     &:focus-visible {
-      outline: 1px solid currentColor;
-      outline-offset: 2px;
+      outline: 2px solid currentColor;
+      outline-offset: 0;
+      background-color: rgb(128, 128, 128, 50%);
+      text-decoration: none;
+      padding: var(--khao-sys-size-regular-1);
+      height: var(--khao-sys-size-regular-4);
+      border-radius: var(--khao-sys-shape-corner-extra-large);
+      backdrop-filter: saturate(80%);
     }
   }
 
@@ -108,10 +120,13 @@
     text-decoration-thickness: 2px;
   }
 
-  .link-secondary:hover,
-  .link-secondary:focus {
+  .link-secondary:hover {
     text-decoration: underline;
     text-decoration-thickness: 1px;
+  }
+
+  .link-secondary:focus-visible {
+    text-decoration: none;
   }
 
   .icon {
