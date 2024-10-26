@@ -32,7 +32,7 @@
 
     --khao-chip-outline: none;
 
-    --khao-chip-font-size: var(--khao-sys-size-typography-6);
+    --khao-chip-font-size: var(--khao-sys-size-typography-2);
 
     --khao-chip-hover-state-layer-opacity: var(
       --khao-sys-state-hover-state-layer-opacity
@@ -140,7 +140,7 @@
   .chip-type-outlined {
     --khao-chip-container-color: var(--khao-sys-color-surface);
     --khao-chip-text-color: var(--khao-sys-color-on-surface);
-    --khao-chip-outline: 1px solid var(--khao-sys-color-neutral30);
+    --khao-chip-outline: 1px solid var(--khao-sys-color-outline);
 
     &:hover {
       --khao-chip-container-color: var(--khao-sys-static-color-green);

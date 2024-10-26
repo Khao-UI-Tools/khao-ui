@@ -10,7 +10,7 @@ This is an UI Component Library based on lightweight Svelte Components which are
 
 ## Styling
 
-The UI Components are styled with css-custom-properties that are provided by the [Khao Malet](https://www.npmjs.com/package/@der-reiskoch/khao-malet) design system.
+The UI Components are styled with css-custom-properties that are provided by the [Khao Malet](https://khao-ui-tools.github.io/khao-malet/) design system.
 You can easyily style them by overwritng the css-custom-properties.
 
 ## Build

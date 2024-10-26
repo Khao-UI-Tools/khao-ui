@@ -27,7 +27,7 @@
 
 <style>
   :host {
-    --khao-tab-text-size: var(--khao-sys-size-typography-7);
+    --khao-tab-text-size: var(--khao-sys-size-typography-3);
 
     --khao-tab-leading-space: var(--khao-sys-size-regular-4);
     --khao-tab-trailing-space: var(--khao-sys-size-regular-4);

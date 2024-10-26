@@ -40,7 +40,8 @@
     --khao-card-elevation-level-shadow: none;
     --khao-card-outline: none;
 
-    --khao-card-title-size: var(--khao-sys-size-typography-9);
+    --khao-card-title-size: var(--khao-sys-size-typography-5);
+    --khao-card-title-font: var(--khao-sys-typescale-body-font);
     --khao-card-title-space: var(--khao-sys-size-regular-2);
 
     --khao-card-icon-size: var(--khao-sys-size-regular-7);
@@ -69,6 +70,7 @@
   }
 
   .title {
+    font-family: var(--khao-card-title-font);
     font-size: var(--khao-card-title-size);
     font-weight: 800;
     margin-bottom: var(--khao-card-title-space);
