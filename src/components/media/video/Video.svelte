@@ -106,12 +106,12 @@ encrypted-media; gyroscope; picture-in-picture"
   :host {
     --khao-video-consent-color: var(--khao-sys-color-neutral80);
     --khao-video-consent-background: var(--khao-sys-static-color-black);
-    --khao-video-consent-font-size: var(--khao-sys-size-typography-6);
-    --khao-video-caption-line-height: var(--khao-sys-size-typography-8);
+    --khao-video-consent-font-size: var(--khao-sys-size-typography-2);
+    --khao-video-caption-line-height: var(--khao-sys-size-typography-3);
 
     --khao-video-caption-color: var(--khao-sys-color-neutral30);
-    --khao-video-caption-font-size: var(--khao-sys-size-typography-6);
-    --khao-video-caption-line-height: var(--khao-sys-size-typography-7);
+    --khao-video-caption-font-size: var(--khao-sys-size-typography-2);
+    --khao-video-caption-line-height: var(--khao-sys-size-typography-3);
     --khao-video-caption-font-style: italic;
     --khao-video-caption-spacing: var(--khao-sys-size-regular-1);
   }
