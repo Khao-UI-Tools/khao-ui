@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import Image from "./Image.svelte";
-import { imageTypes, imageTypeDefault } from "./types/ImageType";
+import { imageTypes } from "./types/ImageType";
 
 const meta = {
   title: "Media/Image",
@@ -39,7 +39,7 @@ const meta = {
     type: {
       control: { type: "select" },
       options: imageTypes,
-      default: imageTypeDefault,
+      default: "default",
     },
   },
 } satisfies Meta<Image>;
@@ -52,7 +52,7 @@ export const Default: Story = {
     src: "https://bilder.koch-reis.de/media/_thaiindex/yam_hed.jpg",
     title: "An image",
     caption: "An Image with caption",
-    type: imageTypeDefault,
+    type: "default",
     webp: "false",
   },
 };
@@ -81,7 +81,7 @@ export const JpgWithWebp: Story = {
     src: "https://bilder.koch-reis.de/media/_thaiindex/yam_hed.jpg",
     title: "An image that tries to load the webp version of the src",
     caption: "A .jpg image that tries to load it's webp version",
-    type: imageTypeDefault,
+    type: "default",
     webp: "true",
   },
 };
@@ -91,7 +91,7 @@ export const PngWithWebp: Story = {
     src: "https://bilder.koch-reis.de/media/_links/thai_kueche_und_ihre_rezepte.png",
     title: "An image that tries to load the webp version of the image",
     caption: "A .png image that tries to load it's webp version",
-    type: imageTypeDefault,
+    type: "default",
     webp: "true",
   },
 };
@@ -103,7 +103,7 @@ export const SVG: Story = {
     caption: "A .svg image",
     width: "220px",
     height: "220px",
-    type: imageTypeDefault,
+    type: "default",
     webp: "false",
   },
 };
@@ -114,7 +114,7 @@ export const LazyLoadedImage: Story = {
     title: "An image that is lazyloaded",
     lazyLoading: "true",
     caption: "An image that is lazyloaded",
-    type: imageTypeDefault,
+    type: "default",
   },
 };
 
@@ -124,7 +124,7 @@ export const LazyLoadedWithWebp: Story = {
     title: "An image that has webp and is lazyloaded",
     lazyLoading: "true",
     caption: "An image that has webp and is lazyloaded",
-    type: imageTypeDefault,
+    type: "default",
     webp: "true",
   },
 };
@@ -137,7 +137,17 @@ export const SmallLazyLoadedWithWebp: Story = {
     width: "300px",
     height: "240px",
     caption: "A small image that has webp and is lazyloaded",
-    type: imageTypeDefault,
+    type: "default",
     webp: "true",
+  },
+};
+
+export const BrokenImage: Story = {
+  args: {
+    src: "https://bilder.koch-reis.de/broken.jpg",
+    title: "A broken Image",
+    lazyLoading: "true",
+    caption: "A broken Image",
+    type: "default",
   },
 };

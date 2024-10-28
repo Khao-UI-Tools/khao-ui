@@ -2,11 +2,13 @@
 
 <script lang="ts">
   import { onMount } from "svelte";
-  import { type ImageType, imageTypeDefault } from "./types/ImageType";
+  import { type ImageType } from "./types/ImageType";
   import { type StringBoolean } from "../../../common/types/StringBoolean";
 
   let webpSrc: string = "";
   let imageType: "image/jpeg" | "image/png" | "image/svg+xml" = "image/jpeg";
+
+  let hasError = false;
 
   onMount(() => {
     if (src !== "") {
@@ -25,6 +27,10 @@
     }
   });
 
+  function handleError() {
+    hasError = true;
+  }
+
   export let src: string = "";
 
   export let lazyLoading: StringBoolean = "false";
@@ -32,29 +38,37 @@
 
   export let title: string = "";
   export let caption: string = "";
-  export let type: ImageType = imageTypeDefault;
+  export let type: ImageType = "default";
 
   export let width: string = "600";
   export let height: string = "450";
 </script>
 
 <figure class="figure">
-  <picture>
-    {#if webp === "true"}
-      <source srcset={webpSrc} type="image/webp" />
-    {/if}
+  {#if !hasError}
+    <picture>
+      {#if webp === "true"}
+        <source srcset={webpSrc} type="image/webp" />
+      {/if}
 
-    <source srcset={src} type={imageType} />
-    <img
-      {src}
-      loading={lazyLoading === "true" ? "lazy" : "eager"}
-      alt={title}
-      {title}
-      {width}
-      {height}
-      class="image image-{type}"
-    />
-  </picture>
+      <source srcset={src} type={imageType} />
+      <img
+        {src}
+        loading={lazyLoading === "true" ? "lazy" : "eager"}
+        alt={title}
+        {title}
+        {width}
+        {height}
+        class="image image-{type}"
+        on:error={handleError}
+      />
+    </picture>
+  {:else}
+    <div
+      class="image image-fallback"
+      style="width:{width}px; height: {height}px;"
+    ></div>
+  {/if}
 
   {#if caption !== ""}
     <figcaption class="caption">
@@ -76,6 +90,8 @@
     --khao-image-caption-line-height: var(--khao-sys-size-typography-3);
     --khao-image-caption-font-style: italic;
     --khao-image-caption-spacing: var(--khao-sys-size-regular-1);
+
+    --khao-image-fallback-background: var(--khao-sys-color-neutral80);
   }
 
   .figure {
@@ -98,6 +114,10 @@
     --khao-image-elevation-level-shadow: var(
       --khao-sys-elevation-level1-shadow
     );
+  }
+
+  .image-fallback {
+    background: var(--khao-image-fallback-background);
   }
 
   .caption {
