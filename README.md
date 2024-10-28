@@ -15,7 +15,7 @@ You can easyily style them by overwritng the css-custom-properties.
 
 ## Build
 
-The Build creates a single JavaScript File, a CSS file and needed Font Files.
+The Build creates a single JavaScript File for every component, a CSS file and needed Font Files.
 
 ```bash
 npm run build
@@ -23,25 +23,36 @@ npm run build
 
 ## Include the components
 
-To use the Khao UI components in your project, you have to include the style and icon component before the spefic JavaScript file from the `/dist/components` folder
+Install the library in your project
 
-Perhaps you have to configure your bundler/build tool to be able to use resources from the `node_modules` folder.
-Or you can copy the files into another folder which is managed by your build tool.
+```bash
+npm install @der-reiskoch/khao-ui
+```
+
+### Include into your document
+
+To use a Khao UI component directly in yout HTML document, you have to include the style and icon component before the spefic JavaScript file from the `/dist/components` folder
 
 ```html
 <link
   rel="stylesheet"
-  href="node_modules/@der-reiskoch/khao-ui/dist/css/khao-ui-vx.x.x.css"
+  href="node_modules/@der-reiskoch/khao-ui/dist/css/khao-ui.css"
 />
 <script
   type="module"
-  src="node_modules/@der-reiskoch/khao-ui/dist/js/khao-ui-icon-vx.x.x.js"
+  src="node_modules/@der-reiskoch/khao-ui/dist/js/khao-ui-icon.js"
 ></script>
 <script
   type="module"
-  src="node_modules/@der-reiskoch/khao-ui/dist/js/khao-ui-button-vx.x.x.js"
+  src="node_modules/@der-reiskoch/khao-ui/dist/js/khao-ui-button.js"
 ></script>
 ```
+
+### Using a bundler or build tool
+
+If you use a bundler like `vite`, `parcel` or `webpack` or another build tool you can also concatenate multiple components into one JavaScript file.
+Perhaps you have to configure your bundler to be able to use resources from the `node_modules` folder.
+Or you can copy the files into another folder which is managed by your build tool.
 
 ## Usage
 

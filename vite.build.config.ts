@@ -1,8 +1,6 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
-import { version } from "./package.json";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   build: {
     rollupOptions: {
@@ -37,11 +35,10 @@ export default defineConfig({
       },
       output: {
         dir: "dist/",
-        entryFileNames: `js/khao-ui-[name]-v${version}.js`,
+        entryFileNames: `js/khao-ui-[name].js`,
         chunkFileNames: `js/svelte-chunk-[hash].js`,
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name == "style.css")
-            return `css/khao-ui-v${version}.css`;
+          if (assetInfo.name == "style.css") return `css/khao-ui.css`;
           return `css/${assetInfo.name}`;
         },
         inlineDynamicImports: false,

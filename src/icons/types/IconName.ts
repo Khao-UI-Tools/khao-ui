@@ -26,6 +26,7 @@ export const iconNames = [
   "play",
   "printer",
   "reiskoch-logo",
+  "reload",
   "restaurant",
   "rss",
   "search",
