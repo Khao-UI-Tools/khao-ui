@@ -1,4 +1,5 @@
 export const cardFillings = [
+  "surface-light",
   "surface",
   "surface-dark",
   "primary",

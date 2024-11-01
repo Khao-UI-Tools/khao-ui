@@ -88,38 +88,45 @@
   }
 
   .card-surface {
-    --khao-card-container-color: var(--khao-sys-color-surface);
-    --khao-card-text-color: var(--khao-sys-color-on-surface);
+    --khao-card-container-color: var(--khao-sys-color-surface-container-high);
+    --khao-card-text-color: var(--khao-sys-color-on-surface-container-high);
+  }
+
+  .card-surface-light {
+    --khao-card-container-color: var(--khao-sys-color-surface-container-lowest);
+    --khao-card-text-color: var(--khao-sys-color-on-surface-container-lowest);
   }
 
   .card-surface-dark {
-    --khao-card-container-color: var(--khao-sys-color-surface-variantd30);
-    --khao-card-text-color: var(--khao-sys-color-on-surface-variantd30);
+    --khao-card-container-color: var(
+      --khao-sys-color-surface-container-highest
+    );
+    --khao-card-text-color: var(--khao-sys-color-on-surface-container-highest);
   }
 
   .card-primary {
-    --khao-card-container-color: var(--khao-sys-color-primary);
-    --khao-card-text-color: var(--khao-sys-color-on-primary);
+    --khao-card-container-color: var(--khao-sys-color-primary-container);
+    --khao-card-text-color: var(--khao-sys-color-on-primary-container);
   }
 
   .card-secondary {
-    --khao-card-container-color: var(--khao-sys-color-secondary);
-    --khao-card-text-color: var(--khao-sys-color-on-secondary);
+    --khao-card-container-color: var(--khao-sys-color-secondary-container);
+    --khao-card-text-color: var(--khao-sys-color-on-secondary-container);
   }
 
   .card-tertiary {
-    --khao-card-container-color: var(--khao-sys-color-tertiary);
-    --khao-card-text-color: var(--khao-sys-color-on-tertiary);
+    --khao-card-container-color: var(--khao-sys-color-tertiary-container);
+    --khao-card-text-color: var(--khao-sys-color-on-tertiary-container);
   }
 
   .card-success {
-    --khao-card-container-color: var(--khao-sys-static-color-green);
-    --khao-card-text-color: var(--khao-sys-static-color-on-green);
+    --khao-card-container-color: var(--khao-sys-static-color-success-container);
+    --khao-card-text-color: var(--khao-sys-static-color-on-success-container);
   }
 
   .card-error {
-    --khao-card-container-color: var(--khao-sys-static-color-red);
-    --khao-card-text-color: var(--khao-sys-static-color-on-red);
+    --khao-card-container-color: var(--khao-sys-static-color-error-container);
+    --khao-card-text-color: var(--khao-sys-static-color-on-error-container);
   }
 
   .card-type-elevated {

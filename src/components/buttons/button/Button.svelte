@@ -67,9 +67,9 @@
   @import "../reset.css";
 
   :host {
-    --khao-button-container-color: var(--khao-sys-color-container);
-    --khao-button-label-text-color: var(--khao-sys-color-on-container);
-    --khao-button-state-layer-color: var(--khao-sys-color-on-container);
+    --khao-button-container-color: var(--khao-sys-color-primary);
+    --khao-button-label-text-color: var(--khao-sys-color-on-primary);
+    --khao-button-state-layer-color: var(--khao-sys-color-on-primary);
 
     --khao-button-label-font-weight: var(
       --khao-sys-typescale-label-medium-weight-prominent
@@ -141,7 +141,7 @@
         var(--khao-button-state-layer-color)
           var(--khao-button-focus-state-layer-opacity)
       );
-      
+
       outline-offset: 2px;
       outline: 2px solid
         color-mix(
@@ -175,12 +175,6 @@
   .button-size-large {
     min-width: var(--khao-button-width-large);
     height: var(--khao-button-height-large);
-  }
-
-  .button-primary {
-    --khao-button-container-color: var(--khao-sys-color-primary);
-    --khao-button-label-text-color: var(--khao-sys-color-on-primary);
-    --khao-button-state-layer-color: var(--khao-sys-color-on-primary);
   }
 
   .button-secondary {

@@ -29,6 +29,8 @@
     <IconButton
       iconName="newsletter"
       priority={socialButtonsPriority}
+      customColor="var(--khao-sys-static-color-white)"
+      customBGColor="var(--khao-sys-color-secondary)"
       customHoverColor="#9acd32"
       title={newsletterTitle}
       href={newsletterUrl}
@@ -40,6 +42,8 @@
   <IconButton
     iconName="facebook"
     priority={socialButtonsPriority}
+    customColor="var(--khao-sys-static-color-white)"
+    customBGColor="var(--khao-sys-color-secondary)"
     customHoverColor="#3b5998"
     title={facebookTitle}
     href={facebookUrl}
@@ -51,6 +55,8 @@
   <IconButton
     iconName="instagram"
     priority={socialButtonsPriority}
+    customColor="var(--khao-sys-static-color-white)"
+    customBGColor="var(--khao-sys-color-secondary)"
     customHoverColor="#e4405f"
     title={instagramTitle}
     href={instagramUrl}
@@ -62,6 +68,8 @@
   <IconButton
     iconName="pinterest"
     priority={socialButtonsPriority}
+    customColor="var(--khao-sys-static-color-white)"
+    customBGColor="var(--khao-sys-color-secondary)"
     customHoverColor="#bd081c"
     title={pinterestTitle}
     href={pinterestUrl}
@@ -73,6 +81,8 @@
   <IconButton
     iconName="rss"
     priority={socialButtonsPriority}
+    customColor="var(--khao-sys-static-color-white)"
+    customBGColor="var(--khao-sys-color-secondary)"
     customHoverColor="#ff9900"
     title={rssTitle}
     href={rssUrl}
