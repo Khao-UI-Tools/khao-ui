@@ -1,11 +1,11 @@
 <svelte:options customElement="khao-card" />
 
 <script lang="ts">
-  import { type CardFilling, cardFillingDefault } from "../types/CardFilling";
+  import { type CardFilling } from "../types/CardFilling";
   import { type CardType, cardTypeDefault } from "../types/CardType";
   import Icon from "../../../icons/Icon.svelte";
   import { type IconName } from "../../../icons/types/IconName";
-  export let filling: CardFilling = cardFillingDefault;
+  export let filling: CardFilling = "surface";
   export let type: CardType = cardTypeDefault;
   export let title: string = "";
   export let iconName: IconName | "" = "";
@@ -88,16 +88,26 @@
   }
 
   .card-surface {
-    --khao-card-container-color: var(--khao-sys-color-surface-container-high);
-    --khao-card-text-color: var(--khao-sys-color-on-surface-container-high);
+    --khao-card-container-color: var(--khao-sys-color-surface-container);
+    --khao-card-text-color: var(--khao-sys-color-on-surface-container);
   }
 
-  .card-surface-light {
+  .card-surface-low {
+    --khao-card-container-color: var(--khao-sys-color-surface-container-low);
+    --khao-card-text-color: var(--khao-sys-color-on-surface-container-low);
+  }
+
+  .card-surface-lowest {
     --khao-card-container-color: var(--khao-sys-color-surface-container-lowest);
     --khao-card-text-color: var(--khao-sys-color-on-surface-container-lowest);
   }
 
-  .card-surface-dark {
+  .card-surface-high {
+    --khao-card-container-color: var(--khao-sys-color-surface-container-high);
+    --khao-card-text-color: var(--khao-sys-color-on-surface-container-high);
+  }
+
+  .card-surface-highest {
     --khao-card-container-color: var(
       --khao-sys-color-surface-container-highest
     );

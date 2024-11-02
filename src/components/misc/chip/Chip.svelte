@@ -146,7 +146,7 @@
   }
 
   .chip-type-outlined {
-    --khao-chip-container-color: var(--khao-sys-color-surface);
+    --khao-chip-container-color: transparent;
     --khao-chip-text-color: var(--khao-sys-color-on-surface);
     --khao-chip-outline: 1px solid var(--khao-sys-color-outline);
 

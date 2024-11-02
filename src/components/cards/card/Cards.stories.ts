@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Card from "./Card.svelte";
-import { cardFillings, cardFillingDefault } from "../types/CardFilling";
+import { cardFillings } from "../types/CardFilling";
 import { cardTypes, cardTypeDefault } from "../types/CardType";
 import { iconNames } from "../../../icons/types/IconName";
 
@@ -13,7 +13,7 @@ const meta = {
       control: { type: "select" },
       options: cardFillings,
       type: "string",
-      default: cardFillingDefault,
+      default: "surface",
     },
     type: {
       control: { type: "select" },
@@ -38,7 +38,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    filling: cardFillingDefault,
+    filling: "surface",
     type: cardTypeDefault,
     title: "Card Component",
   },

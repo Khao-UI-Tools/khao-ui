@@ -75,7 +75,7 @@
       --khao-sys-typescale-label-medium-weight-prominent
     );
 
-    --khao-button-container-shape: var(--khao-sys-shape-corner-medium);
+    --khao-button-container-shape: var(--khao-sys-shape-corner-small);
 
     --khao-button-leading-space: var(--khao-sys-size-regular-5);
     --khao-button-trailing-space: var(--khao-sys-size-regular-5);

@@ -1,14 +1,12 @@
 export const cardFillings = [
-  "surface-light",
+  "surface-lowest",
+  "surface-low",
   "surface",
-  "surface-dark",
+  "surface-high",
+  "surface-highest",
   "primary",
   "secondary",
   "tertiary",
-  "success",
-  "error",
 ];
 
 export type CardFilling = (typeof cardFillings)[number];
-
-export const cardFillingDefault: CardFilling = "surface-dark";
