@@ -11,6 +11,7 @@ export const iconNames = [
   "help",
   "info",
   "instagram",
+  "leaf",
   "location",
   "meta-author",
   "meta-category",
