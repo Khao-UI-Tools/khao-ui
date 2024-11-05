@@ -17,8 +17,8 @@
 
 <style>
   :host {
-    --khao-badge-container-color: var(--khao-sys-color-container);
-    --khao-badge-text-color: var(--khao-sys-color-on-container);
+    --khao-badge-container-color: var(--khao-sys-color-surface-container);
+    --khao-badge-text-color: var(--khao-sys-color-on-surface-container);
     --khao-bagde-rotation: -45deg;
   }
 

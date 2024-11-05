@@ -1,11 +1,11 @@
 <svelte:options customElement="khao-card" />
 
 <script lang="ts">
-  import { type CardFilling, cardFillingDefault } from "../types/CardFilling";
+  import { type CardFilling } from "../types/CardFilling";
   import { type CardType, cardTypeDefault } from "../types/CardType";
   import Icon from "../../../icons/Icon.svelte";
   import { type IconName } from "../../../icons/types/IconName";
-  export let filling: CardFilling = cardFillingDefault;
+  export let filling: CardFilling = "surface";
   export let type: CardType = cardTypeDefault;
   export let title: string = "";
   export let iconName: IconName | "" = "";
@@ -88,38 +88,55 @@
   }
 
   .card-surface {
-    --khao-card-container-color: var(--khao-sys-color-surface);
-    --khao-card-text-color: var(--khao-sys-color-on-surface);
+    --khao-card-container-color: var(--khao-sys-color-surface-container);
+    --khao-card-text-color: var(--khao-sys-color-on-surface-container);
   }
 
-  .card-surface-dark {
-    --khao-card-container-color: var(--khao-sys-color-surface-variantd30);
-    --khao-card-text-color: var(--khao-sys-color-on-surface-variantd30);
+  .card-surface-low {
+    --khao-card-container-color: var(--khao-sys-color-surface-container-low);
+    --khao-card-text-color: var(--khao-sys-color-on-surface-container-low);
+  }
+
+  .card-surface-lowest {
+    --khao-card-container-color: var(--khao-sys-color-surface-container-lowest);
+    --khao-card-text-color: var(--khao-sys-color-on-surface-container-lowest);
+  }
+
+  .card-surface-high {
+    --khao-card-container-color: var(--khao-sys-color-surface-container-high);
+    --khao-card-text-color: var(--khao-sys-color-on-surface-container-high);
+  }
+
+  .card-surface-highest {
+    --khao-card-container-color: var(
+      --khao-sys-color-surface-container-highest
+    );
+    --khao-card-text-color: var(--khao-sys-color-on-surface-container-highest);
   }
 
   .card-primary {
-    --khao-card-container-color: var(--khao-sys-color-primary);
-    --khao-card-text-color: var(--khao-sys-color-on-primary);
+    --khao-card-container-color: var(--khao-sys-color-primary-container);
+    --khao-card-text-color: var(--khao-sys-color-on-primary-container);
   }
 
   .card-secondary {
-    --khao-card-container-color: var(--khao-sys-color-secondary);
-    --khao-card-text-color: var(--khao-sys-color-on-secondary);
+    --khao-card-container-color: var(--khao-sys-color-secondary-container);
+    --khao-card-text-color: var(--khao-sys-color-on-secondary-container);
   }
 
   .card-tertiary {
-    --khao-card-container-color: var(--khao-sys-color-tertiary);
-    --khao-card-text-color: var(--khao-sys-color-on-tertiary);
+    --khao-card-container-color: var(--khao-sys-color-tertiary-container);
+    --khao-card-text-color: var(--khao-sys-color-on-tertiary-container);
   }
 
   .card-success {
-    --khao-card-container-color: var(--khao-sys-static-color-green);
-    --khao-card-text-color: var(--khao-sys-static-color-on-green);
+    --khao-card-container-color: var(--khao-sys-static-color-success-container);
+    --khao-card-text-color: var(--khao-sys-static-color-on-success-container);
   }
 
   .card-error {
-    --khao-card-container-color: var(--khao-sys-static-color-red);
-    --khao-card-text-color: var(--khao-sys-static-color-on-red);
+    --khao-card-container-color: var(--khao-sys-static-color-error-container);
+    --khao-card-text-color: var(--khao-sys-static-color-on-error-container);
   }
 
   .card-type-elevated {

@@ -54,6 +54,8 @@
     {title}
     iconName="arrow-up"
     circle="true"
+    customColor="var(--khao-sys-static-color-white)"
+    customBGColor="var(--khao-sys-color-primary)"
     {size}
     onClick={scrollToTop}
   />

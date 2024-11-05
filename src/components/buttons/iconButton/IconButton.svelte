@@ -72,9 +72,9 @@
   @import "../reset.css";
 
   :host {
-    --khao-icon-button-container-color: var(--khao-sys-color-container);
-    --khao-icon-button-label-text-color: var(--khao-sys-color-on-container);
-    --khao-icon-button-state-layer-color: var(--khao-sys-color-on-container);
+    --khao-icon-button-container-color: var(--khao-sys-color-primary);
+    --khao-icon-button-label-text-color: var(--khao-sys-color-on-primary);
+    --khao-icon-button-state-layer-color: var(--khao-sys-color-on-primary);
 
     --khao-icon-button-size-compact: var(--khao-sys-size-regular-10);
     --khao-icon-button-size-medium: var(--khao-sys-size-regular-12);
@@ -152,15 +152,9 @@
     }
   }
 
-  .button-primary {
-    --khao-icon-button-container-color: var(--khao-sys-color-primary);
-    --khao-icon-button-label-text-color: var(--khao-sys-color-on-primary);
-    --khao-icon-button-state-layer-color: var(--khao-sys-color-on-primary);
-  }
-
   .button-secondary {
     --khao-icon-button-container-color: var(--khao-sys-color-secondary);
-    --khao-icon-button-label-text-color: var(--khao-sys-color-on-secondary);
+    --khao-icon-button-label-text-color: var(--khao-sys-color-static-white);
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-secondary);
   }
 
