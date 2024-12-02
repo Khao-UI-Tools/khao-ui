@@ -31,6 +31,7 @@ export const Example: Story = {
     imageUrl: "https://placehold.co/200x200?text=Werbung&font=montserrat",
     imageWidth: "200px",
     imageTitle: "Dummy Image",
+    imageCaption: "A dummy advertisement",
     onError: () => {
       alert("error");
     },
