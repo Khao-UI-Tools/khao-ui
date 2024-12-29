@@ -32,6 +32,7 @@ export default defineConfig({
         "social-buttons":
           "src/components/widgets/socialButtons/SocialButtons.svelte",
         "tab-bar": "src/components/tabs/tabBar/TabBar.svelte",
+        "text-field": "src/components/forms/textField/TextField.svelte",
         video: "src/components/media/video/Video.svelte",
       },
       output: {
