@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [3.0.9]
 
 - use smaller icons for `navigate-back` and `navigate-forward`
+- added `khao-textfield` component
 
 ## [3.0.8]
 

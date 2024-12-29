@@ -1,0 +1,15 @@
+.input {
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font: inherit;
+  padding: 0;
+  user-select: none;
+
+  &:focus {
+    outline: none;
+  }
+}
