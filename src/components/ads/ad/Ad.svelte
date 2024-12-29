@@ -6,35 +6,45 @@
   export let imageUrl: string;
   export let imageWidth: string;
   export let imageTitle: string;
+  export let imageCaption: string;
   export let onError: () => void;
 </script>
 
 <div class="container">
-  <div class="title">{title}</div>
-  <a
-    class="link"
-    href={url}
-    target={url.includes("mailto:") ? "_self" : "_blank"}
-  >
-    <picture>
-      <source srcset={imageUrl.replace(".jpg", ".webp")} type="image/webp" />
-      <source srcset={imageUrl} type="image/jpeg" />
-      <img
-        src={imageUrl}
-        width={imageWidth || "300px"}
-        alt={imageTitle || title}
-        title={imageTitle || title}
-        class="image"
-        on:error={onError}
-      />
-    </picture>
-  </a>
+  <figure>
+    <div class="title">{title}</div>
+    <a
+      class="link"
+      href={url}
+      target={url.includes("mailto:") ? "_self" : "_blank"}
+    >
+      <picture>
+        <source srcset={imageUrl.replace(".jpg", ".webp")} type="image/webp" />
+        <source srcset={imageUrl} type="image/jpeg" />
+        <img
+          src={imageUrl}
+          width={imageWidth || "300px"}
+          alt={imageTitle || title}
+          title={imageTitle || title}
+          class="image"
+          on:error={onError}
+        />
+      </picture>
+    </a>
+
+    {#if imageCaption !== ""}
+      <figcaption class="caption">
+        {imageCaption}
+      </figcaption>
+    {/if}
+  </figure>
 </div>
 
 <style>
   :host {
     --khao-ads-margin-top: var(--khao-sys-size-regular-6);
-    --khao-ads-title-margin-bottom: var(--khao-sys-size-regular-1);
+    --khao-ads-title-margin: var(--khao-sys-size-regular-1);
+    --khao-add-caption-margin: var(--khao-sys-size-regular-2);
   }
 
   .container {
@@ -47,7 +57,14 @@
 
   .title {
     font-size: 70%;
-    margin-bottom: var(--khao-ads-title-margin-bottom);
+    margin-bottom: var(--khao-ads-title-margin);
+    text-align: center;
+  }
+
+  .caption {
+    font-size: 70%;
+    margin-bottom: var(--khao-add-caption-margin);
+    text-align: center;
   }
 
   .link {

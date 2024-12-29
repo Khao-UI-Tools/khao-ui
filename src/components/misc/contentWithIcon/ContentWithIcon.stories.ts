@@ -51,7 +51,7 @@ export const AuthorExample: Story = {
     iconName: "meta-author",
     iconSizeFactor: "5",
     iconOpacity: "50%",
-    slot: `<khao-link href="/info/ueber-mich/" title="Über den Autor">Jens<span class="meta__author__extended">&nbsp;(<span itemprop="author">Der Reiskoch</span>)</span>
+    slot: `<khao-link href="/info/ueber-mich/" title="Über den Autor">Jens<span class="meta__author__extended">&nbsp;(<span>Der Reiskoch</span>)</span>
 </khao-link>`,
   },
   render: render,

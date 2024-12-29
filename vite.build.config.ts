@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
+import { version } from "./package.json";
 
 export default defineConfig({
   build: {
@@ -35,10 +36,11 @@ export default defineConfig({
       },
       output: {
         dir: "dist/",
-        entryFileNames: `js/khao-ui-[name].js`,
+        entryFileNames: `js/khao-ui-[name]-${version}.js`,
         chunkFileNames: `js/svelte-chunk-[hash].js`,
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name == "style.css") return `css/khao-ui.css`;
+          if (assetInfo.name == "style.css")
+            return `css/khao-ui-${version}.css`;
           return `css/${assetInfo.name}`;
         },
         inlineDynamicImports: false,
