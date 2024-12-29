@@ -1,4 +1,4 @@
-<svelte:options customElement="khao-textfield" />
+<svelte:options customElement="khao-ui-textfield" />
 
 <script lang="ts">
   import {
@@ -8,16 +8,17 @@
 
   export let label: string;
   export let value: string;
+  export let id: string = `khao-ui-texfield-${label}`;
   export let type: TextFieldType = textFieldTypeDefault;
 </script>
 
 <div class="formfield">
-  <label class="label" for={label}>{label}</label>
+  <label class="label" for={id}>{label}</label>
 
   {#if type === "output"}
-    <output class="input" id={label}>{value}</output>
+    <output class="input" {id}>{value}</output>
   {:else}
-    <input class="input" id={label} {type} {value} />
+    <input class="input" {id} {type} {value} />
   {/if}
 </div>
 
