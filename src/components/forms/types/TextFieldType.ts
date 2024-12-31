@@ -1,4 +1,4 @@
-export const textFieldTypes = ["text", "output", "password", "email", "number"];
+export const textFieldTypes = ["text", "output", "password", "email", "number", "search", "tel", "url"] as const;
 
 export type TextFieldType = (typeof textFieldTypes)[number];
 

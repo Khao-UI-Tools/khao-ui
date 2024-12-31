@@ -1,0 +1,37 @@
+:host {
+    --khao-formfield-height: var(--khao-sys-size-regular-12);
+    --khao-formfield-min-width: var(--khao-sys-size-regular-20);
+    --khao-formfield-bg-color: var(--khao-sys-static-color-white);
+    --khao-formfield-border-color: var(--khao-sys-color-neutral80);
+    --khao-formfield-gap: var(--khao-sys-size-regular-3);
+    --khao-formfield-padding: var(--khao-sys-size-regular-3);
+    --khao-formfield-label-font-size: 14px;
+    --khao-formfield-label-font-color: var(--khao-sys-color-neutral50);
+    --khao-formfield-input-font-size: 16px;
+    --khao-formfield-input-font-color: var(--khao-sys-static-color-black);
+  }
+
+  .formfield {
+    border: 2px solid var(--khao-formfield-border-color);
+    border-radius: var(--khao-sys-shape-corner-small);
+    background-color: var(--khao-formfield-bg-color);
+    display: flex;
+    flex-direction: column;
+    height: var(--khao-formfield-height);
+    gap: var(--khao-formfield-gap);
+    padding: var(--khao-formfield-padding);
+    min-width: var(--khao-formfield-min-width);
+  }
+
+  .label {
+    font-size: var(--khao-formfield-label-font-size);
+  }
+
+  .field {
+    color: var(--khao-formfield-input-font-color);
+    font-weight: 700;
+    font-size: var(--khao-formfield-field-font-size);
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

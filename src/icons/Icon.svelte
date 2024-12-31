@@ -226,17 +226,15 @@
 
   {#if iconName === "navigate-back"}
     <symbol id="khao-icon-navigate-back" viewBox="0 0 24 24">
-      <path d="M0 0h24v24H0z" fill="none" /><path
-        d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
-      />
+      <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/>
     </symbol>
   {/if}
 
   {#if iconName === "navigate-forward"}
     <symbol id="khao-icon-navigate-forward" viewBox="0 0 24 24">
-      <path d="M0 0h24v24H0z" fill="none" /><path
-        d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
-      />
+      <g transform="rotate(180, 12, 12)">
+      <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/>
+    </g>
     </symbol>
   {/if}
 
