@@ -1,5 +1,6 @@
 :host {
     --khao-formfield-height: var(--khao-sys-size-regular-12);
+    --khao-formfield-min-width: var(--khao-sys-size-regular-20);
     --khao-formfield-bg-color: var(--khao-sys-static-color-white);
     --khao-formfield-border-color: var(--khao-sys-color-neutral80);
     --khao-formfield-gap: var(--khao-sys-size-regular-3);
@@ -19,14 +20,18 @@
     height: var(--khao-formfield-height);
     gap: var(--khao-formfield-gap);
     padding: var(--khao-formfield-padding);
+    min-width: var(--khao-formfield-min-width);
   }
 
   .label {
     font-size: var(--khao-formfield-label-font-size);
   }
 
-  .input {
+  .field {
     color: var(--khao-formfield-input-font-color);
     font-weight: 700;
     font-size: var(--khao-formfield-field-font-size);
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }

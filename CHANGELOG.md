@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [3.1.3]
 
 - use fatter icons for `navigate-back` and `navigate-forward`
+- added prop `placeholder` to `khao-ui-textfield`
+- added types `search`, `tel`, `url` to `khao-ui-textfield`
+- added `khao-ui-selectfield`
 
 ## [3.1.2]
 

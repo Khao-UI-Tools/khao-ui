@@ -16,6 +16,10 @@ const meta = {
       control: "text",
       type: "string",
     },
+    allowEmpty: {
+      ontrol: "boolean",
+      type: "boolean",
+    },
     options: {
       control: "object",
       type: "string",
@@ -33,7 +37,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     label: "Selectfield",
-    value: "a",
     id: "field1",
     options: [
       {
@@ -42,6 +45,83 @@ export const Default: Story = {
       },
       {
         label: "Zwei",
+        value: "2",
+      },
+      {
+        label: "Drei",
+        value: "3",
+      },
+      {
+        label: "Vier",
+        value: "4",
+      },
+    ],
+  },
+};
+export const SelectedValue: Story = {
+  args: {
+    label: "Selected Value",
+    id: "field2",
+    value: "3",
+    options: [
+      {
+        label: "Eins",
+        value: "1",
+      },
+      {
+        label: "Zwei",
+        value: "2",
+      },
+      {
+        label: "Drei",
+        value: "3",
+      },
+      {
+        label: "Vier",
+        value: "4",
+      },
+    ],
+  },
+};
+
+export const AllowEmpty: Story = {
+  args: {
+    label: "Allow Empty",
+    value: "",
+    id: "field3",
+    allowEmpty: true,
+    options: [
+      {
+        label: "Eins",
+        value: "1",
+      },
+      {
+        label: "Zwei",
+        value: "2",
+      },
+      {
+        label: "Drei",
+        value: "3",
+      },
+      {
+        label: "Vier",
+        value: "4",
+      },
+    ],
+  },
+};
+export const LongLabels: Story = {
+  args: {
+    label: "Long Labels",
+    value: "1",
+    id: "field4",
+    options: [
+      {
+        label: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+        value: "1",
+      },
+      {
+        label: "sed diam nonumy eirmod tempor invidunt ut l",
         value: "2",
       },
     ],

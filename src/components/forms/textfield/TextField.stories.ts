@@ -16,6 +16,10 @@ const meta = {
       control: "text",
       type: "string",
     },
+    placeholder: {
+      control: "text",
+      type: "string",
+    },
     id: {
       control: "text",
       type: "string",
@@ -47,6 +51,14 @@ export const Number: Story = {
     type: "number",
   },
 };
+export const Search: Story = {
+  args: {
+    label: "Searchfield",
+    value: "",
+    placeholder: "What are you looking for?",
+    type: "search",
+  },
+};
 
 export const Output: Story = {
   args: {
@@ -61,5 +73,20 @@ export const OutputWithThai: Story = {
     label: "Thai",
     value: "ต้มปลาหมึก",
     type: "output",
+  },
+};
+
+export const OutputWithLongText: Story = {
+  args: {
+    label: "Long Output",
+    value: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+    type: "output",
+  },
+};
+
+export const InputWithLongText: Story = {
+  args: {
+    label: "Long Output",
+    value: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
   },
 };

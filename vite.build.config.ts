@@ -29,10 +29,11 @@ export default defineConfig({
           "src/components/widgets/shareButtons/ShareButtons.svelte",
         "scroll-to-top":
           "src/components/buttons/scrollToTop/scrollToTop.svelte",
+        "select-field": "src/components/forms/selectfield/SelectField.svelte",
         "social-buttons":
           "src/components/widgets/socialButtons/SocialButtons.svelte",
         "tab-bar": "src/components/tabs/tabBar/TabBar.svelte",
-        "text-field": "src/components/forms/textField/TextField.svelte",
+        "text-field": "src/components/forms/textfield/TextField.svelte",
         video: "src/components/media/video/Video.svelte",
       },
       output: {
