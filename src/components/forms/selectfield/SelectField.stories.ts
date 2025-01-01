@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Selectfield from "./SelectField.svelte";
-import { type Option } from "../types/Option";
+import options from "./options.json";
+import optionsWithLongLabels from "./options_with_long_labels.json";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
@@ -12,7 +13,7 @@ const meta = {
       control: "text",
       type: "string",
     },
-    value: {
+    selectedValue: {
       control: "text",
       type: "string",
     },
@@ -21,7 +22,7 @@ const meta = {
       type: "boolean",
     },
     options: {
-      control: "object",
+      control: "text",
       type: "string",
     },
     id: {
@@ -38,49 +39,15 @@ export const Default: Story = {
   args: {
     label: "Selectfield",
     id: "field1",
-    options: [
-      {
-        label: "Eins",
-        value: "1",
-      },
-      {
-        label: "Zwei",
-        value: "2",
-      },
-      {
-        label: "Drei",
-        value: "3",
-      },
-      {
-        label: "Vier",
-        value: "4",
-      },
-    ],
+    options: JSON.stringify(options),
   },
 };
 export const SelectedValue: Story = {
   args: {
     label: "Selected Value",
     id: "field2",
-    value: "3",
-    options: [
-      {
-        label: "Eins",
-        value: "1",
-      },
-      {
-        label: "Zwei",
-        value: "2",
-      },
-      {
-        label: "Drei",
-        value: "3",
-      },
-      {
-        label: "Vier",
-        value: "4",
-      },
-    ],
+    selectedValue: "3",
+    options: JSON.stringify(options),
   },
 };
 
@@ -90,41 +57,15 @@ export const AllowEmpty: Story = {
     value: "",
     id: "field3",
     allowEmpty: true,
-    options: [
-      {
-        label: "Eins",
-        value: "1",
-      },
-      {
-        label: "Zwei",
-        value: "2",
-      },
-      {
-        label: "Drei",
-        value: "3",
-      },
-      {
-        label: "Vier",
-        value: "4",
-      },
-    ],
+    options:  JSON.stringify(options),
   },
 };
 export const LongLabels: Story = {
   args: {
     label: "Long Labels",
-    value: "1",
+    selectedValue: "2",
     id: "field4",
-    options: [
-      {
-        label: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
-        value: "1",
-      },
-      {
-        label: "sed diam nonumy eirmod tempor invidunt ut l",
-        value: "2",
-      },
-    ],
+    options:  JSON.stringify(optionsWithLongLabels),
   },
 };
 

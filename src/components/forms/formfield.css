@@ -17,7 +17,7 @@
     background-color: var(--khao-formfield-bg-color);
     display: flex;
     flex-direction: column;
-    height: var(--khao-formfield-height);
+    min-height: var(--khao-formfield-height);
     gap: var(--khao-formfield-gap);
     padding: var(--khao-formfield-padding);
     min-width: var(--khao-formfield-min-width);
