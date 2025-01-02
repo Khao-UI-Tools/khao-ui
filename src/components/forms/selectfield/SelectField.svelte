@@ -1,11 +1,10 @@
 <svelte:options customElement="khao-ui-selectfield" />
 
 <script lang="ts">
-  import type { Option } from "../types/Option";
 
   export let label: string;
-  export let value: string;
-  export let options: Option[] = [];
+  export let selectedValue: string;
+  export let options: string;
   export let id: string = `khao-ui-selectfield-${label}`;
   export let allowEmpty: boolean = false;
 </script>
@@ -18,13 +17,15 @@
       <option value=""></option>
     {/if}
 
-    {#each options as option}
-      {#if value === option.value}
-        <option value={option.value} selected>{option.label}</option>
+    {#if options}
+    {#each JSON.parse(options) as { label, value }}
+      {#if selectedValue === value}
+        <option value={value} selected>{label}</option>
       {:else}
-        <option value={option.value}>{option.label}</option>
+        <option value={value}>{label}</option>
       {/if}
     {/each}
+    {/if}
   </select>
 </div>
 

@@ -7,7 +7,7 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     tabs: {
-      control: "object",
+      control: "text",
       type: "string",
     },
     activeTabKey: {

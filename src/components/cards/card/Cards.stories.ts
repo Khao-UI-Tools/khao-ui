@@ -72,3 +72,27 @@ export const instagramExample: Story = {
     Dann mach doch ein schickes Bild von deiner Kreation und poste es auf Instagram mit dem Hashtag #derReiskoch und erwähne meinen Account @der.reiskoch. Ich bin schon sehr gespannt auf dein Bild!
   </khao-card>`,
 };
+
+export const doItYourselfExample: Story = {
+  args: {
+    filling: "secondary",
+    title: "Do it yourself",
+    iconName: "mortar-pestle",
+  },
+};
+
+export const fastAlternativeExample: Story = {
+  args: {
+    filling: "tertiary",
+    title: "A fast alternative",
+    iconName: "fast",
+  },
+};
+
+export const veggieAlternativeExample: Story = {
+  args: {
+    filling: "primary",
+    title: "A veggie alternative",
+    iconName: "leaf",
+  },
+};
