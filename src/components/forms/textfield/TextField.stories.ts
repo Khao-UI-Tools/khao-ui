@@ -5,7 +5,7 @@ import { textFieldTypes, textFieldTypeDefault } from "../types/TextFieldType";
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
   title: "forms/Textfield",
-  component: "khao-ui-textfield",
+  component: "khao-text-field",
   tags: ["autodocs"],
   argTypes: {
     label: {
@@ -40,7 +40,7 @@ export const Default: Story = {
     label: "Textfield",
     value: "A value",
     type: "text",
-    id: "field1"
+    id: "field1",
   },
 };
 

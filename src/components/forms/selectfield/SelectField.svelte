@@ -1,27 +1,6 @@
-<svelte:options
-  customElement={{
-    tag: "khao-select-field",
-    shadow: "none",
-    extend: (customElementConstructor) => {
-      return class extends customElementConstructor {
-        static formAssociated = true;
-
-        constructor() {
-          super();
-          attachedInternals = this.attachInternals();
-        }
-
-        get form() {
-          return attachedInternals.form;
-        }
-      };
-    },
-  }}
-/>
+<svelte:options customElement="khao-select-field" />
 
 <script lang="ts">
-  let attachedInternals: ElementInternals;
-
   export let label: string;
   export let selectedValue: string;
   export let options: string;
@@ -30,7 +9,6 @@
 
   function handleChange(event: Event) {
     const select = event.target as HTMLSelectElement;
-    attachedInternals.setFormValue(select.value);
 
     const changeEvent = new CustomEvent("change", {
       detail: {

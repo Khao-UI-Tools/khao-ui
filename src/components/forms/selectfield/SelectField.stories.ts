@@ -6,7 +6,7 @@ import optionsWithLongLabels from "./options_with_long_labels.json";
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
   title: "forms/Selectfield",
-  component: "khao-ui-selectfield",
+  component: "khao-select-field",
   tags: ["autodocs"],
   argTypes: {
     label: {
@@ -57,7 +57,7 @@ export const AllowEmpty: Story = {
     value: "",
     id: "field3",
     allowEmpty: true,
-    options:  JSON.stringify(options),
+    options: JSON.stringify(options),
   },
 };
 export const LongLabels: Story = {
@@ -65,7 +65,6 @@ export const LongLabels: Story = {
     label: "Long Labels",
     selectedValue: "2",
     id: "field4",
-    options:  JSON.stringify(optionsWithLongLabels),
+    options: JSON.stringify(optionsWithLongLabels),
   },
 };
-
