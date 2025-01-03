@@ -1,10 +1,31 @@
-<svelte:options customElement="khao-ui-textfield" />
+<svelte:options
+  customElement={{
+    tag: "khao-text-field",
+    shadow: "none",
+    extend: (customElementConstructor) => {
+      return class extends customElementConstructor {
+        static formAssociated = true;
+
+        constructor() {
+          super();
+          attachedInternals = this.attachInternals();
+        }
+
+        get form() {
+          return attachedInternals.form;
+        }
+      };
+    },
+  }}
+/>
 
 <script lang="ts">
   import {
     type TextFieldType,
     textFieldTypeDefault,
   } from "../types/TextFieldType";
+
+  let attachedInternals: ElementInternals;
 
   export let label: string;
   export let value: string;
@@ -26,5 +47,4 @@
 <style>
   @import "../reset.css";
   @import "../formfield.css";
-
 </style>
