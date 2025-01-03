@@ -2,7 +2,7 @@
 
 <script lang="ts">
   export let label: string;
-  export let selectedValue: string;
+  export let selectedValue: string = "";
   export let options: string;
   export let id: string = `khao-select-field-${label}`;
   export let allowEmpty: boolean = false;
@@ -10,7 +10,9 @@
   function handleChange(event: Event) {
     const select = event.target as HTMLSelectElement;
 
-    const changeEvent = new CustomEvent("change", {
+    console.log('"khao-select-field-change: ', select.value);
+
+    const changeEvent = new CustomEvent("khao-select-field-change", {
       detail: {
         value: select.value,
       },
@@ -23,7 +25,7 @@
 <div class="formfield">
   <label class="label" for={id}>{label}</label>
 
-  <select class="field" {id} on:change={handleChange} value={selectedValue}>
+  <select class="field" {id} on:change={handleChange}>
     {#if allowEmpty}
       <option value=""></option>
     {/if}
