@@ -11,7 +11,7 @@
 <!--icons from https://fonts.google.com/icons -->
 <div style="background-color: {color}" class="pin">
   <span class="icon">
-    <Icon iconName={iconName} sizeFactor="5"/>
+    <Icon {iconName} sizeFactor="5" />
   </span>
 </div>
 
@@ -20,6 +20,8 @@
     display: block;
     --khao-marker-pin-icon-color: var(--khao-sys-static-color-black);
     --khao-marker-pin-icon-bgcolor: var(--khao-sys-static-color-white);
+    --khao-marker-pin-icon-offset-y: 0.3rem;
+    --khao-marker-pin-icon-offset-x: 0.4rem;
   }
 
   .pin {
@@ -45,8 +47,8 @@
 
   .icon {
     position: absolute;
-    top: 0.3rem;
-    left: 0.4rem;
+    top: var(--khao-marker-pin-icon-offset-y);
+    left: var(--khao-marker-pin-icon-offset-x);
     transform: rotate(45deg);
     text-align: center;
   }
