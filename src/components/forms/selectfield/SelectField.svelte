@@ -10,15 +10,17 @@
   function handleChange(event: Event) {
     const select = event.target as HTMLSelectElement;
 
-    console.log('"khao-select-field-change: ', select.value);
+    const CHANGE_EVENT_NAME = "khao-select-field-change";
 
-    const changeEvent = new CustomEvent("khao-select-field-change", {
+    const changeEvent = new CustomEvent(CHANGE_EVENT_NAME, {
       detail: {
         value: select.value,
       },
+      bubbles: true,
+      composed: true,
     });
 
-    dispatchEvent(changeEvent);
+    select.dispatchEvent(changeEvent);
   }
 </script>
 
