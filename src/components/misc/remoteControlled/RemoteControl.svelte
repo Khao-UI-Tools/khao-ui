@@ -8,25 +8,26 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { defaultChannelId, remoteControlEventName } from "./types/Costants";
-  import { type Visibility } from "./types/Visibility";
-  import type { RemoteControlEventDetail } from "./types/RemoteControllEventDetail";
+  import type { RemoteControlEventDetail } from "./types/RemoteControlEventDetail";
+  import type { RemoteControlCommand } from "./types/RemoteControlCommand";
+  import dispatchRemoteControllEvent from "./utils/dispatchRemoteControlEvent";
 
   export let channelId: string = defaultChannelId;
-  export let command: Visibility = "hidden";
+  export let command: RemoteControlCommand = "hidden";
 
   onMount(() => {
-    const payload: RemoteControlEventDetail = {
-      channelId: channelId,
-      command: command,
-    };
-
-    const remoteControlEvent = new CustomEvent(remoteControlEventName, {
-      detail: payload,
-      bubbles: true,
-      composed: true,
-    });
-
-    document.dispatchEvent(remoteControlEvent);
+    document.addEventListener(
+      remoteControlEventName,
+      (event: CustomEventInit<RemoteControlEventDetail>) => {
+        const payload = event.detail;
+        if (payload?.channelId == channelId) {
+          if (payload.command == "ready") {
+            console.log("reveived ready for channel:", channelId);
+            dispatchRemoteControllEvent(channelId, command);
+          }
+        }
+      }
+    );
   });
 </script>
 

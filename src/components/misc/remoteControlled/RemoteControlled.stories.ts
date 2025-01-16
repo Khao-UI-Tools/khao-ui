@@ -31,9 +31,9 @@ interface renderProps {
 }
 
 const render = (props: renderProps): string => {
-  return `<khao-remote-controlled visibility="${props.visibility}" channelId=${
-    props.channelId
-  }>${props.slot}</khao-remote-controlled>${props.remoteControl || ""}`;
+  return `${props.remoteControl || ""}<khao-remote-controlled visibility="${
+    props.visibility
+  }" channelId=${props.channelId}>${props.slot}</khao-remote-controlled>`;
 };
 
 export const Hidden: Story = {
@@ -59,7 +59,7 @@ export const HiddenBecomesVisible: Story = {
     visibility: "hidden",
     channelId: "19",
     slot: `<span>I am hidden but will become visible and i listen to channel Id 19<span>`,
-    remoteControl: `<khao-remote-control channelId="19" command="visible"><khao-remote-control>`,
+    remoteControl: `<khao-remote-control channelId="19" command="visible"></khao-remote-control>`,
   },
   render: render,
 };
@@ -69,7 +69,7 @@ export const VisibleBecomesHidden: Story = {
     visibility: "visible",
     channelId: "10",
     slot: `<span>I am visible and i listen to channel Id 10<span>`,
-    remoteControl: `<khao-remote-control channelId="10" command="hidden"><khao-remote-control>`,
+    remoteControl: `<khao-remote-control channelId="10" command="hidden"></khao-remote-control>`,
   },
   render: render,
 };

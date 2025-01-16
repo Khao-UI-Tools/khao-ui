@@ -9,7 +9,8 @@
   import { onMount } from "svelte";
   import { defaultChannelId, remoteControlEventName } from "./types/Costants";
   import { type Visibility, visibilityOptions } from "./types/Visibility";
-  import type { RemoteControlEventDetail } from "./types/RemoteControllEventDetail";
+  import type { RemoteControlEventDetail } from "./types/RemoteControlEventDetail";
+  import dispatchRemoteControllEvent from "./utils/dispatchRemoteControlEvent";
 
   export let visibility: Visibility = "hidden";
   export let channelId: string = defaultChannelId;
@@ -21,12 +22,16 @@
         const payload = event.detail;
 
         if (payload?.channelId == channelId) {
+          console.log("right channel");
+
           if (visibilityOptions.includes(payload.command)) {
             visibility = payload.command;
           }
         }
       }
     );
+
+    dispatchRemoteControllEvent(channelId, "ready");
   });
 </script>
 
