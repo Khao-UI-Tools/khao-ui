@@ -22,7 +22,6 @@
         const payload = event.detail;
         if (payload?.channelId == channelId) {
           if (payload.command == "ready") {
-            console.log("reveived ready for channel:", channelId);
             dispatchRemoteControllEvent(channelId, command);
           }
         }
@@ -31,4 +30,10 @@
   });
 </script>
 
-<div></div>
+<div class="container" aria-hidden="true"></div>
+
+<style>
+  .container {
+    display: none;
+  }
+</style>

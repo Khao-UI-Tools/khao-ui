@@ -17,8 +17,6 @@ const dispatchRemoteControlEvent = (
     composed: true,
   });
 
-  console.log("dispatchRemoteControlEvent", remoteControlEvent);
-
   document.dispatchEvent(remoteControlEvent);
 };
 

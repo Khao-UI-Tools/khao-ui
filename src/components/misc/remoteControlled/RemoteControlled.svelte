@@ -22,8 +22,6 @@
         const payload = event.detail;
 
         if (payload?.channelId == channelId) {
-          console.log("right channel");
-
           if (visibilityOptions.includes(payload.command)) {
             visibility = payload.command;
           }
