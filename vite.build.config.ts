@@ -25,6 +25,10 @@ export default defineConfig({
           "src/components/misc/infiniteScroll/InfiniteScroll.svelte",
         link: "src/components/links/link/Link.svelte",
         "marker-pin": "src/components/map/markerPin/MarkerPin.svelte",
+        "remote-control":
+          "src/components/misc/remoteControlled/RemoteControl.svelte",
+        "remote-controlled":
+          "src/components/misc/remoteControlled/RemoteControlled.svelte",
         "share-buttons":
           "src/components/widgets/shareButtons/ShareButtons.svelte",
         "scroll-to-top":

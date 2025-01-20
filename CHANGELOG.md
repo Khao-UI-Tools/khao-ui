@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.2.13]
+
+- upgraded to `khao-malet` v2.0.5
+
+## [3.2.11]
+
+- `khao-remote-control` is invisible now
+- remove `change.log` in `khao-remote-controlled` and `khao-remote-control`
+
+## [3.2.10]
+
+- added `khao-remote-controlled` and `khao-remote-control`
+
+## [3.2.8]
+
+- added `--khao-marker-pin-icon-offset-y` and `--khao-marker-pin-icon-offset-x`
+
+## [3.2.7]
+
+- added fodus state to form fields
+
+## [3.2.5]
+
+- `khao-select-field` fires custom event `khao-select-field-change`
+
+## [3.2.0]
+
+- renamed `khao-ui-textfield` into `khao-text-field`
+- renamed `khao-ui-selectfield` into `khao-select-field`
+
 ## [3.1.6]
 
 - added `mortar-pestle` icon

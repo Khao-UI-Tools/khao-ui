@@ -1,4 +1,4 @@
-<svelte:options customElement="khao-ui-textfield" />
+<svelte:options customElement="khao-text-field" />
 
 <script lang="ts">
   import {
@@ -26,5 +26,4 @@
 <style>
   @import "../reset.css";
   @import "../formfield.css";
-
 </style>
