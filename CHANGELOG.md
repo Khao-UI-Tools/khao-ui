@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [3.2.14]
 
 - upgraded to `khao-malet` v2.0.6
+- added `scrollShadow` to `ui-tab-bar`
 
 ## [3.2.13]
 

@@ -16,11 +16,14 @@
   export let activeTabKey: string = "";
   export let maxWidth: string = "860px";
   export let centered: StringBoolean = "false";
+  export let scrollShadow: StringBoolean = "false";
 </script>
 
 <div class="container">
   <div
-    class="wrapper {centered === 'true' ? 'wrapper-centered' : ''}"
+    class="wrapper {centered === 'true'
+      ? 'wrapper-centered'
+      : ''} {scrollShadow === 'true' ? 'wrapper-scroll-shadow' : ''}"
     bind:this={wrapper}
     style="max-width: {maxWidth}"
   >
@@ -67,6 +70,11 @@
     margin-right: auto;
   }
 
+  .wrapper-scroll-shadow {
+    animation: scroll-shadow-inset linear;
+    animation-timeline: scroll(self inline);
+  }
+
   .tab-bar {
     display: flex;
     flex-direction: row;
@@ -75,5 +83,14 @@
     align-items: end;
     margin: 0;
     padding: 0;
+  }
+
+  @keyframes scroll-shadow-inset {
+    from {
+      box-shadow: inset -15px 0px 20px -15px rgb(0 0 0 / 0.5);
+    }
+    to {
+      box-shadow: inset 15px 0px 20px -15px rgb(0 0 0 / 0.5);
+    }
   }
 </style>

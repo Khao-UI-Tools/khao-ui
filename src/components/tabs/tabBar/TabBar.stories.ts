@@ -22,6 +22,10 @@ const meta = {
       control: "boolean",
       type: "Boolean",
     },
+    scrollShadow: {
+      control: "boolean",
+      type: "Boolean",
+    },
   },
 } satisfies Meta<TabBar>;
 
@@ -33,6 +37,7 @@ interface renderProps {
   activeTabKey: string;
   maxWidth: string;
   centered: boolean;
+  scrollShadow: boolean;
 }
 
 const renderTabBar = (props: renderProps) => {
@@ -40,7 +45,8 @@ const renderTabBar = (props: renderProps) => {
       <khao-tab-bar 
           activeTabKey="${props.activeTabKey}" 
           maxWidth="${props.maxWidth}" 
-          centered=${props.centered} 
+          centered=${props.centered}
+          scrollShadow=${props.scrollShadow} 
           tabs='${JSON.stringify(props.tabs)}'
       >
       </khao-tab-bar>`;
@@ -52,6 +58,7 @@ export const Default: Story = {
     activeTabKey: "3",
     maxWidth: "600px",
     centered: true,
+    scrollShadow: true,
     tabs: [
       {
         label: "1",
@@ -118,6 +125,7 @@ export const AlphabetExample: Story = {
     activeTabKey: "x",
     maxWidth: "600px",
     centered: true,
+    scrollShadow: true,
     tabs: [
       {
         label: "A",
