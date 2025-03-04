@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - refactored `tab` to have fixed widths
 - removed outer container from `tab-bar`
+- improved ed `scrollShadow` for   `ui-tab-bar`
 
 ## [3.2.14]
 

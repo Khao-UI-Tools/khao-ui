@@ -46,8 +46,8 @@
     --khao-tab-bar-height: var(--khao-sys-size-regular-9);
 
     --khao-tab-bar-bg-color: var(--khao-sys-color-background);
-    --khao-tab-bar-scroll-shadow-color: rgba(98, 94, 94, 0.5);
-    --khao-tab-bar-scroll-shadow-size: 1.5rem;
+    --khao-tab-bar-scroll-shadow-color: rgba(216, 216, 216, 1);
+    --khao-tab-bar-scroll-shadow-size: 1rem;
     --khao-tab-bar-scroll-shadow-transparent: rgba(255, 255, 255, 0);
   }
 

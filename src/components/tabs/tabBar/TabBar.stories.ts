@@ -399,6 +399,7 @@ export const WordsExample: Story = {
     activeTabKey: "videos",
     maxWidth: "600px",
     centered: true,
+    scrollShadow: true,
     tabs: [
       {
         label: "Bücher",
@@ -440,6 +441,7 @@ export const WordsExample2: Story = {
     activeTabKey: "landeskuechen",
     maxWidth: "600px",
     centered: true,
+    scrollShadow: true,
     tabs: [
       {
         label: "Suche",
