@@ -22,7 +22,7 @@
 <ul
   class="tab-bar {centered === 'true'
     ? 'tab-bar-centered'
-    : ''} {scrollShadow === 'true' ? 'container-scroll-shadow' : ''}"
+    : ''} {scrollShadow === 'true' ? 'tab-bar-scroll-shadow' : ''}"
   role="tablist"
   bind:this={tabBar}
   style="max-width: {maxWidth}"
@@ -44,6 +44,11 @@
 <style>
   :host {
     --khao-tab-bar-height: var(--khao-sys-size-regular-9);
+
+    --khao-tab-bar-bg-color: var(--khao-sys-color-background);
+    --khao-tab-bar-scroll-shadow-color: rgba(34, 34, 34, 0.5);
+    --khao-tab-bar-scroll-shadow-size: 1rem;
+    --khao-tab-bar-scroll-shadow-transparent: rgba(255, 255, 255, 0);
   }
 
   .tab-bar {
@@ -67,5 +72,45 @@
   .tab-bar-centered {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .tab-bar-scroll-shadow {
+    overflow-x: scroll;
+
+    background:
+      linear-gradient(
+        to right,
+        var(--khao-tab-bar-bg-color),
+        var(--khao-tab-bar-bg-color),
+        var(--khao-tab-bar-scroll-shadow-transparent)
+          calc(var(--khao-tab-bar-scroll-shadow-size) * 2)
+      ),
+      radial-gradient(
+        farthest-side at 0 50%,
+        var(--khao-tab-bar-scroll-shadow-color),
+        var(--khao-tab-bar-scroll-shadow-transparent)
+      ),
+      linear-gradient(
+        to left,
+        var(--khao-tab-bar-bg-color),
+        var(--khao-tab-bar-bg-color),
+        var(--khao-tab-bar-scroll-shadow-transparent)
+          calc(var(--khao-tab-bar-scroll-shadow-size) * 2)
+      ),
+      radial-gradient(
+          farthest-side at 100% 50%,
+          var(--khao-tab-bar-scroll-shadow-color),
+          var(--khao-tab-bar-scroll-shadow-transparent)
+        )
+        100%;
+    background-color: var(--khao-tab-bar-bg-color);
+    background-repeat: no-repeat;
+    background-attachment: local, scroll, local, scroll;
+    background-size:
+      100% 100%,
+      var(--khao-tab-bar-scroll-shadow-size) 100%,
+      100% 100%,
+      var(--khao-tab-bar-scroll-shadow-size) 100%;
+    height: 100%;
   }
 </style>
