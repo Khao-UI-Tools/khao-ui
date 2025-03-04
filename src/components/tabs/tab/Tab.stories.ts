@@ -54,7 +54,7 @@ export const SizeCompact: Story = {
   },
 };
 
-export const SizeMedim: Story = {
+export const SizeMedium: Story = {
   args: {
     href: "/",
     title: "Medium",
