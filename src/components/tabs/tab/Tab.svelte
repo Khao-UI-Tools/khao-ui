@@ -29,8 +29,8 @@
   :host {
     --khao-tab-text-size: var(--khao-sys-size-typography-3);
 
-    --khao-tab-leading-space: var(--khao-sys-size-regular-4);
-    --khao-tab-trailing-space: var(--khao-sys-size-regular-4);
+    --khao-tab-leading-space: var(--khao-sys-size-regular-2);
+    --khao-tab-trailing-space: var(--khao-sys-size-regular-2);
 
     --khao-tab-height: var(--khao-sys-size-regular-6);
 
@@ -57,24 +57,24 @@
   }
 
   .tab {
+    align-items: center;
     background-color: var(--khao-sys-color-surface-variantd10);
-    list-style-type: none;
+    border-bottom-width: 2px;
+    border-top-left-radius: var(--khao-tab-container-shape);
+    border-top-right-radius: var(--khao-tab-container-shape);
+    border: 1px solid var(--khao-tab-border-color);
     display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    flex: 0 0 auto;
+    font-size: var(--khao-tab-text-size);
+    height: var(--khao-tab-height);
     justify-content: center;
-    align-items: center;
+    list-style-type: none;
     padding: 0.1rem var(--khao-tab-leading-space) 0.1rem
       var(--khao-tab-trailing-space);
-    min-width: var(--khao-tab-width);
-    width: 100%;
-    height: var(--khao-tab-height);
-    font-size: var(--khao-tab-text-size);
-    border: 1px solid var(--khao-tab-border-color);
-    border-top-left-radius: var(--khao-tab-container-shape);
-    border-top-right-radius: var(--khao-tab-container-shape);
-    border-bottom-width: 2px;
     text-align: center;
+    width: var(--khao-tab-width);
 
     &:hover {
       text-decoration: none !important;
@@ -94,23 +94,19 @@
   }
 
   .tab-size-flex {
-    --khao-tab-leading-space: 0;
-    --khao-tab-trailing-space: 0;
+    --khao-tab-width: 100%;
   }
 
   .tab-size-compact {
-    --khao-tab-leading-space: var(--khao-sys-size-regular-3);
-    --khao-tab-trailing-space: var(--khao-sys-size-regular-3);
+    --khao-tab-width: 32px;
   }
 
   .tab-size-medium {
-    --khao-tab-leading-space: var(--khao-sys-size-regular-5);
-    --khao-tab-trailing-space: var(--khao-sys-size-regular-5);
+    --khao-tab-width: 64px;
   }
 
   .tab-size-large {
-    --khao-tab-leading-space: var(--khao-sys-size-regular-7);
-    --khao-tab-trailing-space: var(--khao-sys-size-regular-7);
+    --khao-tab-width: 96px;
   }
 
   .link {
@@ -121,7 +117,7 @@
     min-width: 3rem;
     overflow-x: hidden;
     text-overflow: ellipsis;
-    margin: 0 0.3rem;
+    margin: 0 0.4rem;
 
     &:hover {
       text-decoration: none !important;
