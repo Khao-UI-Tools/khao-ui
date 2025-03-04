@@ -46,8 +46,8 @@
     --khao-tab-bar-height: var(--khao-sys-size-regular-9);
 
     --khao-tab-bar-bg-color: var(--khao-sys-color-background);
-    --khao-tab-bar-scroll-shadow-color: rgba(34, 34, 34, 0.5);
-    --khao-tab-bar-scroll-shadow-size: 1rem;
+    --khao-tab-bar-scroll-shadow-color: rgba(98, 94, 94, 0.5);
+    --khao-tab-bar-scroll-shadow-size: 1.5rem;
     --khao-tab-bar-scroll-shadow-transparent: rgba(255, 255, 255, 0);
   }
 
@@ -86,7 +86,7 @@
           calc(var(--khao-tab-bar-scroll-shadow-size) * 2)
       ),
       radial-gradient(
-        farthest-side at 0 50%,
+        farthest-side at left bottom,
         var(--khao-tab-bar-scroll-shadow-color),
         var(--khao-tab-bar-scroll-shadow-transparent)
       ),
@@ -98,7 +98,7 @@
           calc(var(--khao-tab-bar-scroll-shadow-size) * 2)
       ),
       radial-gradient(
-          farthest-side at 100% 50%,
+        farthest-side at right bottom,
           var(--khao-tab-bar-scroll-shadow-color),
           var(--khao-tab-bar-scroll-shadow-transparent)
         )
@@ -111,6 +111,6 @@
       var(--khao-tab-bar-scroll-shadow-size) 100%,
       100% 100%,
       var(--khao-tab-bar-scroll-shadow-size) 100%;
-    height: 100%;
+    height: calc(var(--khao-tab-bar-height)-20px);
   }
 </style>
