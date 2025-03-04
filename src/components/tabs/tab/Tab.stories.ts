@@ -37,9 +37,49 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     href: "/",
-    title: "A Single Tab",
-    label: "A Single Tab",
+    title: "Tab",
+    label: "Tab",
     active: false,
     size: tabSizeDefault,
+  },
+};
+
+export const SizeCompact: Story = {
+  args: {
+    href: "/",
+    title: "33",
+    label: "33",
+    active: false,
+    size: "compact",
+  },
+};
+
+export const SizeMedim: Story = {
+  args: {
+    href: "/",
+    title: "Medium",
+    label: "Medium",
+    active: false,
+    size: "medium",
+  },
+};
+
+export const SizeLarge: Story = {
+  args: {
+    href: "/",
+    title: "A Large Tab",
+    label: "A Large Tab",
+    active: false,
+    size: "large",
+  },
+};
+
+export const SizeFlex: Story = {
+  args: {
+    href: "/",
+    title: "A Single Tab with flex size",
+    label: "A Single Tab with flex size",
+    active: false,
+    size: "flex",
   },
 };
