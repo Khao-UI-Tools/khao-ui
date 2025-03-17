@@ -140,3 +140,14 @@ export const CustomMinWidthExample: Story = {
     onClick: fn(),
   },
 };
+
+export const LongTextExample: Story = {
+  parameters: {
+    viewport: { defaultViewport: "mobile1" },
+  },
+  args: {
+    label: "Fire Sense Grill bei amazon.de",
+    iconName: "cart",
+    onClick: fn(),
+  },
+};

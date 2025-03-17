@@ -121,6 +121,7 @@
     padding-inline-start: var(--khao-button-leading-space);
     padding-inline-end: var(--khao-button-trailing-space);
     gap: var(--khao-button-icon-leading-space);
+    white-space: nowrap;
     transition:
       background-color 0.1s,
       color 0.2s;
