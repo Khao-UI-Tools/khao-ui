@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import Card from "./Card.svelte";
-import { cardFillings } from "../types/CardFilling";
-import { cardTypes, cardTypeDefault } from "../types/CardType";
-import { iconNames } from "../../../icons/types/IconName";
+import Card from "../components/cards/card/Card.svelte";
+import { cardFillings } from "../components/cards/types/CardFilling";
+import { cardTypes, cardTypeDefault } from "../components/cards/types/CardType";
+import { iconNames } from "../icons/types/IconName";
 
 const meta = {
   title: "Cards/Card",
@@ -28,6 +28,11 @@ const meta = {
     iconName: {
       control: { type: "select" },
       options: iconNames,
+      type: "string",
+    },
+    dismissable: {
+      control: { type: "select" },
+      options: ["true", "false"],
       type: "string",
     },
   },
@@ -59,11 +64,17 @@ export const Secondary: Story = {
 };
 
 export const Tertiary: Story = {
-  args: {
-    filling: "tertiary",
-    title: "Tertiary Card with Title and Icon",
-    iconName: "info",
-  },
+  render:
+    () => `<khao-card filling="tertiary" title="Tertiary Card with Title and Icon" iconName="info">
+    This is a tertiary card with a title and an icon. Lporem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </khao-card>`,
+};
+
+export const DismissableCard: Story = {
+  render:
+    () => `<khao-card filling="tertiary" title="Dismissable Card with Title and Icon" dismissable="true" iconName="info">
+    This is a dismissable card with a title and an icon. Lporem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </khao-card>`,
 };
 
 export const instagramExample: Story = {
