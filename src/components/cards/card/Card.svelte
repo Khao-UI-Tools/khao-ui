@@ -5,17 +5,48 @@
   import { type CardType, cardTypeDefault } from "../types/CardType";
   import Icon from "../../../icons/Icon.svelte";
   import { type IconName } from "../../../icons/types/IconName";
+  import type { StringBoolean } from "../../../common/types/StringBoolean";
+
   export let filling: CardFilling = "surface";
   export let type: CardType = cardTypeDefault;
   export let title: string = "";
   export let iconName: IconName | "" = "";
 
   export let ariaLabel: string = "";
+  export let dismissable: StringBoolean = "false";
+
+  export let card: HTMLDivElement | null = null;
+
+  function dismissCard() {
+    if (card) {
+      card.remove();
+    }
+  }
 </script>
 
-<div class="card card-{filling} card-type-{type}" aria-label={ariaLabel}>
-  {#if title !== ""}
-    <div class="title">{title}</div>
+<div
+  class="card card-{filling} card-type-{type}"
+  aria-label={ariaLabel}
+  bind:this={card}
+>
+  {#if title !== "" || dismissable === "true"}
+    <div class="header">
+      {#if title !== ""}
+        <div class="title">{title}</div>
+      {/if}
+
+      {#if dismissable === "true"}
+        <button
+          class="close-button"
+          aria-label="Close"
+          on:click={() => {
+            dismissCard();
+          }}
+        >
+          <Icon iconName="close" sizeFactor="8" />
+        </button>
+      {/if}
+    </div>
   {/if}
 
   <div class="content">
@@ -69,11 +100,32 @@
     color: var(--khao-card-text-color);
   }
 
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--khao-card-title-space);
+  }
+
   .title {
     font-family: var(--khao-card-title-font);
     font-size: var(--khao-card-title-size);
     font-weight: 800;
-    margin-bottom: var(--khao-card-title-space);
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    color: var(--khao-card-text-color);
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+
+    &:focus-visible {
+      outline: 2px solid var(--khao-sys-color-neutral50);
+      outline-offset: 2px;
+      border-radius: var(--khao-sys-shape-corner-small);
+    }
   }
 
   .content {
