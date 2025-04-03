@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import SteadyButton from "../../components/buttons/steadyButton/SteadyButton.svelte";
+import SteadyButton from "../../src/components/buttons/steadyButton/SteadyButton.svelte";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {

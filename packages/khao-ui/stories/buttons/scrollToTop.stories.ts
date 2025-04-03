@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import { action } from "@storybook/addon-actions";
-import ScrollToTop from "../../components/buttons/scrollToTop/scrollToTop.svelte";
-import { buttonSizes } from "../../components/buttons/types/ButtonSize";
+import ScrollToTop from "../../src/components/buttons/scrollToTop/scrollToTop.svelte";
+import { buttonSizes } from "../../src/components/buttons/types/ButtonSize";
 
 const meta = {
   title: "Buttons/ScrollToTopButton",

@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import Button from "../../components/buttons/button/Button.svelte";
+import Button from "../../src/components/buttons/button/Button.svelte";
 import { fn } from "@storybook/test";
-import { iconNames } from "../../icons/types/IconName";
+import { iconNames } from "../../src/icons/types/IconName";
 import {
   buttonPriorities,
   buttonPriorityDefault,
-} from "../../components/buttons/types/ButtonPriority";
-import { buttonSizes } from "../../components/buttons/types/ButtonSize";
+} from "../../src/components/buttons/types/ButtonPriority";
+import { buttonSizes } from "../../src/components/buttons/types/ButtonSize";
 
 const meta = {
   title: "Buttons/Button",

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import PayPalDonateButton from "../../components/buttons/payPalDonateButton/PayPalDonateButton.svelte";
+import PayPalDonateButton from "../../src/components/buttons/payPalDonateButton/PayPalDonateButton.svelte";
 
 const meta = {
   title: "Buttons/PayPalDonateButton",
