@@ -28,7 +28,7 @@ export const Example: Story = {
   args: {
     title: "Werbung",
     url: "/",
-    imageUrl: "https://placehold.co/200x200?text=Werbung&font=montserrat",
+    imageUrl: "https://www.der-reiskoch.de/img/avatar/avatar.webp",
     imageWidth: "200px",
     imageTitle: "Dummy Image",
     imageCaption: "A dummy advertisement",

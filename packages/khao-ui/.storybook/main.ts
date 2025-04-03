@@ -2,7 +2,7 @@ import type { StorybookConfig } from "@storybook/web-components-vite";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|ts|svelte)"],
-
+  staticDirs: ['../storybook-assets'],
   addons: [
     "@storybook/addon-svelte-csf",
     "@storybook/addon-links",
