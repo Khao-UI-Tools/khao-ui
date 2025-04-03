@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import ContentWithIcon from "../../components/misc/contentWithIcon/ContentWithIcon.svelte";
-import { iconNames } from "../../icons/types/IconName";
+import ContentWithIcon from "../../src/components/misc/contentWithIcon/ContentWithIcon.svelte";
+import { iconNames } from "../../src/icons/types/IconName";
 import {
   iconSizeFactors,
   iconSizeFactorDefault,
-} from "../../icons/types/IconSizeFactor";
+} from "../../src/icons/types/IconSizeFactor";
 import {
   iconOpacities,
   iconOpacityDefault,
-} from "../../icons/types/IconOpacity";
+} from "../../src/icons/types/IconOpacity";
 
 const meta = {
   title: "Misc/Content With Icon",

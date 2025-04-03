@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import Video from "../../components/media/video/Video.svelte";
+import Video from "../../src/components/media/video/Video.svelte";
 
 const meta = {
   title: "Media/Video",

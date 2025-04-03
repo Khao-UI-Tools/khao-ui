@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import InfiniteScroll from "../../components/misc/infiniteScroll/InfiniteScroll.svelte";
+import InfiniteScroll from "../../src/components/misc/infiniteScroll/InfiniteScroll.svelte";
 
 const meta = {
   title: "Misc/InfiniteScroll",

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import Textfield from "../../components/forms/textfield/TextField.svelte";
-import { textFieldTypes, textFieldTypeDefault } from "../../components/forms/types/TextFieldType";
+import Textfield from "../../src/components/forms/textfield/TextField.svelte";
+import { textFieldTypes, textFieldTypeDefault } from "../../src/components/forms/types/TextFieldType";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {

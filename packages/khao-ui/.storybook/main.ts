@@ -2,8 +2,6 @@ import type { StorybookConfig } from "@storybook/web-components-vite";
 
 const config: StorybookConfig = {
   stories: [
-    "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|ts|svelte)",
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|ts|svelte)",
   ],

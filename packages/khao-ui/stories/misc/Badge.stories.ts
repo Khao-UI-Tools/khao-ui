@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import StarBadge from "../../components/misc/badge/Badge.svelte";
+import StarBadge from "../../src/components/misc/badge/Badge.svelte";
 
 import {
   bagdePriorities,
   badgePriorityDefault,
-} from "../../components/misc/badge/types/BadgePriority";
+} from "../../src/components/misc/badge/types/BadgePriority";
 
 const meta = {
   title: "Misc/Badge",

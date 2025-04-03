@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import TabBar from "../../components/tabs/tabBar/TabBar.svelte";
+import TabBar from "../../src/components/tabs/tabBar/TabBar.svelte";
 
 const meta = {
   title: "Tabs/TabBar",
