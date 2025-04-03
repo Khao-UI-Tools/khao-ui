@@ -28,8 +28,8 @@ export const Example: Story = {
   args: {
     title: "Werbung",
     url: "/",
-    imageUrl: "https://www.der-reiskoch.de/img/avatar/avatar.webp",
-    imageWidth: "200px",
+    imageUrl: "https://storybook.js.org/images/placeholders/350x150.png",
+    imageWidth: "350px",
     imageTitle: "Dummy Image",
     imageCaption: "A dummy advertisement",
     onError: () => {
