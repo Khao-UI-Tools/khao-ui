@@ -23,7 +23,6 @@
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-links": "^8.6.12",
-    "@storybook/addon-mdx-gfm": "^8.6.12",
     "@storybook/addon-svelte-csf": "^4.2.0",
     "@storybook/blocks": "^8.6.12",
     "@storybook/svelte": "^8.6.12",
