@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import Card from "../../components/cards/card/Card.svelte";
-import { cardFillings } from "../../components/cards/types/CardFilling";
+import Card from "../../src/components/cards/card/Card.svelte";
+import { cardFillings } from "../../src/components/cards/types/CardFilling";
 import {
   cardTypes,
   cardTypeDefault,
-} from "../../components/cards/types/CardType";
-import { iconNames } from "../../icons/types/IconName";
+} from "../../src/components/cards/types/CardType";
+import { iconNames } from "../../src/icons/types/IconName";
 
 const meta = {
   title: "Cards/Card",

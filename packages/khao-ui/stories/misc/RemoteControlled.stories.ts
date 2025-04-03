@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import remoteControlled from "../../components/misc/remoteControlled/RemoteControlled.svelte";
-import remoteControl from "../../components/misc/remoteControlled/RemoteControl.svelte";
-import { visibilityOptions } from "../../components/misc/remoteControlled/types/Visibility";
+import remoteControlled from "../../src/components/misc/remoteControlled/RemoteControlled.svelte";
+import remoteControl from "../../src/components/misc/remoteControlled/RemoteControl.svelte";
+import { visibilityOptions } from "../../src/components/misc/remoteControlled/types/Visibility";
 
 const meta = {
   title: "Misc/RemoteControlled",

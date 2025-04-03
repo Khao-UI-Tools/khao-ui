@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import Image from "../../components/media/image/Image.svelte";
-import { imageTypes } from "../../components/media/image/types/ImageType";
+import Image from "../../src/components/media/image/Image.svelte";
+import { imageTypes } from "../../src/components/media/image/types/ImageType";
 
 const meta = {
   title: "Media/Image",

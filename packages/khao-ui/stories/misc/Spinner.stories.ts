@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import Spinner from "../../components/misc/spinner/Spinner.svelte";
+import Spinner from "../../src/components/misc/spinner/Spinner.svelte";
 
 const meta = {
   title: "Misc/Spinner",

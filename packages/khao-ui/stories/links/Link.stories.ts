@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import Link from "../../components/links/link/Link.svelte";
-import { iconNames } from "../../icons/types/IconName";
-import { iconLocations } from "../../components/links/link/types/LinkIconLocation";
+import Link from "../../src/components/links/link/Link.svelte";
+import { iconNames } from "../../src/icons/types/IconName";
+import { iconLocations } from "../../src/components/links/link/types/LinkIconLocation";
 import {
   linkPriorities,
   linkPriorityDefault,
-} from "../../components/links/link/types/LinkPriority";
+} from "../../src/components/links/link/types/LinkPriority";
 import {
   iconOpacities,
   iconOpacityDefault,
-} from "../../icons/types/IconOpacity";
+} from "../../src/icons/types/IconOpacity";
 
 const meta = {
   title: "links/Link",

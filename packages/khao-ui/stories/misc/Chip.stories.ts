@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import Chip from "../../components/misc/chip/Chip.svelte";
-import { chipFillings, chipFillingDefault } from "../../components/misc/chip/types/ChipFilling";
-import { chipTypes, chipTypeDefault } from "../../components/misc/chip/types/ChipType";
+import Chip from "../../src/components/misc/chip/Chip.svelte";
+import { chipFillings, chipFillingDefault } from "../../src/components/misc/chip/types/ChipFilling";
+import { chipTypes, chipTypeDefault } from "../../src/components/misc/chip/types/ChipType";
 
 const meta = {
   title: "Misc/Chip",

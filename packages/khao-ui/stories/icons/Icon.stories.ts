@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import Icon from "../../icons/Icon.svelte";
-import { iconNames } from "../../icons/types/IconName";
-import { iconSizeFactors, iconSizeFactorDefault } from "../../icons/types/IconSizeFactor";
-import { iconOpacities, iconOpacityDefault } from "../../icons/types/IconOpacity";
+import Icon from "../../src/icons/Icon.svelte";
+import { iconNames } from "../../src/icons/types/IconName";
+import { iconSizeFactors, iconSizeFactorDefault } from "../../src/icons/types/IconSizeFactor";
+import { iconOpacities, iconOpacityDefault } from "../../src/icons/types/IconOpacity";
 
 const meta = {
   title: "Icons/Icon Component",

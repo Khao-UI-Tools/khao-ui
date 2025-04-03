@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import Selectfield from "../../components/forms/selectfield/SelectField.svelte";
+import Selectfield from "../../src/components/forms/selectfield/SelectField.svelte";
 import options from "./data/options.json";
 import optionsWithLongLabels from "./data/options_with_long_labels.json";
 
