@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
-import Ad from "../../components/ads/ad/Ad.svelte";
+import Ad from "../../src/components/ads/ad/Ad.svelte";
 
 const meta = {
   title: "Ads/Ad",

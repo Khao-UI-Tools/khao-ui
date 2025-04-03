@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import { fn } from "@storybook/test";
-import IconButton from "../../components/buttons/iconButton/IconButton.svelte";
+import IconButton from "../../src/components/buttons/iconButton/IconButton.svelte";
 import {
   buttonPriorities,
   buttonPriorityDefault,
-} from "../../components/buttons/types/ButtonPriority";
-import { iconNames } from "../../icons/types/IconName";
-import { buttonSizes } from "../../components/buttons/types/ButtonSize";
+} from "../../src/components/buttons/types/ButtonPriority";
+import { iconNames } from "../../src/icons/types/IconName";
+import { buttonSizes } from "../../src/components/buttons/types/ButtonSize";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
