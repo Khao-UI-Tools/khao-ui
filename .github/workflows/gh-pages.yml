@@ -20,7 +20,7 @@ jobs:
       - name: install missing rollup for linux
         run: npm install @rollup/rollup-linux-x64-gnu
       - name: build
-        run: npm run build:storybook
+        run: npm run storybook:build
 
       - name: Upload Storybook
         uses: actions/upload-pages-artifact@v3
