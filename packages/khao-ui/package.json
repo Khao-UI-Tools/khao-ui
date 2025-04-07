@@ -14,7 +14,7 @@
     "jest": "jest",
     "jest:dev": "jest --watchAll --silent=false",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "BASE_PATH=/storybook storybook build -o storybook-static/storybook",
     "prepack": "npm run build"
   },
   "devDependencies": {
