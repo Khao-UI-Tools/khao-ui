@@ -15,6 +15,7 @@ const config: StorybookConfig = {
     name: '@storybook/web-components-vite',
     options: {},
   },
+  staticDirs: ['../storybook-assets'],
   stories: [
     '../stories/**/*.mdx',
     '../stories/**/*.stories.@(js|ts|svelte)',
