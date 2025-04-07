@@ -16,7 +16,8 @@
   ],
   "scripts": {
     "jest": "npm run jest -w @der-reiskoch/khao-ui",
-    "storybook": "npm run storybook -w @der-reiskoch/khao-ui"
+    "storybook": "npm run storybook -w @der-reiskoch/khao-ui",
+    "build:storybook": "npm run build-storybook -w @der-reiskoch/khao-ui"
   },
   "repository": {
     "type": "git",
