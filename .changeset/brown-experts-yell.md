@@ -1,5 +1,5 @@
 ---
-"@der-reiskoch/khao-ui": patch
+"@der-reiskoch/khao-ui": minor
 ---
 
-Test the changeset
+Added `khao-pagination` and `khao-pagintaion-item` components
