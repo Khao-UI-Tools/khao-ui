@@ -1,19 +1,12 @@
-<svelte:options customElement="khao-spinner" />
+<svelte:options customElement="khao-pagination" />
 
 <script lang="ts">
-
   export let urlPrefix: string = "";
   export let currentPage: number = 1;
   export let totalPages: number = 1;
-
 </script>
 
-
-<div class="spinner">
-
-
-
-</div>
+<div class="pagination"></div>
 
 <style>
   :host {
