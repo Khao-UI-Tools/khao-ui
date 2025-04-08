@@ -10,17 +10,21 @@
 
   export let urlPrefix: string = "";
   export let titlePrefix: string = "";
-  export let currentPage: number = 1;
-  export let totalPages: number = 1;
+  export let currentPage: string = "1";
+  export let totalPages: string = "1";
+
+  let currentPageNumber = parseInt(currentPage, 10);
+  let totalPagesNumber = parseInt(totalPages, 10);
 
   const adjacentLinks = 3;
   let paginationItems: PaginationItemConfig[] = [];
-  if (currentPage > 0 && totalPages > 1) {
+
+  if (currentPageNumber > 0 && totalPagesNumber > 1) {
     paginationItems = createPaginationItems(
       urlPrefix,
       titlePrefix,
-      currentPage,
-      totalPages,
+      currentPageNumber,
+      totalPagesNumber,
       adjacentLinks
     );
   }

@@ -15,12 +15,12 @@ const meta = {
       type: "string",
     },
     currentPage: {
-      control: "number",
-      type: "number",
+      control: "text",
+      type: "string",
     },
     totalPages: {
-      control: "number",
-      type: "number",
+      control: "text",
+      type: "string",
     },
   },
 } satisfies Meta<Pagination>;
@@ -32,8 +32,8 @@ export const Default: Story = {
   args: {
     urlPrefix: "/seite/",
     titlePrefix: "Seite",
-    currentPage: 2,
-    totalPages: 6,
+    currentPage: "2",
+    totalPages: "6",
   },
 };
 
@@ -41,8 +41,8 @@ export const onlyOnePageNoDisplay: Story = {
   args: {
     urlPrefix: "/seite/",
     titlePrefix: "Seite",
-    currentPage: 1,
-    totalPages: 1,
+    currentPage: "1",
+    totalPages: "1",
   },
 };
 
@@ -50,8 +50,8 @@ export const lessThen9Pages: Story = {
   args: {
     urlPrefix: "/seite/",
     titlePrefix: "Seite",
-    currentPage: 4,
-    totalPages: 8,
+    currentPage: "4",
+    totalPages: "8",
   },
 };
 
@@ -59,8 +59,8 @@ export const exact9Pages: Story = {
   args: {
     urlPrefix: "/seite/",
     titlePrefix: "Seite",
-    currentPage: 4,
-    totalPages: 9,
+    currentPage: "4",
+    totalPages: "9",
   },
 };
 
@@ -68,8 +68,8 @@ export const moreThen9Pages: Story = {
   args: {
     urlPrefix: "/seite/",
     titlePrefix: "Seite",
-    currentPage: 5,
-    totalPages: 10,
+    currentPage: "5",
+    totalPages: "10",
   },
 };
 
@@ -77,7 +77,7 @@ export const farMoreThen9Pages: Story = {
   args: {
     urlPrefix: "/seite/",
     titlePrefix: "Seite",
-    currentPage: 11,
-    totalPages: 19,
+    currentPage: "11",
+    totalPages: "19",
   },
 };
