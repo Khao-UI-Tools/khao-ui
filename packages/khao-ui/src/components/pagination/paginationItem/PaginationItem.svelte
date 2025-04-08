@@ -34,8 +34,8 @@
   :host {
     --khao-pagination-item-text-size: var(--khao-sys-size-typography-4);
 
-    --khao-pagination-item-witdth: var(--khao-sys-size-regular-9);
-    --khao-pagination-item-height: var(--khao-sys-size-regular-7);
+    --khao-pagination-item-witdth: var(--khao-sys-size-regular-8);
+    --khao-pagination-item-height: var(--khao-sys-size-regular-6);
 
     --khao-pagination-item-container-shape: var(--khao-sys-shape-corner-small);
     --khao-pagination-item-border-color: var(--khao-sys-color-secondary);
