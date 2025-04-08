@@ -10,31 +10,39 @@
 
   export let urlPrefix: string = "";
   export let titlePrefix: string = "";
-  export let currentPage: number = 1;
-  export let totalPages: number = 1;
+  export let currentPage: string = "1";
+  export let totalPages: string = "1";
+
+  let currentPageNumber = currentPage != "" ? parseInt(currentPage, 10) : 1;
+  let totalPagesNumber = totalPages != "" ? parseInt(totalPages, 10) : 1;
 
   const adjacentLinks = 3;
   let paginationItems: PaginationItemConfig[] = [];
-  if (currentPage > 0 && totalPages > 1) {
+
+  if (
+    currentPageNumber > 0 &&
+    totalPagesNumber > 1 &&
+    totalPagesNumber >= currentPageNumber
+  ) {
     paginationItems = createPaginationItems(
       urlPrefix,
       titlePrefix,
-      currentPage,
-      totalPages,
+      currentPageNumber,
+      totalPagesNumber,
       adjacentLinks
     );
   }
 </script>
 
 {#if paginationItems.length > 1}
-  <div class="wrapper">
+  <nav class="wrapper" aria-label="Pagination">
     <ul class="pagination">
       {#each paginationItems as { label, href, title, active, disabled }}
         <PaginationItem {label} {href} {title} {active} {disabled}
         ></PaginationItem>
       {/each}
     </ul>
-  </div>
+  </nav>
 {/if}
 
 <style>
@@ -48,6 +56,7 @@
   }
 
   .pagination {
+    padding-left: 0;
     list-style: none;
     margin: 0 auto;
     display: flex;
