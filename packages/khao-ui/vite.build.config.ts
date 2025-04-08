@@ -25,6 +25,7 @@ export default defineConfig({
           "src/components/misc/infiniteScroll/InfiniteScroll.svelte",
         link: "src/components/links/link/Link.svelte",
         "marker-pin": "src/components/map/markerPin/MarkerPin.svelte",
+        pagination: "src/components/pagination/pagination/Pagination.svelte",
         "remote-control":
           "src/components/misc/remoteControlled/RemoteControl.svelte",
         "remote-controlled":
