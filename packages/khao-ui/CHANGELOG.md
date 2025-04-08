@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.5.1
+
+- Use type string for `currentPage` and `totalPages` in `khao-pagination`
+
 ## 3.5.0
 
 - added `khao-pagination` and `khao-pagintaion-item` components
