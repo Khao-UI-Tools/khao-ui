@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.5.5
+
+- improved spacing of `khao-link`
+
 ## 3.5.4
 
 - use "chilled" text decoration in `khao-link`
