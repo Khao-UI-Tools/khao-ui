@@ -53,16 +53,16 @@
   {target}
   on:click={onClick}
 >
-  {#if label !== ""}
-    {label}
-  {:else}
-    <slot>Link</slot>
-  {/if}
-
   {#if iconName !== ""}
     <span class="icon" aria-hidden="true">
       <Icon {iconName} sizeFactor="4" opacity={iconOpacity} />
     </span>
+  {/if}
+
+  {#if label !== ""}
+    {label}
+  {:else}
+    <slot>Link</slot>
   {/if}
 </a>
 
@@ -70,6 +70,7 @@
   :host {
     --khao-link-icon-size: var(--khao-sys-size-regular-4);
     --khao-link-icon-space: var(--khao-sys-size-regular-1);
+    --khao-link-space-to-next-char: 0;
   }
 
   .link {
@@ -100,14 +101,15 @@
 
   .link-with-icon-after {
     display: inline-flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     gap: var(--khao-link-icon-space);
+    margin-right: var(--khao-link-space-to-next-char);
   }
 
   .link-with-icon-before {
     display: inline-flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
     gap: var(--khao-link-icon-space);
     margin-right: 0;
@@ -134,5 +136,6 @@
   .icon {
     margin-bottom: var(--khao-link-icon-space);
     margin-right: calc(var(--khao-link-icon-space) * 0.5);
+    color: color-mix(in srgb, currentColor, transparent 10%);
   }
 </style>
