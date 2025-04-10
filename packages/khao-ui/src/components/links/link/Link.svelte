@@ -80,13 +80,12 @@
     text-underline-offset: var(--khao-sys-size-regular-1);
 
     &:focus-visible {
-      outline: 2px solid currentColor;
+      outline: 2px solid color-mix(in srgb, currentColor, transparent 50%);
       outline-offset: 0;
-      background-color: rgb(128, 128, 128, 50%);
       text-decoration: none;
       padding: var(--khao-sys-size-regular-1);
       height: var(--khao-sys-size-regular-4);
-      border-radius: var(--khao-sys-shape-corner-extra-large);
+      border-radius: var(--khao-sys-shape-corner-small);
       backdrop-filter: saturate(80%);
     }
   }
@@ -115,9 +114,12 @@
     margin-left: var(--khao-link-space-to-next-char);
   }
 
-  .link-primary:hover,
-  .link-primary:focus {
+  .link-primary:hover {
     text-decoration-thickness: 2px;
+  }
+
+  .link-primary:not(:is(:hover, :focus)) {
+    text-decoration-color: color-mix(in srgb, currentColor, transparent 50%);
   }
 
   .link-secondary:hover {

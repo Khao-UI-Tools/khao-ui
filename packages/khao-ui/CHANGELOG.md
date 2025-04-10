@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.5.4
+
+- use "chilled" text decoration in `khao-link`
+- improved focus state for `khao-link`
+
 ## 3.5.3
 
 - use nav-tag as wrapper for `khao-pagination`
