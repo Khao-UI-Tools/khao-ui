@@ -41,7 +41,7 @@
     "ts-jest": "^29.2.4",
     "tslib": "^2.6.3",
     "typescript": "^5.5.3",
-    "vite": "^5.4.0"
+    "vite": "^5.4.16"
   },
   "repository": {
     "type": "git",

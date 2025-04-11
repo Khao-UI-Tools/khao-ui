@@ -1,5 +1,5 @@
-import { StringBoolean } from "../../../common/types/StringBoolean";
-import { TabSize } from "./TabSize";
+import { type StringBoolean } from "../../../common/types/StringBoolean";
+import { type TabSize } from "./TabSize";
 
 export interface TabConfig {
   label: string;
