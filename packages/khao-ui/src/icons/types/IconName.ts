@@ -25,6 +25,7 @@ export const iconNames = [
   "navigate-forward",
   "newsletter",
   "notification",
+  "phone",
   "pinterest",
   "play",
   "printer",
