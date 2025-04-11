@@ -2,4 +2,4 @@
 "@der-reiskoch/khao-ui": patch
 ---
 
-added phone icon
+changed website in package.json

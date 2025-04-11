@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.5.6
+
+- added property `iconName` to `khao-textfield`
+- added priority `secondary-emphasized` to `khao-link`
+- added phone icon
+
 ## 3.5.5
 
 - improved spacing of `khao-link`
