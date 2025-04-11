@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Textfield from "../../src/components/forms/textfield/TextField.svelte";
-import { textFieldTypes, textFieldTypeDefault } from "../../src/components/forms/types/TextFieldType";
+import {
+  textFieldTypes,
+  textFieldTypeDefault,
+} from "../../src/components/forms/types/TextFieldType";
+import { iconNames } from "../../src/icons/types/IconName";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
@@ -28,6 +32,10 @@ const meta = {
       control: { type: "select" },
       options: textFieldTypes,
       default: textFieldTypeDefault,
+    },
+    iconName: {
+      control: { type: "select" },
+      options: iconNames,
     },
   },
 } satisfies Meta<Textfield>;
@@ -73,6 +81,15 @@ export const OutputWithThai: Story = {
     label: "Thai",
     value: "ต้มปลาหมึก",
     type: "output",
+  },
+};
+
+export const OutputWithIcon: Story = {
+  args: {
+    label: "Translation",
+    value: "Tom Pla Muek",
+    type: "output",
+    iconName: "translation",
   },
 };
 
