@@ -81,6 +81,14 @@ export const SecondaryLink: Story = {
   },
 };
 
+export const SecondaryEmphasizedLink: Story = {
+  args: {
+    label: "Emphasized Secondary Link",
+    href: "/",
+    priority: "secondary-emphasized",
+  },
+};
+
 export const ExternalLink: Story = {
   args: {
     label: "External link",
@@ -138,15 +146,23 @@ export const TranslationLink: Story = {
   },
 };
 
-
 export const PhoneLink: Story = {
   args: {
     label: "+49 123 456789",
     href: "tel:+49 123 456789",
     iconName: "phone",
-    iconOpacity: "70%",
     iconLocation: "before",
-    priority: "secondary",
+    priority: "secondary-emphasized",
+  },
+};
+
+export const WebsiteLink: Story = {
+  args: {
+    label: "www.der-reiskoch.de",
+    href: "/",
+    iconName: "meta-lang",
+    iconLocation: "before",
+    priority: "secondary-emphasized",
   },
 };
 
