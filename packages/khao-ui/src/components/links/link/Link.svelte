@@ -37,16 +37,25 @@
   export let iconOpacity: IconOpacity = "80%";
   export let opensNewWindow: string = "false";
   export let priority: LinkPriority = linkPriorityDefault;
+
+  let additonalClasses = "";
+  if (priority === "primary") {
+    additonalClasses += " link-primary";
+  } else if (priority === "secondary") {
+    additonalClasses += " link-secondary";
+  } else if (priority === "secondary-emphasized") {
+    additonalClasses += " link-secondary-emphasized";
+  }
+
+  if (iconName !== "" && iconLocation === "after") {
+    additonalClasses += " link-with-icon-after";
+  } else if (iconName !== "" && iconLocation === "before") {
+    additonalClasses += " link-with-icon-before";
+  }
 </script>
 
 <a
-  class="link {priority === 'primary'
-    ? 'link-primary'
-    : 'link-secondary'} {iconName !== ''
-    ? iconLocation === 'after'
-      ? 'link-with-icon-after'
-      : 'link-with-icon-before'
-    : ''} "
+  class="link {additonalClasses}"
   {href}
   {title}
   {rel}
@@ -95,7 +104,8 @@
     text-decoration: underline;
   }
 
-  .link-secondary {
+  .link-secondary,
+  .link-secondary-emphasized {
     text-decoration: none;
   }
 
@@ -124,13 +134,18 @@
     text-decoration-color: color-mix(in srgb, currentColor, transparent 50%);
   }
 
-  .link-secondary:hover {
+  .link-secondary:hover,
+  .link-secondary-emphasized:hover {
     text-decoration: underline;
     text-decoration-thickness: 1px;
   }
 
   .link-secondary:focus-visible {
     text-decoration: none;
+  }
+
+  .link-secondary-emphasized {
+    font-weight: 600;
   }
 
   .icon {

@@ -1,4 +1,4 @@
-export const linkPriorities = ["primary", "secondary"];
+export const linkPriorities = ["primary", "secondary", "secondary-emphasized"] as const;
 
 export type LinkPriority = (typeof linkPriorities)[number];
 

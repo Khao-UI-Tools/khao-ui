@@ -1,6 +1,6 @@
 {
   "name": "@der-reiskoch/khao-ui",
-  "version": "3.5.5",
+  "version": "3.5.6",
   "type": "module",
   "main": "dist/lib/khao-ui.js",
   "files": [
@@ -55,5 +55,5 @@
   ],
   "author": "Der-Reiskoch <info@der-reiskoch.de>",
   "license": "ISC",
-  "homepage": "https://khao-ui-tools.github.io/khao-ui"
+  "homepage": "https://khao-ui-tools.github.io/khao-ui/storybook/"
 }
