@@ -160,7 +160,7 @@ export const WebsiteLink: Story = {
   args: {
     label: "www.der-reiskoch.de",
     href: "/",
-    iconName: "meta-lang",
+    iconName: "globe",
     iconLocation: "before",
     priority: "secondary-emphasized",
   },
