@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.5.9
+
+### Patch Changes
+
+- added `auto-focus` to `khao-text-field`
+
+## 3.5.8
+
+- added `disabled` prop to `khao-text-field`
+- changed change handler on `khao-text-field`
+
+## 3.5.7
+
+- `khao-text-field` fires custom event `khao-text-field-change`
+- changed website in package.json
+
 ## 3.5.6
 
 - added property `iconName` to `khao-textfield`
