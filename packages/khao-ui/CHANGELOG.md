@@ -1,8 +1,26 @@
 # Changelog
 
-## 3.5.9
+## 4.0.0
 
-### Patch Changes
+- renamed icon `meta-author` into `person`
+- renamed icon `meta-category` to `folder`
+- renamed icon `meta-lang` into `globe`
+- renamed icon `meta-regin` into `map`
+- renamed icon `meta-meal` to `noodle-soup`
+- renamed icon `meta-date` to `date-time`
+- added icon `knife`
+- added icon `cooking-pot`
+- removed debug messages
+
+## 3.6.1
+
+- added debug messages to textfield
+
+## 3.6.0
+
+- added keyboard events to `khao-text-field`
+
+## 3.5.9
 
 - added `auto-focus` to `khao-text-field`
 

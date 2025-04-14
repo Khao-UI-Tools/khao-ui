@@ -25,9 +25,9 @@
   function handleChange(event: Event) {
     const input = event.target as HTMLInputElement;
 
-    const CHANGE_EVENT_NAME = "khao-text-field-change";
+    const EVENT_NAME = `khao-text-field-${event.type}`;
 
-    const changeEvent = new CustomEvent(CHANGE_EVENT_NAME, {
+    const customEvent = new CustomEvent(EVENT_NAME, {
       detail: {
         value: input.value,
       },
@@ -35,7 +35,7 @@
       composed: true,
     });
 
-    input.dispatchEvent(changeEvent);
+    input.dispatchEvent(customEvent);
   }
 </script>
 
@@ -59,6 +59,9 @@
       autofocus={autofocus === "true" ? true : false}
       disabled={disabled === "true" ? true : false}
       on:keydown={handleChange}
+      on:keyup={handleChange}
+      on:keypress={handleChange}
+      on:change={handleChange}
     />
   {/if}
 </div>

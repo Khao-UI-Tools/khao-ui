@@ -52,7 +52,7 @@ type Story = StoryObj<typeof meta>;
 
 export const AuthorExample: Story = {
   args: {
-    iconName: "meta-author",
+    iconName: "person",
     iconSizeFactor: "5",
     iconOpacity: "50%",
     slot: `<khao-link href="/info/ueber-mich/" title="Über den Autor">Jens<span class="meta__author__extended">&nbsp;(<span>Der Reiskoch</span>)</span>
@@ -63,7 +63,7 @@ export const AuthorExample: Story = {
 
 export const DateExample: Story = {
   args: {
-    iconName: "meta-date",
+    iconName: "date-time",
     iconSizeFactor: "5",
     iconOpacity: "50%",
     slot: `<time datetime="2017-07-17T10:44:00+02:00">17.07.2017</time>`,
@@ -73,7 +73,7 @@ export const DateExample: Story = {
 
 export const CategoryExample: Story = {
   args: {
-    iconName: "meta-category",
+    iconName: "folder",
     iconSizeFactor: "5",
     iconOpacity: "50%",
     slot: `<khao-link href="/dies-und-das/" rel="category" title="Zur Kategorie">Dies &amp; Das</khao-link>`,
@@ -83,7 +83,7 @@ export const CategoryExample: Story = {
 
 export const LangExample: Story = {
   args: {
-    iconName: "meta-lang",
+    iconName: "globe",
     iconSizeFactor: "5",
     iconOpacity: "50%",
     slot: `<span><khao-link class="meta__item-translations--current" title="Mein Tagebuch (August 2024) (Deutsche Version)">DE</khao-link>/<khao-link class="meta__link meta__link_lang" href="/en/diary/diary-2024-08/" title="Foodie Diary (August 2024) (English Version)">EN
@@ -94,7 +94,7 @@ export const LangExample: Story = {
 
 export const MealExample: Story = {
   args: {
-    iconName: "meta-meal",
+    iconName: "noodle-soup",
     iconSizeFactor: "5",
     iconOpacity: "50%",
     slot: `<span>ยำหมูย่าง</span>`,
@@ -104,7 +104,7 @@ export const MealExample: Story = {
 
 export const RegionExample: Story = {
   args: {
-    iconName: "meta-region",
+    iconName: "map",
     iconSizeFactor: "5",
     iconOpacity: "50%",
     slot: `<span>Isaan</span>`,
