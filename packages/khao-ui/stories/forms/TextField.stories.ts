@@ -37,18 +37,27 @@ const meta = {
       control: { type: "select" },
       options: iconNames,
     },
+    autofocus: {
+      control: "boolean",
+      type: "boolean",
+    },
+    disabled: {
+      control: "boolean",
+      type: "boolean",
+    },
   },
 } satisfies Meta<Textfield>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Autofocus: Story = {
   args: {
-    label: "Textfield",
+    label: "Textfield (Autofocus)",
     value: "A value",
     type: "text",
     id: "field1",
+    autofocus: "true",
   },
 };
 
@@ -65,6 +74,17 @@ export const Search: Story = {
     value: "",
     placeholder: "What are you looking for?",
     type: "search",
+    disabled: "false",
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    label: "Textfield (Disabled)",
+    value: "A value",
+    type: "text",
+    id: "field1",
+    disabled: "true",
   },
 };
 

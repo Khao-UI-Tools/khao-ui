@@ -18,7 +18,7 @@ const meta = {
       type: "string",
     },
     allowEmpty: {
-      ontrol: "boolean",
+      control: "boolean",
       type: "boolean",
     },
     options: {
