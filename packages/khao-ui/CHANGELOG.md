@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.0.2
+
+### Patch Changes
+
+- improved behavior of `khao-video`
+
+## 4.0.1
+
+- make ` videoId` in `khao-video` reflective
+
 ## 4.0.0
 
 - renamed icon `meta-author` into `person`

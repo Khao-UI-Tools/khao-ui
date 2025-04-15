@@ -1,4 +1,11 @@
-<svelte:options customElement="khao-video" />
+<svelte:options
+  customElement={{
+    tag: "khao-video",
+    props: {
+      videoId: { reflect: true, type: "String", attribute: "videoId" },
+    },
+  }}
+/>
 
 <script lang="ts">
   import { onMount } from "svelte";
@@ -25,7 +32,7 @@
   export let videoId: string = "";
 
   export let autoplay: StringBoolean = "false";
-  export let start: String = "";
+  export let start: string = "";
 
   export let title: string = "";
   export let caption: string = "";
@@ -37,18 +44,31 @@
   export let width: string = "600";
   export let height: string = "450";
 
-  let embeddedUrl =
-    type === "youtube"
-      ? `https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1`
-      : "";
+  let embeddedUrl: string = "";
 
-  if (type === "youtube" && autoplay === "true") {
-    embeddedUrl += "&autoplay=1";
+  function setUrl(
+    type: VideoType,
+    videoId: string,
+    autoplay: StringBoolean,
+    start: string
+  ) {
+    embeddedUrl =
+      type === "youtube"
+        ? `https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1`
+        : "";
+
+    if (type === "youtube" && autoplay === "true") {
+      embeddedUrl += "&autoplay=1";
+    }
+
+    if (type === "youtube" && start !== "") {
+      embeddedUrl += `&start=${start}`;
+    }
+
+    console.log("Video Url changed to", embeddedUrl);
   }
 
-  if (type === "youtube" && start !== "") {
-    embeddedUrl += `&start=${start}`;
-  }
+  setUrl(type, videoId, autoplay, start);
 
   function giveConsent(event: MouseEvent) {
     event.stopPropagation();
@@ -56,6 +76,8 @@
     shwoPreview = false;
     showVideo = true;
   }
+
+  $: videoId && setUrl(type, videoId, autoplay, start);
 </script>
 
 <div
