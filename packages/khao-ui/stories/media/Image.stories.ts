@@ -15,6 +15,11 @@ const meta = {
       options: ["true", "false"],
       type: "string",
     },
+    loadingAnimation: {
+      control: { type: "select" },
+      options: ["true", "false"],
+      type: "string",
+    },
     webp: {
       control: { type: "select" },
       options: ["true", "false"],
@@ -139,6 +144,17 @@ export const SmallLazyLoadedWithWebp: Story = {
     caption: "A small image that has webp and is lazyloaded",
     type: "default",
     webp: "true",
+  },
+};
+
+export const WithoutLoadingAnimation: Story = {
+  args: {
+    src: "https://bilder.koch-reis.de/media/1100/1106/curry_garkueche_auf_dem_chatuchak_markt.jpg",
+    title: "Without Loading Animation",
+    lazyLoading: "true",
+    caption: "Without Loading Animation",
+    type: "default",
+    loadingAnimation: "false",
   },
 };
 

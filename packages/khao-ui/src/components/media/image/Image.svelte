@@ -9,6 +9,7 @@
   let imageType: "image/jpeg" | "image/png" | "image/svg+xml" = "image/jpeg";
 
   let hasError = false;
+  let isLoading = true;
 
   onMount(() => {
     if (src !== "") {
@@ -31,9 +32,15 @@
     hasError = true;
   }
 
+  function handleLoaded() {
+    isLoading = false;
+  }
+
   export let src: string = "";
 
   export let lazyLoading: StringBoolean = "false";
+  export let loadingAnimation: StringBoolean = "true";
+
   export let webp: StringBoolean = "false";
 
   export let title: string = "";
@@ -42,16 +49,24 @@
 
   export let width: string = "600";
   export let height: string = "450";
+
+  if (loadingAnimation === "false") {
+    isLoading = false;
+  }
 </script>
 
 <figure class="figure">
   {#if !hasError}
-    <picture>
+    <picture
+      class={isLoading ? "picture-loading" : ""}
+      style="width:{width}px; height: {height}px;"
+    >
       {#if webp === "true"}
         <source srcset={webpSrc} type="image/webp" />
       {/if}
 
       <source srcset={src} type={imageType} />
+
       <img
         {src}
         loading={lazyLoading === "true" ? "lazy" : "eager"}
@@ -61,6 +76,7 @@
         {height}
         class="image image-{type}"
         on:error={handleError}
+        on:load={handleLoaded}
       />
     </picture>
   {:else}
@@ -78,7 +94,8 @@
 </figure>
 
 <style>
-  :host {
+  :host,
+  :root {
     --khao-image-elevation-level: 1;
     --khao-image-elevation-level-shadow: none;
     --khao-image-position: center;
@@ -89,7 +106,6 @@
     --khao-image-caption-font-size: var(--khao-sys-size-typography-2);
     --khao-image-caption-line-height: var(--khao-sys-size-typography-3);
     --khao-image-caption-font-style: italic;
-    --khao-image-caption-spacing: var(--khao-sys-size-regular-1);
 
     --khao-image-fallback-background: var(--khao-sys-color-neutral80);
   }
@@ -99,6 +115,28 @@
     flex-direction: column;
     align-items: var(--khao-image-position);
     margin: 0;
+    gap: var(--khao-sys-size-regular-1);
+  }
+
+  .picture-loading {
+    background-color: var(--khao-image-fallback-background);
+
+    background-image: linear-gradient(
+      90deg,
+      rgba(204, 204, 204, 1) 0%,
+      rgba(221, 221, 221, 1) 50%
+    );
+    background-size: 40px 100%;
+
+    background-repeat: no-repeat;
+    background-position: left -40px top 0;
+    animation: shine 1.2s ease infinite;
+  }
+
+  @keyframes shine {
+    to {
+      background-position: right -40px top 0;
+    }
   }
 
   .image {
@@ -118,10 +156,10 @@
 
   .image-fallback {
     background: var(--khao-image-fallback-background);
+    border-radius: var(--khao-image-border-radius);
   }
 
   .caption {
-    padding-top: var(--khao-image-caption-spacing);
     text-align: center;
     font-size: var(--khao-image-caption-font-size);
     line-height: var(--khao-image-caption-line-height);
