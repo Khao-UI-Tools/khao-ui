@@ -1,14 +1,29 @@
 # Changelog
 
+## 4.0.6
+
+- re-adjusted spacing in `khao-iamge`
+
+## 4.0.5
+
+- improved spacing in `khao-image` component
+
+## 4.0.4
+
+- added parametet `loadingAnimation` to `khao-image`
+- set image dimension to picture tag in `khao-image`
+
+## 4.0.3
+
+- added skeleton loader to `khao-image` componeant
+
 ## 4.0.2
 
-### Patch Changes
-
-- improved behavior of `khao-video`
+- improved reflective behavior of `khao-video`
 
 ## 4.0.1
 
-- make ` videoId` in `khao-video` reflective
+- make `videoId` in `khao-video` reflective
 
 ## 4.0.0
 
