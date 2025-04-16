@@ -4,11 +4,11 @@
   import { onMount } from "svelte";
   import { type ImageType } from "./types/ImageType";
   import { type StringBoolean } from "../../../common/types/StringBoolean";
+  import getFallbackImage from "./getFallbackImage";
 
   let webpSrc: string = "";
   let imageType: "image/jpeg" | "image/png" | "image/svg+xml" = "image/jpeg";
 
-  let hasError = false;
   let isLoading = true;
 
   onMount(() => {
@@ -29,7 +29,7 @@
   });
 
   function handleError() {
-    hasError = true;
+    src = getFallbackImage();
   }
 
   function handleLoaded() {
@@ -56,36 +56,25 @@
 </script>
 
 <figure class="figure">
-  {#if !hasError}
-    <picture
-      class={isLoading ? "picture-loading" : ""}
-      style="width:{width}px; height: {height}px;"
-    >
-      {#if webp === "true"}
-        <source srcset={webpSrc} type="image/webp" />
-      {/if}
+  <picture class={isLoading ? "picture-loading" : ""}>
+    {#if webp === "true"}
+      <source srcset={webpSrc} type="image/webp" />
+    {/if}
 
-      <source srcset={src} type={imageType} />
+    <source srcset={src} type={imageType} />
 
-      <img
-        {src}
-        loading={lazyLoading === "true" ? "lazy" : "eager"}
-        alt={title}
-        {title}
-        {width}
-        {height}
-        class="image image-{type}"
-        on:error={handleError}
-        on:load={handleLoaded}
-      />
-    </picture>
-  {:else}
-    <div
-      class="image image-fallback"
-      style="width:{width}px; height: {height}px;"
-    ></div>
-  {/if}
-
+    <img
+      {src}
+      loading={lazyLoading === "true" ? "lazy" : "eager"}
+      alt={title}
+      {title}
+      {width}
+      {height}
+      class="image image-{type}"
+      on:error={handleError}
+      on:load={handleLoaded}
+    />
+  </picture>
   {#if caption !== ""}
     <figcaption class="caption">
       {caption}
@@ -152,11 +141,6 @@
     --khao-image-elevation-level-shadow: var(
       --khao-sys-elevation-level1-shadow
     );
-  }
-
-  .image-fallback {
-    background: var(--khao-image-fallback-background);
-    border-radius: var(--khao-image-border-radius);
   }
 
   .caption {
