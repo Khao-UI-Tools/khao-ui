@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.0.7
+
+- improved fallback image for `khao-image`
+- fixed `khao-image` component: removed dimension from picture tag
+
 ## 4.0.6
 
 - re-adjusted spacing in `khao-iamge`
