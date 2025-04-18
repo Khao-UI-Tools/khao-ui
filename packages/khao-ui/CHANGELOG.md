@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.0.8
+
+- upgraded to @der-reiskoch/khao-malet 2.0.7
+- re-introduced `--khao-image-caption-spacing`
+
 ## 4.0.7
 
 - improved fallback image for `khao-image`

@@ -91,6 +91,7 @@
 
     --khao-image-border-radius: var(--khao-sys-shape-corner-none);
 
+    --khao-image-caption-spacing: var(--khao-sys-size-regular-0);
     --khao-image-caption-color: var(--khao-sys-color-neutral30);
     --khao-image-caption-font-size: var(--khao-sys-size-typography-2);
     --khao-image-caption-line-height: var(--khao-sys-size-typography-3);
@@ -104,7 +105,7 @@
     flex-direction: column;
     align-items: var(--khao-image-position);
     margin: 0;
-    gap: var(--khao-sys-size-regular-1);
+    gap: var(--khao-image-caption-spacing);
   }
 
   .picture-loading {
