@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.0.11
+
+- added `--khao-image-filter` to `khao-image`
+- use `--khao-image-filter` in `khao-video`
+
+## 4.0.10
+
+- do not show video if videoId is empty for `khao-video`
+
+## 4.0.9
+
+- improved handling of url in `khao-video`
+
 ## 4.0.8
 
 - upgraded to @der-reiskoch/khao-malet 2.0.7

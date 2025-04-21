@@ -112,3 +112,16 @@ export const WithStartTimeAndConsent: Story = {
     caption: "Video with startTime",
   },
 };
+
+export const NoVideoId: Story = {
+  args: {
+    videoId: "",
+    previewSrc: "https://api.koch-reis.de/youtube/v1/?file=-rD6V79-M4I.jpg",
+    awaitsConsent: "true",
+    autoplay: "true",
+    consentText:
+      "Mit dem Aufruf des Videos erklärst Du Dich einverstanden, dass Deine Daten an YouTube übermittelt werden.",
+    title: "No VideoId",
+    caption: "Video without videoId",
+  },
+};
