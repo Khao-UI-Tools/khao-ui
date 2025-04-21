@@ -147,6 +147,8 @@ encrypted-media; gyroscope; picture-in-picture"
   .video-wrapper {
     max-width: var(--khao-video-width);
     max-height: var(--khao-video-height);
+
+    --khao-image-filter: opacity(50%);
   }
 
   .preview-wrapper {

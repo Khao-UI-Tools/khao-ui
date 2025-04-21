@@ -30,6 +30,7 @@
 
   function handleError() {
     src = getFallbackImage();
+    type = "fallback";
   }
 
   function handleLoaded() {
@@ -90,6 +91,7 @@
     --khao-image-position: center;
 
     --khao-image-border-radius: var(--khao-sys-shape-corner-none);
+    --khao-image-filter: none;
 
     --khao-image-caption-spacing: var(--khao-sys-size-regular-0);
     --khao-image-caption-color: var(--khao-sys-color-neutral30);
@@ -135,6 +137,7 @@
     box-shadow: var(--khao-image-elevation-level-shadow);
     z-index: var(--khao-image-elevation-level);
     border-radius: var(--khao-image-border-radius);
+    filter: var(--khao-image-filter);
   }
 
   .image-elevated {
