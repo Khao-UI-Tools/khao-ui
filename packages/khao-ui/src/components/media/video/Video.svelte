@@ -46,45 +46,51 @@
 
   let embeddedUrl: string = "";
 
-  function setUrl(
+  function setEmbeddedUrl(
     type: VideoType,
     videoId: string,
     autoplay: StringBoolean,
     start: string
   ) {
-    embeddedUrl =
-      type === "youtube"
-        ? `https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1`
-        : "";
+    if (videoId === "") {
+      embeddedUrl = "";
+    } else {
+      embeddedUrl =
+        type === "youtube"
+          ? `https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1`
+          : "";
 
-    if (type === "youtube" && autoplay === "true") {
-      embeddedUrl += "&autoplay=1";
+      if (type === "youtube" && autoplay === "true") {
+        embeddedUrl += "&autoplay=1";
+      }
+
+      if (type === "youtube" && start !== "") {
+        embeddedUrl += `&start=${start}`;
+      }
+
+      console.log("Video Url changed to", embeddedUrl);
     }
-
-    if (type === "youtube" && start !== "") {
-      embeddedUrl += `&start=${start}`;
-    }
-
-    console.log("Video Url changed to", embeddedUrl);
   }
 
-  setUrl(type, videoId, autoplay, start);
+  setEmbeddedUrl(type, videoId, autoplay, start);
 
   function giveConsent(event: MouseEvent) {
     event.stopPropagation();
     event.preventDefault();
     shwoPreview = false;
     showVideo = true;
+
+    setEmbeddedUrl(type, videoId, autoplay, start);
   }
 
-  $: videoId && setUrl(type, videoId, autoplay, start);
+  $: videoId && setEmbeddedUrl(type, videoId, autoplay, start);
 </script>
 
 <div
   class="video-wrapper"
   style="--khao-video-width: {width}px; --khao-video-height: {height}px;"
 >
-  {#if shwoPreview}
+  {#if shwoPreview || embeddedUrl === ""}
     <a
       class="preview-wrapper"
       href={type === "youtube" ? `https://youtu.be/${videoId}` : ""}
@@ -109,7 +115,7 @@
       </div>
     </a>
   {/if}
-  {#if showVideo}
+  {#if showVideo && embeddedUrl !== ""}
     <iframe
       class="video-frame"
       style="max-width: {width}px;"
