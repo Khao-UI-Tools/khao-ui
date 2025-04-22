@@ -1,8 +1,12 @@
 # Changelog
 
+## 4.0.13
+
+- changed icon `book` in `khao-icon`
+
 ## 4.0.12
 
-- added `book` to `khao-icon`
+- added icon `book` to `khao-icon`
 
 ## 4.0.11
 
