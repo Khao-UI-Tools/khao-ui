@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.12
+
+- added `book` to `khao-icon`
+
 ## 4.0.11
 
 - added `--khao-image-filter` to `khao-image`
