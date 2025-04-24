@@ -1,5 +1,26 @@
 # Changelog
 
+## 4.0.18
+
+- adjust spacing of icon in `khao-link`
+
+## 4.0.17
+
+- added `iconEnlarged` prop to `khao-link`
+
+## 4.0.16
+
+- added `--khao-icon-size` to `khao-icon`
+
+## 4.0.15
+
+- added `pdf` icon
+- changed `book` and `knife` icon
+
+## 4.0.14
+
+- yet another version of book icon
+
 ## 4.0.13
 
 - changed icon `book` in `khao-icon`

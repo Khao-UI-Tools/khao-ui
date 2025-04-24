@@ -7,6 +7,11 @@ import {
   linkPriorityDefault,
 } from "../../src/components/links/link/types/LinkPriority";
 import {
+  iconSizeFactors,
+  iconSizeFactorDefault,
+} from "../../src/icons/types/IconSizeFactor";
+
+import {
   iconOpacities,
   iconOpacityDefault,
 } from "../../src/icons/types/IconOpacity";
@@ -29,6 +34,11 @@ const meta = {
       control: { type: "select" },
       options: iconOpacities,
       default: iconOpacityDefault,
+    },
+    iconEnlarged: {
+      control: { type: "select" },
+      options: ["true", "false"],
+      type: "string",
     },
     priority: {
       control: { type: "select" },
@@ -70,6 +80,7 @@ export const Default: Story = {
     label: "Primary Link",
     href: "/",
     priority: "primary",
+    iconEnlarged: "false",
   },
 };
 
@@ -103,6 +114,7 @@ export const AffiliateLink: Story = {
     label: "Affiliate Link",
     href: "/",
     iconName: "cart",
+    iconEnlarged: "true",
     priority: "primary",
   },
 };
@@ -146,11 +158,22 @@ export const TranslationLink: Story = {
   },
 };
 
+export const BookLink: Story = {
+  args: {
+    label: "Book Link",
+    href: "/",
+    iconName: "book",
+    iconEnlarged: "true",
+    priority: "primary",
+  },
+};
+
 export const PhoneLink: Story = {
   args: {
     label: "+49 123 456789",
     href: "tel:+49 123 456789",
     iconName: "phone",
+    iconEnlarged: "true",
     iconLocation: "before",
     priority: "secondary-emphasized",
   },
@@ -161,6 +184,7 @@ export const WebsiteLink: Story = {
     label: "www.der-reiskoch.de",
     href: "/",
     iconName: "globe",
+    iconEnlarged: "true",
     iconLocation: "before",
     priority: "secondary-emphasized",
   },
