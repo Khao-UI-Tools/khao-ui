@@ -27,6 +27,7 @@ export const iconNames = [
   "newsletter",
   "noodle-soup",
   "notification",
+  "pdf",
   "person",
   "phone",
   "pinterest",

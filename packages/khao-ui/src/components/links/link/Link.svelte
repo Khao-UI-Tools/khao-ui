@@ -9,6 +9,8 @@
   } from "./types/LinkIconLocation";
   import { linkPriorityDefault, type LinkPriority } from "./types/LinkPriority";
   import type { IconOpacity } from "../../../icons/types/IconOpacity";
+  import type { IconSizeFactor } from "../../../icons/types/IconSizeFactor";
+  import { type StringBoolean } from "../../../common/types/StringBoolean";
 
   const openInNewWindow = (
     url: string,
@@ -33,10 +35,18 @@
   export let rel: string | null = null;
   export let target: string | null = null;
   export let iconName: IconName | "" = "";
+
   export let iconLocation: IconLocation = iconLocationDefault;
   export let iconOpacity: IconOpacity = "80%";
+  export let iconEnlarged: StringBoolean = "false";
+
   export let opensNewWindow: string = "false";
   export let priority: LinkPriority = linkPriorityDefault;
+
+  let iconSizeFactor: IconSizeFactor = "4";
+  if (iconEnlarged === "true") {
+    iconSizeFactor = "5";
+  }
 
   let additonalClasses = "";
   if (priority === "primary") {
@@ -63,9 +73,14 @@
   on:click={onClick}
 >
   {#if iconName !== ""}
-    <span class="icon" aria-hidden="true">
-      <Icon {iconName} sizeFactor="4" opacity={iconOpacity} />
-    </span>
+    <div
+      class="icon"
+      aria-hidden="true"
+      style="--khao-link-icon-size: var(--khao-sys-size-regular-{iconSizeFactor +
+        2});"
+    >
+      <Icon {iconName} sizeFactor={iconSizeFactor} opacity={iconOpacity} />
+    </div>
   {/if}
 
   {#if label !== ""}
@@ -77,12 +92,14 @@
 
 <style>
   :host {
-    --khao-link-icon-size: var(--khao-sys-size-regular-4);
+    --khao-link-icon-size: var(--khao-sys-size-regular-6);
     --khao-link-icon-space: var(--khao-sys-size-regular-1);
     --khao-link-space-to-next-char: 0;
   }
 
   .link {
+    display: inline-flex;
+    align-items: center;
     color: currentColor;
     word-wrap: break-word;
     cursor: pointer;
@@ -149,8 +166,10 @@
   }
 
   .icon {
-    margin-bottom: var(--khao-link-icon-space);
+    display: inline-flex;
     margin-right: calc(var(--khao-link-icon-space) * 0.5);
     color: color-mix(in srgb, currentColor, transparent 10%);
+    width: var(--khao-link-icon-size);
+    height: var(--khao-link-icon-size);
   }
 </style>
