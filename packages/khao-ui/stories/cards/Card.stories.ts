@@ -75,7 +75,7 @@ export const Tertiary: Story = {
 
 export const DismissableCard: Story = {
   render:
-    () => `<khao-card filling="tertiary" title="Dismissable Card with Title and Icon" dismissable="true" iconName="info">
+    () => `<khao-card filling="tertiary" title="Dismissable Card with Title and Icon" dismissable="true" iconName="notification">
     This is a dismissable card with a title and an icon. Lporem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </khao-card>`,
 };
@@ -108,5 +108,13 @@ export const veggieAlternativeExample: Story = {
     filling: "primary",
     title: "A veggie alternative",
     iconName: "leaf",
+  },
+};
+
+export const bookCard: Story = {
+  args: {
+    filling: "secondary",
+    title: "A book card",
+    iconName: "book",
   },
 };
