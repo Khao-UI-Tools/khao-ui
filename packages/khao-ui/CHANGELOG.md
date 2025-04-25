@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.2.0
+
+- added `hasWebP` prop to 'khao-ad'
+
 ## 4.1.0
 
 - moved icon to header in `khao-card`

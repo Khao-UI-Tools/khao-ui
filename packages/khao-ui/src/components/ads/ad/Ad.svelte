@@ -9,8 +9,9 @@
   export let imageWidth: string;
   export let imageTitle: string;
   export let imageCaption: string = "";
-  export let onError: () => void;
   export let hasWebP: StringBoolean = "false";
+
+  export let onError: () => void;
 </script>
 
 <div class="container">
