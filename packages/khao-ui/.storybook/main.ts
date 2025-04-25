@@ -1,18 +1,17 @@
-import type { StorybookConfig } from "@storybook/web-components-vite";
+import { dirname, join } from "path";
+import { StorybookConfig } from "@storybook/web-components-vite";
 
 const config: StorybookConfig = {
   addons: [
-    "@storybook/addon-svelte-csf",
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
+    getAbsolutePath("@storybook/addon-links"),
+    getAbsolutePath("@storybook/addon-essentials"),
+    getAbsolutePath("@chromatic-com/storybook"),
+    getAbsolutePath("@storybook/addon-interactions"),
+    getAbsolutePath("@storybook/addon-mdx-gfm")
   ],
-  docs: {
-    autodocs: true,
-  },
+  docs: {},
   framework: {
-    name: "@storybook/web-components-vite",
+    name: getAbsolutePath("@storybook/web-components-vite"),
     options: {},
   },
   staticDirs: ["../storybook-assets"],
@@ -24,3 +23,7 @@ const config: StorybookConfig = {
 };
 
 export default config;
+
+function getAbsolutePath(value: string): any {
+  return dirname(require.resolve(join(value, "package.json")));
+}
