@@ -43,7 +43,7 @@ export const Example: Story = {
   },
 };
 
-export const WithWebP: Story = {
+export const WithWebp: Story = {
   args: {
     title: "Advertisement (with webP)",
     url: "/",
