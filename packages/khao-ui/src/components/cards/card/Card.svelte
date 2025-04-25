@@ -7,16 +7,27 @@
   import { type IconName } from "../../../icons/types/IconName";
   import type { StringBoolean } from "../../../common/types/StringBoolean";
 
-  export let filling: CardFilling = "surface";
-  export let type: CardType = cardTypeDefault;
-  export let title: string = "";
-  export let iconName: IconName | "" = "";
+  interface Props {
+    filling: CardFilling,
+    type: CardType,
+    title: string,
+    iconName: IconName;
+    ariaLabel: string;
+    dismissable: StringBoolean
+    children: any
+  }
 
-  export let ariaLabel: string = "";
-  export let dismissable: StringBoolean = "false";
+  let {
+    filling = "surface",
+    type = cardTypeDefault,
+    title = "",
+    iconName = "",
+    ariaLabel = "",
+    dismissable = "false",
+    children,
+  }: Props = $props();
 
-  export let card: HTMLDivElement | null = null;
-
+  let card: HTMLDivElement | null = null;
 
   function dismissCard() {
     if (card) {
@@ -46,7 +57,7 @@
         <button
           class="close-button"
           aria-label="Close"
-          on:click={() => {
+          onclick={() => {
             dismissCard();
           }}
         >
