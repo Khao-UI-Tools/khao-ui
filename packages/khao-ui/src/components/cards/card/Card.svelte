@@ -14,9 +14,9 @@
 
   export let ariaLabel: string = "";
   export let dismissable: StringBoolean = "false";
-  export let dissmissedOnLoad: StringBoolean = "false";
 
   export let card: HTMLDivElement | null = null;
+
 
   function dismissCard() {
     if (card) {
