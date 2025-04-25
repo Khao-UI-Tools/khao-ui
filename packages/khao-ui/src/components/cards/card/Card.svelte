@@ -8,13 +8,13 @@
   import type { StringBoolean } from "../../../common/types/StringBoolean";
 
   interface Props {
-    filling: CardFilling,
-    type: CardType,
-    title: string,
+    filling: CardFilling;
+    type: CardType;
+    title: string;
     iconName: IconName;
     ariaLabel: string;
-    dismissable: StringBoolean
-    children: any
+    dismissable: StringBoolean;
+    dismissed: StringBoolean;
   }
 
   let {
@@ -24,53 +24,47 @@
     iconName = "",
     ariaLabel = "",
     dismissable = "false",
-    children,
+    dismissed = "false",
   }: Props = $props();
 
-  let card: HTMLDivElement | null = null;
-
   function dismissCard() {
-    if (card) {
-      card.remove();
-    }
+    dismissed = "true";
   }
 </script>
 
-<div
-  class="card card-{filling} card-type-{type}"
-  aria-label={ariaLabel}
-  bind:this={card}
->
-  {#if iconName !== "" || title !== "" || dismissable === "true"}
-    <div class="header">
-      {#if iconName !== ""}
-        <div class="icon-wrapper">
-          <Icon {iconName} sizeFactor="7" />
-        </div>
-      {/if}
+{#if dismissable === "false" || dismissed === "false"}
+  <div class="card card-{filling} card-type-{type}" aria-label={ariaLabel}>
+    {#if iconName !== "" || title !== "" || dismissable === "true"}
+      <div class="header">
+        {#if iconName !== ""}
+          <div class="icon-wrapper">
+            <Icon {iconName} sizeFactor="7" />
+          </div>
+        {/if}
 
-      {#if title !== ""}
-        <div class="title">{title}</div>
-      {/if}
+        {#if title !== ""}
+          <div class="title">{title}</div>
+        {/if}
 
-      {#if dismissable === "true"}
-        <button
-          class="close-button"
-          aria-label="Close"
-          onclick={() => {
-            dismissCard();
-          }}
-        >
-          <Icon iconName="close" sizeFactor="8" />
-        </button>
-      {/if}
+        {#if dismissable === "true"}
+          <button
+            class="close-button"
+            aria-label="Close"
+            onclick={() => {
+              dismissCard();
+            }}
+          >
+            <Icon iconName="close" sizeFactor="8" />
+          </button>
+        {/if}
+      </div>
+    {/if}
+
+    <div class="content">
+      <slot></slot>
     </div>
-  {/if}
-
-  <div class="content">
-    <slot></slot>
   </div>
-</div>
+{/if}
 
 <style>
   :host {
