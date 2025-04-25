@@ -9,6 +9,7 @@
 <a
   href="https://steadyhq.com/{lang || 'de'}/{user}/about"
   {title}
+  aria-label={title}
   target="_blank"
   class="button"
 >
