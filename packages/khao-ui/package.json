@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build -c=vite.build.config.js",
+    "build": "npm run check && vite build -c=vite.build.config.js",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
     "jest": "jest",
@@ -23,7 +23,6 @@
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-links": "^8.6.12",
-    "@storybook/addon-svelte-csf": "^4.2.0",
     "@storybook/blocks": "^8.6.12",
     "@storybook/svelte": "^8.6.12",
     "@storybook/svelte-vite": "^8.6.12",
