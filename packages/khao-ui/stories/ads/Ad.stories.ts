@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/svelte-vite";
+import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Ad from "../../src/components/ads/ad/Ad.svelte";
 
 const meta = {
@@ -18,6 +18,11 @@ const meta = {
       control: "text",
       type: "string",
     },
+    hasWebP: {
+      control: { type: "select" },
+      options: ["true", "false"],
+      type: "string",
+    },
   },
 } satisfies Meta<Ad>;
 
@@ -26,12 +31,27 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    title: "Werbung",
+    title: "Advertisement",
     url: "/",
-    imageUrl: "https://storybook.js.org/images/placeholders/350x150.png",
+    imageUrl: "dummy-ad.jpg",
     imageWidth: "350px",
     imageTitle: "Dummy Image",
     imageCaption: "A dummy advertisement",
+    onError: () => {
+      alert("error");
+    },
+  },
+};
+
+export const WithWebP: Story = {
+  args: {
+    title: "Advertisement (with webP)",
+    url: "/",
+    imageUrl: "dummy-ad.jpg",
+    imageWidth: "350px",
+    imageTitle: "Dummy Image with webP",
+    imageCaption: "A dummy advertisement",
+    hasWebP: "true",
     onError: () => {
       alert("error");
     },
