@@ -17,6 +17,7 @@
 
   export let card: HTMLDivElement | null = null;
 
+
   function dismissCard() {
     if (card) {
       card.remove();
@@ -29,8 +30,14 @@
   aria-label={ariaLabel}
   bind:this={card}
 >
-  {#if title !== "" || dismissable === "true"}
+  {#if iconName !== "" || title !== "" || dismissable === "true"}
     <div class="header">
+      {#if iconName !== ""}
+        <div class="icon-wrapper">
+          <Icon {iconName} sizeFactor="7" />
+        </div>
+      {/if}
+
       {#if title !== ""}
         <div class="title">{title}</div>
       {/if}
@@ -50,11 +57,6 @@
   {/if}
 
   <div class="content">
-    {#if iconName !== ""}
-      <div class="icon-wrapper">
-        <Icon {iconName} sizeFactor="7" />
-      </div>
-    {/if}
     <slot></slot>
   </div>
 </div>
@@ -107,10 +109,20 @@
     margin-bottom: var(--khao-card-title-space);
   }
 
+  .icon-wrapper {
+    margin-right: var(--khao-card-icon-space);
+    width: var(--khao-card-icon-size);
+    height: var(--khao-card-icon-size);
+    flex-grow: 0;
+    flex-shrink: 1;
+  }
+
   .title {
     font-family: var(--khao-card-title-font);
     font-size: var(--khao-card-title-size);
     font-weight: 800;
+    flex-grow: 1;
+    flex-shrink: 0;
   }
 
   .close-button {
@@ -120,6 +132,8 @@
     cursor: pointer;
     padding: 0;
     margin: 0;
+    flex-grow: 0;
+    flex-shrink: 1;
 
     &:focus-visible {
       outline: 2px solid var(--khao-sys-color-neutral50);
@@ -130,13 +144,6 @@
 
   .content {
     line-height: var(--khao-card-icon-size);
-  }
-
-  .icon-wrapper {
-    float: left;
-    margin-right: var(--khao-card-icon-space);
-    width: var(--khao-card-icon-size);
-    height: var(--khao-card-icon-size);
   }
 
   .card-surface {

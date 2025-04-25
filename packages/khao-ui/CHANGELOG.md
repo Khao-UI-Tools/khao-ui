@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.1.0
+
+- moved icon to header in `khao-card`
+
 ## 4.0.18
 
 - adjust spacing of icon in `khao-link`

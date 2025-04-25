@@ -2,7 +2,7 @@
 
 This is an UI Component Library based on lightweight Svelte Components which are provided as web-components.
 
-![Khao UI](https://bilder.koch-reis.de/logo/khao-ui.jpg "Khao UI")
+![Khao UI](logo.jpg "Khao UI")
 
 ## About the Name
 

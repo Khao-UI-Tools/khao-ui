@@ -1,13 +1,16 @@
 <svelte:options customElement="khao-ad" />
 
 <script lang="ts">
-  export let title: string;
-  export let url: string;
+  import type { StringBoolean } from "../../../common/types/StringBoolean";
+
+  export let title: string = "";
+  export let url: string = "";
   export let imageUrl: string;
   export let imageWidth: string;
   export let imageTitle: string;
-  export let imageCaption: string;
+  export let imageCaption: string = "";
   export let onError: () => void;
+  export let hasWebP: StringBoolean = "false";
 </script>
 
 <div class="container">
@@ -19,7 +22,13 @@
       target={url.includes("mailto:") ? "_self" : "_blank"}
     >
       <picture>
-        <source srcset={imageUrl.replace(".jpg", ".webp")} type="image/webp" />
+        {#if hasWebP === "true"}
+          <source
+            srcset={imageUrl.replace(".jpg", ".webp")}
+            type="image/webp"
+          />
+        {/if}
+
         <source srcset={imageUrl} type="image/jpeg" />
         <img
           src={imageUrl}

@@ -9,6 +9,20 @@
     <title>Khao UI Web Conponents</title>
   </head>
   <body>
+
+    
+    <script type="module" src="/src/components/ads/ad/Ad.svelte"></script>
+    <script type="module" src="/src/components/buttons/button/Button.svelte"></script>
+    <script type="module" src="/src/components/buttons/iconButton/IconButton.svelte"></script>
+
+
+
+    <style>
+
+      @import "@der-reiskoch/khao-malet/css/index.css";
+
+
+
       body {
         background-color: var(--khao-sys-color-surface);
         color: var( --khao-sys-color-on-surface);
@@ -23,11 +37,44 @@
         font-family: var(--khao-sys-typescale-body-font);
       }
 
+
+      .showcase-section {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        font-family: var(--khao-sys-typescale-body-font);
+      }
+
+
     </style>
 
     <div class="showcase">
 
       <h1>Khao UI Web Components</h1>
+
+      <h2>Ad</h2>
+
+      <khao-ad title="Advertisement" url="/" imageUrl="logo.jpg" imageWidth="400" imageHeight="250" imageCaption="Khao Ui - Build better Food Blogs"></khao-ad>
+
+      <h2>Buttons</h2>
+
+      <khao-button label="A Button"></khao-button>
+      <khao-button label="A Button" priority="secondary"></khao-button>
+      <khao-button label="A Button" priority="tertiary"></khao-button>
+
+
+      <h2>Icon Buttons</h2>
+
+      <div class="showcase-secion">
+
+        <khao-icon-button iconName="globe"></khao-icon-button>
+        <khao-icon-button iconName="book" priority="secondary"></khao-icon-button>
+        <khao-icon-button iconName="reiskoch-logo" priority="tertiary"></khao-icon-button>
+
+      </div>
+
 
       <p>Please start storybook for more information about the components<p>
 
