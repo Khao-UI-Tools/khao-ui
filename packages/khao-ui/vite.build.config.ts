@@ -37,6 +37,8 @@ export default defineConfig({
         "select-field": "src/components/forms/selectfield/SelectField.svelte",
         "social-buttons":
           "src/components/widgets/socialButtons/SocialButtons.svelte",
+        "switch-button":
+          "src/components/forms/switchbutton/SwitchButton.svelte",
         "tab-bar": "src/components/tabs/tabBar/TabBar.svelte",
         "text-field": "src/components/forms/textfield/TextField.svelte",
         video: "src/components/media/video/Video.svelte",
