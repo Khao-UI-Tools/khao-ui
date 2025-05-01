@@ -9,14 +9,27 @@
   import { type IconName } from "../../../icons/types/IconName";
   import type { StringBoolean } from "../../../common/types/StringBoolean";
 
-  export let label: string;
-  export let value: string;
-  export let placeholder: string;
-  export let id: string = `khao-ui-texfield-${label}`;
-  export let type: TextFieldType = textFieldTypeDefault;
-  export let iconName: IconName | "" = "";
-  export let autofocus: StringBoolean = "false";
-  export let disabled: StringBoolean = "false";
+  interface Props {
+    label: string;
+    value: string;
+    placeholder: string;
+    id: string;
+    type: TextFieldType;
+    iconName: IconName | "";
+    autofocus: StringBoolean;
+    disabled: StringBoolean;
+  }
+
+  let {
+    label,
+    value,
+    placeholder,
+    id = `khao-ui-texfield-${label}`,
+    type = textFieldTypeDefault,
+    iconName = "",
+    autofocus = "false",
+    disabled = "false",
+  }: Props = $props();
 
   if (type === "search" && iconName === "") {
     iconName = "search";
@@ -42,14 +55,16 @@
 <div class="formfield">
   <label class="label" for={id}
     >{#if iconName !== ""}
-      <Icon {iconName} sizeFactor="4" />
+      <span class="icon">
+        <Icon {iconName} sizeFactor="4" />
+      </span>
     {/if}{label}</label
   >
 
   {#if type === "output"}
     <output class="field" {id}>{value}</output>
   {:else}
-    <!-- svelte-ignore a11y-autofocus -->
+    <!-- svelte-ignore a11y_autofocus -->
     <input
       class="field"
       {placeholder}
@@ -58,10 +73,10 @@
       {value}
       autofocus={autofocus === "true" ? true : false}
       disabled={disabled === "true" ? true : false}
-      on:keydown={handleChange}
-      on:keyup={handleChange}
-      on:keypress={handleChange}
-      on:change={handleChange}
+      onkeydown={handleChange}
+      onkeyup={handleChange}
+      onkeypress={handleChange}
+      onchange={handleChange}
     />
   {/if}
 </div>
@@ -69,4 +84,13 @@
 <style>
   @import "../reset.css";
   @import "../formfield.css";
+
+  :host,
+  :root {
+    --khao-text-field-icon-space: var(--khao-sys-size-regular-1);
+  }
+
+  .icon {
+    margin-right: var(--khao-text-field-icon-space);
+  }
 </style>
