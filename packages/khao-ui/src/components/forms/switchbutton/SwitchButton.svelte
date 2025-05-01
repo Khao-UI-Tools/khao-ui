@@ -66,6 +66,15 @@
 </div>
 
 <style>
+  :host,
+  :root {
+    --khao-switch-buton-slider-color: var(--khao-sys-static-color-white);
+    --khao-switch-buton-inactive-bg-color: var(
+      --khao-sys-color-surface-container-high
+    );
+    --khao-switch-buton-active-bg-color: var(--khao-sys-static-color-success);
+  }
+
   .container {
     display: flex;
     justify-content: center;
@@ -95,7 +104,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--khao-sys-color-surface-container-high);
+    background-color: var(--khao-switch-buton-inactive-bg-color);
     transition: 0.4s;
     border-radius: 34px;
   }
@@ -107,18 +116,18 @@
     width: 22px;
     left: 4px;
     bottom: 4px;
-    background-color: var(--khao-sys-static-color-white);
+    background-color: var(--khao-switch-buton-slider-color);
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 50%;
   }
 
   input:checked + .slider {
-    background-color: var(--khao-sys-static-color-success);
+    background-color: var(--khao-switch-buton-active-bg-color);
   }
 
   input:focus + .slider {
-    box-shadow: 0 0 1px var(--khao-sys-static-color-success);
+    box-shadow: 0 0 1px var(--khao-switch-buton-active-bg-color);
   }
 
   input:checked + .slider:before {

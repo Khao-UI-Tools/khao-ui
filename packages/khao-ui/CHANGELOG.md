@@ -1,5 +1,17 @@
 # Changelog
 
+## 4.3.1
+
+- migrated `khao-text-field` to svelte5 syntax
+- added `--khao-text-field-icon-space` css propery
+- ugraded to @der-reiskoch/khao-malet 3.0.0
+
+## 4.3.0
+
+- migrated `khao-card` to svelte5 syntax
+- added `dismissed` prop to `khao-card`
+- added `khao-switch-button` component
+
 ## 4.2.0
 
 - added `hasWebP` prop to 'khao-ad'
