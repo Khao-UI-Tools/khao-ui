@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.0
+
+- added `khao-switch-button` component
+
 ## 4.3.1
 
 - migrated `khao-text-field` to svelte5 syntax
