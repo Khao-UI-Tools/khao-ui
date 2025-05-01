@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.4.2
+
+- ugraded to @der-reiskoch/khao-malet 5.0.0
+
+## 4.4.1
+
+- ugraded to @der-reiskoch/khao-malet 4.0.0
+
 ## 4.4.0
 
 - added `khao-switch-button` component
