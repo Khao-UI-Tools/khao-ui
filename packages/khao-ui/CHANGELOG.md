@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.6.0
+
+- added `khao-wake-lock-switch` widget
+- make background transparent for `khao-switch-button`
+- fixed `onChange` handling for `khao-switch-button`
+- make all props optional for `khao-card`
+
 ## 4.5.0
 
 - use `minChunkSize` rollup setting to reduce number of artefacts

@@ -8,13 +8,13 @@
   import type { StringBoolean } from "../../../common/types/StringBoolean";
 
   interface Props {
-    filling: CardFilling;
-    type: CardType;
-    title: string;
-    iconName: IconName;
-    ariaLabel: string;
-    dismissable: StringBoolean;
-    dismissed: StringBoolean;
+    filling?: CardFilling;
+    type?: CardType;
+    title?: string;
+    iconName?: IconName;
+    ariaLabel?: string;
+    dismissable?: StringBoolean;
+    dismissed?: StringBoolean;
   }
 
   let {
