@@ -42,6 +42,8 @@ export default defineConfig({
         "tab-bar": "src/components/tabs/tabBar/TabBar.svelte",
         "text-field": "src/components/forms/textfield/TextField.svelte",
         video: "src/components/media/video/Video.svelte",
+        "wake-lock-switch":
+          "src/components/widgets/wakeLockSwitch/WakeLockSwitch.svelte",
       },
       output: {
         dir: "dist/",
