@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.5.0
+
+- use `minChunkSize` rollup setting to reduce number of artefacts
+- use `khao-ui-svelte-[name]-${version}` schema for svelte chunks
+
 ## 4.4.2
 
 - ugraded to @der-reiskoch/khao-malet 5.0.0
