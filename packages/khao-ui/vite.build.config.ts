@@ -45,14 +45,14 @@ export default defineConfig({
       },
       output: {
         dir: "dist/",
+        experimentalMinChunkSize: 5000,
         entryFileNames: `js/khao-ui-[name]-${version}.js`,
-        chunkFileNames: `js/svelte-chunk-[hash].js`,
+        chunkFileNames: `js/khao-ui-svelte-[name]-${version}.js`,
         assetFileNames: (assetInfo) => {
           if (assetInfo.name == "style.css")
             return `css/khao-ui-${version}.css`;
           return `css/${assetInfo.name}`;
         },
-        inlineDynamicImports: false,
       },
     },
   },
