@@ -5,14 +5,14 @@
 
   interface Props {
     label: string;
-    activated: StringBoolean;
-    htmlId: string;
-    onChange: (value: string) => {};
+    activated?: StringBoolean;
+    htmlId?: string;
+    onChange?: (value: string) => void;
   }
 
   let {
     label,
-    activated,
+    activated = "false",
     htmlId = `khao-switch-button-${label}`,
     onChange,
   }: Props = $props();
@@ -21,27 +21,23 @@
 
   function handleButtonClick() {
     checked = !checked;
-  }
-
-  function handleCheckboxChange(event: Event) {
-    const checkbox = event.target as HTMLInputElement;
-
-    if (onChange) {
-      onChange(checkbox.value);
-    }
 
     const CHANGE_EVENT_NAME = "khao-switch-button-change";
 
     const changeEvent = new CustomEvent(CHANGE_EVENT_NAME, {
       detail: {
-        value: checkbox.value,
+        value: checked,
         htmlId: htmlId,
       },
       bubbles: true,
       composed: true,
     });
 
-    checkbox.dispatchEvent(changeEvent);
+    window.dispatchEvent(changeEvent);
+
+    if (onChange) {
+      onChange(checked.toString());
+    }
   }
 </script>
 
@@ -57,7 +53,6 @@
       id={htmlId}
       role="switch"
       aria-checked={checked}
-      onchange={handleCheckboxChange}
     /><span class="slider"></span>
   </button>
   <label class="label" id="label-{htmlId}" for={htmlId}>
@@ -81,6 +76,7 @@
     justify-items: center;
     align-items: center;
     gap: 0.5rem;
+    background-color: transparent;
   }
 
   .button {
@@ -89,6 +85,7 @@
     display: inline-block;
     width: 60px;
     height: 30px;
+    background-color: transparent;
   }
 
   .button input {
