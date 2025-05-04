@@ -7,7 +7,7 @@
     label: string;
     activated?: StringBoolean;
     htmlId?: string;
-    onChange?: (value: string) => void;
+    onChange?: (value: StringBoolean) => void;
   }
 
   let {
@@ -36,7 +36,7 @@
     window.dispatchEvent(changeEvent);
 
     if (onChange) {
-      onChange(checked.toString());
+      onChange(checked ? "true" : "false");
     }
   }
 </script>
