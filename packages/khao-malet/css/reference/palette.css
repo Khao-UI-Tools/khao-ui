@@ -1,0 +1,40 @@
+/* Color system
+ * https://m3.material.io/styles/color/system/how-the-system-works
+ */
+
+:root {
+  /* Brand Colors */
+  --khao-ref-palette-bamboo: #c0a74e;
+  --khao-ref-palette-jungle: #7ca428;
+  --khao-ref-palette-flower: #ff9900;
+  --khao-ref-palette-sand: #f7f3e6;
+
+  /* Additional */
+  --khao-ref-palette-red: #aa1d2d;
+  --khao-ref-palette-green: #367300;
+  --khao-ref-palette-white: #ffffff;
+  --khao-ref-palette-black: #000000;
+
+  /* Neutral */
+  --khao-ref-palette-neutral10: var(--khao-ref-palette-black);
+  --khao-ref-palette-neutral30: color-mix(
+    in srgb,
+    var(--khao-ref-palette-black),
+    var(--khao-ref-palette-white) 30%
+  );
+  --khao-ref-palette-neutral50: color-mix(
+    in srgb,
+    var(--khao-ref-palette-black),
+    var(--khao-ref-palette-white) 50%
+  );
+  --khao-ref-palette-neutral80: color-mix(
+    in srgb,
+    var(--khao-ref-palette-black),
+    var(--khao-ref-palette-white) 80%
+  );
+  --khao-ref-palette-neutral90: color-mix(
+    in srgb,
+    var(--khao-ref-palette-black),
+    var(--khao-ref-palette-white) 90%
+  );
+}
