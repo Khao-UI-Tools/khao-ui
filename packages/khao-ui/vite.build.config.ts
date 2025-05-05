@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        style: "@der-reiskoch/khao-malet/khao-malet.css",
+        style: "@der-reiskoch/khao-malet/dist/khao-malet.css",
         ad: "src/components/ads/ad/Ad.svelte",
         badge: "src/components/misc/badge/Badge.svelte",
         button: "src/components/buttons/button/Button.svelte",

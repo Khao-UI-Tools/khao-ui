@@ -1,0 +1,13 @@
+import { Meta } from "@storybook/blocks";
+import { version } from "../package.json";
+import README from "../README.md?raw";
+
+import { Markdown } from "@storybook/blocks";
+
+<Meta title="About Khao Malet" />
+
+<Markdown>{README}</Markdown>
+
+## Version
+
+This is Khao Malet (v{version})

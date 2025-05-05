@@ -1,0 +1,48 @@
+/* Typescale
+ * https://m3.material.io/styles/typography/type-scale-tokens
+ * 
+ */
+
+:root {
+  /* Default */
+  --khao-sys-typescale-default-font: var(--khao-ref-typeface-default);
+
+  /* Title */
+  --khao-sys-typescale-title-font: var(--khao-ref-typeface-secondary);
+
+  --khao-sys-typescale-title-large-line-height: var(--khao-sys-size-regular-6);
+  --khao-sys-typescale-title-large-size: var(--khao-sys-size-typography-10);
+  --khao-sys-typescale-title-large-weight: 700;
+
+  --khao-sys-typescale-title-medium-line-height: var(--khao-sys-size-regular-4);
+  --khao-sys-typescale-title-medium-size: var(--khao-sys-size-typography-8);
+  --khao-sys-typescale-title-medium-weight: 700;
+
+  --khao-sys-typescale-title-small-line-height: var(--khao-sys-size-regular-3);
+  --khao-sys-typescale-title-small-size: var(--khao-sys-size-typography-7);
+  --khao-sys-typescale-title-small-weight: 700;
+
+  --khao-sys-typescale-title-tiny-line-height: var(--khao-sys-size-regular-3);
+  --khao-sys-typescale-title-tiny-size: var(--khao-sys-size-typography-6);
+  --khao-sys-typescale-title-tiny-weight: 700;
+
+  /* Body */
+  --khao-sys-typescale-body-font: var(--khao-ref-typeface-default);
+  --khao-sys-typescale-body-line-height: var(--khao-sys-size-regular-6);
+
+  /* Label */
+  --khao-sys-typescale-label-large-line-height: var(--khao-sys-size-regular-6);
+  --khao-sys-typescale-label-large-size: var(--khao-sys-size-typography-9);
+  --khao-sys-typescale-label-large-weight: 400;
+  --khao-sys-typescale-label-large-weight-prominent: 700;
+  
+  --khao-sys-typescale-label-medium-line-height: var(--khao-sys-size-regular-4);
+  --khao-sys-typescale-label-medium-size: var(--khao-sys-size-typography-6);
+  --khao-sys-typescale-label-medium-weight: 400;
+  --khao-sys-typescale-label-medium-weight-prominent: 700;
+
+  --khao-sys-typescale-label-small-line-height: var(--khao-sys-size-regular-3);
+  --khao-sys-typescale-label-small-size: var(--khao-sys-size-typography-5);
+  --khao-sys-typescale-label-small-weight: 400;
+  --khao-sys-typescale-label-small-weight-prominent: 700;
+}

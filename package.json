@@ -17,7 +17,7 @@
   "scripts": {
     "jest": "npm run jest -w @der-reiskoch/khao-ui",
     "dev": "npm run dev -w @der-reiskoch/khao-ui",
-    "build": "npm run build -w @der-reiskoch/khao-ui",
+    "build": "npm run build -w @der-reiskoch/khao-malet && npm run build -w @der-reiskoch/khao-ui",
     "storybook:dev": "npm run storybook -w @der-reiskoch/khao-ui",
     "storybook:build": "npm run build-storybook -w @der-reiskoch/khao-ui",
     "changeset:add": "npx @changesets/cli",

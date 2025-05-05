@@ -1,0 +1,9 @@
+import { Meta } from "@storybook/blocks";
+import { version } from "../package.json";
+import CHANGELOG from "../CHANGELOG.md?raw";
+
+import { Markdown } from "@storybook/blocks";
+
+<Meta title="Changelog" />
+
+<Markdown>{CHANGELOG}</Markdown>

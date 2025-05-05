@@ -1,0 +1,36 @@
+{
+  "name": "@der-reiskoch/khao-malet",
+  "version": "6.0.0",
+  "description": "The 'Khao Malet' Design System",
+  "main": "khao-malet.css",
+  "files": [
+    "/dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khao-UI-Tools/khao-malet.git"
+  },
+  "keywords": [
+    "css",
+    "design-system"
+  ],
+  "author": "Der-Reiskoch <info@der-reiskoch.de>",
+  "license": "ISC",
+  "homepage": "https://khao-ui-tools.github.io/khao-malet/",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.3.6",
+    "@storybook/addon-interactions": "^8.3.6",
+    "@storybook/addon-links": "^8.3.6",
+    "@storybook/blocks": "^8.3.6",
+    "@storybook/html": "^8.3.6",
+    "@storybook/html-vite": "^8.3.6",
+    "@storybook/test": "^8.3.6",
+    "storybook": "^8.3.6"
+  },
+  "scripts": {
+    "build": "vite build",
+    "storybook:dev": "npm run build && storybook dev -p 7007",
+    "storybook:build": "npm run build && storybook build"
+  }
+}

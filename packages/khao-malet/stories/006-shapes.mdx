@@ -1,0 +1,112 @@
+import { Meta } from "@storybook/blocks";
+import { version } from "../package.json";
+
+<Meta title="Corner Shapes" />
+
+# Corner Shapes
+
+## (@der-reiskoch/khao-malet v{version})
+
+<div className="sb-container">
+  <div className='container'>
+    <div className="shape-item">
+      <div className="shape-example shape-none"></div>
+      <p>--khao-sys-shape-corner-none</p>
+    </div>
+    <div className="shape-item">
+      <div className="shape-example shape-extra-small"></div>
+      <p>--khao-sys-shape-corner-extra-small</p>
+    </div>
+     <div className="shape-item">
+      <div className="shape-example shape-small"></div>
+      <p>--khao-sys-shape-corner-small</p>
+    </div>
+    <div className="shape-item">
+      <div className="shape-example shape-medium"></div>
+      <p>--khao-sys-shape-corner-medium</p>
+    </div>
+    <div className="shape-item">
+      <div className="shape-example shape-large"></div>
+      <p>--khao-sys-shape-corner-large</p>
+    </div>
+    <div className="shape-item">
+      <div className="shape-example shape-extra-large"></div>
+      <p>--khao-sys-shape-corner-extra-large</p>
+    </div>
+     <div className="shape-item">
+      <div className="shape-example shape-extra-full"></div>
+      <p>--khao-sys-shape-corner-full</p>
+    </div>
+
+  </div>
+ </div>
+
+<style>
+  {`
+
+  .sb-container {
+    margin-top: 24px;
+    margin-bottom: 48px;
+  }
+
+  .container {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    
+  }
+
+  .shape-item {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+
+    p {
+      wrap: no-wrap;
+    }
+
+  }
+
+  .shape-example {
+    display: block;
+    background-color: gray;
+    width: 100px;
+    height: 40px; 
+  }
+
+  .shape-none {
+    border-radius: var(--khao-sys-shape-corner-none);
+  }
+
+  .shape-extra-small {
+    border-radius: var(--khao-sys-shape-corner-extra-small);
+  }
+
+  .shape-small {
+    border-radius: var(--khao-sys-shape-corner-small);
+  }
+
+  .shape-medium {
+    border-radius: var(--khao-sys-shape-corner-medium);
+  }
+
+  .shape-large {
+    border-radius: var(--khao-sys-shape-corner-large);
+  }
+
+  .shape-extra-large {
+    border-radius: var(--khao-sys-shape-corner-extra-large);
+  }
+
+  .shape-extra-full {
+    border-radius: var(--khao-sys-shape-corner-full);
+    width: 50px;
+    height: 50px;
+  }
+
+  `}
+</style>
