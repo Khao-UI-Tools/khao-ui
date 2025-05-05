@@ -13,7 +13,8 @@
     "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
     "jest": "jest",
     "jest:dev": "jest --watchAll --silent=false",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "npm run prepare-storybook && storybook dev -p 6006",
+    "prepare-storybook": "npm run build && cp -r dist/css/*.css storybook-assets/khao-ui.css",
     "build-storybook": "BASE_PATH=/khao-ui/storybook/ storybook build -o storybook-static/storybook",
     "prepack": "npm run build"
   },
