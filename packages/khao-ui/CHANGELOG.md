@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.8.0
+
+### Minor Changes
+
+- 55b16bc: changed appearance of `khao-icon-copy`
+- 55b16bc: changed appearance of `khao-icon-external-link`
+
 ## 4.7.0
 
 - upgraded to @der-reiskoch/khao-malet 6.0.0
