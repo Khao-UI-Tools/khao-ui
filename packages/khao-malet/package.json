@@ -18,15 +18,7 @@
   "license": "ISC",
   "homepage": "https://khao-ui-tools.github.io/khao-malet/",
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.9.0",
-    "@storybook/addon-essentials": "^8.3.6",
-    "@storybook/addon-interactions": "^8.3.6",
-    "@storybook/addon-links": "^8.3.6",
-    "@storybook/blocks": "^8.3.6",
-    "@storybook/html": "^8.3.6",
-    "@storybook/html-vite": "^8.3.6",
-    "@storybook/test": "^8.3.6",
-    "storybook": "^8.3.6"
+    "vite": "^6.0.0"
   },
   "scripts": {
     "build": "vite build",
