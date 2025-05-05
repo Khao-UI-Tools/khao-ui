@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.7.0
+
+- upgraded to @der-reiskoch/khao-malet 6.0.0
+
 ## 4.6.0
 
 - added `khao-wake-lock-switch` widget
