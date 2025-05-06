@@ -3,55 +3,37 @@
 <script lang="ts">
   import type { StringBoolean } from "../../../common/types/StringBoolean";
   import Button from "../../buttons/button/Button.svelte";
+  import buildFacebookShareUrl from "./utils/buildFacebookShareUrl";
+  import buildPinterestShareUrl from "./utils/buildPinterestShareUrl";
+  import openInNewWindow from "./utils/openInNewWindow";
+  import shareNativly from "./utils/shareNativly";
 
-  function openInNewWindow(
-    url: string,
-    width: number = 700,
-    height: number = 650
-  ) {
-    const windowFeatures = `left=100,top=100,width=${width},height=${height}}`;
-    window.open(url, "new", windowFeatures);
-  }
+  const NO_LABEL = "No Label";
 
   function isAbleToPrint(): boolean {
     return window.print !== undefined;
+  }
+
+  function isAbleToShareNativly(): boolean {
+    return navigator.share !== undefined;
   }
 
   function print() {
     window.print();
   }
 
-  function buildFacebookShareUrl(sharedUrl: string): string {
-    const baseUrl = "https://www.facebook.com/share.php?u=";
-    const urlToShare = sharedUrl || window.location.href;
-    const url = `${baseUrl}${urlToShare}`;
-    console.log("buildFacebookShareUrl", url);
-    return url;
-  }
-
-  function buildPinterestShareUrl(
-    sharedUrl: string,
-    sharedMediaUrl: string,
-    sharedTitle: string,
-    sharedDescription: string
-  ): string {
-    const baseUrl = "https://www.pinterest.de/pin-builder/";
-    const urlToShare = sharedUrl || window.location.href;
-    const saveMediaUrl = sharedMediaUrl.replace("ß", "ss");
-    const url = `${baseUrl}?description=${sharedDescription}&media=${encodeURIComponent(saveMediaUrl)}&method=button&title=${sharedTitle}&url=${encodeURIComponent(urlToShare)}`;
-    console.log("buildPinterestShareUrl", url);
-    return url;
-  }
-
   interface Props {
-    showPrintButton: StringBoolean;
-    printButtonLabel: string | null;
-    printButtonTitle: string | null;
+    shareButtonLabel: string | null;
+    shareButtonTitle: string | null;
 
     sharedUrl?: string;
     sharedMediaUrl?: string;
     sharedTitle?: string;
     sharedDescription?: string;
+
+    showPrintButton: StringBoolean;
+    printButtonLabel: string | null;
+    printButtonTitle: string | null;
 
     showFacebookButton?: StringBoolean;
     facebookButtonLabel?: string | null;
@@ -63,18 +45,20 @@
   }
 
   let {
-    showPrintButton = "true",
-    printButtonLabel = "No Label",
-    printButtonTitle = printButtonLabel,
+    shareButtonLabel = NO_LABEL,
+    shareButtonTitle = shareButtonLabel,
     sharedUrl = "",
     sharedMediaUrl = "",
     sharedTitle = "",
+    showPrintButton = "true",
+    printButtonLabel = NO_LABEL,
+    printButtonTitle = printButtonLabel,
     sharedDescription = "",
     showFacebookButton = "true",
-    facebookButtonLabel = "No Label",
+    facebookButtonLabel = NO_LABEL,
     facebookButtonTitle = facebookButtonLabel,
     showPinterestButton = "true",
-    pinterestButtonLabel = "No Label",
+    pinterestButtonLabel = NO_LABEL,
     pinterestButtonTitle = pinterestButtonLabel,
   }: Props = $props();
 </script>
@@ -82,15 +66,30 @@
 <div class="share-buttons">
   {#if showPrintButton === "true" && isAbleToPrint()}
     <Button
-      label={printButtonLabel || "No Label"}
+      label={printButtonLabel || NO_LABEL}
       title={printButtonTitle || ""}
       iconName="printer"
-      onClick={print}
+      onClick={() => {
+        print();
+      }}
     ></Button>
   {/if}
-  {#if showFacebookButton === "true"}
+
+  {#if isAbleToShareNativly()}
     <Button
-      label={facebookButtonLabel || "No Label"}
+      label={shareButtonLabel || NO_LABEL}
+      title={shareButtonTitle || ""}
+      iconName="copy"
+      priority="tertiary"
+      onClick={() => {
+        shareNativly(sharedUrl, sharedTitle, sharedDescription);
+      }}
+    ></Button>
+  {/if}
+
+  {#if !isAbleToShareNativly() && showFacebookButton === "true"}
+    <Button
+      label={facebookButtonLabel || NO_LABEL}
       title={facebookButtonTitle || ""}
       iconName="facebook"
       customBGColor="#3b5998"
@@ -101,9 +100,9 @@
     ></Button>
   {/if}
 
-  {#if showPinterestButton === "true"}
+  {#if !isAbleToShareNativly() && showPinterestButton === "true"}
     <Button
-      label={pinterestButtonLabel || "No Label"}
+      label={pinterestButtonLabel || NO_LABEL}
       title={pinterestButtonTitle || ""}
       iconName="pinterest"
       customBGColor="#bd081c"
