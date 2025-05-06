@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.8.1
+
+### Patch Changes
+
+- ffe3b55: use native share api on `khao-share-buttons`
+
 ## 4.8.0
 
 - changed appearance of `khao-icon-copy`
