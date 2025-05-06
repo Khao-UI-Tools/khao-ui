@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/Khao-UI-Tools/khao-ui/issues"
   },
-  "homepage": "https://github.com/Khao-UI-Tools/khao-ui#readme"
+  "homepage": "https://github.com/Khao-UI-Tools/khao-ui#readme",
+  "dependencies": {
+    "@changesets/cli": "^2.29.3"
+  }
 }
