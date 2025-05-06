@@ -7,6 +7,12 @@ const meta = {
   component: "khao-share-buttons",
   tags: ["autodocs"],
   argTypes: {
+    shareButtonLabel: { control: "text", type: "string" },
+    shareButtonTitle: { control: "text", type: "string" },
+    sharedUrl: { control: "text", type: "string" },
+    sharedMediaUrl: { control: "text", type: "string" },
+    sharedDescription: { control: "text", type: "string" },
+    sharedTitle: { control: "text", type: "string" },
     showPrintButton: { type: "string" },
     printButtonLabel: { control: "text", type: "string" },
     printButtonTitle: { control: "text", type: "string" },
@@ -15,10 +21,6 @@ const meta = {
     showPinterestButton: { type: "string" },
     pinterestButtonLabel: { control: "text", type: "string" },
     pinterestButtonTitle: { control: "text", type: "string" },
-    sharedUrl: { control: "text", type: "string" },
-    sharedMediaUrl: { control: "text", type: "string" },
-    sharedDescription: { control: "text", type: "string" },
-    sharedTitle: { control: "text", type: "string" },
   },
 } satisfies Meta<ShareButtons>;
 
@@ -27,6 +29,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    shareButtonLabel: "Teilen",
+    shareButtonTile: "Inhalt teilen",
+    sharedUrl:
+      "https://www.der-reiskoch.de/rezepte/pak-choi-mit-gelber-bohnenpaste/",
+    sharedMediaUrl:
+      "https://bilder.koch-reis.de/pin/v2/?id=1352&title=Pak+Choi+mit+gelber+Bohnenpaste",
+    sharedDescription: "Thailändisches Pad Pak Choi Tao Djiau",
+    sharedTitle: "Pak Choi mit gelber Bohnenpaste",
     showPrintButton: "true",
     printButtonLabel: "Drucken",
     printButtonTitle: "Diese Seite Drucken",
@@ -36,12 +46,6 @@ export const Default: Story = {
     showPinterestButton: "true",
     pinterestButtonLabel: "Pinterest",
     pinterestButtonTitle: "Auf Pinterest teilen",
-    sharedUrl:
-      "https://www.der-reiskoch.de/rezepte/pak-choi-mit-gelber-bohnenpaste/",
-    sharedMediaUrl:
-      "https://bilder.koch-reis.de/pin/v2/?id=1352&title=Pak+Choi+mit+gelber+Bohnenpaste",
-    sharedDescription: "Thailändisches Pad Pak Choi Tao Djiau",
-    sharedTitle: "Pak Choi mit gelber Bohnenpaste",
   },
 };
 
