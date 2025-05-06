@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.8.2
+
+### Patch Changes
+
+- e0293e7: Show Pinterest Pin Button also when native share is possible
+
 ## 4.8.1
 
 ### Patch Changes
