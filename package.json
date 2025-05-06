@@ -22,7 +22,7 @@
     "storybook:build": "npm run build-storybook -w @der-reiskoch/khao-ui",
     "changeset:add": "npx @changesets/cli",
     "changeset:version": "npx @changesets/cli version",
-    "changeset:publish": "npx @changesets/cli publish"
+    "changeset:publish": "npx @changesets/cli publish && git push --tags"
   },
   "repository": {
     "type": "git",
