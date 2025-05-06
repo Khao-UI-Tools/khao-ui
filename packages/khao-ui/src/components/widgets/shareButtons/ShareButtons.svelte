@@ -100,7 +100,7 @@
     ></Button>
   {/if}
 
-  {#if !isAbleToShareNativly() && showPinterestButton === "true"}
+  {#if showPinterestButton === "true"}
     <Button
       label={pinterestButtonLabel || NO_LABEL}
       title={pinterestButtonTitle || ""}
