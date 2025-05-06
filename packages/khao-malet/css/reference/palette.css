@@ -13,6 +13,7 @@
   --khao-ref-palette-red: #aa1d2d;
   --khao-ref-palette-green: #367300;
   --khao-ref-palette-white: #ffffff;
+  --khao-ref-palette-off-white: #faf9f6;
   --khao-ref-palette-black: #000000;
 
   /* Neutral */
@@ -36,5 +37,10 @@
     in srgb,
     var(--khao-ref-palette-black),
     var(--khao-ref-palette-white) 90%
+  );
+  --khao-ref-palette-neutral95: color-mix(
+    in srgb,
+    var(--khao-ref-palette-black),
+    var(--khao-ref-palette-white) 95%
   );
 }

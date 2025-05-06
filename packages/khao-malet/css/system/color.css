@@ -97,6 +97,7 @@
   --khao-sys-color-neutral50: var(--khao-ref-palette-neutral50);
   --khao-sys-color-neutral80: var(--khao-ref-palette-neutral80);
   --khao-sys-color-neutral90: var(--khao-ref-palette-neutral90);
+  --khao-sys-color-neutral95: var(--khao-ref-palette-neutral95);
 
   --khao-sys-static-color-success: var(--khao-ref-palette-green);
   --khao-sys-static-color-on-success: var(--khao-ref-palette-white);
@@ -120,6 +121,9 @@
 
   --khao-sys-static-color-white: var(--khao-ref-palette-white);
   --khao-sys-static-color-on-white: var(--khao-ref-palette-black);
+
+  --khao-sys-static-color-off-white: var(--khao-ref-palette-off-white);
+  --khao-sys-static-color-on-offwhite: var(--khao-ref-palette-black);
 
   --khao-sys-static-color-black: var(--khao-ref-palette-black);
   --khao-sys-static-color-on-black: var(--khao-ref-palette-white);

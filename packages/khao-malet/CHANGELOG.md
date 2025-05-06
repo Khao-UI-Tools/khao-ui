@@ -1,5 +1,19 @@
 # Changelog
 
+## 6.1.1
+
+### Patch Changes
+
+- added `--khao-sys-color-neutral95`
+- added `--khao-sys-static-color-off-white`
+- restoreed pure white for `--khao-sys-static-color-white`
+
+## 6.1.0
+
+### Minor Changes
+
+- replace pure white (#ffffff) by offwhite (#faf9f6)
+
 ## 6.0.0
 
 ### Major Changes

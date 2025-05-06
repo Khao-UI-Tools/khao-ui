@@ -1,6 +1,6 @@
 {
   "name": "@der-reiskoch/khao-ui",
-  "version": "4.8.2",
+  "version": "4.8.4",
   "type": "module",
   "main": "dist/lib/khao-ui.js",
   "files": [
@@ -14,12 +14,12 @@
     "jest": "jest",
     "jest:dev": "jest --watchAll --silent=false",
     "storybook": "npm run prepare-storybook && storybook dev -p 6006",
-    "prepare-storybook": "npm run build && cp -r dist/css/*.css storybook-assets/khao-ui.css",
+    "prepare-storybook": "npm run build && cp -r -f dist/css/*.css storybook-assets/khao-ui.css",
     "build-storybook": "BASE_PATH=/khao-ui/storybook/ storybook build -o storybook-static/storybook",
     "prepack": "npm run build"
   },
   "dependencies": {
-    "@der-reiskoch/khao-malet": "6.0.0"
+    "@der-reiskoch/khao-malet": "6.1.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
