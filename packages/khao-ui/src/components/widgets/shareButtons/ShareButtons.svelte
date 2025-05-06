@@ -1,6 +1,7 @@
 <svelte:options customElement="khao-share-buttons" />
 
 <script lang="ts">
+  import type { StringBoolean } from "../../../common/types/StringBoolean";
   import Button from "../../buttons/button/Button.svelte";
 
   function openInNewWindow(
@@ -42,22 +43,40 @@
     return url;
   }
 
-  export let showPrintButton: string = "true";
-  export let printButtonLabel: string | null = "No Label";
-  export let printButtonTitle: string | null = printButtonLabel;
+  interface Props {
+    showPrintButton: StringBoolean;
+    printButtonLabel: string | null;
+    printButtonTitle: string | null;
 
-  export let sharedUrl: string = "";
-  export let sharedMediaUrl: string = "";
-  export let sharedTitle: string = "";
-  export let sharedDescription: string = "";
+    sharedUrl?: string;
+    sharedMediaUrl?: string;
+    sharedTitle?: string;
+    sharedDescription?: string;
 
-  export let showFacebookButton: string = "true";
-  export let facebookButtonLabel: string | null = "No Label";
-  export let facebookButtonTitle: string | null = facebookButtonLabel;
+    showFacebookButton?: StringBoolean;
+    facebookButtonLabel?: string | null;
+    facebookButtonTitle?: string | null;
 
-  export let showPinterestButton: string = "true";
-  export let pinterestButtonLabel: string | null = "No Label";
-  export let pinterestButtonTitle: string | null = pinterestButtonLabel;
+    showPinterestButton?: StringBoolean;
+    pinterestButtonLabel?: string | null;
+    pinterestButtonTitle?: string | null;
+  }
+
+  let {
+    showPrintButton = "true",
+    printButtonLabel = "No Label",
+    printButtonTitle = printButtonLabel,
+    sharedUrl = "",
+    sharedMediaUrl = "",
+    sharedTitle = "",
+    sharedDescription = "",
+    showFacebookButton = "true",
+    facebookButtonLabel = "No Label",
+    facebookButtonTitle = facebookButtonLabel,
+    showPinterestButton = "true",
+    pinterestButtonLabel = "No Label",
+    pinterestButtonTitle = pinterestButtonLabel,
+  }: Props = $props();
 </script>
 
 <div class="share-buttons">
