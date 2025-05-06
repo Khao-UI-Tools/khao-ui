@@ -1,14 +1,18 @@
 # Changelog
 
-## 4.8.2
+## 4.8.4
 
-### Patch Changes
+- upgraded @der-reiskoch/khao-malet@6.1.1
+
+## 4.8.3
+
+- upgraded to @der-reiskoch/khao-malet@6.1.0
+
+## 4.8.2
 
 - e0293e7: Show Pinterest Pin Button also when native share is possible
 
 ## 4.8.1
-
-### Patch Changes
 
 - ffe3b55: use native share api on `khao-share-buttons`
 
