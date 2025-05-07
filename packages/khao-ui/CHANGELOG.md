@@ -1,8 +1,12 @@
 # Changelog
 
+## 4.8.5
+
+- upgraded to @der-reiskoch/khao-malet@6.2.0
+
 ## 4.8.4
 
-- upgraded @der-reiskoch/khao-malet@6.1.1
+- upgraded to @der-reiskoch/khao-malet@6.1.1
 
 ## 4.8.3
 

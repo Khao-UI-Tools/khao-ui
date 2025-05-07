@@ -1,6 +1,6 @@
 {
   "name": "@der-reiskoch/khao-ui",
-  "version": "4.8.4",
+  "version": "4.8.5",
   "type": "module",
   "main": "dist/lib/khao-ui.js",
   "files": [
@@ -19,7 +19,7 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "@der-reiskoch/khao-malet": "6.1.1"
+    "@der-reiskoch/khao-malet": "6.2.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
