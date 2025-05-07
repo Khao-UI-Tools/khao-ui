@@ -1,8 +1,12 @@
 # Changelog
 
-## 6.1.1
+## 6.2.0
 
-### Patch Changes
+- omitted `--khao-sys-elevation-level3-distance`
+- omitted `--khao-sys-elevation-level4-distance`
+- added `--khao-sys-elevation-level2-shadow`
+
+## 6.1.1
 
 - added `--khao-sys-color-neutral95`
 - added `--khao-sys-static-color-off-white`
@@ -10,13 +14,9 @@
 
 ## 6.1.0
 
-### Minor Changes
-
 - replace pure white (#ffffff) by offwhite (#faf9f6)
 
 ## 6.0.0
-
-### Major Changes
 
 - integratated to mono-repo, artefacts are now back in `/dist` folder
 
