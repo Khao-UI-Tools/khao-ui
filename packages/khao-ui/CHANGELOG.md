@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.9.1
+
+- fixed exposed name for `copy-to-clipboard`
+
 ## 4.9.0
 
 - added `khao-copy-to-clipboard` button
