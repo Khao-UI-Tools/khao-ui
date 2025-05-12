@@ -18,6 +18,8 @@ export default defineConfig({
         chip: "src/components/misc/chip/Chip.svelte",
         "content-with-icon":
           "src/components/misc/contentWithIcon/ContentWithIcon.svelte",
+        "copy-to-clipboard":
+          "src/components/buttons/copyToClipboard/CopyToClipboard.svelte",
         icon: "src/icons/Icon.svelte",
         "icon-button": "src/components/buttons/iconButton/IconButton.svelte",
         image: "src/components/media/image/Image.svelte",
