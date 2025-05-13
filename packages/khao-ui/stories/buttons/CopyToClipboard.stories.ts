@@ -42,6 +42,7 @@ const meta = {
       control: "text",
       type: "string",
     },
+    customMinWidth: { control: "text", type: "string" },
   },
 } satisfies Meta<CopyToClipboard>;
 

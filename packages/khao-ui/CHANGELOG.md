@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.9.4
+
+- added prop `customMinWidth` to `khao-copy-to-clipboard`
+
 ## 4.9.3
 
 - improved `copyFrom` behaviour for `khao-copy-to-clipboard`
