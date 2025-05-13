@@ -1,6 +1,7 @@
 <svelte:options customElement="khao-copy-to-clipboard" />
 
 <script lang="ts">
+  import { onMount } from "svelte";
   import type { ButtonPriority } from "../types/ButtonPriority";
   import Button from "../button/Button.svelte";
   import type { ButtonSize } from "../types/ButtonSize";
@@ -18,6 +19,7 @@
     iconName: IconName | "";
 
     textToCopy?: string;
+    copyFrom?: string;
   }
 
   let userFeedback: UserFeedback = $state("none");
@@ -27,9 +29,18 @@
     title = "",
     priority = "primary",
     size = "medium",
-    iconName = "copy",
+    iconName = "",
     textToCopy = "",
+    copyFrom = "",
   }: Props = $props();
+
+  onMount(() => {
+    if (!textToCopy && !copyFrom) {
+      console.error(
+        "khao-copy-to-clipboard: both textToCopy and copyFrom are empty!"
+      );
+    }
+  });
 
   const giveUserFeedback = (feedbackType: UserFeedback) => {
     if (feedbackType) {
@@ -41,19 +52,33 @@
     }
   };
 
-  const copyToClipboard = async (text: string) => {
+  async function copyToClipboard(text: string) {
     try {
       await navigator.clipboard.writeText(text);
       giveUserFeedback("success");
     } catch (err) {
       giveUserFeedback("error");
     }
-  };
+  }
 
   function handleClick() {
-    if (textToCopy) {
-      copyToClipboard(textToCopy);
+    let text = textToCopy;
+
+    if (!textToCopy) {
+      const elementToCopyFrom = <HTMLFormElement>(
+        document.getElementById(copyFrom)
+      );
+
+      if (elementToCopyFrom) {
+        text = elementToCopyFrom.value;
+      } else {
+        console.error(
+          `khao-copy-to-clipboard: no element found with id=${copyFrom}`
+        );
+      }
     }
+
+    copyToClipboard(text);
   }
 </script>
 

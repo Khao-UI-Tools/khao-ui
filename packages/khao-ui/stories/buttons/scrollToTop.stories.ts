@@ -40,7 +40,7 @@ interface renderProps {
 
 export const Example: Story = {
   args: {
-    title: "Scroll to the top",
+    title: "Scroll to the top. The Top is the Limit!",
     scrollThreshold: "100",
     size: "medium",
     forceVisible: false,
