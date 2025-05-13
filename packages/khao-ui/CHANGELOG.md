@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.9.3
+
+- improved `copyFrom` behaviour for `khao-copy-to-clipboard`
+- fixed empty href behavior for `khao-button`
+
+## 4.9.2
+
+- added `copyFrom` prop to `khao-copy-to-clipboard`
+
+## 4.9.1
+
+- fixed exposed name for `copy-to-clipboard`
+
 ## 4.9.0
 
 - added `khao-copy-to-clipboard` button

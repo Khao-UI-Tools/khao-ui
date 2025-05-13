@@ -50,7 +50,7 @@
 <a
   class="button button-{priority} button-size-{size}"
   {title}
-  href={onClick === null ? href : "javascript:void();"}
+  href={onClick === null ? href : "javascript:"}
   {target}
   {rel}
   style={setCustomStyles(customBGColor, customColor, customMinWidth)}
