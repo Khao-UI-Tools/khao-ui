@@ -20,6 +20,8 @@
 
     textToCopy?: string;
     copyFrom?: string;
+
+    customMinWidth?: string;
   }
 
   let userFeedback: UserFeedback = $state("none");
@@ -32,6 +34,7 @@
     iconName = "",
     textToCopy = "",
     copyFrom = "",
+    customMinWidth = "",
   }: Props = $props();
 
   onMount(() => {
@@ -89,7 +92,8 @@
     {priority}
     {size}
     {iconName}
-    href="#"
+    {customMinWidth}
+    href="javasctipt:"
     onClick={handleClick}
   ></Button>
 </div>
