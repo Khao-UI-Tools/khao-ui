@@ -41,6 +41,7 @@ export const iconNames = [
   "rss",
   "search",
   "speaker",
+  "tag",
   "translation",
   "youtube",
 ];
