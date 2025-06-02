@@ -1,6 +1,6 @@
 {
   "name": "@der-reiskoch/khao-ui",
-  "version": "4.9.4",
+  "version": "4.10.0",
   "type": "module",
   "main": "dist/lib/khao-ui.js",
   "files": [

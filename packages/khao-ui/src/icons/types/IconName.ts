@@ -21,6 +21,7 @@ export const iconNames = [
   "leaf",
   "location",
   "map",
+  "menu",
   "mortar-pestle",
   "navigate-back",
   "navigate-forward",

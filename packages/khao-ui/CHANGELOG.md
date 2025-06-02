@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.10.0
+
+- added `none` to priorities of `khao-icon-button`
+- added `tiny` to sizes of `khao-icon-button`
+- added icon `menu` from material icons
+- changed icon `search` to use material icon
+
 ## 4.9.4
 
 - added prop `customMinWidth` to `khao-copy-to-clipboard`

@@ -18,7 +18,7 @@ const meta = {
     customColor: { control: "color" },
     priority: {
       control: { type: "select" },
-      options: buttonPriorities,
+      options: buttonPriorities.concat("none"),
       default: buttonPriorityDefault,
     },
     iconName: {
@@ -27,10 +27,15 @@ const meta = {
     },
     size: {
       control: { type: "select" },
-      options: buttonSizes,
+      options: buttonSizes.concat("tiny"),
       default: "medium",
     },
     circle: {
+      control: { type: "select" },
+      options: ["true", "false"],
+      type: "string",
+    },
+    transparent: {
       control: { type: "select" },
       options: ["true", "false"],
       type: "string",
@@ -106,6 +111,15 @@ export const CustomHoverColorExample: Story = {
     priority: "secondary",
     customHoverColor: "#bd081c",
     onClick: fn(),
+  },
+};
+export const PriorityNoneExample: Story = {
+  args: {
+    iconName: "search",
+    size: "tiny",
+    priority: "none",
+    onClick: fn(),
+    circle: "true",
   },
 };
 

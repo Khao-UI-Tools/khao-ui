@@ -31,24 +31,35 @@
     return href === null && onClick !== null ? "button" : "";
   }
 
-  export let title: string = "";
+  interface Props {
+    title?: string;
+    href?: string | null;
+    rel?: string | null;
+    target?: string | null;
+    priority?: ButtonPriority | "none";
+    size?: ButtonSize | "tiny";
+    customBGColor?: string;
+    customColor?: string;
+    customHoverColor?: string;
+    iconName?: IconName | "";
+    circle?: StringBoolean;
+    onClick?: ((event: MouseEvent) => void) | null;
+  }
 
-  export let href: string | null = null;
-  export let rel: string | null = null;
-  export let target: string | null = null;
-
-  export let priority: ButtonPriority = "primary";
-  export let size: ButtonSize = "medium";
-
-  export let customBGColor: string = "";
-  export let customColor: string = "";
-  export let customHoverColor: string = "";
-
-  export let iconName: IconName | "" = "";
-
-  export let circle: StringBoolean = "false";
-
-  export let onClick: ((event: MouseEvent) => void) | null = null;
+  let {
+    title = "",
+    href = null,
+    rel = null,
+    target = null,
+    priority = "primary",
+    size = "medium",
+    customBGColor = "",
+    customColor = "",
+    customHoverColor = "",
+    iconName = "",
+    circle = "false",
+    onClick = null,
+  }: Props = $props();
 </script>
 
 <a
@@ -61,7 +72,7 @@
   {rel}
   style={setCustomStyles(customBGColor, customColor, customHoverColor)}
   role={setRole(href, onClick)}
-  on:click={onClick}
+  onclick={onClick}
 >
   {#if iconName !== ""}
     <Icon {iconName} sizeFactor="9" />
@@ -76,6 +87,7 @@
     --khao-icon-button-label-text-color: var(--khao-sys-color-on-primary);
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-primary);
 
+    --khao-icon-button-size-tiny: var(--khao-sys-size-regular-6);
     --khao-icon-button-size-compact: var(--khao-sys-size-regular-10);
     --khao-icon-button-size-medium: var(--khao-sys-size-regular-12);
     --khao-icon-button-size-large: var(--khao-sys-size-regular-14);
@@ -162,6 +174,21 @@
     --khao-icon-button-container-color: var(--khao-sys-color-tertiary);
     --khao-icon-button-label-text-color: var(--khao-sys-color-on-tertiary);
     --khao-icon-button-state-layer-color: var(--khao-sys-color-on-tertiary);
+  }
+
+  .button-none {
+    --khao-icon-button-container-color: transparent;
+    --khao-icon-button-label-text-color: var(
+      --khao-sys-color-on-surface-container
+    );
+    --khao-icon-button-state-layer-color: var(
+      --khao-sys-color-on-surface-container
+    );
+  }
+
+  .button-size-tiny {
+    width: var(--khao-icon-button-size-tiny);
+    height: var(--khao-icon-button-size-tiny);
   }
 
   .button-size-compact {
