@@ -15,6 +15,7 @@ export const iconNames = [
   "folder",
   "globe",
   "help",
+  "home",
   "info",
   "instagram",
   "knife",
