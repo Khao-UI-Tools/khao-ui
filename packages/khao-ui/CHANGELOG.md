@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.12.0
+
+### Minor Changes
+
+- added icon `tag` from material icons
+
+## 4.11.0
+
+- changed icons `info` and `notification` to material icons
+- added icon `home` from material icons
+
 ## 4.10.0
 
 - added `none` to priorities of `khao-icon-button`
