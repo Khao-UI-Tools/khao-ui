@@ -1,6 +1,6 @@
 {
   "name": "@der-reiskoch/khao-malet",
-  "version": "6.2.0",
+  "version": "6.3.0",
   "description": "The 'Khao Malet' Design System",
   "main": "khao-malet.css",
   "files": [

@@ -127,7 +127,6 @@
     font-size: var(--khao-card-title-size);
     font-weight: 800;
     flex-grow: 1;
-    flex-shrink: 0;
   }
 
   .close-button {
