@@ -29,13 +29,14 @@
   /* Body */
   --khao-sys-typescale-body-font: var(--khao-ref-typeface-default);
   --khao-sys-typescale-body-line-height: var(--khao-sys-size-regular-6);
+  --khao-sys-typescale-body-weight: 400;
 
   /* Label */
   --khao-sys-typescale-label-large-line-height: var(--khao-sys-size-regular-6);
   --khao-sys-typescale-label-large-size: var(--khao-sys-size-typography-9);
   --khao-sys-typescale-label-large-weight: 400;
   --khao-sys-typescale-label-large-weight-prominent: 700;
-  
+
   --khao-sys-typescale-label-medium-line-height: var(--khao-sys-size-regular-4);
   --khao-sys-typescale-label-medium-size: var(--khao-sys-size-typography-6);
   --khao-sys-typescale-label-medium-weight: 400;

@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.13.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @der-reiskoch/khao-malet@6.3.0
+
 ## 4.13.0
 
 ### Minor Changes

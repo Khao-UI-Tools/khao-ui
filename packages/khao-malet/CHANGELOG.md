@@ -1,5 +1,9 @@
 # Changelog
 
+## 6.3.0
+
+- added `--khao-sys-typescale-body-weight`
+
 ## 6.2.0
 
 - omitted `--khao-sys-elevation-level3-distance`
