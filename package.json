@@ -15,6 +15,7 @@
     "packages/*"
   ],
   "scripts": {
+    "claude": "npx @anthropic-ai/claude-code",
     "jest": "npm run jest -w @der-reiskoch/khao-ui",
     "dev": "npm run dev -w @der-reiskoch/khao-ui",
     "build": "npm run build -w @der-reiskoch/khao-malet && npm run build -w @der-reiskoch/khao-ui",
