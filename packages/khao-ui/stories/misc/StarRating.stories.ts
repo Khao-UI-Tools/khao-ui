@@ -2,14 +2,14 @@ import type { Meta, StoryObj } from "@storybook/svelte-vite";
 import StarRating from "../../src/components/misc/starRating/StarRating.svelte";
 
 import {
-  starRatingPriorities,
-  starRatingPriorityDefault,
-} from "../../src/components/misc/starRating/types/StarRatingPriority";
+  starRatingColors,
+  starRatingColorDefault,
+} from "../../src/components/misc/starRating/types/StarRatingColor";
 
 import {
-  starRatingBackgroundColors,
-  starRatingBackgroundColorDefault,
-} from "../../src/components/misc/starRating/types/StarRatingBackgroundColor";
+  starRatingStarBackgroundColors,
+  starRatingStarBackgroundColorDefault,
+} from "../../src/components/misc/starRating/types/StarRatingStarBackgroundColor";
 
 import {
   starRatingSizes,
@@ -29,14 +29,14 @@ const meta = {
       control: { type: "number", min: 3, max: 10 },
       description: "Maximum number of stars",
     },
-    priority: {
+    starColor: {
       control: { type: "select" },
-      options: starRatingPriorities,
+      options: starRatingColors,
       description: "Color theme for the stars",
     },
-    backgroundColor: {
+    starBackgroundColor: {
       control: { type: "select" },
-      options: starRatingBackgroundColors,
+      options: starRatingStarBackgroundColors,
       description: "Background color surface container variant",
     },
     starSize: {
@@ -105,8 +105,8 @@ export const Default: Story = {
   args: {
     rating: 3.5,
     maxRating: 5,
-    priority: starRatingPriorityDefault,
-    backgroundColor: starRatingBackgroundColorDefault,
+    starColor: starRatingColorDefault,
+    starBackgroundColor: starRatingStarBackgroundColorDefault,
     starSize: starRatingSizeDefault,
     readonly: false,
     name: "rating",
@@ -122,7 +122,7 @@ export const ReadOnly: Story = {
   args: {
     rating: 4,
     maxRating: 5,
-    priority: "primary",
+    starColor: "primary",
     readonly: true,
     name: "rating-readonly",
     ariaLabel: "Current rating",
@@ -141,7 +141,7 @@ export const CustomMaxRating: Story = {
   args: {
     rating: 7,
     maxRating: 10,
-    priority: "primary",
+    starColor: "primary",
     readonly: false,
     name: "rating-ten",
     ariaLabel: "Rate from 1 to 10",
@@ -160,15 +160,15 @@ export const ColorVariants: Story = {
     <div style="display: flex; gap: 2rem; flex-direction: column;">
       <div>
         <h4>Primary (default)</h4>
-        <khao-star-rating rating="4" priority="primary" readonly name="primary"></khao-star-rating>
+        <khao-star-rating rating="4" starColor="primary" readonly name="primary"></khao-star-rating>
       </div>
       <div>
         <h4>Secondary</h4>
-        <khao-star-rating rating="3.5" priority="secondary" readonly name="secondary"></khao-star-rating>
+        <khao-star-rating rating="3.5" starColor="secondary" readonly name="secondary"></khao-star-rating>
       </div>
       <div>
         <h4>Tertiary</h4>
-        <khao-star-rating rating="2.5" priority="tertiary" readonly name="tertiary"></khao-star-rating>
+        <khao-star-rating rating="2.5" starColor="tertiary" readonly name="tertiary"></khao-star-rating>
       </div>
     </div>
   `,
@@ -186,7 +186,7 @@ export const InteractiveExample: Story = {
   args: {
     rating: 0,
     maxRating: 5,
-    priority: "primary",
+    starColor: "primary",
     readonly: false,
     name: "rating-interactive",
     ariaLabel: "Please rate your experience",
@@ -205,7 +205,15 @@ export const SizeVariants: Story = {
   render: () => `
     <div style="display: flex; gap: 2rem; flex-direction: column; align-items: flex-start;">
       <div>
-        <h4>Small (sizeFactor 10)</h4>
+        <h4>Extra Small (sizeFactor 6)</h4>
+        <khao-star-rating rating="4" starSize="6" readonly name="size-xs"></khao-star-rating>
+      </div>
+      <div>
+        <h4>Small (sizeFactor 8)</h4>
+        <khao-star-rating rating="4" starSize="8" readonly name="size-small"></khao-star-rating>
+      </div>
+      <div>
+        <h4>Medium (sizeFactor 10)</h4>
         <khao-star-rating rating="4" starSize="10" readonly name="size-medium"></khao-star-rating>
       </div>
       <div>
@@ -222,7 +230,7 @@ export const SizeVariants: Story = {
     docs: {
       description: {
         story:
-          "Different size variants available for the star rating component using Icon sizeFactor values (4-20).",
+          "Different size variants available for the star rating component using Icon sizeFactor values (6-20).",
       },
     },
   },

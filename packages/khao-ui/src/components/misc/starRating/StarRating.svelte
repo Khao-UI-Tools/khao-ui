@@ -3,13 +3,13 @@
 <script lang="ts">
   import Icon from "../../../icons/Icon.svelte";
   import {
-    type StarRatingPriority,
-    starRatingPriorityDefault,
-  } from "./types/StarRatingPriority";
+    type StarRatingColor,
+    starRatingColorDefault,
+  } from "./types/StarRatingColor";
   import {
-    type StarRatingBackgroundColor,
-    starRatingBackgroundColorDefault,
-  } from "./types/StarRatingBackgroundColor";
+    type StarRatingStarBackgroundColor,
+    starRatingStarBackgroundColorDefault,
+  } from "./types/StarRatingStarBackgroundColor";
   import {
     type StarRatingSize,
     starRatingSizeDefault,
@@ -17,9 +17,9 @@
 
   export let rating: number = 0;
   export let maxRating: number = 5;
-  export let priority: StarRatingPriority = starRatingPriorityDefault;
-  export let backgroundColor: StarRatingBackgroundColor =
-    starRatingBackgroundColorDefault;
+  export let starColor: StarRatingColor = starRatingColorDefault;
+  export let starBackgroundColor: StarRatingStarBackgroundColor =
+    starRatingStarBackgroundColorDefault;
   export let starSize: StarRatingSize = starRatingSizeDefault;
   export let readonly: boolean = false;
   export let name: string = "star-rating";
@@ -66,7 +66,7 @@
 </script>
 
 <fieldset
-  class="star-rating star-rating-{priority} star-rating-bg-{backgroundColor}"
+  class="star-rating star-rating-{starColor} star-rating-bg-{starBackgroundColor}"
   class:readonly
   style="--total-stars: {maxRating}"
   aria-describedby="{name}-description"
