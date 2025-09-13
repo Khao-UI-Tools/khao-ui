@@ -400,6 +400,12 @@ l-85 -133 -1522 0 -1523 0 -11 -62 c-26 -154 -34 -269 -28 -443 6 -196 20
     </symbol>
   {/if}
 
+  {#if iconName === "star"}
+    <symbol id="khao-icon-star" viewBox="0 -960 960 960">
+      <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"/>
+    </symbol>
+  {/if}
+
   {#if iconName === "tag"}
     <symbol id="khao-icon-tag" viewBox="0 -960 960 960">
       <path

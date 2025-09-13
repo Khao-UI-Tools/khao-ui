@@ -1,21 +1,20 @@
 # Changelog
 
-## 4.13.1
+## 4.14.0
 
-### Patch Changes
+- added star icon
+- added star-rating component
+
+## 4.13.1
 
 - Updated dependencies
   - @der-reiskoch/khao-malet@6.3.0
 
 ## 4.13.0
 
-### Minor Changes
-
 - The title in `card` can wrap now
 
 ## 4.12.0
-
-### Minor Changes
 
 - added icon `tag` from material icons
 
