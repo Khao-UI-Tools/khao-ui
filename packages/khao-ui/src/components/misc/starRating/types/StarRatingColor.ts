@@ -1,4 +1,4 @@
-export const starRatingColors = ["primary", "secondary", "tertiary"];
+export const starRatingColors = ["primary", "secondary", "tertiary", "neutral"];
 
 export type StarRatingColor = (typeof starRatingColors)[number];
 

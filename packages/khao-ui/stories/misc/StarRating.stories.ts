@@ -170,6 +170,10 @@ export const ColorVariants: Story = {
         <h4>Tertiary</h4>
         <khao-star-rating rating="2.5" starColor="tertiary" readonly name="tertiary"></khao-star-rating>
       </div>
+      <div>
+        <h4>Neutral</h4>
+        <khao-star-rating rating="4.5" starColor="neutral" readonly name="neutral"></khao-star-rating>
+      </div>
     </div>
   `,
   parameters: {

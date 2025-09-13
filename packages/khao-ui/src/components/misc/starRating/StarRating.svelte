@@ -238,6 +238,11 @@
     --khao-star-rating-hover-color: var(--khao-sys-color-tertiary);
   }
 
+  .star-rating-neutral {
+    --khao-star-rating-filled-color: var(--khao-sys-color-neutral30);
+    --khao-star-rating-hover-color: var(--khao-sys-color-neutral30);
+  }
+
   .star-rating-bg-surface-container {
     --khao-star-rating-empty-color: var(--khao-sys-color-surface-container);
   }
