@@ -54,7 +54,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    src: "https://bilder.koch-reis.de/media/_thaiindex/yam_hed.jpg",
+    src: "https://bilder.koch-reis.de/media/_thaiindex/y/yam_hed_mhu_sap_gung.jpg",
     title: "An image",
     caption: "An Image with caption",
     type: "default",
@@ -83,7 +83,7 @@ export const ElevatedWithCaption: Story = {
 
 export const JpgWithWebp: Story = {
   args: {
-    src: "https://bilder.koch-reis.de/media/_thaiindex/yam_hed.jpg",
+    src: "https://bilder.koch-reis.de/media/_thaiindex/y/yam_hed_mhu_sap_gung.jpg",
     title: "An image that tries to load the webp version of the src",
     caption: "A .jpg image that tries to load it's webp version",
     type: "default",
