@@ -27,3 +27,7 @@ storybook-static
 *.sw?
 
 *storybook.log
+
+
+## CLAUDE
+.claude/settings.local.json
