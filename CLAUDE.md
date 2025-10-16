@@ -109,3 +109,12 @@ Components use CSS custom properties from khao-malet design system. The design s
 - Component-specific styling hooks
 
 Override styling by setting CSS custom properties at a higher level in your application.
+
+## Git Workflow
+
+**IMPORTANT**: Always work on the `development` branch. Do NOT create new branches or pull requests without explicit user consent.
+
+- Commit and push changes directly to `development` unless instructed otherwise
+- Only create feature branches when the user specifically asks for them
+- Only open pull requests when the user explicitly requests it
+- to memorize
