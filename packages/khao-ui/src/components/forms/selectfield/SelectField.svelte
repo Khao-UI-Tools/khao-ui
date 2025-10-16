@@ -1,22 +1,56 @@
-<svelte:options customElement="khao-select-field" />
+<svelte:options
+  customElement={{
+    tag: "khao-select-field",
+    shadow: "open",
+    extend: (customElementConstructor) => {
+      return class extends customElementConstructor {
+        static formAssociated = true;
+      };
+    },
+  }}
+/>
 
 <script lang="ts">
+  import { onMount } from "svelte";
+
   let {
     label,
     selectedValue = "",
     options,
     id = `khao-select-field-${label}`,
-    allowEmpty = false
+    allowEmpty = false,
+    name = ""
   }: {
     label: string;
     selectedValue?: string;
     options: string;
     id?: string;
-    allowEmpty?: boolean
+    allowEmpty?: boolean;
+    name?: string
   } = $props();
+
+  let internals: ElementInternals | null = null;
+  let selectElement = $state<HTMLSelectElement | null>(null);
+
+  onMount(() => {
+    // Get the host element and attach internals
+    const host = (selectElement?.getRootNode() as ShadowRoot)?.host as HTMLElement;
+    if (host && 'attachInternals' in host && !internals) {
+      internals = (host as any).attachInternals();
+      // Set initial form value
+      if (internals && selectedValue) {
+        internals.setFormValue(selectedValue);
+      }
+    }
+  });
 
   function handleChange(event: Event) {
     const select = event.target as HTMLSelectElement;
+
+    // Update form value via ElementInternals
+    if (internals) {
+      internals.setFormValue(select.value);
+    }
 
     const CHANGE_EVENT_NAME = "khao-select-field-change";
 
@@ -35,7 +69,7 @@
 <div class="formfield">
   <label class="label" for={id}>{label}</label>
 
-  <select class="field" {id} onchange={handleChange}>
+  <select bind:this={selectElement} class="field" {id} name={name || id} onchange={handleChange}>
     {#if allowEmpty}
       <option value=""></option>
     {/if}
