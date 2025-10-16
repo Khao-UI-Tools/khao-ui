@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.15.1
+
+- fix the priority prop on link component
+
 ## 4.15.0
 
 - Migrate all components to Svelte 5 syntax
