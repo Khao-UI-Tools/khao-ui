@@ -6,17 +6,25 @@
   import scrollActiveTabIntoView from "./utils/scrollActiveTabIntoView";
   import { type StringBoolean } from "../../../common/types/StringBoolean";
 
+  let {
+    tabs = "",
+    activeTabKey = "",
+    maxWidth = "860px",
+    centered = "false" as StringBoolean,
+    scrollShadow = "false" as StringBoolean
+  }: {
+    tabs?: string;
+    activeTabKey?: string;
+    maxWidth?: string;
+    centered?: StringBoolean;
+    scrollShadow?: StringBoolean
+  } = $props();
+
   let tabBar: HTMLElement;
 
   onMount(() => {
     scrollActiveTabIntoView(tabBar);
   });
-
-  export let tabs: string = "";
-  export let activeTabKey: string = "";
-  export let maxWidth: string = "860px";
-  export let centered: StringBoolean = "false";
-  export let scrollShadow: StringBoolean = "false";
 </script>
 
 <ul

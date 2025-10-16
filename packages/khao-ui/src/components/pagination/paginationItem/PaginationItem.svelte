@@ -3,18 +3,23 @@
 <script lang="ts">
   import { type StringBoolean } from "../../../common/types/StringBoolean";
 
-  export let label: string = "";
-  export let href: string = "";
-  export let title: string = "";
-  export let active: StringBoolean = "false";
-  export let disabled: StringBoolean = "false";
+  let {
+    label = "",
+    href = "",
+    title = "",
+    active = "false" as StringBoolean,
+    disabled = "false" as StringBoolean
+  }: {
+    label?: string;
+    href?: string;
+    title?: string;
+    active?: StringBoolean;
+    disabled?: StringBoolean
+  } = $props();
 
-  let displayLabel: string = label;
-  if (label.length > 0 && label.length < 4) {
-    displayLabel = label;
-  } else {
-    displayLabel = "#val";
-  }
+  let displayLabel = $derived(
+    label.length > 0 && label.length < 4 ? label : "#val"
+  );
 </script>
 
 {#if disabled === "false"}

@@ -1,9 +1,7 @@
 <svelte:options customElement="khao-button-pay-pal-donate" />
 
 <script lang="ts">
-  export let hostedButtonId: string;
-  export let label: string;
-  export let title: string;
+  let { hostedButtonId, label, title }: { hostedButtonId: string; label: string; title: string } = $props();
 </script>
 
 <a

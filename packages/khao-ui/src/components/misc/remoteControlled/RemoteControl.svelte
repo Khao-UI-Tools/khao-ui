@@ -12,8 +12,13 @@
   import type { RemoteControlCommand } from "./types/RemoteControlCommand";
   import dispatchRemoteControllEvent from "./utils/dispatchRemoteControlEvent";
 
-  export let channelId: string = defaultChannelId;
-  export let command: RemoteControlCommand = "hidden";
+  let {
+    channelId = defaultChannelId,
+    command = "hidden" as RemoteControlCommand
+  }: {
+    channelId?: string;
+    command?: RemoteControlCommand
+  } = $props();
 
   onMount(() => {
     document.addEventListener(

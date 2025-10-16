@@ -1,5 +1,17 @@
 # Changelog
 
+## 4.15.0
+
+- Migrate all components to Svelte 5 syntax
+
+  22 components have been migrated from Svelte 4 to Svelte 5 syntax:
+
+  - Props now use $props() rune with TypeScript types
+  - Event handlers updated from on:event to onevent attributes
+  - Reactive statements converted to $derived() and $effect() runes
+  - Added $state() for reactive local state management
+  - Used $bindable() for two-way binding props
+
 ## 4.14.0
 
 - added star icon

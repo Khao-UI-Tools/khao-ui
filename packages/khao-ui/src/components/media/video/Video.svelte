@@ -15,10 +15,38 @@
 
   type VideoType = "youtube";
 
-  let shwoPreview = false;
-  let showVideo = false;
+  let {
+    type = "youtube" as VideoType,
+    videoId = "",
+    autoplay = "false" as StringBoolean,
+    start = "",
+    title = "",
+    caption = "",
+    awaitsConsent = "false" as StringBoolean,
+    consentText = "",
+    previewSrc = "",
+    width = "600",
+    height = "450"
+  }: {
+    type?: VideoType;
+    videoId?: string;
+    autoplay?: StringBoolean;
+    start?: string;
+    title?: string;
+    caption?: string;
+    awaitsConsent?: StringBoolean;
+    consentText?: string;
+    previewSrc?: string;
+    width?: string;
+    height?: string
+  } = $props();
+
+  let shwoPreview = $state(false);
+  let showVideo = $state(false);
 
   let captionElement: HTMLDivElement;
+
+  let embeddedUrl: string = $state("");
 
   onMount(() => {
     if (awaitsConsent === "true") {
@@ -27,24 +55,6 @@
       showVideo = true;
     }
   });
-
-  export let type: VideoType = "youtube";
-  export let videoId: string = "";
-
-  export let autoplay: StringBoolean = "false";
-  export let start: string = "";
-
-  export let title: string = "";
-  export let caption: string = "";
-
-  export let awaitsConsent: StringBoolean = "false";
-  export let consentText: string = "";
-  export let previewSrc = "";
-
-  export let width: string = "600";
-  export let height: string = "450";
-
-  let embeddedUrl: string = "";
 
   function setEmbeddedUrl(
     type: VideoType,
@@ -83,7 +93,11 @@
     setEmbeddedUrl(type, videoId, autoplay, start);
   }
 
-  $: videoId && setEmbeddedUrl(type, videoId, autoplay, start);
+  $effect(() => {
+    if (videoId) {
+      setEmbeddedUrl(type, videoId, autoplay, start);
+    }
+  });
 </script>
 
 <div
@@ -95,7 +109,7 @@
       class="preview-wrapper"
       href={type === "youtube" ? `https://youtu.be/${videoId}` : ""}
       target="_blank"
-      on:click={giveConsent}
+      onclick={giveConsent}
     >
       <Image
         src={previewSrc}

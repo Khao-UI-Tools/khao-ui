@@ -7,6 +7,18 @@
   import { type StringBoolean } from "../../../common/types/StringBoolean";
   import { type ButtonSize } from "../types/ButtonSize";
 
+  let {
+    title = "",
+    scrollThreshold = "155",
+    forceVisible = "false" as StringBoolean,
+    size = "medium" as ButtonSize
+  }: {
+    title?: string;
+    scrollThreshold?: string;
+    forceVisible?: StringBoolean;
+    size?: ButtonSize
+  } = $props();
+
   let wrapper: HTMLElement;
 
   const visibilityChangeEvent = new CustomEvent(
@@ -36,11 +48,6 @@
       }
     });
   });
-
-  export let title: string = "";
-  export let scrollThreshold: string = "155";
-  export let forceVisible: StringBoolean = "false";
-  export let size: ButtonSize = "medium";
 </script>
 
 <div

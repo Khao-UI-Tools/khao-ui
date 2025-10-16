@@ -6,10 +6,32 @@
   import { type StringBoolean } from "../../../common/types/StringBoolean";
   import getFallbackImage from "./getFallbackImage";
 
-  let webpSrc: string = "";
-  let imageType: "image/jpeg" | "image/png" | "image/svg+xml" = "image/jpeg";
+  let {
+    src = "",
+    lazyLoading = "false" as StringBoolean,
+    loadingAnimation = "true" as StringBoolean,
+    webp = "false" as StringBoolean,
+    title = "",
+    caption = "",
+    type = "default" as ImageType,
+    width = "600",
+    height = "450"
+  }: {
+    src?: string;
+    lazyLoading?: StringBoolean;
+    loadingAnimation?: StringBoolean;
+    webp?: StringBoolean;
+    title?: string;
+    caption?: string;
+    type?: ImageType;
+    width?: string;
+    height?: string
+  } = $props();
 
-  let isLoading = true;
+  let webpSrc: string = $state("");
+  let imageType: "image/jpeg" | "image/png" | "image/svg+xml" = $state("image/jpeg");
+
+  let isLoading = $state(loadingAnimation !== "false");
 
   onMount(() => {
     if (src !== "") {
@@ -36,24 +58,6 @@
   function handleLoaded() {
     isLoading = false;
   }
-
-  export let src: string = "";
-
-  export let lazyLoading: StringBoolean = "false";
-  export let loadingAnimation: StringBoolean = "true";
-
-  export let webp: StringBoolean = "false";
-
-  export let title: string = "";
-  export let caption: string = "";
-  export let type: ImageType = "default";
-
-  export let width: string = "600";
-  export let height: string = "450";
-
-  if (loadingAnimation === "false") {
-    isLoading = false;
-  }
 </script>
 
 <figure class="figure">
@@ -72,8 +76,8 @@
       {width}
       {height}
       class="image image-{type}"
-      on:error={handleError}
-      on:load={handleLoaded}
+      onerror={handleError}
+      onload={handleLoaded}
     />
   </picture>
   {#if caption !== ""}

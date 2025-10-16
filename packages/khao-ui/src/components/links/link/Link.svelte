@@ -21,6 +21,32 @@
     window.open(url, "new", windowFeatures);
   };
 
+  let {
+    label = "",
+    title = "",
+    href = "",
+    rel = null,
+    target = null,
+    iconName = "" as IconName | "",
+    iconLocation = iconLocationDefault,
+    iconOpacity = "80%" as IconOpacity,
+    iconEnlarged = "false" as StringBoolean,
+    opensNewWindow = "false",
+    priority = linkPriorityDefault
+  }: {
+    label?: string;
+    title?: string;
+    href?: string;
+    rel?: string | null;
+    target?: string | null;
+    iconName?: IconName | "";
+    iconLocation?: IconLocation;
+    iconOpacity?: IconOpacity;
+    iconEnlarged?: StringBoolean;
+    opensNewWindow?: string;
+    priority?: LinkPriority
+  } = $props();
+
   const onClick = (event: MouseEvent) => {
     if (href !== "" && opensNewWindow === "true") {
       event.preventDefault();
@@ -29,39 +55,25 @@
     }
   };
 
-  export let label: string = "";
-  export let title: string = "";
-  export let href: string = "";
-  export let rel: string | null = null;
-  export let target: string | null = null;
-  export let iconName: IconName | "" = "";
+  let iconSizeFactor = $derived<IconSizeFactor>(iconEnlarged === "true" ? "5" : "4");
 
-  export let iconLocation: IconLocation = iconLocationDefault;
-  export let iconOpacity: IconOpacity = "80%";
-  export let iconEnlarged: StringBoolean = "false";
+  let additonalClasses = $derived(() => {
+    let classes = "";
+    if (priority === "primary") {
+      classes += " link-primary";
+    } else if (priority === "secondary") {
+      classes += " link-secondary";
+    } else if (priority === "secondary-emphasized") {
+      classes += " link-secondary-emphasized";
+    }
 
-  export let opensNewWindow: string = "false";
-  export let priority: LinkPriority = linkPriorityDefault;
-
-  let iconSizeFactor: IconSizeFactor = "4";
-  if (iconEnlarged === "true") {
-    iconSizeFactor = "5";
-  }
-
-  let additonalClasses = "";
-  if (priority === "primary") {
-    additonalClasses += " link-primary";
-  } else if (priority === "secondary") {
-    additonalClasses += " link-secondary";
-  } else if (priority === "secondary-emphasized") {
-    additonalClasses += " link-secondary-emphasized";
-  }
-
-  if (iconName !== "" && iconLocation === "after") {
-    additonalClasses += " link-with-icon-after";
-  } else if (iconName !== "" && iconLocation === "before") {
-    additonalClasses += " link-with-icon-before";
-  }
+    if (iconName !== "" && iconLocation === "after") {
+      classes += " link-with-icon-after";
+    } else if (iconName !== "" && iconLocation === "before") {
+      classes += " link-with-icon-before";
+    }
+    return classes;
+  });
 </script>
 
 <a
@@ -70,7 +82,7 @@
   {title}
   {rel}
   {target}
-  on:click={onClick}
+  onclick={onClick}
 >
   {#if iconName !== ""}
     <div

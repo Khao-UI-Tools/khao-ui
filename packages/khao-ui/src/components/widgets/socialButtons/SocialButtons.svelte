@@ -7,21 +7,31 @@
   const socialButtonsTarget = "_blank";
   const socialButtonsRel = "noopener noreferrer";
 
-  export let newsletterTeaser: string = "true";
-  export let newsletterTitle: string = "";
-  export let newsletterUrl: string = "";
-
-  export let facebookTitle: string = "";
-  export let facebookUrl: string = "";
-
-  export let instagramTitle: string = "";
-  export let instagramUrl: string = "";
-
-  export let pinterestTitle: string = "";
-  export let pinterestUrl: string = "";
-
-  export let rssTitle: string = "";
-  export let rssUrl: string = "";
+  let {
+    newsletterTeaser = "true",
+    newsletterTitle = "",
+    newsletterUrl = "",
+    facebookTitle = "",
+    facebookUrl = "",
+    instagramTitle = "",
+    instagramUrl = "",
+    pinterestTitle = "",
+    pinterestUrl = "",
+    rssTitle = "",
+    rssUrl = ""
+  }: {
+    newsletterTeaser?: string;
+    newsletterTitle?: string;
+    newsletterUrl?: string;
+    facebookTitle?: string;
+    facebookUrl?: string;
+    instagramTitle?: string;
+    instagramUrl?: string;
+    pinterestTitle?: string;
+    pinterestUrl?: string;
+    rssTitle?: string;
+    rssUrl?: string
+  } = $props();
 </script>
 
 <div class="container">

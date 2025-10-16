@@ -1,9 +1,7 @@
 <svelte:options customElement="khao-button-steady" />
 
 <script lang="ts">
-  export let user: string;
-  export let title: string;
-  export let lang: string;
+  let { user, title, lang }: { user: string; title: string; lang: string } = $props();
 </script>
 
 <a
