@@ -1,5 +1,21 @@
 # Changelog
 
+## 4.16.0
+
+### Minor Changes
+
+- Add form association support to TextField and SelectField components
+
+  TextField and SelectField now properly participate in HTML forms using the ElementInternals API:
+
+  - Components are now form-associated custom elements
+  - Field values are correctly included in form submissions
+  - Added optional 'name' prop for custom form field naming
+  - Support for form validation, reset, and other form lifecycle events
+  - Values sync automatically between the component and the parent form
+
+  This enables these components to work seamlessly with standard HTML form APIs and form libraries.
+
 ## 4.15.1
 
 - fix the priority prop on link component
