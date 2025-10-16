@@ -57,7 +57,7 @@
 
   let iconSizeFactor = $derived<IconSizeFactor>(iconEnlarged === "true" ? "5" : "4");
 
-  let additonalClasses = $derived(() => {
+  let additonalClasses = $derived.by(() => {
     let classes = "";
     if (priority === "primary") {
       classes += " link-primary";
