@@ -1,11 +1,19 @@
 <svelte:options customElement="khao-select-field" />
 
 <script lang="ts">
-  export let label: string;
-  export let selectedValue: string = "";
-  export let options: string;
-  export let id: string = `khao-select-field-${label}`;
-  export let allowEmpty: boolean = false;
+  let {
+    label,
+    selectedValue = "",
+    options,
+    id = `khao-select-field-${label}`,
+    allowEmpty = false
+  }: {
+    label: string;
+    selectedValue?: string;
+    options: string;
+    id?: string;
+    allowEmpty?: boolean
+  } = $props();
 
   function handleChange(event: Event) {
     const select = event.target as HTMLSelectElement;
@@ -27,7 +35,7 @@
 <div class="formfield">
   <label class="label" for={id}>{label}</label>
 
-  <select class="field" {id} on:change={handleChange}>
+  <select class="field" {id} onchange={handleChange}>
     {#if allowEmpty}
       <option value=""></option>
     {/if}

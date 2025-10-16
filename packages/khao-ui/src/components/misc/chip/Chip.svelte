@@ -4,13 +4,19 @@
   import { type ChipFilling, chipFillingDefault } from "./types/ChipFilling";
   import { type ChipType, chipTypeDefault } from "./types/ChipType";
 
-  export let href: string = "";
-
-  export let filling: ChipFilling = chipFillingDefault;
-  export let type: ChipType = chipTypeDefault;
-
-  export let title: string = "";
-  export let ariaLabel: string = "";
+  let {
+    href = "",
+    filling = chipFillingDefault,
+    type = chipTypeDefault,
+    title = "",
+    ariaLabel = ""
+  }: {
+    href?: string;
+    filling?: ChipFilling;
+    type?: ChipType;
+    title?: string;
+    ariaLabel?: string
+  } = $props();
 </script>
 
 <a

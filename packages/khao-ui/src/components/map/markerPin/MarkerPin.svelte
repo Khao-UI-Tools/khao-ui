@@ -4,8 +4,7 @@
   import Icon from "../../../icons/Icon.svelte";
   import { type IconName } from "../../../icons/types/IconName";
 
-  export let color: string;
-  export let iconName: IconName;
+  let { color, iconName }: { color: string; iconName: IconName } = $props();
 </script>
 
 <!--icons from https://fonts.google.com/icons -->

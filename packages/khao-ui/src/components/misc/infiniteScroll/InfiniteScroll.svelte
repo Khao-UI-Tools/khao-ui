@@ -12,9 +12,23 @@
   import Spinner from "../spinner/Spinner.svelte";
   import { type StringBoolean } from "../../../common/types/StringBoolean";
 
-  let showButton = false;
-  let showSpinner = false;
-  let countPages = 1;
+  let {
+    querySelector,
+    paginationSlug,
+    buttonLabel,
+    numberOfPages = "1",
+    showButtonOnFirstLoad = "true" as StringBoolean
+  }: {
+    querySelector: string;
+    paginationSlug: string;
+    buttonLabel: string;
+    numberOfPages?: string;
+    showButtonOnFirstLoad?: StringBoolean
+  } = $props();
+
+  let showButton = $state(false);
+  let showSpinner = $state(false);
+  let countPages = $state(1);
 
   const loadedMoreEvent = new CustomEvent("khao-infinite-scroll-loaded-more", {
     bubbles: true,
@@ -49,12 +63,6 @@
 
     observeSrolledToBottom(scroller, handleScolledToBottom);
   });
-
-  export let querySelector: string;
-  export let paginationSlug: string;
-  export let buttonLabel: string;
-  export let numberOfPages: string = "1";
-  export let showButtonOnFirstLoad: StringBoolean = "true";
 </script>
 
 <div bind:this={scroller} class="infinite-scroll">

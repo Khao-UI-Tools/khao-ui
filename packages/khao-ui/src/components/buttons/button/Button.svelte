@@ -28,23 +28,33 @@
     return href === null && onClick !== null ? "button" : "";
   }
 
-  export let label: string;
-  export let title: string = label;
-
-  export let href: string | null = null;
-  export let rel: string | null = null;
-  export let target: string | null = null;
-
-  export let priority: ButtonPriority = buttonPriorityDefault;
-  export let size: ButtonSize = "medium";
-
-  export let customBGColor: string = "";
-  export let customColor: string = "";
-  export let customMinWidth: string = "";
-
-  export let iconName: IconName | "" = "";
-
-  export let onClick: (() => void) | null = null;
+  let {
+    label,
+    title = label,
+    href = null,
+    rel = null,
+    target = null,
+    priority = buttonPriorityDefault,
+    size = "medium" as ButtonSize,
+    customBGColor = "",
+    customColor = "",
+    customMinWidth = "",
+    iconName = "" as IconName | "",
+    onClick = null
+  }: {
+    label: string;
+    title?: string;
+    href?: string | null;
+    rel?: string | null;
+    target?: string | null;
+    priority?: ButtonPriority;
+    size?: ButtonSize;
+    customBGColor?: string;
+    customColor?: string;
+    customMinWidth?: string;
+    iconName?: IconName | "";
+    onClick?: (() => void) | null;
+  } = $props();
 </script>
 
 <a
@@ -55,7 +65,7 @@
   {rel}
   style={setCustomStyles(customBGColor, customColor, customMinWidth)}
   role={setRole(href, onClick)}
-  on:click={onClick}
+  onclick={onClick}
 >
   {label}
   {#if iconName !== ""}

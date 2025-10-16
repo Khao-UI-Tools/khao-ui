@@ -3,9 +3,15 @@
 <script lang="ts">
   import type { BagdePriority } from "./types/BadgePriority";
 
-  export let mainLabel: string = "";
-  export let secondaryLabel: string = "";
-  export let priority: BagdePriority = "primary";
+  let {
+    mainLabel = "",
+    secondaryLabel = "",
+    priority = "primary" as BagdePriority
+  }: {
+    mainLabel?: string;
+    secondaryLabel?: string;
+    priority?: BagdePriority
+  } = $props();
 </script>
 
 <div class="container container-{priority}">

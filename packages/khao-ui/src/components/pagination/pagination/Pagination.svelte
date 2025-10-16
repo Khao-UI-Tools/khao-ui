@@ -8,30 +8,36 @@
     type PaginationItemConfig,
   } from "./createPaginationItems";
 
-  export let urlPrefix: string = "";
-  export let titlePrefix: string = "";
-  export let currentPage: string = "1";
-  export let totalPages: string = "1";
+  let {
+    urlPrefix = "",
+    titlePrefix = "",
+    currentPage = "1",
+    totalPages = "1"
+  }: {
+    urlPrefix?: string;
+    titlePrefix?: string;
+    currentPage?: string;
+    totalPages?: string
+  } = $props();
 
-  let currentPageNumber = currentPage != "" ? parseInt(currentPage, 10) : 1;
-  let totalPagesNumber = totalPages != "" ? parseInt(totalPages, 10) : 1;
+  let currentPageNumber = $derived(currentPage != "" ? parseInt(currentPage, 10) : 1);
+  let totalPagesNumber = $derived(totalPages != "" ? parseInt(totalPages, 10) : 1);
 
   const adjacentLinks = 3;
-  let paginationItems: PaginationItemConfig[] = [];
 
-  if (
+  let paginationItems = $derived(
     currentPageNumber > 0 &&
     totalPagesNumber > 1 &&
     totalPagesNumber >= currentPageNumber
-  ) {
-    paginationItems = createPaginationItems(
-      urlPrefix,
-      titlePrefix,
-      currentPageNumber,
-      totalPagesNumber,
-      adjacentLinks
-    );
-  }
+      ? createPaginationItems(
+          urlPrefix,
+          titlePrefix,
+          currentPageNumber,
+          totalPagesNumber,
+          adjacentLinks
+        )
+      : []
+  );
 </script>
 
 {#if paginationItems.length > 1}

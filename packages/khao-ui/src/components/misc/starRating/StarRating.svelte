@@ -15,24 +15,38 @@
     starRatingSizeDefault,
   } from "./types/StarRatingSize";
 
-  export let rating: number = 0;
-  export let maxRating: number = 5;
-  export let starColor: StarRatingColor = starRatingColorDefault;
-  export let starBackgroundColor: StarRatingStarBackgroundColor =
-    starRatingStarBackgroundColorDefault;
-  export let starSize: StarRatingSize = starRatingSizeDefault;
-  export let readonly: boolean = false;
-  export let name: string = "star-rating";
-  export let ariaLabel: string = "";
-  export let noRatingLabel: string = "No rating";
-  export let oneStarLabel: string = "1 star out of";
-  export let multipleStarsLabel: string = "stars out of";
-  export let currentRatingLabel: string = "Current rating";
+  let {
+    rating = $bindable(0),
+    maxRating = 5,
+    starColor = starRatingColorDefault,
+    starBackgroundColor = starRatingStarBackgroundColorDefault,
+    starSize = starRatingSizeDefault,
+    readonly = false,
+    name = "star-rating",
+    ariaLabel = "",
+    noRatingLabel = "No rating",
+    oneStarLabel = "1 star out of",
+    multipleStarsLabel = "stars out of",
+    currentRatingLabel = "Current rating"
+  }: {
+    rating?: number;
+    maxRating?: number;
+    starColor?: StarRatingColor;
+    starBackgroundColor?: StarRatingStarBackgroundColor;
+    starSize?: StarRatingSize;
+    readonly?: boolean;
+    name?: string;
+    ariaLabel?: string;
+    noRatingLabel?: string;
+    oneStarLabel?: string;
+    multipleStarsLabel?: string;
+    currentRatingLabel?: string
+  } = $props();
 
-  $: ratingOptions = Array.from(
+  let ratingOptions = $derived(Array.from(
     { length: maxRating / 0.5 + 1 },
     (_, i) => i * 0.5
-  );
+  ));
 
   function handleRatingChange(event: Event) {
     if (readonly) return;
@@ -82,7 +96,7 @@
         value={ratingValue}
         checked={rating === ratingValue}
         disabled={readonly}
-        on:change={handleRatingChange}
+        onchange={handleRatingChange}
         class="visuallyhidden"
       />
     {/each}

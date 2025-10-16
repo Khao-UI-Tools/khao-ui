@@ -6,12 +6,21 @@
   import { type StringBoolean } from "../../../common/types/StringBoolean";
   import { type TabSize } from "../types/TabSize";
 
-  export let label: string = "";
-  export let href: string = "";
-  export let title: string = "";
-  export let active: StringBoolean = "false";
-  export let size: TabSize = Breakpoint.isPhone() ? "compact" : "medium";
-  export let key: string = "";
+  let {
+    label = "",
+    href = "",
+    title = "",
+    active = "false" as StringBoolean,
+    size = (Breakpoint.isPhone() ? "compact" : "medium") as TabSize,
+    key = ""
+  }: {
+    label?: string;
+    href?: string;
+    title?: string;
+    active?: StringBoolean;
+    size?: TabSize;
+    key?: string
+  } = $props();
 </script>
 
 <li

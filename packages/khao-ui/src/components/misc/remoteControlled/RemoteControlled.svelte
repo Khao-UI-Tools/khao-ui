@@ -12,8 +12,13 @@
   import type { RemoteControlEventDetail } from "./types/RemoteControlEventDetail";
   import dispatchRemoteControllEvent from "./utils/dispatchRemoteControlEvent";
 
-  export let visibility: Visibility = "hidden";
-  export let channelId: string = defaultChannelId;
+  let {
+    visibility = $bindable("hidden" as Visibility),
+    channelId = defaultChannelId
+  }: {
+    visibility?: Visibility;
+    channelId?: string
+  } = $props();
 
   onMount(() => {
     document.addEventListener(

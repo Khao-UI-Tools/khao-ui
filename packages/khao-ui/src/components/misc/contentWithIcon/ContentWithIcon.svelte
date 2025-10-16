@@ -12,9 +12,15 @@
     iconOpacityDefault,
   } from "../../../icons/types/IconOpacity";
 
-  export let iconName: IconName;
-  export let iconSizeFactor: IconSizeFactor = iconSizeFactorDefault;
-  export let iconOpacity: IconOpacity = iconOpacityDefault;
+  let {
+    iconName,
+    iconSizeFactor = iconSizeFactorDefault,
+    iconOpacity = iconOpacityDefault
+  }: {
+    iconName: IconName;
+    iconSizeFactor?: IconSizeFactor;
+    iconOpacity?: IconOpacity
+  } = $props();
 </script>
 
 <div class="content-with-icon">

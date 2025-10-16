@@ -3,15 +3,25 @@
 <script lang="ts">
   import type { StringBoolean } from "../../../common/types/StringBoolean";
 
-  export let title: string = "";
-  export let url: string = "";
-  export let imageUrl: string;
-  export let imageWidth: string;
-  export let imageTitle: string;
-  export let imageCaption: string = "";
-  export let hasWebP: StringBoolean = "false";
-
-  export let onError: () => void;
+  let {
+    title = "",
+    url = "",
+    imageUrl,
+    imageWidth,
+    imageTitle,
+    imageCaption = "",
+    hasWebP = "false" as StringBoolean,
+    onError
+  }: {
+    title?: string;
+    url?: string;
+    imageUrl: string;
+    imageWidth: string;
+    imageTitle: string;
+    imageCaption?: string;
+    hasWebP?: StringBoolean;
+    onError: () => void;
+  } = $props();
 </script>
 
 <div class="container">
@@ -37,7 +47,7 @@
           alt={imageTitle || title}
           title={imageTitle || title}
           class="image"
-          on:error={onError}
+          onerror={onError}
         />
       </picture>
     </a>
