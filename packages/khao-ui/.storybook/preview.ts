@@ -1,5 +1,5 @@
-import { themes } from '@storybook/theming';
- 
+import { themes } from 'storybook/theming';
+
 const preview = {
   tags: ["autodocs", "autodocs"],
   parameters: {
@@ -8,7 +8,7 @@ const preview = {
     },
   },
 };
- 
+
 export default preview;
 
 

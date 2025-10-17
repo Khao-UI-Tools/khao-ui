@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Button from "../../src/components/buttons/button/Button.svelte";
-import { fn } from "@storybook/test";
+import { fn } from "storybook/test";
 import { iconNames } from "../../src/icons/types/IconName";
 import {
   buttonPriorities,
