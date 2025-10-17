@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import { action } from "storybook/test";
 import ScrollToTop from "../../src/components/buttons/scrollToTop/scrollToTop.svelte";
 import { buttonSizes } from "../../src/components/buttons/types/ButtonSize";
 
@@ -52,7 +51,6 @@ export const Example: Story = {
 
       () => {
         console.log("khao-scroll-to-top-visibility-change");
-        action("khao-scroll-to-top-visibility-change");
       }
     );
 
