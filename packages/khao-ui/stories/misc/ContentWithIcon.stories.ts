@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/svelte-vite";
+import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import ContentWithIcon from "../../src/components/misc/contentWithIcon/ContentWithIcon.svelte";
 import { iconNames } from "../../src/icons/types/IconName";
 import {

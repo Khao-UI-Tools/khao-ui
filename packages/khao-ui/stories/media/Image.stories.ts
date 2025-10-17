@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/svelte-vite";
+import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Image from "../../src/components/media/image/Image.svelte";
 import { imageTypes } from "../../src/components/media/image/types/ImageType";
 
