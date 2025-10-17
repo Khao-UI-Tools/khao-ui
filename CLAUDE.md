@@ -167,31 +167,37 @@ const config: StorybookConfig = {
 
 ### Story Files
 
-**Two patterns for importing components:**
+**Standard pattern for all stories:**
 
-1. **Web Components pattern** (most stories use this):
-   ```typescript
-   import type { Meta, StoryObj } from "@storybook/web-components-vite";
-   import Button from "../../src/components/buttons/button/Button.svelte";
+```typescript
+import type { Meta, StoryObj } from "@storybook/web-components-vite";
+import Button from "../../src/components/buttons/button/Button.svelte";
 
-   const meta = {
-     component: "khao-button",  // String, not component reference
-     // ...
-   } satisfies Meta<Button>;
-   ```
+const meta = {
+  component: "khao-button",  // String (custom element tag), not component reference
+  tags: ["autodocs"],
+  argTypes: {
+    // Control definitions...
+  },
+} satisfies Meta<Button>;
 
-2. **Svelte pattern** (some stories use this):
-   ```typescript
-   import type { Meta, StoryObj } from "@storybook/svelte-vite";
-   import IconButton from "../../src/components/buttons/iconButton/IconButton.svelte";
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-   const meta = {
-     component: "khao-icon-button",  // Still uses string for custom element
-     // ...
-   } satisfies Meta<IconButton>;
-   ```
+export const Primary: Story = {
+  args: {
+    label: "Primary Button",
+    priority: "primary",
+  },
+};
+```
 
-**Important:** Even when importing from `@storybook/svelte-vite`, the `component` field uses a string (the custom element tag name), not the imported Svelte component. This is because the components are compiled to web components.
+**Key Points:**
+- **Always** import types from `@storybook/web-components-vite` (never `@storybook/svelte-vite`)
+- Import the Svelte component for type information only
+- The `component` field must be a **string** matching the custom element tag name (e.g., `"khao-button"`)
+- Use `satisfies Meta<ComponentName>` to get type checking for args and controls
+- All stories follow this consistent pattern throughout the codebase
 
 ### Autodocs and MDX
 

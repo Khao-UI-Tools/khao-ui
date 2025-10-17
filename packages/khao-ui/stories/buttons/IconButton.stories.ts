@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/svelte-vite";
+import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import { fn } from "@storybook/test";
 import IconButton from "../../src/components/buttons/iconButton/IconButton.svelte";
 import {
