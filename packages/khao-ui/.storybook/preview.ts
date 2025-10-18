@@ -1,7 +1,7 @@
 import { themes } from 'storybook/theming';
 
 const preview = {
-  tags: ["autodocs", "autodocs"],
+  tags: ["autodocs"],
   parameters: {
     docs: {
       theme: themes.light,
