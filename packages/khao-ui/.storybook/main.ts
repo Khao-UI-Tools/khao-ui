@@ -5,7 +5,6 @@ const config: StorybookConfig = {
   addons: [
     getAbsolutePath("@storybook/addon-docs"),
     getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@chromatic-com/storybook"),
   ],
   framework: {
     name: getAbsolutePath("@storybook/web-components-vite"),
