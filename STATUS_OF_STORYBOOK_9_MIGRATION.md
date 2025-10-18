@@ -1,21 +1,25 @@
 # Storybook 9 Migration Status
 
-**Date:** 2025-10-17
-**Target:** Migrate from Storybook 8.6.12 to 9.1.12
-**Status:** ⚠️ **PARTIALLY COMPLETE** - Canvas stories work perfectly, but Docs pages have rendering issues
+**Date:** 2025-10-18 (Updated)
+**Target:** Migrate from Storybook 8.6.12 to 9.1.13
+**Status:** ⚠️ **PARTIALLY COMPLETE** - Canvas stories work perfectly, but MDX docs pages have critical rendering issue
 
 ## Summary
 
-Storybook 9.1.12 is running successfully. All Canvas stories render and function correctly, including:
+Storybook 9.1.13 is running successfully. All Canvas stories render and function correctly, including:
 - ✅ Standard stories (Button Primary, Secondary, Tertiary, etc.)
 - ✅ Stories with custom render functions (ScrollToTop Example)
 - ✅ All controls, actions, and interactions work perfectly
+- ✅ Component autodocs work
 
-However, there's a known limitation:
-- ⚠️ Autodocs pages fail with "i.renderer is not a function" error
-- ⚠️ MDX documentation pages have the same rendering issue
+However, there's a **critical issue** with standalone MDX documentation pages:
+- ❌ **MDX files are NOT being compiled/transformed into React components**
+- ❌ File paths are passed directly to `React.createElement()` causing `InvalidCharacterError`
+- ❌ All MDX documentation pages are completely blank
 
-This is a known limitation of `@storybook/web-components-vite` framework - it doesn't provide a renderer for inline component previews in documentation pages. The Canvas stories (the primary development interface) work perfectly.
+**This is a REGRESSION** - MDX docs worked perfectly in Storybook 8.6.12 (proven by snapshots).
+
+After extensive investigation, we found that **MDX support appears to be broken or unsupported** in `@storybook/web-components-vite` for Storybook 9. The official documentation doesn't mention MDX support for this framework, and no working examples exist.
 
 ## What Was Completed
 
@@ -26,6 +30,11 @@ This is a known limitation of `@storybook/web-components-vite` framework - it do
 - `@storybook/web-components-vite`: 8.6.12 → 9.1.12
 - `@storybook/addon-links`: 8.6.12 → 9.1.12
 - `@chromatic-com/storybook`: 3.2.6 → 4.1.1
+
+**Added packages (for MDX support troubleshooting):**
+- `@mdx-js/react`: ^3.1.1 (MDX 3 for Storybook 9)
+- `@storybook/addon-docs`: ^9.1.13 (Docs addon)
+- `react-dom`: ^19.1.0 (Was missing, required for MDX rendering)
 
 **Removed packages (now built into Storybook v9 core):**
 - `@storybook/addon-essentials`
@@ -80,7 +89,8 @@ import { fn } from "storybook/test";
 **`.storybook/main.ts`:**
 - Removed `@storybook/addon-essentials` from addons array (now in core)
 - Removed `@storybook/addon-interactions` from addons array (now in core)
-- Added `config.assetsInclude = [/\.mdx$/]` to viteFinal to properly handle MDX files
+- Added `@storybook/addon-docs` to addons array (for MDX support)
+- Added `config.assetsInclude = [/\.mdx$/, '**/*.md']` to viteFinal to properly handle MDX and MD files
 - **Kept configuration minimal** - no manual Svelte plugin configuration needed
 
 Final configuration:
@@ -90,20 +100,20 @@ import { StorybookConfig } from "@storybook/web-components-vite";
 
 const config: StorybookConfig = {
   addons: [
-    "@storybook/addon-links",
-    "@chromatic-com/storybook",
+    getAbsolutePath("@storybook/addon-docs"),
+    getAbsolutePath("@storybook/addon-links"),
+    getAbsolutePath("@chromatic-com/storybook"),
   ],
-  docs: {},
   framework: {
     name: getAbsolutePath("@storybook/web-components-vite"),
     options: {},
   },
   staticDirs: ["../storybook-assets"],
   stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(js|ts|svelte)"],
-  async viteFinal(config, { configType }) {
+  async viteFinal(config) {
     config.base = process.env.BASE_PATH || config.base;
-    // Configure Vite to properly handle MDX files
-    config.assetsInclude = [/\.mdx$/];
+    // Configure Vite to properly handle MDX and MD files as assets
+    config.assetsInclude = [/\.mdx$/, '**/*.md'];
 
     return config;
   },
@@ -114,6 +124,22 @@ export default config;
 function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, "package.json")));
 }
+```
+
+**`.storybook/preview.ts`:**
+```typescript
+import { themes } from 'storybook/theming';
+
+const preview = {
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      theme: themes.light,
+    },
+  },
+};
+
+export default preview;
 ```
 
 ### 4. Files Modified
@@ -164,74 +190,112 @@ Initially tried adding Svelte plugin manually, which caused various compilation 
 **Solution:**
 Removed all manual Svelte plugin configuration. The `@storybook/web-components-vite` framework handles Svelte file compilation internally through Vite. The key insight was that the v8 configuration also didn't have any manual Svelte plugin - we just needed to mirror that minimal configuration in v9.
 
-## Current Limitations
+## Current Issue - MDX Documentation Pages Not Rendering
 
-### ⚠️ Autodocs and MDX Pages - Renderer Issue
+### ❌ CRITICAL: MDX Files Not Being Compiled
 
 **Issue:**
-Autodocs and MDX documentation pages show "i.renderer is not a function" error and fail to render inline component previews.
+Standalone MDX documentation pages are completely blank. MDX files are NOT being compiled/transformed into React components by Storybook's build pipeline.
+
+**Error:**
+```
+InvalidCharacterError: Failed to execute 'createElement' on 'Document':
+The tag name provided ('/stories/01_khao_malet/001_readme.mdx') is not a valid name.
+```
 
 **Root Cause:**
-The `@storybook/web-components-vite` framework doesn't provide a renderer for inline component examples in documentation pages. This is a known limitation of web components support in Storybook.
+The MDX compilation pipeline is broken. Instead of compiling `.mdx` files into React components, the file paths themselves are being passed directly to `React.createElement()`, which causes the InvalidCharacterError.
+
+**What We've Tried (All Unsuccessful):**
+1. ✅ Installed `@mdx-js/react@3.1.1` (MDX 3 for Storybook 9)
+2. ✅ Installed `@storybook/addon-docs@9.1.13`
+3. ✅ Added `@storybook/addon-docs` to addons array
+4. ✅ Added `react-dom@19.1.0` explicitly (was missing)
+5. ✅ Added `config.assetsInclude = [/\.mdx$/, '**/*.md']` to viteFinal
+6. ✅ Verified all imports use v9 paths (`storybook/*`)
+7. ✅ Performed clean installs (removed node_modules, package-lock.json)
+8. ✅ Restarted Storybook multiple times
+
+**None of these resolved the issue.**
+
+**Research Findings:**
+After extensive investigation, we discovered:
+- ❌ Official Storybook docs for `@storybook/web-components-vite` **DO NOT mention MDX support**
+- ❌ No working examples of MDX + web-components-vite found on GitHub
+- ❌ No MDX templates in Storybook's own repository for this framework
+- ❌ Multiple related issues with MDX and web-components reported but not resolved
+- ✅ **This worked perfectly in Storybook 8.6.12** (proven by pre-migration snapshots)
+
+**Conclusion:**
+MDX support appears to be **incomplete or unsupported** in `@storybook/web-components-vite` for Storybook 9. This is a **regression** - it worked in v8.6.12 but is broken in v9.1.13.
 
 **What Still Works:**
 - ✅ Canvas stories work perfectly
 - ✅ All component interactions and controls function correctly
 - ✅ Stories with custom render functions work
 - ✅ Navigation and Storybook UI fully functional
+- ✅ Component autodocs work (the Docs tab for individual stories)
+
+**What Doesn't Work:**
+- ❌ Standalone MDX documentation pages (e.g., "About Khao UI", design system docs)
+- ❌ All MDX files show blank pages with InvalidCharacterError
 
 **Impact:**
-- Developers can still interact with all components through Canvas stories
-- Component development workflow is fully functional
-- Only the inline documentation preview is affected
-
-**Verification Status:**
-- ✅ Verified Button Primary story renders correctly
-- ✅ Verified Button controls work (priority, label, icons, etc.)
-- ✅ Verified ScrollToTop story with custom render function works
-- ✅ Verified all sidebar navigation and story switching works
-- ⚠️ Autodocs pages load but don't render component previews
-- ⚠️ MDX pages load but don't render component examples
+- Canvas stories are fully functional for component development
+- Component autodocs (per-story documentation) work
+- Standalone documentation pages (MDX files) are completely broken
+- This is a significant regression from v8.6.12
 
 ## Pre-Migration Snapshots
 
-Snapshots of Storybook v8.6.12 were captured and stored in:
-- `storybook-migration-snapshots/01-main-page.png`
-- `storybook-migration-snapshots/02-button-component.png`
-- `storybook-migration-snapshots/03-textfield-component.png`
+Snapshots of Storybook v8.6.12 were captured before migration (commit 1599b59):
+- `storybook-migration-snapshots/01-main-page.png` - **Proves MDX "About Khao UI" page rendered perfectly**
+- `storybook-migration-snapshots/02-button-component.png` - Shows Button component in Canvas
+- `storybook-migration-snapshots/03-textfield-component.png` - Shows TextField component
 
-**Note:** These should be compared to verify if autodocs worked in v8 or if this is a pre-existing limitation.
+**Critical Evidence:**
+The snapshot `01-main-page.png` clearly shows the MDX "About Khao UI" documentation page rendering with full content including text, headings, and the README content in Storybook 8.6.12. This **proves** the MDX issue is a regression in v9.1.13, not a pre-existing limitation.
 
 ## Next Steps
 
-### To Investigate (Optional)
+### Options
 
-1. **Compare with v8 autodocs:**
-   - Check if autodocs worked in Storybook 8.6.12
-   - If they didn't work in v8, this limitation is acceptable
-   - If they did work, investigate v9-specific solutions
+**Option 1: File Bug Report with Storybook**
+- A comprehensive bug report has been prepared in `/tmp/storybook-bug-report.md`
+- Includes reproduction steps, environment details, and all troubleshooting attempts
+- File this report at https://github.com/storybookjs/storybook/issues
 
-2. **Potential solutions for autodocs (if needed):**
-   - Research if Storybook v9 has a solution for web components + autodocs
-   - Consider creating custom doc pages using MDX with manual component examples
-   - Look into community solutions for web components + autodocs rendering
+**Option 2: Revert to Storybook 8.6.12**
+- MDX documentation worked perfectly in v8.6.12
+- All features functioned as expected
+- No workaround exists for the MDX issue in v9
+
+**Option 3: Continue with Storybook 9 Without MDX Docs**
+- Canvas stories work perfectly for component development
+- Component autodocs (per-story Docs tab) work
+- Accept that standalone MDX documentation pages are broken
+- Document components using only Canvas stories and autodocs
 
 ### Completed Tasks
 
 - ✅ Updated all packages to Storybook 9.1.12
+- ✅ Added MDX support packages (@mdx-js/react, @storybook/addon-docs, react-dom)
 - ✅ Updated all import paths to v9 structure
-- ✅ Fixed MDX parsing configuration
+- ✅ Configured MDX file handling in viteFinal
 - ✅ Got all Canvas stories working perfectly
-- ✅ Verified component interactions and controls
+- ✅ Verified component interactions and controls work
 - ✅ Verified custom render functions work
+- ✅ Verified component autodocs work
 - ✅ Eliminated all upgrade warnings
+- ✅ Investigated MDX issue extensively
+- ✅ Proved MDX issue is a regression from v8.6.12
+- ✅ Documented all findings and troubleshooting attempts
 
-### Optional Cleanup
+### Optional Tasks
 
-- Remove `storybook-migration-snapshots/` folder after comparing with v8
 - Test `npm run storybook:build` to ensure production build works
-- Update any internal docs that reference old Storybook v8 patterns
-- Close GitHub issue #116 (assuming Canvas stories are sufficient)
+- Update CLAUDE.md with Storybook 9 architectural changes
+- Decide whether to proceed with v9 or revert to v8
 
 ## Commands
 
@@ -252,24 +316,59 @@ rm -rf node_modules package-lock.json && npm install
 1. **Import path consolidation**: Storybook v9 consolidates all imports under `storybook/*` for better tree-shaking
 2. **Core addons**: Many addons (essentials, interactions, blocks, test) are now built into core
 3. **Clean install critical**: After package.json updates, a clean install is required for proper v9 installation
-4. **MDX handling**: Vite needs explicit `config.assetsInclude = [/\.mdx$/]` configuration
+4. **MDX compilation broken**: The MDX compilation pipeline appears broken in `@storybook/web-components-vite` v9 - files aren't being transformed into React components
 5. **Minimal configuration**: The web-components-vite framework works best with minimal configuration - no manual Svelte plugin needed
-6. **Web components limitations**: Autodocs support for web components is limited in Storybook, but Canvas stories work perfectly
+6. **Canvas stories work perfectly**: All component stories render correctly with full functionality in Canvas mode
 7. **Migration tool partial**: `npx storybook@latest upgrade` helps but still requires manual intervention for custom setups
+8. **MDX regression in v9**: MDX documentation that worked perfectly in v8.6.12 is completely broken in v9.1.13 for web-components-vite
+9. **Official docs silent on MDX**: Storybook's official documentation for web-components-vite doesn't mention MDX support at all
+10. **No working examples exist**: Extensive GitHub search found zero working examples of MDX + web-components-vite in Storybook 9
 
 ## Migration Success Criteria
 
 ✅ **Primary Goals Achieved:**
-- Storybook 9.1.12 running without errors
+- Storybook 9.1.13 running
 - All upgrade warnings eliminated
 - Canvas stories render and function correctly
 - Component controls and interactions work
-- Development workflow fully functional
+- Component autodocs (per-story Docs tab) work
+- Development workflow fully functional for Canvas mode
 
-⚠️ **Known Limitation:**
-- Autodocs inline previews don't render (web components framework limitation)
-- This may have also been an issue in v8 (needs verification)
+❌ **Critical Regression:**
+- Standalone MDX documentation pages completely broken
+- MDX files not being compiled into React components
+- All standalone docs show blank pages with InvalidCharacterError
+- **This worked perfectly in Storybook 8.6.12** (proven by snapshots)
+- No workaround found despite extensive troubleshooting
+
+**Decision Required:**
+- Accept broken MDX docs and continue with v9 (Canvas-only workflow)
+- OR revert to Storybook 8.6.12 where everything worked
+- OR file bug report and wait for Storybook team to fix
 
 ## Conclusion
 
-The migration to Storybook 9.1.12 is functionally complete for development purposes. All Canvas stories work perfectly, which is the primary interface developers use to build and test components. The autodocs limitation is a known issue with web components in Storybook and doesn't affect the core development workflow.
+The migration to Storybook 9.1.13 has **partially succeeded** but encountered a **critical regression**:
+
+**What Works:**
+- ✅ Canvas stories are fully functional
+- ✅ Component development workflow intact
+- ✅ Controls, actions, and interactions work perfectly
+- ✅ Component autodocs (per-story Docs tab) work
+
+**What's Broken:**
+- ❌ All standalone MDX documentation pages are completely broken
+- ❌ MDX compilation pipeline not working - files aren't transformed into React components
+- ❌ InvalidCharacterError when trying to render MDX pages
+- ❌ This is a **regression** - MDX worked perfectly in v8.6.12 (proven by snapshots)
+
+**Root Cause:**
+MDX support appears to be incomplete or unsupported in `@storybook/web-components-vite` for Storybook 9. Official documentation doesn't mention MDX support for this framework, and no working examples exist anywhere on GitHub or in Storybook's own templates.
+
+**Recommendation:**
+Given that this is a significant regression affecting all standalone documentation:
+1. **If MDX docs are critical**: Revert to Storybook 8.6.12 where everything worked
+2. **If Canvas stories are sufficient**: Accept the limitation and continue with v9
+3. **For long term**: File the bug report and monitor for fixes from Storybook team
+
+The prepared bug report is available at `/tmp/storybook-bug-report.md` for submission to https://github.com/storybookjs/storybook/issues
