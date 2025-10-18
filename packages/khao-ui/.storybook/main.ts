@@ -3,12 +3,10 @@ import { StorybookConfig } from "@storybook/web-components-vite";
 
 const config: StorybookConfig = {
   addons: [
+    getAbsolutePath("@storybook/addon-docs"),
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@chromatic-com/storybook"),
   ],
-  docs: {
-    autodocs: true,
-  },
   framework: {
     name: getAbsolutePath("@storybook/web-components-vite"),
     options: {},
@@ -17,8 +15,8 @@ const config: StorybookConfig = {
   stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(js|ts|svelte)"],
   async viteFinal(config) {
     config.base = process.env.BASE_PATH || config.base;
-    // Configure Vite to properly handle MDX files
-    config.assetsInclude = [/\.mdx$/];
+    // Configure Vite to properly handle MDX and MD files as assets
+    config.assetsInclude = [/\.mdx$/, '**/*.md'];
 
     return config;
   },
