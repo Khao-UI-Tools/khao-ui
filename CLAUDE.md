@@ -26,6 +26,50 @@ packages/
     └── dist/         # Built design system
 ```
 
+### NPM Workspaces
+
+**CRITICAL**: This is an npm workspaces monorepo. Understanding how workspaces work is essential:
+
+- Root `package.json` defines `"workspaces": ["packages/*"]`
+- Dependencies are **hoisted** to the root `node_modules` by default
+- Each workspace package can also have its own `node_modules` folder for non-hoisted dependencies
+- When installing dependencies, npm manages ALL workspace packages together
+- **IMPORTANT**: The root `package-lock.json` controls the entire dependency tree for all workspaces
+
+**Clean Install in Workspaces:**
+
+When you need to do a fresh install (e.g., after lockfile corruption), you MUST clean ALL node_modules folders:
+
+```bash
+# Clean ALL node_modules folders (root + all workspace packages)
+find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
+rm -f package-lock.json
+
+# Or explicitly:
+rm -rf node_modules packages/*/node_modules package-lock.json
+
+# Then install
+npm install
+```
+
+**Common Mistakes:**
+- ❌ Only deleting root `node_modules` - leaves stale dependencies in workspace packages
+- ❌ Only deleting root `package-lock.json` - npm might use cached lockfile from workspace packages
+- ✅ Delete ALL node_modules folders AND root package-lock.json before reinstalling
+
+**Running Scripts in Workspaces:**
+
+```bash
+# From root - runs script in specific workspace
+npm run jest -w @der-reiskoch/khao-ui
+
+# From root - install dependency in specific workspace
+npm install <package> -w @der-reiskoch/khao-ui
+
+# From workspace directory - runs local script
+cd packages/khao-ui && npm run jest
+```
+
 ### Component Categories
 
 Components in `packages/khao-ui/src/components/` are organized by purpose:
