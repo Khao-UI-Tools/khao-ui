@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/addon-docs/blocks";
+import { Meta, Typeset } from "@storybook/addon-docs/blocks";
 import { dependencies } from "../../package.json";
 
 <Meta title="Khao Malet/Fonts & Font Sizes" />
@@ -7,320 +7,52 @@ import { dependencies } from "../../package.json";
 
 ## (@der-reiskoch/khao-malet v{dependencies['@der-reiskoch/khao-malet']})
 
-## Title (--khao-sys-typescale-title-font)
- 
-
-<div className="sb-container">
-  <div className='container'>
-
-    <div className="font-item font-family-title-large sb-unstyled">
-      This is a large Title or Headline
-    </div>
-
-    </div>
- </div>
-
- <div className="sb-container">
-  <div className='container'>
-
-    <div className="font-item font-family-title-medium sb-unstyled">
-      This is a medium Title or Headline
-    </div>
-
-    </div>
- </div> 
-
-
- <div className="sb-container">
-  <div className='container'> 
-
-    <div className="font-item font-family-title-small sb-unstyled">
-      This is a small Title or Headline
-    </div>
-
-      </div>
- </div>
-
-<div className="sb-container">
-  <div className='container'> 
-
-    <div className="font-item font-family-title-tiny sb-unstyled">
-      This is a tiny Title or Headline
-    </div>
-
-
-
-  </div>
- </div>
-
-
-
-
-## Body (--khao-sys-typescale-body-font)
-
-
-
-<div className="sb-container">
-  <div className='container'>
-
-    <div className="font-family-body sb-unstyled">
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-      abore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
-      ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-      consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-      sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-      sanctus est Lorem ipsum dolor sit amet.
-    </div>
-
-  </div>
- </div>
-
-
-
-
-## All Font Sizes (Body)
-
-
-
-
-### --khao-sys-size-typography-10
-
-<div className="sb-container">
-  <div className="container">
-    <div className="font-item">
-      <div className="font-10 sb-unstyled">
-        Lorem ipsum dolor sit amet
-      </div>
-    </div>
-  </div>
-</div>
-
-### --khao-sys-size-typography-9
-
-<div className="sb-container">
-  <div className="container">
-    <div className="font-item">
-      <div className="font-9 sb-unstyled">
-        Lorem ipsum dolor sit amet
-      </div>
-    </div>
-  </div>
-</div>
-
-### --khao-sys-size-typography-8
-
-<div className="sb-container">
-  <div className="container">
-    <div className="font-item">
-      <div className="font-8 sb-unstyled">
-        Lorem ipsum dolor sit amet
-      </div>
-    </div>
-  </div>
-</div>
-
-### --khao-sys-size-typography-7
-
-<div className="sb-container">
-  <div className="container">
-    <div className="font-item">
-      <div className="font-7 sb-unstyled">
-        Lorem ipsum dolor sit amet
-      </div>
-    </div>
-  </div>
-</div>
-
-### --khao-sys-size-typography-6
-
-<div className="sb-container">
-  <div className="container">
-    <div className="font-item">
-      <div className="font-6 sb-unstyled">
-        Lorem ipsum dolor sit amet
-      </div>
-    </div>
-  </div>
-</div>
-
-### --khao-sys-size-typography-5
-
-<div className="sb-container">
-  <div className="container">
-    <div className="font-item">
-      <div className="font-5 sb-unstyled">
-        Lorem ipsum dolor sit amet
-      </div>
-    </div>
-  </div>
-</div>
-
-### --khao-sys-size-typography-4
-
-<div className="sb-container">
-  <div className="container">
-    <div className="font-item">
-      <div className="font-4 sb-unstyled">
-        Lorem ipsum dolor sit amet
-      </div>
-    </div>
-  </div>
-</div>
-
-### --khao-sys-size-typography-3
-
-<div className="sb-container">
-  <div className="container">
-    <div className="font-item">
-      <div className="font-3 sb-unstyled">
-        Lorem ipsum dolor sit amet
-      </div>
-    </div>
-  </div>
-</div>
-
-### --khao-sys-size-typography-2
-
-<div className="sb-container">
-  <div className="container">
-    <div className="font-item">
-      <div className="font-2 sb-unstyled">
-        Lorem ipsum dolor sit amet
-      </div>
-    </div>
-  </div>
-</div>
-
-<style>
-  {`
-
-  .sb-container {
-    margin-top: 24px;
-    margin-bottom: 48px;
-  }
-
-  .container {
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    
-  }
-
-  .font-family-body {
-    background-color: var(--khao-sys-color-surface);
-    font-family: var(--khao-sys-typescale-body-font);
-    line-height: var(--khao-sys-typescale-body-line-height);
-    width: 50%;
-    padding: var(--khao-sys-size-regular-2) var(--khao-sys-size-regular-4);
-  }
-
-  .font-family-title-large {
-    background-color: var(--khao-sys-color-surface);
-    font-family: var(--khao-sys-typescale-title-font);
-    font-size: var(--khao-sys-typescale-title-large-size);
-    font-weight: var(--khao-sys-typescale-title-large-weight);
-    line-heigh: var(--khao-sys-typescale-title-large-line-height);
-  }
-
-  .font-family-title-medium {
-    background-color: var(--khao-sys-color-surface);
-    font-family: var(--khao-sys-typescale-title-font);
-    font-size: var(--khao-sys-typescale-title-medium-size);
-    font-weight: var(--khao-sys-typescale-title-medium-weight);
-    line-heigh: var(--khao-sys-typescale-title-medium-line-height);
-  }
-
-
-  .font-family-title-small {
-    background-color: var(--khao-sys-color-surface);
-    font-family: var(--khao-sys-typescale-title-font);
-    font-size: var(--khao-sys-typescale-title-small-size);
-    font-weight: var(--khao-sys-typescale-title-small-weight);
-    line-heigh: var(--khao-sys-typescale-title-small-line-height);
-  }
-
-  .font-family-title-tiny {
-    background-color: var(--khao-sys-color-surface);
-    font-family: var(--khao-sys-typescale-title-font);
-    font-size: var(--khao-sys-typescale-title-tiny-size);
-    font-weight: var(--khao-sys-typescale-title-tiny-weight);
-    line-heigh: var(--khao-sys-typescale-title-tiny-line-height);
-  }
-
-  .font-item {
-    background-color: var(--khao-sys-color-surface);
-    align-items: flex-start;
-    display:flex;
-    flex-direction: column;
-    font-family: var(--khao-sys-typescale-body-font);
-    justify-content: center;
-    width: 100%;
-    height: 60px;
-    padding: var(--khao-sys-size-regular-2) var(--khao-sys-size-regular-4);
-
-    div {
-      wrap: no-wrap;
-    }
-
-  }
-
-  .font-2 {
-      p {
-        font-size: var(--khao-sys-size-typography-2);
-      }
-  }
-
-  .font-3 {
-      p {
-        font-size: var(--khao-sys-size-typography-3);
-      }
-  }
-
-  .font-4 {
-      p {
-        font-size: var(--khao-sys-size-typography-4);
-      }
-  }
-
-  .font-5 {
-      p {
-        font-size: var(--khao-sys-size-typography-5);
-      }
-  }
-
-  .font-6 {
-      p {
-        font-size: var(--khao-sys-size-typography-6);
-      }
-  }
-
-  .font-7 {
-      p {
-        font-size: var(--khao-sys-size-typography-7);
-      }
-  }
-
-  .font-8 {
-      p {
-        font-size: var(--khao-sys-size-typography-8);
-      }
-  }
-
-  .font-9 {
-      p {
-        font-size: var(--khao-sys-size-typography-9);
-      }
-  }
-
-  .font-10 {
-      p {
-        font-size: var(--khao-sys-size-typography-10);
-        
-      }
-  }
-
-
-  `}
-</style>
+## Title Font (Montserrat)
+
+Used for headings and titles with **font-weight: 700**
+
+<Typeset
+  fontFamily='"Montserrat", Arial, Helvetica, sans-serif, system-ui'
+  fontSizes={[24, 28, 32, 40]}
+  fontWeight={700}
+  sampleText="The quick brown fox jumps over the lazy dog"
+/>
+
+**Typography tokens:** `--khao-sys-size-typography-6` (24px), `--khao-sys-size-typography-7` (28px), `--khao-sys-size-typography-8` (32px), `--khao-sys-size-typography-10` (40px)
+
+## Body Font (Ubuntu)
+
+Used for body text and paragraphs with **font-weight: 400**
+
+<Typeset
+  fontFamily='"Ubuntu", Arial, Helvetica, sans-serif, system-ui'
+  fontSizes={[14, 16, 20]}
+  fontWeight={400}
+  sampleText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+/>
+
+**Typography tokens:** `--khao-sys-size-typography-3` (14px), `--khao-sys-size-typography-4` (16px), `--khao-sys-size-typography-5` (20px)
+
+## Complete Typography Scale
+
+All available font sizes (using Ubuntu font family):
+
+<Typeset
+  fontFamily='"Ubuntu", Arial, Helvetica, sans-serif, system-ui'
+  fontSizes={[12, 14, 16, 20, 24, 28, 32, 36, 40]}
+  fontWeight={400}
+  sampleText="Lorem ipsum dolor sit amet"
+/>
+
+**Available tokens:**
+- `--khao-sys-size-typography-2`: 12px (base × 3)
+- `--khao-sys-size-typography-3`: 14px (base × 3.5)
+- `--khao-sys-size-typography-4`: 16px (base × 4)
+- `--khao-sys-size-typography-5`: 20px (base × 5)
+- `--khao-sys-size-typography-6`: 24px (base × 6)
+- `--khao-sys-size-typography-7`: 28px (base × 7)
+- `--khao-sys-size-typography-8`: 32px (base × 8)
+- `--khao-sys-size-typography-9`: 36px (base × 9)
+- `--khao-sys-size-typography-10`: 40px (base × 10)
+
+_Base size: `--khao-ref-base-size-typography`: 4px_
