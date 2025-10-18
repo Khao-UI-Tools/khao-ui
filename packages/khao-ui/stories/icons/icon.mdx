@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/addon-docs/blocks";
+import { Meta, IconGallery, IconItem } from "@storybook/addon-docs/blocks";
 import Icon from "../../src/icons/Icon.svelte";
 import { iconNames } from "../../src/icons/types/IconName";
 import { version } from "../../package.json";
@@ -11,41 +11,10 @@ import { version } from "../../package.json";
 
 Icons are used to represent actions, objects, or concepts. Most of the icons come from [Material Icons](https://fonts.google.com/icons) and [Icomoon.io](https://icomoon.io/)
 
-<div className="sb-container">
-  <div className='container'>
-  
-    {iconNames.map(iconName=>(
-        <div className="icon-item" key={iconName}>
-            <khao-icon iconName={iconName} sizeFactor="15" />
-            {iconName}
-        </div>
-    ))}
-
-    </div>
-
-</div>
-
-<style>
-  {`
-    .sb-container {
-        margin-top: 24px;
-        margin-bottom: 48px;
-    }
-
-    .container {
-        display:flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 4rem;
-        
-    }
-
-    .icon-item {
-        display:block;
-        width: 75px;
-        height: 75px;
-        text-align: center;
-    }
-  `}
-</style>{" "}
+<IconGallery>
+  {iconNames.map(iconName => (
+    <IconItem name={iconName} key={iconName}>
+      <khao-icon iconName={iconName} sizeFactor="8" />
+    </IconItem>
+  ))}
+</IconGallery>
