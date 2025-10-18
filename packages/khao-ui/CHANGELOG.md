@@ -1,5 +1,33 @@
 # Changelog
 
+## 4.17.0
+
+### Minor Changes
+
+- Upgrade Storybook from 8.6.12 to 9.1.13
+
+  **Breaking Changes:**
+
+  - Import paths updated to Storybook v9 consolidated structure (`@storybook/*` → `storybook/*`)
+  - MDX doc blocks must now be imported from `@storybook/addon-docs/blocks`
+
+  **Package Updates:**
+
+  - storybook: 8.6.12 → 9.1.13
+  - @storybook/web-components-vite: 8.6.12 → 9.1.12
+  - @storybook/addon-links: 8.6.12 → 9.1.12
+  - @chromatic-com/storybook: 3.2.6 → 4.1.1
+  - Added: @storybook/addon-docs@9.1.13
+
+  **Removed Packages (now built into Storybook v9 core):**
+
+  - @storybook/addon-essentials
+  - @storybook/addon-interactions
+  - @storybook/blocks
+  - @storybook/test
+  - @storybook/manager-api
+  - @storybook/theming
+
 ## 4.16.0
 
 ### Minor Changes
