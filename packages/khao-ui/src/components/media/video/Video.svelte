@@ -46,7 +46,26 @@
 
   let captionElement: HTMLDivElement;
 
-  let embeddedUrl: string = $state("");
+  // Use $derived instead of $state + $effect to avoid infinite loops
+  let embeddedUrl = $derived.by(() => {
+    if (videoId === "") {
+      return "";
+    }
+
+    let url = type === "youtube"
+      ? `https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1`
+      : "";
+
+    if (type === "youtube" && autoplay === "true") {
+      url += "&autoplay=1";
+    }
+
+    if (type === "youtube" && start !== "") {
+      url += `&start=${start}`;
+    }
+
+    return url;
+  });
 
   onMount(() => {
     if (awaitsConsent === "true") {
@@ -56,48 +75,12 @@
     }
   });
 
-  function setEmbeddedUrl(
-    type: VideoType,
-    videoId: string,
-    autoplay: StringBoolean,
-    start: string
-  ) {
-    if (videoId === "") {
-      embeddedUrl = "";
-    } else {
-      embeddedUrl =
-        type === "youtube"
-          ? `https://www.youtube-nocookie.com/embed/${videoId}?modestbranding=1`
-          : "";
-
-      if (type === "youtube" && autoplay === "true") {
-        embeddedUrl += "&autoplay=1";
-      }
-
-      if (type === "youtube" && start !== "") {
-        embeddedUrl += `&start=${start}`;
-      }
-
-      console.log("Video Url changed to", embeddedUrl);
-    }
-  }
-
-  setEmbeddedUrl(type, videoId, autoplay, start);
-
   function giveConsent(event: MouseEvent) {
     event.stopPropagation();
     event.preventDefault();
     shwoPreview = false;
     showVideo = true;
-
-    setEmbeddedUrl(type, videoId, autoplay, start);
   }
-
-  $effect(() => {
-    if (videoId) {
-      setEmbeddedUrl(type, videoId, autoplay, start);
-    }
-  });
 </script>
 
 <div
