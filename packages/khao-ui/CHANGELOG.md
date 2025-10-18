@@ -1,5 +1,41 @@
 # Changelog
 
+## 4.17.1
+
+### Patch Changes
+
+Refactor color palette documentation to use Storybook's ColorPalette components
+
+  Replaced custom HTML/CSS color display with Storybook's built-in `ColorPalette` and `ColorItem` components in the color palette documentation page. This provides:
+
+  - More maintainable and standardized color documentation
+  - Consistent styling with Storybook's design system
+  - Better accessibility and responsive design
+  - Clearer organization with descriptive titles and subtitles for each color group
+
+  The colors are displayed using CSS variables, allowing dynamic computation of color values including those using `color-mix()` functions.
+
+- Refactor icon library documentation to use Storybook's IconGallery components
+
+  Replaced custom HTML/CSS grid with Storybook's built-in `IconGallery` and `IconItem` components in the icon library documentation page. This provides:
+
+  - More maintainable and standardized icon documentation
+  - Consistent styling with Storybook's design system
+  - Better responsive grid layout
+
+  The icons are displayed using the native IconGallery grid with optimized sizing (sizeFactor="8") for better visibility.
+
+- Refactor font documentation to use Storybook's Typeset components
+
+  Replaced custom HTML/CSS typography display with Storybook's built-in `Typeset` components in the Fonts & Font Sizes documentation page. This provides:
+
+  - More maintainable and standardized typography documentation
+  - Consistent styling with Storybook's design system
+  - Better visual presentation of font scales
+  - Clearer organization by font families (Title/Montserrat and Body/Ubuntu)
+
+  The typography is displayed using Storybook's native Typeset component with proper font families, weights, and size scales.
+
 ## 4.17.0
 
 ### Minor Changes
