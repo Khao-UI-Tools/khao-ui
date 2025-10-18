@@ -1,19 +1,26 @@
 # Changelog
 
+## 4.17.2
+
+### Patch Changes
+
+- Fix critical infinite loop bug in Video component causing browser crashes
+- Improve TypeScript configuration for better Svelte 5 support in VS Code
+
 ## 4.17.1
 
 ### Patch Changes
 
 Refactor color palette documentation to use Storybook's ColorPalette components
 
-  Replaced custom HTML/CSS color display with Storybook's built-in `ColorPalette` and `ColorItem` components in the color palette documentation page. This provides:
+Replaced custom HTML/CSS color display with Storybook's built-in `ColorPalette` and `ColorItem` components in the color palette documentation page. This provides:
 
-  - More maintainable and standardized color documentation
-  - Consistent styling with Storybook's design system
-  - Better accessibility and responsive design
-  - Clearer organization with descriptive titles and subtitles for each color group
+- More maintainable and standardized color documentation
+- Consistent styling with Storybook's design system
+- Better accessibility and responsive design
+- Clearer organization with descriptive titles and subtitles for each color group
 
-  The colors are displayed using CSS variables, allowing dynamic computation of color values including those using `color-mix()` functions.
+The colors are displayed using CSS variables, allowing dynamic computation of color values including those using `color-mix()` functions.
 
 - Refactor icon library documentation to use Storybook's IconGallery components
 
