@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/addon-docs/blocks";
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
 import { dependencies } from "../../package.json";
 
 <Meta title="Khao Malet/Color Palette" />
@@ -11,464 +11,113 @@ The color palette applies the [Material Design Color System](https://m3.material
 
 ## Dynamic Brand Colors
 
-<div className="sb-container">
-  <div className='container'>
-    <div className="color-item color-primary">
-      <p>
-        --khao-sys-color-primary
-      </p>
-    </div>
-
-    <div className="color-item color-secondary">
-      <p>
-        --khao-sys-color-secondary
-      </p>
-    </div>
-
-    <div className="color-item color-tertiary">
-      <p>
-        --khao-sys-color-tertiary
-      </p>
-    </div>
-
-    <div className="color-item color-primary-container">
-      <p>
-        --khao-sys-color-primary-container
-      </p>
-    </div>
-
-     <div className="color-item color-secondary-container">
-      <p>
-        --khao-sys-color-secondary-container
-      </p>
-    </div>
-
-    <div className="color-item color-tertiary-container">
-      <p>
-        --khao-sys-color-tertiary-container
-      </p>
-    </div>
-
-
-      </div>
-
- </div>
+<ColorPalette>
+  <ColorItem
+    title="Primary"
+    subtitle="Main brand color (Jungle)"
+    colors={{
+      "primary": "var(--khao-sys-color-primary)",
+      "primary-container": "var(--khao-sys-color-primary-container)"
+    }}
+  />
+  <ColorItem
+    title="Secondary"
+    subtitle="Secondary brand color (Bamboo)"
+    colors={{
+      "secondary": "var(--khao-sys-color-secondary)",
+      "secondary-container": "var(--khao-sys-color-secondary-container)"
+    }}
+  />
+  <ColorItem
+    title="Tertiary"
+    subtitle="Tertiary brand color (Flower)"
+    colors={{
+      "tertiary": "var(--khao-sys-color-tertiary)",
+      "tertiary-container": "var(--khao-sys-color-tertiary-container)"
+    }}
+  />
+</ColorPalette>
 
 ## Background, Surface and Outline
 
-<div className="sb-container">
-    <div className='container'>
-
-     <div className="color-item color-background">
-      <p>
-        --khao-sys-color-background
-      </p>
-    </div>
-
-
-    <div className="color-item color-surface">
-      <p>
-        --khao-sys-color-surface
-      </p>
-    </div>
-
-    <div className="color-item color-outline">
-      <p>
-        --khao-sys-color-outline
-      </p>
-    </div>
-
-    <div className="color-item color-outline-bright">
-      <p>--khao-sys-color-outline-bright</p>
-    </div>
-
-  </div>
- </div>
+<ColorPalette>
+  <ColorItem
+    title="Background"
+    subtitle="Base background color"
+    colors={{
+      "background": "var(--khao-sys-color-background)"
+    }}
+  />
+  <ColorItem
+    title="Surface"
+    subtitle="Surface color for cards and containers"
+    colors={{
+      "surface": "var(--khao-sys-color-surface)"
+    }}
+  />
+  <ColorItem
+    title="Outline"
+    subtitle="Border and outline colors"
+    colors={{
+      "outline": "var(--khao-sys-color-outline)",
+      "outline-bright": "var(--khao-sys-color-outline-bright)"
+    }}
+  />
+</ColorPalette>
 
 ## Dynamic Surface Container
 
-<div className="sb-container">
-  <div className="container">
-    <div className="color-item color-surface-container-lowest">
-      <p>--khao-sys-color-surface-container-lowest</p>
-    </div>
-
-    <div className="color-item color-surface-container-low">
-      <p>--khao-sys-color-surface-container-low</p>
-    </div>
-
-     <div className="color-item color-surface-container">
-      <p>--khao-sys-color-surface-container</p>
-    </div>
-
-     <div className="color-item color-surface-container-high">
-      <p>--khao-sys-color-surface-container-high</p>
-    </div>
-
-     <div className="color-item color-surface-container-highest">
-      <p>--khao-sys-color-surface-container-highest</p>
-    </div>
-
-  </div>
-</div>
+<ColorPalette>
+  <ColorItem
+    title="Surface Container Levels"
+    subtitle="Layered surface elevations from lowest to highest"
+    colors={{
+      "lowest": "var(--khao-sys-color-surface-container-lowest)",
+      "low": "var(--khao-sys-color-surface-container-low)",
+      "container": "var(--khao-sys-color-surface-container)",
+      "high": "var(--khao-sys-color-surface-container-high)",
+      "highest": "var(--khao-sys-color-surface-container-highest)"
+    }}
+  />
+</ColorPalette>
 
 ## Dynamic Neutral Colors
 
-<div className="sb-container">
-  <div className='container'>
-    <div className="color-item color-neutral10">
-      <p>
-        --khao-sys-color-neutral10
-      </p>
-    </div>
-
-    <div className="color-item color-neutral30">
-      <p>
-        --khao-sys-color-neutral30
-      </p>
-    </div>
-
-    <div className="color-item color-neutral50">
-      <p>
-        --khao-sys-color-neutral50
-      </p>
-    </div>
-
-    <div className="color-item color-neutral80">
-      <p>
-        --khao-sys-color-neutral80
-      </p>
-    </div>
-
-     <div className="color-item color-neutral90">
-      <p>
-        --khao-sys-color-neutral90
-      </p>
-    </div>
-
-     <div className="color-item color-neutral95">
-      <p>
-        --khao-sys-color-neutral95
-      </p>
-    </div>
-
-  </div>
- </div>
+<ColorPalette>
+  <ColorItem
+    title="Neutral Scale"
+    subtitle="Grayscale values for text and elements"
+    colors={{
+      "neutral-10": "var(--khao-sys-color-neutral10)",
+      "neutral-30": "var(--khao-sys-color-neutral30)",
+      "neutral-50": "var(--khao-sys-color-neutral50)",
+      "neutral-80": "var(--khao-sys-color-neutral80)",
+      "neutral-90": "var(--khao-sys-color-neutral90)",
+      "neutral-95": "var(--khao-sys-color-neutral95)"
+    }}
+  />
+</ColorPalette>
 
 ## Static Colors
 
-<div className="sb-container">
-  <div className='container'>
-
-    <div className="color-item color-success">
-      <p>--khao-sys-static-color-success</p>
-    </div>
-
-    <div className="color-item color-error">
-      <p>
-        --khao-sys-static-color-error
-      </p>
-    </div>
-
-     <div className="color-item color-white">
-      <p>
-        --khao-sys-static-color-white
-      </p>
-    </div>
-
-     <div className="color-item color-off-white">
-      <p>
-        --khao-sys-static-color-off-white
-      </p>
-    </div>
-
-
-    <div className="color-item color-success-container">
-      <p>--khao-sys-static-color-success-container</p>
-    </div>
-
-     <div className="color-item color-error-container">
-      <p>--khao-sys-static-color-error-container</p>
-    </div>
-
-
-     <div className="color-item color-black">
-      <p>
-        --khao-sys-static-color-black
-      </p>
-    </div>
-
-  </div>
- </div>
-
-<style>
-  {`
-
-
-  .sb-container {
-    margin-top: 24px;
-    margin-bottom: 48px;
-    padding: 1rem;
-    background-color: var(--khao-sys-color-background);
-  }
-
-  .container {
-    display:flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    
-  }
-
-  .color-item {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: 800;
-    width: 300px;
-    height: 80px;
-    border-radius: var(--khao-sys-shape-corner-small);
-  }
-
-  .color-primary {
-      background-color: var(--khao-sys-color-primary);
-
-      p {
-        color: var(--khao-sys-color-on-primary) !important;
-      }
-  }
-
-   .color-primary-container {
-      background-color: var(--khao-sys-color-primary-container);
-
-      p {
-        color: var(--khao-sys-color-on-primary-container) !important;
-      }
-  }
-
-  .color-secondary {
-      background-color: var(--khao-sys-color-secondary);
-
-      p {
-        color: var(--khao-sys-color-on-secondary) !important;
-      }
-  }
-
-  .color-secondary-container {
-      background-color: var(--khao-sys-color-secondary-container);
-
-      p {
-        color: var(--khao-sys-color-on-secondary-container) !important;
-      }
-  }
-
-  .color-tertiary {
-      background-color: var(--khao-sys-color-tertiary);
-
-      p {
-        color: var(--khao-sys-color-on-tertiary) !important;
-      }
-  }
-
-
-  .color-tertiary-container {
-      background-color: var(--khao-sys-color-tertiary-container);
-
-      p {
-        color: var(--khao-sys-color-on-tertiary-container) !important;
-      }
-  }
-
-
-  .color-background {
-      background-color: var(--khao-sys-color-background);
-      border: 1px solid black;
-  
-      p {
-        color: var(--khao-sys-color-on-background) !important;
-      }
-  }
-
-  .color-surface {
-      background-color: var(--khao-sys-color-surface);
-      
-      p {
-        color: var(--khao-sys-color-on-surface) !important;
-      }
-  }
-
-  .color-surface-container-lowest {
-      background-color: var(--khao-sys-color-surface-container-lowest);
-    
-      p {
-        color: var(--khao-sys-color-on-surface-container-lowest) !important;
-      }
-  }
-
-  .color-surface-container-low {
-      background-color: var(--khao-sys-color-surface-container-low);
-
-      p {
-        color: var(--khao-sys-color-on-surface-container-low) !important;
-      }
-  }
-
-  .color-surface-container {
-      background-color: var(--khao-sys-color-surface-container);
-
-      p {
-        color: var(--khao-sys-color-on-surface-container) !important;
-      }
-  }
-
-  .color-surface-container-high {
-      background-color: var(--khao-sys-color-surface-container-high);
-
-      p {
-        color: var(--khao-sys-color-on-surface-container-high) !important;
-      }
-  }
-
-  .color-surface-container-highest {
-      background-color: var(--khao-sys-color-surface-container-highest);
-
-      p {
-        color: var(--khao-sys-color-on-surface-container-highest) !important;
-      }
-  }
-
-  .color-outline {
-      background-color: var(--khao-sys-color-outline);
-
-      p {
-        color: var(--khao-sys-color-on-outline) !important;
-      }
-  }
-
-  .color-outline-bright {
-      background-color: var(--khao-sys-color-outline-bright);
-
-      p {
-        color: var(--khao-sys-color-on-outline-bright) !important;
-      }
-  }
-
-  .color-neutral10 {
-      background-color: var(--khao-sys-color-neutral10);
-
-      p {
-        color: var(--khao-sys-static-color-white) !important;
-      }
-  }
-
-  .color-neutral30 {
-      background-color: var(--khao-sys-color-neutral30);
-
-      p {
-        color: var(--khao-sys-static-color-white) !important;
-      }
-  }
-
-  .color-neutral50 {
-      background-color: var(--khao-sys-color-neutral50);
-
-      p {
-        color: var(--khao-sys-static-color-white) !important;
-      }
-  }
-
-  .color-neutral80 {
-      background-color: var(--khao-sys-color-neutral80);
-
-      p {
-        color: var(--khao-sys-static-color-black) !important;
-      }
-  }
-
-  .color-neutral90 {
-      background-color: var(--khao-sys-color-neutral90);
-     
-      p {
-        color: var(--khao-sys-static-color-black) !important;
-      }
-  }
-
-  .color-neutral95 {
-      background-color: var(--khao-sys-color-neutral95);
-     
-      p {
-        color: var(--khao-sys-static-color-black) !important;
-      }
-  }
-
-  .color-green {
-      background-color: var(--khao-sys-static-color-green);
-     
-      p {
-        color: var(--khao-sys-static-color-on-green) !important;
-      }
-  }
-
-  .color-success {
-      background-color: var(--khao-sys-static-color-success);
-     
-      p {
-        color: var(--khao-sys-static-color-on-success) !important;
-      }
-  }
-
-  .color-success-container {
-      background-color: var(--khao-sys-static-color-success-container);
-     
-      p {
-        color: var(--khao-sys-static-color-on-success-container) !important;
-      }
-  }
-
-  .color-error {
-      background-color: var(--khao-sys-static-color-error);
-     
-      p {
-        color: var(--khao-sys-static-color-on-error) !important;
-      }
-  }
-
-   .color-error-container {
-      background-color: var(--khao-sys-static-color-error-container);
-     
-      p {
-        color: var(--khao-sys-static-color-on-error-container) !important;
-      }
-  }
-
-  .color-white {
-      background-color: var(--khao-sys-static-color-white);
-    
-     
-      p {
-        color: var(--khao-sys-static-color-on-white) !important;
-      }
-  }
-  .color-off-white {
-      background-color: var(--khao-sys-static-color-off-white);
-    
-     
-      p {
-        color: var(--khao-sys-static-color-on-off-white) !important;
-      }
-  }
-
-  .color-black {
-      background-color: var(--khao-sys-static-color-black);
-     
-      p {
-        color: var(--khao-sys-static-color-on-black) !important;
-      }
-  }
-
-
-  `}
-</style>
+<ColorPalette>
+  <ColorItem
+    title="Semantic Colors"
+    subtitle="Success and error states"
+    colors={{
+      "success": "var(--khao-sys-static-color-success)",
+      "success-container": "var(--khao-sys-static-color-success-container)",
+      "error": "var(--khao-sys-static-color-error)",
+      "error-container": "var(--khao-sys-static-color-error-container)"
+    }}
+  />
+  <ColorItem
+    title="Base Colors"
+    subtitle="Pure white, off-white, and black"
+    colors={{
+      "white": "var(--khao-sys-static-color-white)",
+      "off-white": "var(--khao-sys-static-color-off-white)",
+      "black": "var(--khao-sys-static-color-black)"
+    }}
+  />
+</ColorPalette>
