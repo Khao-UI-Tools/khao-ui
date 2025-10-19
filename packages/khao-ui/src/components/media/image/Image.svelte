@@ -61,7 +61,7 @@
 </script>
 
 <figure class="figure">
-  <picture class={isLoading ? "picture-loading" : ""}>
+  <picture class={isLoading ? "picture-loading" : ""} style="--khao-image-aspect-ratio: {width}/{height}">
     {#if webp === "true"}
       <source srcset={webpSrc} type="image/webp" />
     {/if}
@@ -114,6 +114,11 @@
     gap: var(--khao-image-caption-spacing);
   }
 
+  .figure picture {
+    display: block;
+    aspect-ratio: var(--khao-image-aspect-ratio, 4/3);
+  }
+
   .picture-loading {
     background-color: var(--khao-image-fallback-background);
 
@@ -138,6 +143,7 @@
   .image {
     max-width: 100%;
     height: auto;
+    display: block;
     box-shadow: var(--khao-image-elevation-level-shadow);
     z-index: var(--khao-image-elevation-level);
     border-radius: var(--khao-image-border-radius);
