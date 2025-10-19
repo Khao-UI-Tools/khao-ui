@@ -97,7 +97,7 @@
     --khao-image-border-radius: var(--khao-sys-shape-corner-none);
     --khao-image-filter: none;
 
-    --khao-image-caption-spacing: var(--khao-sys-size-regular-0);
+    --khao-image-caption-spacing: var(--khao-sys-size-regular-2);
     --khao-image-caption-color: var(--khao-sys-color-neutral30);
     --khao-image-caption-font-size: var(--khao-sys-size-typography-2);
     --khao-image-caption-line-height: var(--khao-sys-size-typography-3);
