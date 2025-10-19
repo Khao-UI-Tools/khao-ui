@@ -75,7 +75,7 @@
       {title}
       {width}
       {height}
-      class="image image-{type}"
+      class="image image-{type} {!isLoading ? 'loaded' : ''}"
       onerror={handleError}
       onload={handleLoaded}
     />
@@ -148,6 +148,12 @@
     z-index: var(--khao-image-elevation-level);
     border-radius: var(--khao-image-border-radius);
     filter: var(--khao-image-filter);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .image.loaded {
+    opacity: 1;
   }
 
   .image-elevated {
