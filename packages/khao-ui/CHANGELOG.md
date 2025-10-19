@@ -1,8 +1,10 @@
 # Changelog
 
-## 4.17.3
+## 4.17.4
 
-### Patch Changes
+- Fix khao-image caption spacing
+
+## 4.17.3
 
 - Add aspect-ratio to khao-image to prevent Cumulative Layout Shift (CLS)
 - Enhance khao-image loading animation and add smooth fade-in transition
