@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.17.3
+
+### Patch Changes
+
+- Add aspect-ratio to khao-image to prevent Cumulative Layout Shift (CLS)
+- Enhance khao-image loading animation and add smooth fade-in transition
+
 ## 4.17.2
 
 - Fix critical infinite loop bug in Video component causing browser crashes
