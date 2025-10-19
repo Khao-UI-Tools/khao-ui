@@ -2,14 +2,10 @@
 
 ## 4.17.2
 
-### Patch Changes
-
 - Fix critical infinite loop bug in Video component causing browser crashes
 - Improve TypeScript configuration for better Svelte 5 support in VS Code
 
 ## 4.17.1
-
-### Patch Changes
 
 Refactor color palette documentation to use Storybook's ColorPalette components
 
