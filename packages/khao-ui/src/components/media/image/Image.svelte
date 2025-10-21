@@ -15,7 +15,7 @@
     caption = "",
     type = "default" as ImageType,
     width = "600",
-    height = "450"
+    height = "450",
   }: {
     src?: string;
     lazyLoading?: StringBoolean;
@@ -25,11 +25,12 @@
     caption?: string;
     type?: ImageType;
     width?: string;
-    height?: string
+    height?: string;
   } = $props();
 
   let webpSrc: string = $state("");
-  let imageType: "image/jpeg" | "image/png" | "image/svg+xml" = $state("image/jpeg");
+  let imageType: "image/jpeg" | "image/png" | "image/svg+xml" =
+    $state("image/jpeg");
 
   let isLoading = $state(loadingAnimation !== "false");
 
@@ -61,7 +62,10 @@
 </script>
 
 <figure class="figure">
-  <picture class={isLoading ? "picture-loading" : ""} style="--khao-image-aspect-ratio: {width}/{height}">
+  <picture
+    class={isLoading ? "picture-loading" : ""}
+    style="--khao-image-aspect-ratio: {width}/{height}"
+  >
     {#if webp === "true"}
       <source srcset={webpSrc} type="image/webp" />
     {/if}
@@ -121,22 +125,33 @@
 
   .picture-loading {
     background-color: var(--khao-image-fallback-background);
+    overflow: hidden;
+    position: relative;
+  }
 
+  .picture-loading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -150%;
+    width: 150%;
     background-image: linear-gradient(
       90deg,
-      rgba(204, 204, 204, 1) 0%,
-      rgba(221, 221, 221, 1) 50%
+      rgba(204, 204, 204, 0) 0%,
+      rgba(204, 204, 204, 1) 50%,
+      rgba(221, 221, 221, 1) 50%,
+      rgba(221, 221, 221, 0) 100%
     );
-    background-size: 40px 100%;
-
-    background-repeat: no-repeat;
-    background-position: left -40px top 0;
-    animation: shine 1.2s ease infinite;
+    animation: shine 1.5s ease-in-out infinite;
   }
 
   @keyframes shine {
-    to {
-      background-position: right -40px top 0;
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(300%);
     }
   }
 
