@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.17.5
+
+- Fix khao-image shimmer animation for not causing CLS issues
+
 ## 4.17.4
 
 - Fix khao-image caption spacing
