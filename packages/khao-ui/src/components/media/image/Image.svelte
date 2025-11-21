@@ -120,8 +120,6 @@
 
   .figure picture {
     display: block;
-    width: 100%;
-    height: auto;
     aspect-ratio: var(--khao-image-aspect-ratio, 4/3);
   }
 
