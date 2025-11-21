@@ -120,6 +120,7 @@
 
   .figure picture {
     display: block;
+    aspect-ratio: var(--khao-image-aspect-ratio, 4/3);
   }
 
   .picture-loading {
@@ -164,7 +165,6 @@
     filter: var(--khao-image-filter);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    aspect-ratio: var(--khao-image-aspect-ratio, 4/3);
   }
 
   .image.loaded {
