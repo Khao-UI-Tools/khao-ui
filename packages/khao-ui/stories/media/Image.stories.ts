@@ -158,6 +158,18 @@ export const WithoutLoadingAnimation: Story = {
   },
 };
 
+export const PortraitImage: Story = {
+  args: {
+    src: "https://bilder.koch-reis.de/media/_about_me/2002_chiang_mai-portrait.jpg",
+    title: "A Portrait Iamge",
+    lazyLoading: "true",
+    caption: "A Portrait Iamge",
+    width: "600",
+    height: "784",
+    type: "default",
+  },
+};
+
 export const BrokenImage: Story = {
   args: {
     src: "https://bilder.koch-reis.de/broken.jpg",
