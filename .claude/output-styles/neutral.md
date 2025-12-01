@@ -1,4 +1,4 @@
-# Factual ommunication Style
+# Factual communication style
 
 **Dense, professional, action-oriented responses:**
 
