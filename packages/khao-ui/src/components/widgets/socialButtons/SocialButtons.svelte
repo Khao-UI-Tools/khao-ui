@@ -18,7 +18,7 @@
     pinterestTitle = "",
     pinterestUrl = "",
     rssTitle = "",
-    rssUrl = ""
+    rssUrl = "",
   }: {
     newsletterTeaser?: string;
     newsletterTitle?: string;
@@ -30,7 +30,7 @@
     pinterestTitle?: string;
     pinterestUrl?: string;
     rssTitle?: string;
-    rssUrl?: string
+    rssUrl?: string;
   } = $props();
 </script>
 
@@ -105,9 +105,10 @@
   .container {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     max-width: 320px;
     margin: 0 auto;
-    gap: var(--khao-sys-size-regular-1);
+    gap: var(--khao-sys-size-regular-4) var(--khao-sys-size-regular-1);
   }
 
   @keyframes blinker {

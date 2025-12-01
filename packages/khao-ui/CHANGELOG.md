@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.17.6
+
+- improve responsive styles for social-buttons
+
 ## 4.17.5
 
 - Fix khao-image shimmer animation for not causing CLS issues
