@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.3.2
+
+### Patch Changes
+
+- fixed the css custom properties
+
 ## 6.3.1
 
 - added new `--khao-sys-spacing-xx` tokens
