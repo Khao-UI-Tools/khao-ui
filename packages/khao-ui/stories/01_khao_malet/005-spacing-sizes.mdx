@@ -109,6 +109,45 @@ import { dependencies } from "../../package.json";
   </div>
  </div>
 
+## Spacing Aliases
+
+Convenient aliases for common spacing values:
+
+<div className="sb-container">
+  <div className='container'>
+    <div className="size-item">
+      <div className="size-example spacing-small"></div>
+      <p>--khao-sys-spacing-small</p>
+      <p style={{ fontSize: '0.8em', color: '#666' }}>(regular-4)</p>
+    </div>
+
+    <div className="size-item">
+      <div className="size-example spacing-medium"></div>
+      <p>--khao-sys-spacing-medium</p>
+      <p style={{ fontSize: '0.8em', color: '#666' }}>(regular-8)</p>
+    </div>
+
+    <div className="size-item">
+      <div className="size-example spacing-large"></div>
+      <p>--khao-sys-spacing-large</p>
+      <p style={{ fontSize: '0.8em', color: '#666' }}>(regular-12)</p>
+    </div>
+
+    <div className="size-item">
+      <div className="size-example spacing-xlarge"></div>
+      <p>--khao-sys-spacing-xlarge</p>
+      <p style={{ fontSize: '0.8em', color: '#666' }}>(regular-16)</p>
+    </div>
+
+    <div className="size-item">
+      <div className="size-example spacing-xxlarge"></div>
+      <p>--khao-sys-spacing-xxlarge</p>
+      <p style={{ fontSize: '0.8em', color: '#666' }}>(regular-20)</p>
+    </div>
+
+  </div>
+</div>
+
 <style>
   {`
 
@@ -244,7 +283,32 @@ import { dependencies } from "../../package.json";
     height: var(--khao-sys-size-regular-20);
   }
 
- 
+  .spacing-small {
+    width: var(--khao-sys-spacing-small);
+    height: var(--khao-sys-spacing-small);
+  }
+
+  .spacing-medium {
+    width: var(--khao-sys-spacing-medium);
+    height: var(--khao-sys-spacing-medium);
+  }
+
+  .spacing-large {
+    width: var(--khao-sys-spacing-large);
+    height: var(--khao-sys-spacing-large);
+  }
+
+  .spacing-xlarge {
+    width: var(--khao-sys-spacing-xlarge);
+    height: var(--khao-sys-spacing-xlarge);
+  }
+
+  .spacing-xxlarge {
+    width: var(--khao-sys-spacing-xxlarge);
+    height: var(--khao-sys-spacing-xxlarge);
+  }
+
+
 
 
   `}

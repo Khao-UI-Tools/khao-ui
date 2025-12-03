@@ -1,5 +1,9 @@
 # Changelog
 
+## 6.3.1
+
+- added new `--khao-sys-spacing-xx` tokens
+
 ## 6.3.0
 
 - added `--khao-sys-typescale-body-weight`
