@@ -31,3 +31,6 @@ storybook-static
 
 ## CLAUDE
 .claude/settings.local.json
+
+# NPM Configuration with credentials
+.npmrc
