@@ -39,7 +39,6 @@
     var(--khao-ref-base-size-typography) * 10
   );
 
-  /* Spacing aliases for padding and margins */
   --khao-sys-spacing-small: var(--khao-sys-size-regular-4);
   --khao-sys-spacing-medium: var(--khao-sys-size-regular-8);
   --khao-sys-spacing-large: var(--khao-sys-size-regular-12);
