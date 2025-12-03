@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.17.7
+
+- Updated dependencies
+  - @der-reiskoch/khao-malet@6.3.1
+
 ## 4.17.6
 
 - improve responsive styles for social-buttons
