@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.17.8
+
+### Patch Changes
+
+- Updated dependencies
+  - @der-reiskoch/khao-malet@6.3.2
+
 ## 4.17.7
 
 - Updated dependencies
