@@ -1,4 +1,3 @@
-
 {
   "name": "khao-ui-monorepo",
   "version": "1.0.0",
@@ -16,7 +15,6 @@
     "packages/*"
   ],
   "scripts": {
-    "claude": "npx @anthropic-ai/claude-code",
     "jest": "npm run jest -w @der-reiskoch/khao-ui",
     "dev": "npm run dev -w @der-reiskoch/khao-ui",
     "build": "npm run build -w @der-reiskoch/khao-malet && npm run build -w @der-reiskoch/khao-ui",
@@ -36,5 +34,8 @@
   "homepage": "https://github.com/Khao-UI-Tools/khao-ui#readme",
   "dependencies": {
     "@changesets/cli": "^2.29.3"
+  },
+  "volta": {
+    "node": "20.19.0"
   }
 }
