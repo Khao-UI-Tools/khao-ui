@@ -2,6 +2,15 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Basic Rules
+
+- Ask questions if anything is uncertain, do not make any assumptions!
+- Ask those questions in a numbered List, so that the user can address them easily
+- plan before you implement!
+- do not commit anything without permission by the user
+- update your internal documentation after you finished a task
+- add a changeset explainig the implemented feature after you finished a task
+
 ## Project Overview
 
 This is a monorepo for the Khao UI component library and Khao Malet design system. "Khao" (ข้าว) means rice in Thai, representing the foundational nature of these tools for foodie/cooking websites.
@@ -15,15 +24,15 @@ This is a monorepo for the Khao UI component library and Khao Malet design syste
 
 ```markdown
 packages/
-├── khao-ui/          # Main UI component library
-│   ├── src/
-│   │   ├── components/   # Organized by category (buttons, forms, cards, etc.)
-│   │   ├── icons/        # Icon components
-│   │   └── common/       # Shared utilities
-│   └── dist/         # Built components and CSS
-└── khao-malet/       # Design system (CSS custom properties)
-    ├── css/          # Source CSS files
-    └── dist/         # Built design system
+├── khao-ui/ # Main UI component library
+│ ├── src/
+│ │ ├── components/ # Organized by category (buttons, forms, cards, etc.)
+│ │ ├── icons/ # Icon components
+│ │ └── common/ # Shared utilities
+│ └── dist/ # Built components and CSS
+└── khao-malet/ # Design system (CSS custom properties)
+├── css/ # Source CSS files
+└── dist/ # Built design system
 ```
 
 ### NPM Workspaces
@@ -53,6 +62,7 @@ npm install
 ```
 
 **Common Mistakes:**
+
 - ❌ Only deleting root `node_modules` - leaves stale dependencies in workspace packages
 - ❌ Only deleting root `package-lock.json` - npm might use cached lockfile from workspace packages
 - ✅ Delete ALL node_modules folders AND root package-lock.json before reinstalling
@@ -163,6 +173,7 @@ This project uses Storybook with the `@storybook/web-components-vite` framework 
 ### Component Structure
 
 **Svelte Components with Custom Elements:**
+
 - Each component uses `<svelte:options customElement="khao-button" />` at the top
 - Components are written in Svelte 5 with the new runes syntax (`$props()`, `$state()`, etc.)
 - The `customElement` option tells Svelte to compile to a web component instead of a Svelte component
@@ -173,6 +184,7 @@ This project uses Storybook with the `@storybook/web-components-vite` framework 
 **Two Vite configs exist:**
 
 1. **`vite.config.ts`** - For general development
+
    ```typescript
    plugins: [
      svelte({
@@ -191,10 +203,11 @@ This project uses Storybook with the `@storybook/web-components-vite` framework 
 ### Storybook Configuration
 
 **`.storybook/main.ts`:**
+
 ```typescript
 const config: StorybookConfig = {
   framework: {
-    name: "@storybook/web-components-vite",  // Web components framework
+    name: "@storybook/web-components-vite", // Web components framework
     options: {},
   },
   stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(js|ts|svelte)"],
@@ -218,7 +231,7 @@ import type { Meta, StoryObj } from "@storybook/web-components-vite";
 import Button from "../../src/components/buttons/button/Button.svelte";
 
 const meta = {
-  component: "khao-button",  // String (custom element tag), not component reference
+  component: "khao-button", // String (custom element tag), not component reference
   tags: ["autodocs"],
   argTypes: {
     // Control definitions...
@@ -237,6 +250,7 @@ export const Primary: Story = {
 ```
 
 **Key Points:**
+
 - **Always** import types from `@storybook/web-components-vite` (never `@storybook/svelte-vite`)
 - Import the Svelte component for type information only
 - The `component` field must be a **string** matching the custom element tag name (e.g., `"khao-button"`)
@@ -246,9 +260,10 @@ export const Primary: Story = {
 ### Autodocs and MDX
 
 **`.storybook/preview.ts`:**
+
 ```typescript
 const preview = {
-  tags: ["autodocs", "autodocs"],  // Enable autodocs globally
+  tags: ["autodocs", "autodocs"], // Enable autodocs globally
   parameters: {
     docs: {
       theme: themes.light,
@@ -258,6 +273,7 @@ const preview = {
 ```
 
 **MDX Files:**
+
 - MDX files import from `@storybook/blocks` for components like `<Meta>`, `<Markdown>`
 - They render markdown content and can include live component examples
 - Located in `stories/` directory alongside `.stories.ts` files
@@ -265,18 +281,21 @@ const preview = {
 ### How Svelte Web Components Work in Storybook
 
 1. **Build Process:**
+
    - `npm run storybook` triggers `npm run prepare-storybook`
    - This runs `npm run build` which compiles all Svelte components to dist/
    - CSS is copied to `storybook-assets/khao-ui.css`
    - Storybook dev server starts
 
 2. **Runtime Compilation:**
+
    - Storybook's Vite dev server compiles `.svelte` files on-the-fly
    - Inherits Svelte plugin from project's `vite.config.ts`
    - Components are compiled with `customElement: true`
    - Custom elements are registered in the browser as `<khao-button>`, etc.
 
 3. **Canvas Stories:**
+
    - Work perfectly because they render the web components directly
    - Storybook's web-components framework knows how to handle custom elements
    - Controls panel works because it sets attributes/properties on the custom elements
@@ -292,18 +311,21 @@ const preview = {
 When migrating from Storybook 8 to 9:
 
 1. **Import path changes:** `@storybook/*` → `storybook/*`
+
    - `@storybook/test` → `storybook/test`
    - `@storybook/blocks` → `storybook/blocks`
    - `@storybook/theming` → `storybook/theming`
    - `@storybook/manager-api` → `storybook/manager-api`
 
 2. **Package consolidation:** Many packages are now built into core:
+
    - `@storybook/addon-essentials` (now in core)
    - `@storybook/addon-interactions` (now in core)
    - `@storybook/blocks` (import from `storybook/blocks`)
    - `@storybook/test` (import from `storybook/test`)
 
 3. **MDX handling:** Add to `.storybook/main.ts`:
+
    ```typescript
    viteFinal(config) {
      config.assetsInclude = [/\.mdx$/];  // Required for v9
