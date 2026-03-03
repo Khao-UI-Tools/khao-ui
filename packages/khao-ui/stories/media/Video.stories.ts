@@ -113,6 +113,22 @@ export const WithStartTimeAndConsent: Story = {
   },
 };
 
+export const SmallVideo: Story = {
+  args: {
+    videoId: "Vv0mUrwgu9c",
+    previewSrc: "https://api.koch-reis.de/youtube/v1/?file=Vv0mUrwgu9c.jpg",
+    awaitsConsent: "true",
+    autoplay: "true",
+    consentText:
+      "Mit dem Aufruf des Videos erklärst Du Dich einverstanden, dass Deine Daten an YouTube übermittelt werden.",
+    title: "Small Video",
+    caption:
+      "Demonstrates the sizing issue: video is smaller than the preview image",
+    width: "600",
+    height: "450",
+  },
+};
+
 export const NoVideoId: Story = {
   args: {
     videoId: "",

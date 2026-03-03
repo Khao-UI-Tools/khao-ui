@@ -1,8 +1,12 @@
 # Changelog
 
-## 4.17.8
+## 4.17.9
 
-### Patch Changes
+- khao-video: add `display: block` to `:host` in shadow DOM
+
+  Without this, the custom element defaults to `display: inline`. When the YouTube iframe loads after consent, `width: 100%` on `.video-frame` has no concrete containing-block width to resolve against — causing the component to collapse to ~300 px. Setting `:host { display: block }` gives the wrapper a concrete available width so the iframe sizes correctly in both preview and video states.
+
+## 4.17.8
 
 - Updated dependencies
   - @der-reiskoch/khao-malet@6.3.2
