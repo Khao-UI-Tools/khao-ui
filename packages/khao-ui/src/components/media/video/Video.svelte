@@ -129,6 +129,7 @@ encrypted-media; gyroscope; picture-in-picture"
 
 <style>
   :host {
+    display: block;
     --khao-video-consent-color: var(--khao-sys-color-neutral80);
     --khao-video-consent-background: var(--khao-sys-static-color-black);
     --khao-video-consent-font-size: var(--khao-sys-size-typography-2);
