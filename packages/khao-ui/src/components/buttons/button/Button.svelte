@@ -30,7 +30,7 @@
 
   let {
     label,
-    title = label,
+    title = "",
     href = null,
     rel = null,
     target = null,
@@ -55,11 +55,13 @@
     iconName?: IconName | "";
     onClick?: (() => void) | null;
   } = $props();
+
+  let computedTitle = $derived(title || label);
 </script>
 
 <a
   class="button button-{priority} button-size-{size}"
-  {title}
+  title={computedTitle}
   href={onClick === null ? href : "javascript:"}
   {target}
   {rel}

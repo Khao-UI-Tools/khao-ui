@@ -13,10 +13,11 @@
   let {
     label,
     activated = "false",
-    htmlId = `khao-switch-button-${label}`,
+    htmlId = "",
     onChange,
   }: Props = $props();
 
+  let computedHtmlId = $derived(htmlId || `khao-switch-button-${label}`);
   let checked = $derived(activated === "true");
 
   function handleButtonClick() {
@@ -27,7 +28,7 @@
     const changeEvent = new CustomEvent(CHANGE_EVENT_NAME, {
       detail: {
         value: checked,
-        htmlId: htmlId,
+        htmlId: computedHtmlId,
       },
       bubbles: true,
       composed: true,
@@ -45,17 +46,17 @@
   <button
     class="button button-disabled"
     onclick={handleButtonClick}
-    aria-labelledby="label-{htmlId}"
+    aria-labelledby="label-{computedHtmlId}"
   >
     <input
       type="checkbox"
       bind:checked
-      id={htmlId}
+      id={computedHtmlId}
       role="switch"
       aria-checked={checked}
     /><span class="slider"></span>
   </button>
-  <label class="label" id="label-{htmlId}" for={htmlId}>
+  <label class="label" id="label-{computedHtmlId}" for={computedHtmlId}>
     {label}
   </label>
 </div>

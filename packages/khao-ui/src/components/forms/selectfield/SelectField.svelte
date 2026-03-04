@@ -17,7 +17,7 @@
     label,
     selectedValue = "",
     options,
-    id = `khao-select-field-${label}`,
+    id = "",
     allowEmpty = false,
     name = ""
   }: {
@@ -28,6 +28,8 @@
     allowEmpty?: boolean;
     name?: string
   } = $props();
+
+  let computedId = $derived(id || `khao-select-field-${label}`);
 
   let internals: ElementInternals | null = null;
   let selectElement = $state<HTMLSelectElement | null>(null);
@@ -67,9 +69,15 @@
 </script>
 
 <div class="formfield">
-  <label class="label" for={id}>{label}</label>
+  <label class="label" for={computedId}>{label}</label>
 
-  <select bind:this={selectElement} class="field" {id} name={name || id} onchange={handleChange}>
+  <select
+    bind:this={selectElement}
+    class="field"
+    id={computedId}
+    name={name || computedId}
+    onchange={handleChange}
+  >
     {#if allowEmpty}
       <option value=""></option>
     {/if}
