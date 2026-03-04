@@ -36,7 +36,7 @@
     label,
     value,
     placeholder,
-    id = `khao-ui-texfield-${label}`,
+    id = "",
     type = textFieldTypeDefault,
     iconName = "",
     autofocus = "false",
@@ -44,9 +44,8 @@
     name = "",
   }: Props = $props();
 
-  if (type === "search" && iconName === "") {
-    iconName = "search";
-  }
+  let computedId = $derived(id || `khao-ui-texfield-${label}`);
+  let computedIconName = $derived(type === "search" && iconName === "" ? "search" : iconName);
 
   let internals: ElementInternals | null = null;
   let inputElement = $state<HTMLInputElement | null>(null);
@@ -86,24 +85,24 @@
 </script>
 
 <div class="formfield">
-  <label class="label" for={id}
-    >{#if iconName !== ""}
+  <label class="label" for={computedId}
+    >{#if computedIconName !== ""}
       <span class="icon">
-        <Icon {iconName} sizeFactor="4" />
+        <Icon iconName={computedIconName} sizeFactor="4" />
       </span>
     {/if}{label}</label
   >
 
   {#if type === "output"}
-    <output class="field" {id}>{value}</output>
+    <output class="field" id={computedId}>{value}</output>
   {:else}
     <!-- svelte-ignore a11y_autofocus -->
     <input
       bind:this={inputElement}
       class="field"
       {placeholder}
-      {id}
-      name={name || id}
+      id={computedId}
+      name={name || computedId}
       {type}
       {value}
       autofocus={autofocus === "true" ? true : false}

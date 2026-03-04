@@ -32,7 +32,11 @@
   let imageType: "image/jpeg" | "image/png" | "image/svg+xml" =
     $state("image/jpeg");
 
-  let isLoading = $state(loadingAnimation !== "false");
+  let isLoading = $state(false);
+
+  $effect(() => {
+    isLoading = loadingAnimation !== "false";
+  });
 
   onMount(() => {
     if (src !== "") {

@@ -46,28 +46,37 @@
 
   let {
     shareButtonLabel = NO_LABEL,
-    shareButtonTitle = shareButtonLabel,
+    shareButtonTitle = "",
     sharedUrl = "",
     sharedMediaUrl = "",
     sharedTitle = "",
     showPrintButton = "true",
     printButtonLabel = NO_LABEL,
-    printButtonTitle = printButtonLabel,
+    printButtonTitle = "",
     sharedDescription = "",
     showFacebookButton = "true",
     facebookButtonLabel = NO_LABEL,
-    facebookButtonTitle = facebookButtonLabel,
+    facebookButtonTitle = "",
     showPinterestButton = "true",
     pinterestButtonLabel = NO_LABEL,
-    pinterestButtonTitle = pinterestButtonLabel,
+    pinterestButtonTitle = "",
   }: Props = $props();
+
+  let computedShareButtonTitle = $derived(shareButtonTitle || shareButtonLabel);
+  let computedPrintButtonTitle = $derived(printButtonTitle || printButtonLabel);
+  let computedFacebookButtonTitle = $derived(
+    facebookButtonTitle || facebookButtonLabel
+  );
+  let computedPinterestButtonTitle = $derived(
+    pinterestButtonTitle || pinterestButtonLabel
+  );
 </script>
 
 <div class="share-buttons">
   {#if showPrintButton === "true" && isAbleToPrint()}
     <Button
       label={printButtonLabel || NO_LABEL}
-      title={printButtonTitle || ""}
+      title={computedPrintButtonTitle || ""}
       iconName="printer"
       onClick={() => {
         print();
@@ -78,7 +87,7 @@
   {#if isAbleToShareNativly()}
     <Button
       label={shareButtonLabel || NO_LABEL}
-      title={shareButtonTitle || ""}
+      title={computedShareButtonTitle || ""}
       iconName="copy"
       priority="tertiary"
       onClick={() => {
@@ -90,7 +99,7 @@
   {#if !isAbleToShareNativly() && showFacebookButton === "true"}
     <Button
       label={facebookButtonLabel || NO_LABEL}
-      title={facebookButtonTitle || ""}
+      title={computedFacebookButtonTitle || ""}
       iconName="facebook"
       customBGColor="#3b5998"
       customColor="#ffffff"
@@ -103,7 +112,7 @@
   {#if showPinterestButton === "true"}
     <Button
       label={pinterestButtonLabel || NO_LABEL}
-      title={pinterestButtonTitle || ""}
+      title={computedPinterestButtonTitle || ""}
       iconName="pinterest"
       customBGColor="#bd081c"
       customColor="#ffffff"
