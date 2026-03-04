@@ -35,3 +35,6 @@ storybook-static
 
 # NPM Configuration with credentials
 .npmrc
+
+# Codex local skills
+.codex/skills
