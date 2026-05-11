@@ -1,5 +1,22 @@
 # Changelog
 
+## 4.18.0
+
+### Minor Changes
+
+- Add `<khao-thai-speaker>` web component for Thai speech synthesis
+
+  New custom element that renders Thai script as a clickable button which speaks the text aloud using the Web Speech API with the `th-TH` voice. Supports an optional `transliteration` prop that renders as `"Transliteration" (ภาษาไทย 🔊)` format with curly quotes. Handles async voice loading via `onvoiceschanged`, and gracefully alerts when the Speech API or a Thai voice is unavailable.
+
+  - Thai text is clipped with `text-overflow: ellipsis` rather than wrapping, keeping the speaker icon consistently on one line
+  - `title` attribute falls back to the Thai `text` prop when not provided
+
+### Patch Changes
+
+- 373bb96: Fix Storybook/Svelte warnings caused by non-reactive prop default references in multiple components.
+
+  The update replaces cross-prop defaults with derived values and adjusts image loading state initialization to avoid Svelte `state_referenced_locally` warnings during check/build.
+
 ## 4.17.9
 
 - khao-video: add `display: block` to `:host` in shadow DOM

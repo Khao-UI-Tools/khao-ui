@@ -26,6 +26,8 @@ export default defineConfig({
         "infinite-scroll":
           "src/components/misc/infiniteScroll/InfiniteScroll.svelte",
         link: "src/components/links/link/Link.svelte",
+        "thai-speaker":
+          "src/components/buttons/thaiSpeaker/ThaiSpeaker.svelte",
         "marker-pin": "src/components/map/markerPin/MarkerPin.svelte",
         pagination: "src/components/pagination/pagination/Pagination.svelte",
         "remote-control":
