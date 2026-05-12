@@ -1,8 +1,17 @@
 # Changelog
 
-## 4.18.0
+## 4.18.1
 
-### Minor Changes
+- Improve `<khao-thai-speaker>` accessibility, icon styling and UX
+
+  - Add optional `ariaLabel` prop for i18n-prefixed accessible names (e.g. "Anhören: …"); falls back to computed title
+  - `title` now auto-computes as `"Transliteration (Thai)"` when `transliteration` is set and no explicit `title` is provided
+  - Icon color uses `color-mix(in srgb, currentColor, transparent 20%)` matching the Link component's icon treatment; overridable via `--khao-thai-speaker-icon-color`
+  - Add `margin-right: 0.15em` to icon-wrap to visually separate the speaker icon from a following `)`
+  - Thai text clips with `text-overflow: ellipsis` instead of wrapping, keeping the icon consistently on one line
+  - Add `WithExplicitTitle`, `WithAriaLabel`, `InsideText` (with long name), and `InProseText` Storybook stories
+
+## 4.18.0
 
 - Add `<khao-thai-speaker>` web component for Thai speech synthesis
 
@@ -10,8 +19,6 @@
 
   - Thai text is clipped with `text-overflow: ellipsis` rather than wrapping, keeping the speaker icon consistently on one line
   - `title` attribute falls back to the Thai `text` prop when not provided
-
-### Patch Changes
 
 - 373bb96: Fix Storybook/Svelte warnings caused by non-reactive prop default references in multiple components.
 
