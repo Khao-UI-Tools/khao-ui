@@ -5,13 +5,18 @@
     text,
     title = "",
     transliteration = "",
+    ariaLabel = "",
   }: {
     text: string;
     title?: string;
     transliteration?: string;
+    ariaLabel?: string;
   } = $props();
 
-  let computedTitle = $derived(title || text);
+  let computedTitle = $derived(
+    title || (transliteration ? `${transliteration} (${text})` : text),
+  );
+  let computedAriaLabel = $derived(ariaLabel || computedTitle);
 
   const speak = () => {
     if (!("speechSynthesis" in window)) {
@@ -48,12 +53,23 @@
 {#if transliteration}
   "{transliteration}"
   <span class="parens"
-    >(<button class="link" type="button" title={computedTitle} onclick={speak}
+    >(<button
+      class="link"
+      type="button"
+      title={computedTitle}
+      aria-label={computedAriaLabel}
+      onclick={speak}
       ><span class="text" lang="th">{text}</span>{@render icon()}</button
     >)</span
   >
 {:else}
-  <button class="link" type="button" title={computedTitle} onclick={speak}>
+  <button
+    class="link"
+    type="button"
+    title={computedTitle}
+    aria-label={computedAriaLabel}
+    onclick={speak}
+  >
     <span class="text" lang="th">{text}</span>
     {@render icon()}
   </button>
@@ -83,6 +99,11 @@
   :host {
     --khao-link-icon-space: var(--khao-sys-size-regular-1);
     --khao-link-space-to-next-char: 0;
+    --khao-thai-speaker-icon-color: color-mix(
+      in srgb,
+      currentColor,
+      transparent 20%
+    );
   }
 
   .parens {
@@ -141,11 +162,12 @@
     align-items: center;
     flex-shrink: 0;
     margin-top: 6px;
+    margin-right: 0.15em;
   }
 
   .icon {
     width: 1em;
     height: 1em;
-    opacity: 0.8;
+    color: var(--khao-thai-speaker-icon-color);
   }
 </style>
