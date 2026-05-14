@@ -16,6 +16,8 @@ export default defineConfig({
           "src/components/buttons/steadyButton/SteadyButton.svelte",
         card: "src/components/cards/card/Card.svelte",
         chip: "src/components/misc/chip/Chip.svelte",
+        "chinese-speaker":
+          "src/components/speakers/chineseSpeaker/ChineseSpeaker.svelte",
         "content-with-icon":
           "src/components/misc/contentWithIcon/ContentWithIcon.svelte",
         "copy-to-clipboard":
@@ -27,7 +29,9 @@ export default defineConfig({
           "src/components/misc/infiniteScroll/InfiniteScroll.svelte",
         link: "src/components/links/link/Link.svelte",
         "thai-speaker":
-          "src/components/buttons/thaiSpeaker/ThaiSpeaker.svelte",
+          "src/components/speakers/thaiSpeaker/ThaiSpeaker.svelte",
+        "vietnamese-speaker":
+          "src/components/speakers/vietnameseSpeaker/VietnameseSpeaker.svelte",
         "marker-pin": "src/components/map/markerPin/MarkerPin.svelte",
         pagination: "src/components/pagination/pagination/Pagination.svelte",
         "remote-control":

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/web-components-vite";
-import ThaiSpeaker from "../../src/components/buttons/thaiSpeaker/ThaiSpeaker.svelte";
+import ThaiSpeaker from "../../src/components/speakers/thaiSpeaker/ThaiSpeaker.svelte";
 
 const meta = {
-  title: "Buttons/ThaiSpeaker",
+  title: "Speakers/ThaiSpeaker",
   component: "khao-thai-speaker",
   tags: ["autodocs"],
   argTypes: {

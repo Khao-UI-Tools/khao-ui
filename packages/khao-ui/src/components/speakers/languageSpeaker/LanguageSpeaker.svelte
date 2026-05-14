@@ -1,16 +1,30 @@
-<svelte:options customElement="khao-thai-speaker" />
-
 <script lang="ts">
+  type VoiceMatcher = (voice: SpeechSynthesisVoice) => boolean;
+
   let {
     text,
     title = "",
     transliteration = "",
     ariaLabel = "",
+    lang,
+    languageLabel,
+    missingVoiceMessage = "",
+    rate = 0.82,
+    pitch = 0.9,
+    volume = 1,
+    voiceMatchers,
   }: {
     text: string;
     title?: string;
     transliteration?: string;
     ariaLabel?: string;
+    lang: string;
+    languageLabel: string;
+    missingVoiceMessage?: string;
+    rate?: number;
+    pitch?: number;
+    volume?: number;
+    voiceMatchers: VoiceMatcher[];
   } = $props();
 
   let computedTitle = $derived(
@@ -25,16 +39,23 @@
     }
 
     const speakWith = (voices: SpeechSynthesisVoice[]) => {
-      const thaiVoice = voices.find((v) => v.lang === "th-TH");
-      if (!thaiVoice) {
-        alert("Sorry, your browser can't speak Thai!");
+      const voice = voiceMatchers
+        .map((matcher) => voices.find(matcher))
+        .find(Boolean);
+
+      if (!voice) {
+        alert(
+          missingVoiceMessage ||
+            `Sorry, your browser can't speak ${languageLabel}!`,
+        );
         return;
       }
+
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.voice = thaiVoice;
-      utterance.rate = 0.8;
-      utterance.pitch = 0.8;
-      utterance.volume = 1;
+      utterance.voice = voice;
+      utterance.rate = rate;
+      utterance.pitch = pitch;
+      utterance.volume = volume;
       window.speechSynthesis.speak(utterance);
     };
 
@@ -59,7 +80,7 @@
       title={computedTitle}
       aria-label={computedAriaLabel}
       onclick={speak}
-      ><span class="text" lang="th">{text}</span>{@render icon()}</button
+      ><span class="text" {lang}>{text}</span>{@render icon()}</button
     >)</span
   >
 {:else}
@@ -70,7 +91,7 @@
     aria-label={computedAriaLabel}
     onclick={speak}
   >
-    <span class="text" lang="th">{text}</span>
+    <span class="text" {lang}>{text}</span>
     {@render icon()}
   </button>
 {/if}
@@ -96,10 +117,8 @@
 {/snippet}
 
 <style>
-  :host {
-    --khao-link-icon-space: var(--khao-sys-size-regular-1);
-    --khao-link-space-to-next-char: 0;
-    --khao-thai-speaker-icon-color: color-mix(
+  :global(:host) {
+    --khao-language-speaker-icon-color: color-mix(
       in srgb,
       currentColor,
       transparent 20%
@@ -111,63 +130,56 @@
   }
 
   .link {
+    --khao-link-icon-space: var(--khao-sys-size-regular-1);
+    --khao-link-space-to-next-char: 0;
     background: none;
     border: none;
     padding: 0;
     font: inherit;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: var(--khao-link-icon-space);
+    display: inline;
     margin-right: var(--khao-link-space-to-next-char);
     color: currentColor;
     cursor: pointer;
-    max-width: 100%;
-    overflow: hidden;
     vertical-align: baseline;
-    text-decoration: underline;
-    text-underline-offset: var(--khao-sys-size-regular-1);
-    text-decoration-color: color-mix(in srgb, currentColor, transparent 50%);
 
     &:hover {
-      text-decoration-thickness: 2px;
-      text-decoration-color: currentColor;
+      .text {
+        text-decoration-thickness: 2px;
+        text-decoration-color: currentColor;
+      }
     }
 
     &:focus-visible {
       outline: 2px solid color-mix(in srgb, currentColor, transparent 50%);
       outline-offset: 0;
-      text-decoration: none;
       padding: var(--khao-sys-size-regular-1);
-      height: var(--khao-sys-size-regular-4);
       border-radius: var(--khao-sys-shape-corner-small);
       backdrop-filter: saturate(80%);
+
+      .text {
+        text-decoration: none;
+      }
     }
   }
 
   .text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 0;
+    display: inline;
     text-decoration: underline;
     text-underline-offset: var(--khao-sys-size-regular-1);
-    text-decoration-color: inherit;
+    text-decoration-color: color-mix(in srgb, currentColor, transparent 50%);
   }
 
   .icon-wrap {
-    align-self: flex-start;
-    height: 1em;
     display: inline-flex;
     align-items: center;
-    flex-shrink: 0;
-    margin-top: 6px;
+    vertical-align: text-bottom;
+    margin-left: var(--khao-link-icon-space);
     margin-right: 0.15em;
   }
 
   .icon {
     width: 1em;
     height: 1em;
-    color: var(--khao-thai-speaker-icon-color);
+    color: var(--khao-language-speaker-icon-color);
   }
 </style>
