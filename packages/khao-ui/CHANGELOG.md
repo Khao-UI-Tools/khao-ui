@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.21.0
+
+- Add `khao-japanese-speaker` and `khao-korean-speaker` custom elements with optional transliteration support, plus matching Storybook stories.
+
 ## 4.20.0
 
 - Add `isDefinition` support to `khao-thai-speaker` so transliterations can render as semantic `<dfn>` elements while preserving the existing quoted output.
