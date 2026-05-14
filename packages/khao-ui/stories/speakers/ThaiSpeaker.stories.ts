@@ -22,6 +22,11 @@ const meta = {
       control: "text",
       type: "string",
     },
+    isDefinition: {
+      control: { type: "select" },
+      options: ["true", "false"],
+      type: "string",
+    },
     width: {
       control: { type: "range", min: 100, max: 800, step: 10 },
       type: "number",
@@ -102,4 +107,12 @@ export const InProseText: Story = {
         eine klare Suppe mit getrockneten Tintenfischen und Schweinerippchen.
       </p>
     </div>`,
+};
+
+export const AsDefinition: Story = {
+  render: () => `
+    <p style="line-height: 1.8rem; font-family: sans-serif;">
+      Das Gericht <khao-thai-speaker text="ผัดกะเพรา" transliteration="Pad Kaphrao" isDefinition="true"></khao-thai-speaker>
+      wird hier mit semantischer Definitions-Auszeichnung gerendert.
+    </p>`,
 };

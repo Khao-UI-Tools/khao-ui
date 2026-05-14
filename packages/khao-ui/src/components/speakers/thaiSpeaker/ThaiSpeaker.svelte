@@ -12,11 +12,13 @@
     title = "",
     transliteration = "",
     ariaLabel = "",
+    isDefinition = "false",
   }: {
     text: string;
     title?: string;
     transliteration?: string;
     ariaLabel?: string;
+    isDefinition?: string;
   } = $props();
 </script>
 
@@ -25,6 +27,7 @@
   {title}
   {transliteration}
   {ariaLabel}
+  {isDefinition}
   lang="th"
   languageLabel="Thai"
   missingVoiceMessage="Sorry, your browser can't speak Thai!"
