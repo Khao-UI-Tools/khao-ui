@@ -1,8 +1,10 @@
 # Changelog
 
-## 4.19.0
+## 4.20.0
 
-### Minor Changes
+- Add `isDefinition` support to `khao-thai-speaker` so transliterations can render as semantic `<dfn>` elements while preserving the existing quoted output.
+
+## 4.19.0
 
 - Add a new `khao-vietnamese-speaker` web component for inline Vietnamese pronunciation playback via the browser speech synthesis API.
 - Add a configurable `khao-chinese-speaker` web component with `variant` support for Mandarin and Cantonese pronunciation playback.
