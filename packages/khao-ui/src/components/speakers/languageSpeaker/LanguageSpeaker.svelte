@@ -6,6 +6,7 @@
     title = "",
     transliteration = "",
     ariaLabel = "",
+    isDefinition = "false",
     lang,
     languageLabel,
     missingVoiceMessage = "",
@@ -18,6 +19,7 @@
     title?: string;
     transliteration?: string;
     ariaLabel?: string;
+    isDefinition?: string;
     lang: string;
     languageLabel: string;
     missingVoiceMessage?: string;
@@ -25,12 +27,15 @@
     pitch?: number;
     volume?: number;
     voiceMatchers: VoiceMatcher[];
-  } = $props();
+} = $props();
 
   let computedTitle = $derived(
     title || (transliteration ? `${transliteration} (${text})` : text),
   );
   let computedAriaLabel = $derived(ariaLabel || computedTitle);
+  let rendersDefinition = $derived(
+    transliteration !== "" && isDefinition === "true",
+  );
 
   const speak = () => {
     if (!("speechSynthesis" in window)) {
@@ -72,7 +77,11 @@
 </script>
 
 {#if transliteration}
-  "{transliteration}"
+  {#if rendersDefinition}
+    "<dfn>{transliteration}</dfn>"
+  {:else}
+    "{transliteration}"
+  {/if}
   <span class="parens"
     >(<button
       class="link"
@@ -127,6 +136,10 @@
 
   .parens {
     white-space: nowrap;
+  }
+
+  dfn {
+    font-style: italic;
   }
 
   .link {
