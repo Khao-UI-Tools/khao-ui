@@ -27,6 +27,10 @@ export default defineConfig({
         image: "src/components/media/image/Image.svelte",
         "infinite-scroll":
           "src/components/misc/infiniteScroll/InfiniteScroll.svelte",
+        "japanese-speaker":
+          "src/components/speakers/japaneseSpeaker/JapaneseSpeaker.svelte",
+        "korean-speaker":
+          "src/components/speakers/koreanSpeaker/KoreanSpeaker.svelte",
         link: "src/components/links/link/Link.svelte",
         "thai-speaker":
           "src/components/speakers/thaiSpeaker/ThaiSpeaker.svelte",
