@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.19.0
+
+### Minor Changes
+
+- Add a new `khao-vietnamese-speaker` web component for inline Vietnamese pronunciation playback via the browser speech synthesis API.
+- Add a configurable `khao-chinese-speaker` web component with `variant` support for Mandarin and Cantonese pronunciation playback.
+
 ## 4.18.1
 
 - Improve `<khao-thai-speaker>` accessibility, icon styling and UX
