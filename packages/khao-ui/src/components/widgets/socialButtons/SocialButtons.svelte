@@ -2,13 +2,21 @@
 
 <script lang="ts">
   import IconButton from "../../buttons/iconButton/IconButton.svelte";
+  import { type ButtonSize } from "../../buttons/types/ButtonSize";
 
   const socialButtonsPriority = "secondary";
   const socialButtonsTarget = "_blank";
   const socialButtonsRel = "noopener noreferrer";
 
+  type SocialButtonsSize = "tiny" | "small" | "medium" | "large";
+
+  const mapWidgetSizeToIconButtonSize = (
+    size: SocialButtonsSize
+  ): ButtonSize | "tiny" => (size === "small" ? "compact" : size);
+
   let {
     newsletterTeaser = "true",
+    size = "medium",
     newsletterTitle = "",
     newsletterUrl = "",
     facebookTitle = "",
@@ -21,6 +29,7 @@
     rssUrl = "",
   }: {
     newsletterTeaser?: string;
+    size?: SocialButtonsSize;
     newsletterTitle?: string;
     newsletterUrl?: string;
     facebookTitle?: string;
@@ -32,9 +41,11 @@
     rssTitle?: string;
     rssUrl?: string;
   } = $props();
+
+  let iconButtonSize = $derived(mapWidgetSizeToIconButtonSize(size));
 </script>
 
-<div class="container">
+<div class="container container-size-{size}">
   <span class={newsletterTeaser === "true" ? "teaser" : ""}>
     <IconButton
       iconName="newsletter"
@@ -45,7 +56,7 @@
       title={newsletterTitle}
       href={newsletterUrl}
       target="_self"
-      size="medium"
+      size={iconButtonSize}
     />
   </span>
 
@@ -59,7 +70,7 @@
     href={facebookUrl}
     target={socialButtonsTarget}
     rel={socialButtonsRel}
-    size="medium"
+    size={iconButtonSize}
   />
 
   <IconButton
@@ -72,7 +83,7 @@
     href={instagramUrl}
     target={socialButtonsTarget}
     rel={socialButtonsRel}
-    size="medium"
+    size={iconButtonSize}
   />
 
   <IconButton
@@ -85,7 +96,7 @@
     href={pinterestUrl}
     target={socialButtonsTarget}
     rel={socialButtonsRel}
-    size="medium"
+    size={iconButtonSize}
   />
 
   <IconButton
@@ -97,7 +108,7 @@
     title={rssTitle}
     href={rssUrl}
     target="_self"
-    size="medium"
+    size={iconButtonSize}
   />
 </div>
 
@@ -109,6 +120,22 @@
     max-width: 320px;
     margin: 0 auto;
     gap: var(--khao-sys-size-regular-4) var(--khao-sys-size-regular-1);
+  }
+
+  .container-size-tiny {
+    gap: var(--khao-sys-size-regular-2);
+    max-width: 240px;
+    justify-content: center;
+  }
+
+  .container-size-small {
+    gap: var(--khao-sys-size-regular-3) var(--khao-sys-size-regular-1);
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .container-size-large {
+    max-width: 420px;
   }
 
   @keyframes blinker {

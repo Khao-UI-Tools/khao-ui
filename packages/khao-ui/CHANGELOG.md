@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.22.1
+
+### Patch Changes
+
+- Add a configurable `size` prop to `khao-social-buttons`, including `tiny` support for smaller icon buttons and tighter spacing for tiny and small layouts.
+
 ## 4.22.0
 
 ### Minor Changes
