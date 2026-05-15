@@ -132,7 +132,7 @@ npm run storybook:dev    # Start Storybook development server
 npm run storybook:build  # Build static Storybook
 
 # Changesets for versioning
-npm run changeset:add     # Add new changeset
+npm run changeset:add     # Add new changeset (pick patch/minor/major; describe the user-facing change)
 npm run changeset:version # Version packages
 npm run changeset:publish # Publish and push tags
 ```
@@ -152,10 +152,18 @@ npm run storybook:dev    # Storybook for design system
 
 ## Development Workflow
 
-1. **khao-malet** must be built first (CSS design system)
+1. **khao-malet** must be built first (CSS design system):
+   ```bash
+   npm run build -w @der-reiskoch/khao-malet
+   ```
 2. **khao-ui** depends on khao-malet and includes it via build process
 3. Components are built as individual entry points for selective importing
 4. Storybook requires CSS to be built and copied to `storybook-assets/`
+
+## Environment
+
+- **Node**: 20.19.0 (required — see `engines` in `package.json`)
+- No `.env` file needed for local development
 
 ## Testing
 
@@ -231,3 +239,44 @@ Autodocs/MDX inline component previews do not render — causes `i.renderer is n
 - Commit and push changes directly to `development` unless instructed otherwise
 - Only create feature branches when the user specifically asks for them
 - Only open pull requests when the user explicitly requests it
+- **Use rebase, not merge.** Never create merge commits — rebase branches onto `development` instead:
+  ```bash
+  git fetch origin && git rebase origin/development
+  ```
+
+### Conventional Commits
+
+**REQUIRED**: All commit messages must follow the [Conventional Commits](https://www.conventionalcommits.org/) specification.
+
+Format: `<type>(<scope>): <description>`
+
+**Types:**
+
+| Type | When to use |
+|---|---|
+| `feat` | New feature or component |
+| `fix` | Bug fix |
+| `docs` | Documentation only |
+| `style` | Formatting, missing semicolons — no logic change |
+| `refactor` | Code change that is neither a fix nor a feature |
+| `test` | Adding or updating tests |
+| `chore` | Build process, tooling, dependencies, changesets |
+| `perf` | Performance improvement |
+| `ci` | CI/CD configuration |
+
+**Scope** (optional): the affected package or component, e.g. `khao-ui`, `khao-malet`, `button`, `storybook`
+
+**Examples:**
+
+```
+feat(khao-ui): add ChineseSpeaker component
+fix(button): correct disabled state cursor style
+chore(deps): bump svelte to 5.28.0
+docs(storybook): add usage examples for KhmerSpeaker
+test(forms): add unit tests for TextField validation
+refactor(khao-malet): consolidate spacing tokens
+```
+
+- Subject line: imperative mood, lowercase, no period at end
+- Body (optional): explain *why*, not *what*
+- Breaking changes: add `!` after type/scope, e.g. `feat(khao-ui)!: rename prop X to Y`
