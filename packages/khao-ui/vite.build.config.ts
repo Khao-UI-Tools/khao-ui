@@ -29,8 +29,12 @@ export default defineConfig({
           "src/components/misc/infiniteScroll/InfiniteScroll.svelte",
         "japanese-speaker":
           "src/components/speakers/japaneseSpeaker/JapaneseSpeaker.svelte",
+        "khmer-speaker":
+          "src/components/speakers/khmerSpeaker/KhmerSpeaker.svelte",
         "korean-speaker":
           "src/components/speakers/koreanSpeaker/KoreanSpeaker.svelte",
+        "lao-speaker":
+          "src/components/speakers/laoSpeaker/LaoSpeaker.svelte",
         link: "src/components/links/link/Link.svelte",
         "thai-speaker":
           "src/components/speakers/thaiSpeaker/ThaiSpeaker.svelte",
