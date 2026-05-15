@@ -27,7 +27,7 @@ const meta = {
     },
     size: {
       control: { type: "select" },
-      options: buttonSizes.concat("tiny"),
+      options: ["tiny"].concat(buttonSizes),
       default: "medium",
     },
     circle: {

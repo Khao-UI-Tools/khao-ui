@@ -7,6 +7,11 @@ const meta = {
   component: "khao-social-buttons",
   tags: ["autodocs"],
   argTypes: {
+    size: {
+      control: { type: "select" },
+      options: ["tiny", "small", "medium", "large"],
+      default: "medium",
+    },
     newsletterTeaser: { control: "text", type: "string" },
     newsletterTitle: { control: "text", type: "string" },
     newsletterUrl: { control: "text", type: "string" },
@@ -25,5 +30,25 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    size: "medium",
+  },
+};
+
+export const Small: Story = {
+  args: {
+    size: "small",
+  },
+};
+
+export const Tiny: Story = {
+  args: {
+    size: "tiny",
+  },
+};
+
+export const Large: Story = {
+  args: {
+    size: "large",
+  },
 };
