@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.22.0
+
+### Minor Changes
+
+- Add `khao-lao-speaker` and `khao-khmer-speaker` custom elements with optional transliteration support, plus matching Storybook stories.
+
 ## 4.21.0
 
 - Add `khao-japanese-speaker` and `khao-korean-speaker` custom elements with optional transliteration support, plus matching Storybook stories.
