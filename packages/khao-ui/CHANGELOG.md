@@ -1,5 +1,17 @@
 # Changelog
 
+## 4.23.1
+
+### Patch Changes
+
+- Fix the published package build to include the `BurmeseSpeaker` component entrypoint.
+
+## 4.23.0
+
+### Minor Changes
+
+- Add a `BurmeseSpeaker` web component based on the shared `LanguageSpeaker`, including Storybook examples.
+
 ## 4.22.1
 
 ### Patch Changes

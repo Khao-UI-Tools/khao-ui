@@ -14,6 +14,8 @@ export default defineConfig({
           "src/components/buttons/payPalDonateButton/PayPalDonateButton.svelte",
         "button-steady":
           "src/components/buttons/steadyButton/SteadyButton.svelte",
+        "burmese-speaker":
+          "src/components/speakers/burmeseSpeaker/BurmeseSpeaker.svelte",
         card: "src/components/cards/card/Card.svelte",
         chip: "src/components/misc/chip/Chip.svelte",
         "chinese-speaker":
