@@ -36,8 +36,5 @@
   "homepage": "https://github.com/Khao-UI-Tools/khao-ui#readme",
   "dependencies": {
     "@changesets/cli": "^2.29.3"
-  },
-  "volta": {
-    "node": "20.19.0"
   }
 }
